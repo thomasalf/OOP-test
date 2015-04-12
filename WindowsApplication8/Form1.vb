@@ -163,4 +163,30 @@ Public Class Form1
 
 
     End Sub
+
+    Private Sub ComboBoxRegistrerteKunder_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxRegistrerteKunder.SelectedIndexChanged
+        GroupBox3.Visible = True
+    End Sub
+
+    Private Sub ButtonLastInnRegistrerteKunder_Click(sender As Object, e As EventArgs) Handles ButtonLastInnRegistrerteKunder.Click
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_kunde"
+        data = query(sql)
+
+
+        If data.Rows.Count >= 1 Then
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = "Kunde-ID: " & row("kundeID") & " " & row("kfornavn") & " " & row("ketternavn") & " " & row("kadresse")
+                ComboBoxRegistrerteKunder.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen kundeinformasjon funnet.")
+        End If
+
+    End Sub
 End Class

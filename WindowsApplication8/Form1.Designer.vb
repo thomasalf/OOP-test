@@ -164,6 +164,8 @@ Partial Class Form1
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComboBoxRegistrerteKunder = New System.Windows.Forms.ComboBox()
+        Me.ButtonLastInnRegistrerteKunder = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -844,6 +846,8 @@ Partial Class Form1
         'TabPage6RedigerKunde
         '
         Me.TabPage6RedigerKunde.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage6RedigerKunde.Controls.Add(Me.ButtonLastInnRegistrerteKunder)
+        Me.TabPage6RedigerKunde.Controls.Add(Me.ComboBoxRegistrerteKunder)
         Me.TabPage6RedigerKunde.Controls.Add(Me.GroupBox3)
         Me.TabPage6RedigerKunde.Controls.Add(Me.Button8)
         Me.TabPage6RedigerKunde.Location = New System.Drawing.Point(4, 22)
@@ -873,12 +877,13 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.Button7)
         Me.GroupBox3.Controls.Add(Me.TextBox9)
         Me.GroupBox3.Controls.Add(Me.TextBox8)
-        Me.GroupBox3.Location = New System.Drawing.Point(157, 15)
+        Me.GroupBox3.Location = New System.Drawing.Point(160, 120)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(377, 264)
         Me.GroupBox3.TabIndex = 37
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "REDIGER KUNDE"
+        Me.GroupBox3.Visible = False
         '
         'Label17
         '
@@ -1361,7 +1366,7 @@ Partial Class Form1
         '
         Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem})
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(139, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem2.Text = "Hovedside"
         '
         'LoginToolStripMenuItem
@@ -1373,25 +1378,25 @@ Partial Class Form1
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(139, 22)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem3.Text = "Medlemmer"
         '
         'Side3ToolStripMenuItem
         '
         Me.Side3ToolStripMenuItem.Name = "Side3ToolStripMenuItem"
-        Me.Side3ToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.Side3ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.Side3ToolStripMenuItem.Text = "Status"
         '
         'UtstyrToolStripMenuItem
         '
         Me.UtstyrToolStripMenuItem.Name = "UtstyrToolStripMenuItem"
-        Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UtstyrToolStripMenuItem.Text = "Utstyr"
         '
         'UtleieToolStripMenuItem
         '
         Me.UtleieToolStripMenuItem.Name = "UtleieToolStripMenuItem"
-        Me.UtleieToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.UtleieToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UtleieToolStripMenuItem.Text = "Utleie"
         '
         'ToolStripMenuItem4
@@ -1429,6 +1434,24 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
+        '
+        'ComboBoxRegistrerteKunder
+        '
+        Me.ComboBoxRegistrerteKunder.FormattingEnabled = True
+        Me.ComboBoxRegistrerteKunder.Location = New System.Drawing.Point(232, 48)
+        Me.ComboBoxRegistrerteKunder.Name = "ComboBoxRegistrerteKunder"
+        Me.ComboBoxRegistrerteKunder.Size = New System.Drawing.Size(384, 21)
+        Me.ComboBoxRegistrerteKunder.TabIndex = 38
+        Me.ComboBoxRegistrerteKunder.Text = "Registrerte kunder"
+        '
+        'ButtonLastInnRegistrerteKunder
+        '
+        Me.ButtonLastInnRegistrerteKunder.Location = New System.Drawing.Point(104, 48)
+        Me.ButtonLastInnRegistrerteKunder.Name = "ButtonLastInnRegistrerteKunder"
+        Me.ButtonLastInnRegistrerteKunder.Size = New System.Drawing.Size(120, 40)
+        Me.ButtonLastInnRegistrerteKunder.TabIndex = 39
+        Me.ButtonLastInnRegistrerteKunder.Text = "Last inn registrerte kunder"
+        Me.ButtonLastInnRegistrerteKunder.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1617,5 +1640,7 @@ Partial Class Form1
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ComboBoxRegistrerteKunder As System.Windows.Forms.ComboBox
+    Friend WithEvents ButtonLastInnRegistrerteKunder As System.Windows.Forms.Button
 
 End Class
