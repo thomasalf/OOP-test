@@ -25,6 +25,12 @@ Public Class Form1
     'End Function
 
 
+    'Brukernavn og passord
+    Private brukernavn As String = "bruker"
+    Private passord As String = "passord"
+
+
+
 
     'Funksjon for kobling til database
     Private Function query(sql As String) As DataTable
@@ -188,5 +194,22 @@ Public Class Form1
             MsgBox("Ingen kundeinformasjon funnet.")
         End If
 
+    End Sub
+
+    Private Sub TabPage1Innlogging_Click(sender As Object, e As EventArgs) Handles TabPage1Innlogging.Click
+
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        If TextBox14.Text = brukernavn And TextBox13.Text = passord Then
+            MenuStrip1.Show()
+        Else
+            MsgBox("Feil brukernavn/passord")
+            MenuStrip1.Hide()
+        End If
     End Sub
 End Class
