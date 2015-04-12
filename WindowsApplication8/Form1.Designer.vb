@@ -24,18 +24,16 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Button14 = New System.Windows.Forms.Button()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button22 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FNavn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -44,25 +42,23 @@ Partial Class Form1
         Me.Epost = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tlf = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tilh = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button22 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Button21 = New System.Windows.Forms.Button()
-        Me.Button20 = New System.Windows.Forms.Button()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.Label22 = New System.Windows.Forms.Label()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.Button21 = New System.Windows.Forms.Button()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.Button20 = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.Button19 = New System.Windows.Forms.Button()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Utstyr = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Pris = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -70,69 +66,16 @@ Partial Class Form1
         Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Utleidtil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Lokale = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Button18 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Side3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UtstyrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UtleieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
-        Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
-        Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.Button23 = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.Button24 = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.ComboBox7 = New System.Windows.Forms.ComboBox()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.ComboBox8 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox10 = New System.Windows.Forms.ComboBox()
-        Me.Button25 = New System.Windows.Forms.Button()
-        Me.Button26 = New System.Windows.Forms.Button()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.ComboBox11 = New System.Windows.Forms.ComboBox()
@@ -152,41 +95,99 @@ Partial Class Form1
         Me.Button28 = New System.Windows.Forms.Button()
         Me.TextBox20 = New System.Windows.Forms.TextBox()
         Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button26 = New System.Windows.Forms.Button()
+        Me.Button25 = New System.Windows.Forms.Button()
+        Me.ComboBox10 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox8 = New System.Windows.Forms.ComboBox()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button24 = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox7 = New System.Windows.Forms.ComboBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Button23 = New System.Windows.Forms.Button()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button29 = New System.Windows.Forms.Button()
-        Me.Button30 = New System.Windows.Forms.Button()
         Me.Button31 = New System.Windows.Forms.Button()
+        Me.Button30 = New System.Windows.Forms.Button()
+        Me.Button29 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Side3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UtstyrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UtleieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.TabPage6.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.TabPage7.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
-        Me.GroupBox7.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.TabPage8.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -208,6 +209,7 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.GroupBox8)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -215,6 +217,37 @@ Partial Class Form1
         Me.TabPage1.Size = New System.Drawing.Size(1195, 552)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(144, 64)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(35, 13)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "TEST"
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.TextBox14)
+        Me.GroupBox8.Controls.Add(Me.Label19)
+        Me.GroupBox8.Controls.Add(Me.Button14)
+        Me.GroupBox8.Controls.Add(Me.Label18)
+        Me.GroupBox8.Controls.Add(Me.Button15)
+        Me.GroupBox8.Controls.Add(Me.TextBox13)
+        Me.GroupBox8.Location = New System.Drawing.Point(455, 177)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(272, 124)
+        Me.GroupBox8.TabIndex = 18
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "INNLOGGING"
+        '
+        'TextBox14
+        '
+        Me.TextBox14.Location = New System.Drawing.Point(95, 19)
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.Size = New System.Drawing.Size(155, 20)
+        Me.TextBox14.TabIndex = 15
         '
         'Label19
         '
@@ -225,6 +258,15 @@ Partial Class Form1
         Me.Label19.TabIndex = 17
         Me.Label19.Text = "Passord:"
         '
+        'Button14
+        '
+        Me.Button14.Location = New System.Drawing.Point(158, 82)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(92, 23)
+        Me.Button14.TabIndex = 12
+        Me.Button14.Text = "Login"
+        Me.Button14.UseVisualStyleBackColor = True
+        '
         'Label18
         '
         Me.Label18.AutoSize = True
@@ -233,20 +275,6 @@ Partial Class Form1
         Me.Label18.Size = New System.Drawing.Size(65, 13)
         Me.Label18.TabIndex = 16
         Me.Label18.Text = "Brukernavn:"
-        '
-        'TextBox14
-        '
-        Me.TextBox14.Location = New System.Drawing.Point(95, 19)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox14.TabIndex = 15
-        '
-        'TextBox13
-        '
-        Me.TextBox13.Location = New System.Drawing.Point(95, 45)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox13.TabIndex = 14
         '
         'Button15
         '
@@ -257,14 +285,12 @@ Partial Class Form1
         Me.Button15.Text = "Avbryt"
         Me.Button15.UseVisualStyleBackColor = True
         '
-        'Button14
+        'TextBox13
         '
-        Me.Button14.Location = New System.Drawing.Point(158, 82)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(92, 23)
-        Me.Button14.TabIndex = 12
-        Me.Button14.Text = "Login"
-        Me.Button14.UseVisualStyleBackColor = True
+        Me.TextBox13.Location = New System.Drawing.Point(95, 45)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Size = New System.Drawing.Size(155, 20)
+        Me.TextBox13.TabIndex = 14
         '
         'TabPage2
         '
@@ -279,50 +305,19 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         '
-        'Button22
+        'GroupBox7
         '
-        Me.Button22.Location = New System.Drawing.Point(23, 126)
-        Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(115, 23)
-        Me.Button22.TabIndex = 36
-        Me.Button22.Text = "Rabatter"
-        Me.Button22.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(6, 19)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(92, 23)
-        Me.Button11.TabIndex = 35
-        Me.Button11.Text = "Tilbake"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(23, 97)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(115, 23)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Slett Kunde"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(23, 68)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(115, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Rediger Kunde"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(23, 39)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(115, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Registrer Ny"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.GroupBox7.Controls.Add(Me.DataGridView2)
+        Me.GroupBox7.Controls.Add(Me.Button22)
+        Me.GroupBox7.Controls.Add(Me.Button1)
+        Me.GroupBox7.Controls.Add(Me.Button2)
+        Me.GroupBox7.Controls.Add(Me.Button3)
+        Me.GroupBox7.Location = New System.Drawing.Point(117, 19)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(927, 255)
+        Me.GroupBox7.TabIndex = 37
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Medlemsinformasjon"
         '
         'DataGridView2
         '
@@ -368,6 +363,51 @@ Partial Class Form1
         Me.Tilh.HeaderText = "Tilhørighet"
         Me.Tilh.Name = "Tilh"
         '
+        'Button22
+        '
+        Me.Button22.Location = New System.Drawing.Point(23, 126)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(115, 23)
+        Me.Button22.TabIndex = 36
+        Me.Button22.Text = "Rabatter"
+        Me.Button22.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(23, 39)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(115, 23)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Registrer Ny"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(23, 68)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(115, 23)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Rediger Kunde"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(23, 97)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(115, 23)
+        Me.Button3.TabIndex = 3
+        Me.Button3.Text = "Slett Kunde"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(6, 19)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(92, 23)
+        Me.Button11.TabIndex = 35
+        Me.Button11.Text = "Tilbake"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.SteelBlue
@@ -380,6 +420,30 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TabPage3"
         '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.RichTextBox1)
+        Me.GroupBox6.Controls.Add(Me.Button21)
+        Me.GroupBox6.Controls.Add(Me.Label21)
+        Me.GroupBox6.Controls.Add(Me.TextBox15)
+        Me.GroupBox6.Controls.Add(Me.Label23)
+        Me.GroupBox6.Controls.Add(Me.Label22)
+        Me.GroupBox6.Controls.Add(Me.ComboBox4)
+        Me.GroupBox6.Location = New System.Drawing.Point(125, 6)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(341, 272)
+        Me.GroupBox6.TabIndex = 38
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Status/Begrensning"
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(59, 122)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(256, 96)
+        Me.RichTextBox1.TabIndex = 9
+        Me.RichTextBox1.Text = "Sykkelen har et punktert dekk."
+        '
         'Button21
         '
         Me.Button21.Location = New System.Drawing.Point(223, 224)
@@ -389,14 +453,22 @@ Partial Class Form1
         Me.Button21.Text = "Lagre status"
         Me.Button21.UseVisualStyleBackColor = True
         '
-        'Button20
+        'Label21
         '
-        Me.Button20.Location = New System.Drawing.Point(6, 6)
-        Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(92, 23)
-        Me.Button20.TabIndex = 36
-        Me.Button20.Text = "Tilbake"
-        Me.Button20.UseVisualStyleBackColor = True
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(20, 42)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(33, 13)
+        Me.Label21.TabIndex = 0
+        Me.Label21.Text = "Navn"
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Location = New System.Drawing.Point(59, 39)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox15.TabIndex = 7
+        Me.TextBox15.Text = "DBS INTRUDER"
         '
         'Label23
         '
@@ -407,15 +479,6 @@ Partial Class Form1
         Me.Label23.TabIndex = 12
         Me.Label23.Text = "Detaljert beskrivelse:"
         '
-        'ComboBox4
-        '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(59, 67)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox4.TabIndex = 11
-        Me.ComboBox4.Text = "I Ustand"
-        '
         'Label22
         '
         Me.Label22.AutoSize = True
@@ -425,30 +488,23 @@ Partial Class Form1
         Me.Label22.TabIndex = 10
         Me.Label22.Text = "Status"
         '
-        'RichTextBox1
+        'ComboBox4
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(59, 122)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(256, 96)
-        Me.RichTextBox1.TabIndex = 9
-        Me.RichTextBox1.Text = "Sykkelen har et punktert dekk."
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(59, 67)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox4.TabIndex = 11
+        Me.ComboBox4.Text = "I Ustand"
         '
-        'TextBox15
+        'Button20
         '
-        Me.TextBox15.Location = New System.Drawing.Point(59, 39)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox15.TabIndex = 7
-        Me.TextBox15.Text = "DBS INTRUDER"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(20, 42)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(33, 13)
-        Me.Label21.TabIndex = 0
-        Me.Label21.Text = "Navn"
+        Me.Button20.Location = New System.Drawing.Point(6, 6)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(92, 23)
+        Me.Button20.TabIndex = 36
+        Me.Button20.Text = "Tilbake"
+        Me.Button20.UseVisualStyleBackColor = True
         '
         'TabPage4
         '
@@ -462,85 +518,23 @@ Partial Class Form1
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "TabPage4"
         '
-        'Button19
+        'GroupBox5
         '
-        Me.Button19.Location = New System.Drawing.Point(37, 194)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(115, 23)
-        Me.Button19.TabIndex = 43
-        Me.Button19.Text = "Registrer Innlevering"
-        Me.Button19.UseVisualStyleBackColor = True
-        '
-        'Button18
-        '
-        Me.Button18.Location = New System.Drawing.Point(37, 223)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(115, 23)
-        Me.Button18.TabIndex = 42
-        Me.Button18.Text = "Utvidet info"
-        Me.Button18.UseVisualStyleBackColor = True
-        '
-        'Button17
-        '
-        Me.Button17.Location = New System.Drawing.Point(37, 165)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(115, 23)
-        Me.Button17.TabIndex = 41
-        Me.Button17.Text = "Registrer utleie"
-        Me.Button17.UseVisualStyleBackColor = True
-        '
-        'Button16
-        '
-        Me.Button16.Location = New System.Drawing.Point(37, 136)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(115, 23)
-        Me.Button16.TabIndex = 40
-        Me.Button16.Text = "Vis begrensninger"
-        Me.Button16.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(75, 33)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 13)
-        Me.Label2.TabIndex = 39
-        Me.Label2.Text = "Kategori"
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(37, 49)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(115, 21)
-        Me.ComboBox3.TabIndex = 38
-        '
-        'Button13
-        '
-        Me.Button13.Location = New System.Drawing.Point(37, 107)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(115, 23)
-        Me.Button13.TabIndex = 37
-        Me.Button13.Text = "Endre Utstyr"
-        Me.Button13.UseVisualStyleBackColor = True
-        '
-        'Button12
-        '
-        Me.Button12.Location = New System.Drawing.Point(37, 78)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(115, 23)
-        Me.Button12.TabIndex = 36
-        Me.Button12.Text = "Registrer Utstyr"
-        Me.Button12.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(6, 16)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(92, 23)
-        Me.Button10.TabIndex = 35
-        Me.Button10.Text = "Tilbake"
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.GroupBox5.Controls.Add(Me.DataGridView1)
+        Me.GroupBox5.Controls.Add(Me.Button19)
+        Me.GroupBox5.Controls.Add(Me.ComboBox3)
+        Me.GroupBox5.Controls.Add(Me.Button18)
+        Me.GroupBox5.Controls.Add(Me.Button12)
+        Me.GroupBox5.Controls.Add(Me.Button17)
+        Me.GroupBox5.Controls.Add(Me.Button13)
+        Me.GroupBox5.Controls.Add(Me.Button16)
+        Me.GroupBox5.Controls.Add(Me.Label2)
+        Me.GroupBox5.Location = New System.Drawing.Point(127, 16)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(856, 289)
+        Me.GroupBox5.TabIndex = 44
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Utstyr/Status"
         '
         'DataGridView1
         '
@@ -581,6 +575,86 @@ Partial Class Form1
         Me.Lokale.HeaderText = "Leveringssted"
         Me.Lokale.Name = "Lokale"
         '
+        'Button19
+        '
+        Me.Button19.Location = New System.Drawing.Point(37, 194)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(115, 23)
+        Me.Button19.TabIndex = 43
+        Me.Button19.Text = "Registrer Innlevering"
+        Me.Button19.UseVisualStyleBackColor = True
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(37, 49)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(115, 21)
+        Me.ComboBox3.TabIndex = 38
+        '
+        'Button18
+        '
+        Me.Button18.Location = New System.Drawing.Point(37, 223)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(115, 23)
+        Me.Button18.TabIndex = 42
+        Me.Button18.Text = "Utvidet info"
+        Me.Button18.UseVisualStyleBackColor = True
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(37, 78)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(115, 23)
+        Me.Button12.TabIndex = 36
+        Me.Button12.Text = "Registrer Utstyr"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'Button17
+        '
+        Me.Button17.Location = New System.Drawing.Point(37, 165)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(115, 23)
+        Me.Button17.TabIndex = 41
+        Me.Button17.Text = "Registrer utleie"
+        Me.Button17.UseVisualStyleBackColor = True
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(37, 107)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(115, 23)
+        Me.Button13.TabIndex = 37
+        Me.Button13.Text = "Endre Utstyr"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'Button16
+        '
+        Me.Button16.Location = New System.Drawing.Point(37, 136)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(115, 23)
+        Me.Button16.TabIndex = 40
+        Me.Button16.Text = "Vis begrensninger"
+        Me.Button16.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(75, 33)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.TabIndex = 39
+        Me.Label2.Text = "Kategori"
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(6, 16)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(92, 23)
+        Me.Button10.TabIndex = 35
+        Me.Button10.Text = "Tilbake"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
         'TabPage5
         '
         Me.TabPage5.BackColor = System.Drawing.Color.SteelBlue
@@ -592,528 +666,6 @@ Partial Class Form1
         Me.TabPage5.Size = New System.Drawing.Size(1195, 552)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "TabPage5"
-        '
-        'Button9
-        '
-        Me.Button9.Location = New System.Drawing.Point(6, 19)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(92, 23)
-        Me.Button9.TabIndex = 35
-        Me.Button9.Text = "Tilbake"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'TabPage6
-        '
-        Me.TabPage6.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage6.Controls.Add(Me.GroupBox3)
-        Me.TabPage6.Controls.Add(Me.Button8)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "TabPage6"
-        '
-        'Button8
-        '
-        Me.Button8.Location = New System.Drawing.Point(6, 15)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(92, 23)
-        Me.Button8.TabIndex = 34
-        Me.Button8.Text = "Tilbake"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(135, 161)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 32
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(309, 83)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(51, 20)
-        Me.TextBox7.TabIndex = 31
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(263, 86)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(40, 13)
-        Me.Label11.TabIndex = 30
-        Me.Label11.Text = "Postnr."
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(76, 220)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(92, 23)
-        Me.Button6.TabIndex = 29
-        Me.Button6.Text = "Null ut skjema"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(192, 220)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(92, 23)
-        Me.Button7.TabIndex = 28
-        Me.Button7.Text = "Lagre Endring"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(135, 135)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox8.TabIndex = 27
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(135, 109)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox9.TabIndex = 26
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Location = New System.Drawing.Point(135, 83)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox10.TabIndex = 25
-        '
-        'TextBox11
-        '
-        Me.TextBox11.Location = New System.Drawing.Point(135, 57)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox11.TabIndex = 24
-        '
-        'TextBox12
-        '
-        Me.TextBox12.Location = New System.Drawing.Point(135, 31)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox12.TabIndex = 23
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(73, 163)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(56, 13)
-        Me.Label12.TabIndex = 22
-        Me.Label12.Text = "Tilhørighet"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(86, 138)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(43, 13)
-        Me.Label13.TabIndex = 21
-        Me.Label13.Text = "Telefon"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(92, 112)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(37, 13)
-        Me.Label14.TabIndex = 20
-        Me.Label14.Text = "E-post"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(84, 86)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(45, 13)
-        Me.Label15.TabIndex = 19
-        Me.Label15.Text = "Adresse"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(76, 64)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(53, 13)
-        Me.Label16.TabIndex = 18
-        Me.Label16.Text = "Etternavn"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(83, 34)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(46, 13)
-        Me.Label17.TabIndex = 17
-        Me.Label17.Text = "Fornavn"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.MenuStrip1)
-        Me.Panel1.Location = New System.Drawing.Point(-1, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1235, 30)
-        Me.Panel1.TabIndex = 1
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem4, Me.ToolStripTextBox1, Me.SøkMedlemToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1235, 27)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem, Me.UtleieToolStripMenuItem})
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 23)
-        Me.ToolStripMenuItem1.Text = "Meny"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem})
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem2.Text = "Hovedside"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(139, 22)
-        Me.ToolStripMenuItem3.Text = "Medlemmer"
-        '
-        'Side3ToolStripMenuItem
-        '
-        Me.Side3ToolStripMenuItem.Name = "Side3ToolStripMenuItem"
-        Me.Side3ToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.Side3ToolStripMenuItem.Text = "Status"
-        '
-        'UtstyrToolStripMenuItem
-        '
-        Me.UtstyrToolStripMenuItem.Name = "UtstyrToolStripMenuItem"
-        Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.UtstyrToolStripMenuItem.Text = "Utstyr"
-        '
-        'UtleieToolStripMenuItem
-        '
-        Me.UtleieToolStripMenuItem.Name = "UtleieToolStripMenuItem"
-        Me.UtleieToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.UtleieToolStripMenuItem.Text = "Utleie"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.LokaleNr3ToolStripMenuItem})
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(125, 23)
-        Me.ToolStripMenuItem4.Text = "Sjekk tilgjengelighet"
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(135, 22)
-        Me.ToolStripMenuItem5.Text = "Utleiested 1"
-        '
-        'ToolStripMenuItem6
-        '
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(135, 22)
-        Me.ToolStripMenuItem6.Text = "Utleiested 2"
-        '
-        'LokaleNr3ToolStripMenuItem
-        '
-        Me.LokaleNr3ToolStripMenuItem.Name = "LokaleNr3ToolStripMenuItem"
-        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
-        Me.LokaleNr3ToolStripMenuItem.Text = "Utleiested 3"
-        '
-        'ToolStripTextBox1
-        '
-        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 23)
-        '
-        'SøkMedlemToolStripMenuItem
-        '
-        Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
-        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
-        Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(90, 192)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(39, 13)
-        Me.Label25.TabIndex = 35
-        Me.Label25.Text = "Rabatt"
-        '
-        'ComboBox6
-        '
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(135, 188)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox6.TabIndex = 36
-        Me.ComboBox6.Text = "0%"
-        '
-        'TabPage7
-        '
-        Me.TabPage7.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage7.Controls.Add(Me.GroupBox2)
-        Me.TabPage7.Controls.Add(Me.Button24)
-        Me.TabPage7.Controls.Add(Me.GroupBox1)
-        Me.TabPage7.Controls.Add(Me.Button23)
-        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage7.TabIndex = 6
-        Me.TabPage7.Text = "TabPage7"
-        '
-        'Button23
-        '
-        Me.Button23.Location = New System.Drawing.Point(3, 32)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(92, 23)
-        Me.Button23.TabIndex = 35
-        Me.Button23.Text = "Tilbake"
-        Me.Button23.UseVisualStyleBackColor = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.ComboBox7)
-        Me.GroupBox1.Controls.Add(Me.Label28)
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker2)
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox1.Controls.Add(Me.Label27)
-        Me.GroupBox1.Controls.Add(Me.Label26)
-        Me.GroupBox1.Location = New System.Drawing.Point(358, 38)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(249, 121)
-        Me.GroupBox1.TabIndex = 36
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Velg Periode"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(6, 25)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(25, 13)
-        Me.Label26.TabIndex = 0
-        Me.Label26.Text = "Fra:"
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(10, 51)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(21, 13)
-        Me.Label27.TabIndex = 1
-        Me.Label27.Text = "Til:"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(37, 19)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 2
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(37, 45)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker2.TabIndex = 3
-        Me.DateTimePicker2.Value = New Date(2015, 3, 24, 0, 0, 0, 0)
-        '
-        'Button24
-        '
-        Me.Button24.Location = New System.Drawing.Point(523, 165)
-        Me.Button24.Name = "Button24"
-        Me.Button24.Size = New System.Drawing.Size(84, 23)
-        Me.Button24.TabIndex = 37
-        Me.Button24.Text = "Vis utstyr"
-        Me.Button24.UseVisualStyleBackColor = True
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.Button26)
-        Me.GroupBox2.Controls.Add(Me.Button25)
-        Me.GroupBox2.Controls.Add(Me.ComboBox10)
-        Me.GroupBox2.Controls.Add(Me.ComboBox9)
-        Me.GroupBox2.Controls.Add(Me.ComboBox8)
-        Me.GroupBox2.Controls.Add(Me.Label31)
-        Me.GroupBox2.Controls.Add(Me.Label30)
-        Me.GroupBox2.Controls.Add(Me.Label29)
-        Me.GroupBox2.Controls.Add(Me.DataGridView3)
-        Me.GroupBox2.Location = New System.Drawing.Point(160, 194)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(709, 352)
-        Me.GroupBox2.TabIndex = 38
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Tilgjengelig utstyr"
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        Me.DataGridView3.Location = New System.Drawing.Point(30, 19)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(643, 231)
-        Me.DataGridView3.TabIndex = 1
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Utstyr"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Pris"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Tilgjengelighet"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Status"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Utleid til"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Leveringssted"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(6, 84)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(32, 13)
-        Me.Label28.TabIndex = 4
-        Me.Label28.Text = "Sted:"
-        '
-        'ComboBox7
-        '
-        Me.ComboBox7.FormattingEnabled = True
-        Me.ComboBox7.Location = New System.Drawing.Point(37, 81)
-        Me.ComboBox7.Name = "ComboBox7"
-        Me.ComboBox7.Size = New System.Drawing.Size(200, 21)
-        Me.ComboBox7.TabIndex = 16
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(27, 262)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(41, 13)
-        Me.Label29.TabIndex = 17
-        Me.Label29.Text = "Kunde:"
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(208, 262)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(42, 13)
-        Me.Label30.TabIndex = 18
-        Me.Label30.Text = "Rabatt:"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(394, 262)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(76, 13)
-        Me.Label31.TabIndex = 19
-        Me.Label31.Text = "Leveringssted:"
-        '
-        'ComboBox8
-        '
-        Me.ComboBox8.FormattingEnabled = True
-        Me.ComboBox8.Location = New System.Drawing.Point(74, 259)
-        Me.ComboBox8.Name = "ComboBox8"
-        Me.ComboBox8.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox8.TabIndex = 20
-        '
-        'ComboBox9
-        '
-        Me.ComboBox9.FormattingEnabled = True
-        Me.ComboBox9.Location = New System.Drawing.Point(256, 259)
-        Me.ComboBox9.Name = "ComboBox9"
-        Me.ComboBox9.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox9.TabIndex = 21
-        '
-        'ComboBox10
-        '
-        Me.ComboBox10.FormattingEnabled = True
-        Me.ComboBox10.Location = New System.Drawing.Point(476, 259)
-        Me.ComboBox10.Name = "ComboBox10"
-        Me.ComboBox10.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox10.TabIndex = 22
-        '
-        'Button25
-        '
-        Me.Button25.Location = New System.Drawing.Point(596, 306)
-        Me.Button25.Name = "Button25"
-        Me.Button25.Size = New System.Drawing.Size(77, 23)
-        Me.Button25.TabIndex = 39
-        Me.Button25.Text = "Registrer"
-        Me.Button25.UseVisualStyleBackColor = True
-        '
-        'Button26
-        '
-        Me.Button26.Location = New System.Drawing.Point(30, 306)
-        Me.Button26.Name = "Button26"
-        Me.Button26.Size = New System.Drawing.Size(77, 23)
-        Me.Button26.TabIndex = 40
-        Me.Button26.Text = "Avbryt"
-        Me.Button26.UseVisualStyleBackColor = True
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.Label17)
-        Me.GroupBox3.Controls.Add(Me.ComboBox6)
-        Me.GroupBox3.Controls.Add(Me.Label16)
-        Me.GroupBox3.Controls.Add(Me.Label25)
-        Me.GroupBox3.Controls.Add(Me.Label15)
-        Me.GroupBox3.Controls.Add(Me.Label14)
-        Me.GroupBox3.Controls.Add(Me.Label13)
-        Me.GroupBox3.Controls.Add(Me.ComboBox2)
-        Me.GroupBox3.Controls.Add(Me.Label12)
-        Me.GroupBox3.Controls.Add(Me.TextBox7)
-        Me.GroupBox3.Controls.Add(Me.TextBox12)
-        Me.GroupBox3.Controls.Add(Me.Label11)
-        Me.GroupBox3.Controls.Add(Me.TextBox11)
-        Me.GroupBox3.Controls.Add(Me.Button6)
-        Me.GroupBox3.Controls.Add(Me.TextBox10)
-        Me.GroupBox3.Controls.Add(Me.Button7)
-        Me.GroupBox3.Controls.Add(Me.TextBox9)
-        Me.GroupBox3.Controls.Add(Me.TextBox8)
-        Me.GroupBox3.Location = New System.Drawing.Point(157, 15)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(377, 264)
-        Me.GroupBox3.TabIndex = 37
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "REDIGER KUNDE"
         '
         'GroupBox4
         '
@@ -1291,68 +843,434 @@ Partial Class Form1
         Me.TextBox21.Size = New System.Drawing.Size(121, 20)
         Me.TextBox21.TabIndex = 27
         '
-        'GroupBox5
+        'Button9
         '
-        Me.GroupBox5.Controls.Add(Me.DataGridView1)
-        Me.GroupBox5.Controls.Add(Me.Button19)
-        Me.GroupBox5.Controls.Add(Me.ComboBox3)
-        Me.GroupBox5.Controls.Add(Me.Button18)
-        Me.GroupBox5.Controls.Add(Me.Button12)
-        Me.GroupBox5.Controls.Add(Me.Button17)
-        Me.GroupBox5.Controls.Add(Me.Button13)
-        Me.GroupBox5.Controls.Add(Me.Button16)
-        Me.GroupBox5.Controls.Add(Me.Label2)
-        Me.GroupBox5.Location = New System.Drawing.Point(127, 16)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(856, 289)
-        Me.GroupBox5.TabIndex = 44
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Utstyr/Status"
+        Me.Button9.Location = New System.Drawing.Point(6, 19)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(92, 23)
+        Me.Button9.TabIndex = 35
+        Me.Button9.Text = "Tilbake"
+        Me.Button9.UseVisualStyleBackColor = True
         '
-        'GroupBox6
+        'TabPage6
         '
-        Me.GroupBox6.Controls.Add(Me.RichTextBox1)
-        Me.GroupBox6.Controls.Add(Me.Button21)
-        Me.GroupBox6.Controls.Add(Me.Label21)
-        Me.GroupBox6.Controls.Add(Me.TextBox15)
-        Me.GroupBox6.Controls.Add(Me.Label23)
-        Me.GroupBox6.Controls.Add(Me.Label22)
-        Me.GroupBox6.Controls.Add(Me.ComboBox4)
-        Me.GroupBox6.Location = New System.Drawing.Point(125, 6)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(341, 272)
-        Me.GroupBox6.TabIndex = 38
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Status/Begrensning"
+        Me.TabPage6.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage6.Controls.Add(Me.GroupBox3)
+        Me.TabPage6.Controls.Add(Me.Button8)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "TabPage6"
         '
-        'GroupBox7
+        'GroupBox3
         '
-        Me.GroupBox7.Controls.Add(Me.DataGridView2)
-        Me.GroupBox7.Controls.Add(Me.Button22)
-        Me.GroupBox7.Controls.Add(Me.Button1)
-        Me.GroupBox7.Controls.Add(Me.Button2)
-        Me.GroupBox7.Controls.Add(Me.Button3)
-        Me.GroupBox7.Location = New System.Drawing.Point(117, 19)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(927, 255)
-        Me.GroupBox7.TabIndex = 37
-        Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "Medlemsinformasjon"
+        Me.GroupBox3.Controls.Add(Me.Label17)
+        Me.GroupBox3.Controls.Add(Me.ComboBox6)
+        Me.GroupBox3.Controls.Add(Me.Label16)
+        Me.GroupBox3.Controls.Add(Me.Label25)
+        Me.GroupBox3.Controls.Add(Me.Label15)
+        Me.GroupBox3.Controls.Add(Me.Label14)
+        Me.GroupBox3.Controls.Add(Me.Label13)
+        Me.GroupBox3.Controls.Add(Me.ComboBox2)
+        Me.GroupBox3.Controls.Add(Me.Label12)
+        Me.GroupBox3.Controls.Add(Me.TextBox7)
+        Me.GroupBox3.Controls.Add(Me.TextBox12)
+        Me.GroupBox3.Controls.Add(Me.Label11)
+        Me.GroupBox3.Controls.Add(Me.TextBox11)
+        Me.GroupBox3.Controls.Add(Me.Button6)
+        Me.GroupBox3.Controls.Add(Me.TextBox10)
+        Me.GroupBox3.Controls.Add(Me.Button7)
+        Me.GroupBox3.Controls.Add(Me.TextBox9)
+        Me.GroupBox3.Controls.Add(Me.TextBox8)
+        Me.GroupBox3.Location = New System.Drawing.Point(157, 15)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(377, 264)
+        Me.GroupBox3.TabIndex = 37
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "REDIGER KUNDE"
         '
-        'GroupBox8
+        'Label17
         '
-        Me.GroupBox8.Controls.Add(Me.TextBox14)
-        Me.GroupBox8.Controls.Add(Me.Label19)
-        Me.GroupBox8.Controls.Add(Me.Button14)
-        Me.GroupBox8.Controls.Add(Me.Label18)
-        Me.GroupBox8.Controls.Add(Me.Button15)
-        Me.GroupBox8.Controls.Add(Me.TextBox13)
-        Me.GroupBox8.Location = New System.Drawing.Point(455, 177)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(272, 124)
-        Me.GroupBox8.TabIndex = 18
-        Me.GroupBox8.TabStop = False
-        Me.GroupBox8.Text = "INNLOGGING"
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(83, 34)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(46, 13)
+        Me.Label17.TabIndex = 17
+        Me.Label17.Text = "Fornavn"
+        '
+        'ComboBox6
+        '
+        Me.ComboBox6.FormattingEnabled = True
+        Me.ComboBox6.Location = New System.Drawing.Point(135, 188)
+        Me.ComboBox6.Name = "ComboBox6"
+        Me.ComboBox6.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox6.TabIndex = 36
+        Me.ComboBox6.Text = "0%"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(76, 64)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(53, 13)
+        Me.Label16.TabIndex = 18
+        Me.Label16.Text = "Etternavn"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(90, 192)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(39, 13)
+        Me.Label25.TabIndex = 35
+        Me.Label25.Text = "Rabatt"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(84, 86)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(45, 13)
+        Me.Label15.TabIndex = 19
+        Me.Label15.Text = "Adresse"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(92, 112)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(37, 13)
+        Me.Label14.TabIndex = 20
+        Me.Label14.Text = "E-post"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(86, 138)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(43, 13)
+        Me.Label13.TabIndex = 21
+        Me.Label13.Text = "Telefon"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(135, 161)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.TabIndex = 32
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(73, 163)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(56, 13)
+        Me.Label12.TabIndex = 22
+        Me.Label12.Text = "Tilhørighet"
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(309, 83)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(51, 20)
+        Me.TextBox7.TabIndex = 31
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(135, 31)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox12.TabIndex = 23
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(263, 86)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(40, 13)
+        Me.Label11.TabIndex = 30
+        Me.Label11.Text = "Postnr."
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(135, 57)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox11.TabIndex = 24
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(76, 220)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(92, 23)
+        Me.Button6.TabIndex = 29
+        Me.Button6.Text = "Null ut skjema"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(135, 83)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox10.TabIndex = 25
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(192, 220)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(92, 23)
+        Me.Button7.TabIndex = 28
+        Me.Button7.Text = "Lagre Endring"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(135, 109)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox9.TabIndex = 26
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(135, 135)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox8.TabIndex = 27
+        '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(6, 15)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(92, 23)
+        Me.Button8.TabIndex = 34
+        Me.Button8.Text = "Tilbake"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'TabPage7
+        '
+        Me.TabPage7.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage7.Controls.Add(Me.GroupBox2)
+        Me.TabPage7.Controls.Add(Me.Button24)
+        Me.TabPage7.Controls.Add(Me.GroupBox1)
+        Me.TabPage7.Controls.Add(Me.Button23)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage7.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage7.TabIndex = 6
+        Me.TabPage7.Text = "TabPage7"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Button26)
+        Me.GroupBox2.Controls.Add(Me.Button25)
+        Me.GroupBox2.Controls.Add(Me.ComboBox10)
+        Me.GroupBox2.Controls.Add(Me.ComboBox9)
+        Me.GroupBox2.Controls.Add(Me.ComboBox8)
+        Me.GroupBox2.Controls.Add(Me.Label31)
+        Me.GroupBox2.Controls.Add(Me.Label30)
+        Me.GroupBox2.Controls.Add(Me.Label29)
+        Me.GroupBox2.Controls.Add(Me.DataGridView3)
+        Me.GroupBox2.Location = New System.Drawing.Point(160, 194)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(709, 352)
+        Me.GroupBox2.TabIndex = 38
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Tilgjengelig utstyr"
+        '
+        'Button26
+        '
+        Me.Button26.Location = New System.Drawing.Point(30, 306)
+        Me.Button26.Name = "Button26"
+        Me.Button26.Size = New System.Drawing.Size(77, 23)
+        Me.Button26.TabIndex = 40
+        Me.Button26.Text = "Avbryt"
+        Me.Button26.UseVisualStyleBackColor = True
+        '
+        'Button25
+        '
+        Me.Button25.Location = New System.Drawing.Point(596, 306)
+        Me.Button25.Name = "Button25"
+        Me.Button25.Size = New System.Drawing.Size(77, 23)
+        Me.Button25.TabIndex = 39
+        Me.Button25.Text = "Registrer"
+        Me.Button25.UseVisualStyleBackColor = True
+        '
+        'ComboBox10
+        '
+        Me.ComboBox10.FormattingEnabled = True
+        Me.ComboBox10.Location = New System.Drawing.Point(476, 259)
+        Me.ComboBox10.Name = "ComboBox10"
+        Me.ComboBox10.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox10.TabIndex = 22
+        '
+        'ComboBox9
+        '
+        Me.ComboBox9.FormattingEnabled = True
+        Me.ComboBox9.Location = New System.Drawing.Point(256, 259)
+        Me.ComboBox9.Name = "ComboBox9"
+        Me.ComboBox9.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox9.TabIndex = 21
+        '
+        'ComboBox8
+        '
+        Me.ComboBox8.FormattingEnabled = True
+        Me.ComboBox8.Location = New System.Drawing.Point(74, 259)
+        Me.ComboBox8.Name = "ComboBox8"
+        Me.ComboBox8.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox8.TabIndex = 20
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(394, 262)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(76, 13)
+        Me.Label31.TabIndex = 19
+        Me.Label31.Text = "Leveringssted:"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(208, 262)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(42, 13)
+        Me.Label30.TabIndex = 18
+        Me.Label30.Text = "Rabatt:"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(27, 262)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(41, 13)
+        Me.Label29.TabIndex = 17
+        Me.Label29.Text = "Kunde:"
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
+        Me.DataGridView3.Location = New System.Drawing.Point(30, 19)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.Size = New System.Drawing.Size(643, 231)
+        Me.DataGridView3.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Utstyr"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Pris"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Tilgjengelighet"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Status"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Utleid til"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Leveringssted"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'Button24
+        '
+        Me.Button24.Location = New System.Drawing.Point(523, 165)
+        Me.Button24.Name = "Button24"
+        Me.Button24.Size = New System.Drawing.Size(84, 23)
+        Me.Button24.TabIndex = 37
+        Me.Button24.Text = "Vis utstyr"
+        Me.Button24.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.ComboBox7)
+        Me.GroupBox1.Controls.Add(Me.Label28)
+        Me.GroupBox1.Controls.Add(Me.DateTimePicker2)
+        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox1.Controls.Add(Me.Label27)
+        Me.GroupBox1.Controls.Add(Me.Label26)
+        Me.GroupBox1.Location = New System.Drawing.Point(358, 38)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(249, 121)
+        Me.GroupBox1.TabIndex = 36
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Velg Periode"
+        '
+        'ComboBox7
+        '
+        Me.ComboBox7.FormattingEnabled = True
+        Me.ComboBox7.Location = New System.Drawing.Point(37, 81)
+        Me.ComboBox7.Name = "ComboBox7"
+        Me.ComboBox7.Size = New System.Drawing.Size(200, 21)
+        Me.ComboBox7.TabIndex = 16
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(6, 84)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(32, 13)
+        Me.Label28.TabIndex = 4
+        Me.Label28.Text = "Sted:"
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(37, 45)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker2.TabIndex = 3
+        Me.DateTimePicker2.Value = New Date(2015, 3, 24, 0, 0, 0, 0)
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(37, 19)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 2
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(10, 51)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(21, 13)
+        Me.Label27.TabIndex = 1
+        Me.Label27.Text = "Til:"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(6, 25)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(25, 13)
+        Me.Label26.TabIndex = 0
+        Me.Label26.Text = "Fra:"
+        '
+        'Button23
+        '
+        Me.Button23.Location = New System.Drawing.Point(3, 32)
+        Me.Button23.Name = "Button23"
+        Me.Button23.Size = New System.Drawing.Size(92, 23)
+        Me.Button23.TabIndex = 35
+        Me.Button23.Text = "Tilbake"
+        Me.Button23.UseVisualStyleBackColor = True
         '
         'TabPage8
         '
@@ -1379,32 +1297,14 @@ Partial Class Form1
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Hovedmeny"
         '
-        'Button4
+        'Button31
         '
-        Me.Button4.Location = New System.Drawing.Point(56, 28)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(115, 23)
-        Me.Button4.TabIndex = 2
-        Me.Button4.Text = "Medlemmer"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(56, 57)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(115, 23)
-        Me.Button5.TabIndex = 3
-        Me.Button5.Text = "Utstyr og Status"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button29
-        '
-        Me.Button29.Location = New System.Drawing.Point(56, 86)
-        Me.Button29.Name = "Button29"
-        Me.Button29.Size = New System.Drawing.Size(115, 23)
-        Me.Button29.TabIndex = 4
-        Me.Button29.Text = "Registrer Utleie"
-        Me.Button29.UseVisualStyleBackColor = True
+        Me.Button31.Location = New System.Drawing.Point(56, 144)
+        Me.Button31.Name = "Button31"
+        Me.Button31.Size = New System.Drawing.Size(115, 23)
+        Me.Button31.TabIndex = 6
+        Me.Button31.Text = "Statistikk"
+        Me.Button31.UseVisualStyleBackColor = True
         '
         'Button30
         '
@@ -1415,20 +1315,131 @@ Partial Class Form1
         Me.Button30.Text = "Registrer Kunde"
         Me.Button30.UseVisualStyleBackColor = True
         '
-        'Button31
+        'Button29
         '
-        Me.Button31.Location = New System.Drawing.Point(56, 144)
-        Me.Button31.Name = "Button31"
-        Me.Button31.Size = New System.Drawing.Size(115, 23)
-        Me.Button31.TabIndex = 6
-        Me.Button31.Text = "Statistikk"
-        Me.Button31.UseVisualStyleBackColor = True
+        Me.Button29.Location = New System.Drawing.Point(56, 86)
+        Me.Button29.Name = "Button29"
+        Me.Button29.Size = New System.Drawing.Size(115, 23)
+        Me.Button29.TabIndex = 4
+        Me.Button29.Text = "Registrer Utleie"
+        Me.Button29.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(56, 57)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(115, 23)
+        Me.Button5.TabIndex = 3
+        Me.Button5.Text = "Utstyr og Status"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(56, 28)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(115, 23)
+        Me.Button4.TabIndex = 2
+        Me.Button4.Text = "Medlemmer"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.MenuStrip1)
+        Me.Panel1.Location = New System.Drawing.Point(-1, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1235, 30)
+        Me.Panel1.TabIndex = 1
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem4, Me.ToolStripTextBox1, Me.SøkMedlemToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1235, 27)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem, Me.UtleieToolStripMenuItem})
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 23)
+        Me.ToolStripMenuItem1.Text = "Meny"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem})
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(139, 22)
+        Me.ToolStripMenuItem2.Text = "Hovedside"
         '
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
         Me.LoginToolStripMenuItem.Text = "Login"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(139, 22)
+        Me.ToolStripMenuItem3.Text = "Medlemmer"
+        '
+        'Side3ToolStripMenuItem
+        '
+        Me.Side3ToolStripMenuItem.Name = "Side3ToolStripMenuItem"
+        Me.Side3ToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.Side3ToolStripMenuItem.Text = "Status"
+        '
+        'UtstyrToolStripMenuItem
+        '
+        Me.UtstyrToolStripMenuItem.Name = "UtstyrToolStripMenuItem"
+        Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.UtstyrToolStripMenuItem.Text = "Utstyr"
+        '
+        'UtleieToolStripMenuItem
+        '
+        Me.UtleieToolStripMenuItem.Name = "UtleieToolStripMenuItem"
+        Me.UtleieToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.UtleieToolStripMenuItem.Text = "Utleie"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.LokaleNr3ToolStripMenuItem})
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(125, 23)
+        Me.ToolStripMenuItem4.Text = "Sjekk tilgjengelighet"
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(135, 22)
+        Me.ToolStripMenuItem5.Text = "Utleiested 1"
+        '
+        'ToolStripMenuItem6
+        '
+        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(135, 22)
+        Me.ToolStripMenuItem6.Text = "Utleiested 2"
+        '
+        'LokaleNr3ToolStripMenuItem
+        '
+        Me.LokaleNr3ToolStripMenuItem.Name = "LokaleNr3ToolStripMenuItem"
+        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.LokaleNr3ToolStripMenuItem.Text = "Utleiested 3"
+        '
+        'ToolStripTextBox1
+        '
+        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 23)
+        '
+        'SøkMedlemToolStripMenuItem
+        '
+        Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
+        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
+        Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
         '
         'Form1
         '
@@ -1442,36 +1453,37 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        Me.GroupBox8.ResumeLayout(False)
+        Me.GroupBox8.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.GroupBox7.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.TabPage6.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.TabPage7.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.TabPage8.ResumeLayout(False)
+        Me.GroupBox9.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.TabPage7.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox6.PerformLayout()
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
-        Me.TabPage8.ResumeLayout(False)
-        Me.GroupBox9.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1617,5 +1629,6 @@ Partial Class Form1
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class
