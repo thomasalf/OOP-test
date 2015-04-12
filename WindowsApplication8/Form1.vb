@@ -130,16 +130,36 @@ Public Class Form1
             MsgBox("Sjekk at e-postadressen er riktig og prøv igjen.")
         ElseIf TextBox20.Text.Length > 0 And TextBox20.Text.IndexOf("@") = -1 Then 'sjekker at e-postadressen inneholder alfakrøll
             MsgBox("Sjekk at e-postadressen er riktig og prøv igjen.")
+        ElseIf TextBox21.Text.Length > 0 And IsNumeric(TextBox21.Text) = False Then 'sjekker at telefonnummeret består av tall
+            MsgBox("Sjekk at telefonnummeret er riktig og prøv igjen.")
+        ElseIf TextBox16.Text.Length > 0 And IsNumeric(TextBox16.Text) = False Then 'sjekker at postnummeret består av tall
+            MsgBox("Sjekk at postnummeret er riktig og prøv igjen.")
+        ElseIf TextBox16.Text.Length <> 4 Then 'sjekker at postnummeret består av 4 tall
+            MsgBox("Sjekk at postnummeret er riktig og prøv igjen. Det ser ut til å ha feil lengde.")
+        Else
+            MsgBox("Alt ser ut til å være riktig utfylt. Lagrer til databasen.")
+            'Lagrer informasjon fra textboxer til variabler
+            Dim fornavnet As String = TextBox17.Text
+            Dim etternavnet As String = TextBox18.Text
+            Dim adresse As String = TextBox19.Text & ", " & TextBox16.Text
+            Dim epost As String = TextBox20.Text
+            Dim telefon As String = TextBox21.Text
+
+            'bruker variabler for å lage SQL-kommando
+            Dim data As New DataTable
+            Dim sql As String = "INSERT INTO pdk_kunde SET kfornavn = '" _
+                                & fornavnet & "', ketternavn = '" _
+                                & etternavnet & "', kadresse = '" _
+                                & adresse & "', kepost = '" _
+                                & epost & "', ktelefon = '" _
+                                & telefon & "';"
+
+            data = query(sql)
 
 
         End If
 
-        'MsgBox("slutten av koden")
 
-        'Dim data As New DataTable
-        'Dim sql As String = "SELECT * FROM pdk_kunde " _
-        '                   & "WHERE kepost = '" & TextBox9.Text & "'"
-        'data = query(sql)
 
 
     End Sub
