@@ -2,6 +2,29 @@
 Imports System.Configuration
 
 Public Class Form1
+    'TAH: Funksjon som automatisk fyller ut resten av kundeinformasjonen
+    'hvis bruker skriver inn informasjon som entydig identifiserer
+    'en spesifikk kunde (f.eks. telefonnummer)
+    '
+    '    Private Function autofill(ByVal tabellnavn As String, ByVal tekstboksnavn As String)
+    '    Dim data As New DataTable
+    '   Dim sql As String = "SELECT * FROM " & tabellnavn _
+    '                      & " WHERE " & tabellnavn _
+    '                     & " = '" & Me.Controls(tekstboksnavn).Text & "'"
+    '    data = query(sql)
+    '   If data.Rows.Count = 1 Then
+    'Dim row As DataRow = Data.Rows(0)
+    '       TextBox12.Text = row("kfornavn")
+    '      TextBox11.Text = row("ketternavn")
+    '     TextBox10.Text = row("kadresse")
+    '    TextBox9.Text = row("kepost")
+    '   TextBox8.Text = row("ktelefon")
+    'Else
+    '    Return false
+    'End If
+    'End Function
+
+
 
     'Funksjon for kobling til database
     Private Function query(sql As String) As DataTable
@@ -12,14 +35,14 @@ Public Class Form1
             conn.Open()
             Dim adapter As New MySqlDataAdapter
             adapter.SelectCommand = New MySqlCommand(sql, conn)
-            adapter.Fill(Data)
+            adapter.Fill(data)
             conn.Close()
         Catch ex As Exception
             MessageBox.Show("Feil ved oppkobling til database: " & ex.Message)
         Finally
             conn.Dispose()
         End Try
-        Return Data
+        Return data
     End Function
 
 
@@ -53,11 +76,11 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        TabControl1.SelectTab(5)
+        TabControl1.SelectTab(4)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        TabControl1.SelectTab(6)
+        TabControl1.SelectTab(5)
     End Sub
 
     Private Sub LoginToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginToolStripMenuItem.Click
@@ -65,4 +88,59 @@ Public Class Form1
     End Sub
 
 
+
+    Private Sub TextBox8_TextChanged(sender As Object, e As EventArgs) Handles TextBox8.TextChanged
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_kunde " _
+                           & "WHERE ktelefon = '" & TextBox8.Text & "'"
+        data = query(sql)
+        If data.Rows.Count = 1 Then
+            Dim row As DataRow = data.Rows(0)
+            TextBox12.Text = row("kfornavn")
+            TextBox11.Text = row("ketternavn")
+            TextBox10.Text = row("kadresse")
+            TextBox9.Text = row("kepost")
+            TextBox8.Text = row("ktelefon")
+        End If
+    End Sub
+
+    Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs) Handles TextBox9.TextChanged
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_kunde " _
+                           & "WHERE kepost = '" & TextBox9.Text & "'"
+        data = query(sql)
+        If data.Rows.Count = 1 Then
+            Dim row As DataRow = data.Rows(0)
+            TextBox12.Text = row("kfornavn")
+            TextBox11.Text = row("ketternavn")
+            TextBox10.Text = row("kadresse")
+            TextBox9.Text = row("kepost")
+            TextBox8.Text = row("ktelefon")
+        End If
+    End Sub
+
+    Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
+        If TextBox17.Text.Length <= 0 Then 'sjekker at det er skrevet inn fornavn
+            MsgBox("Du må skrive inn et fornavn.")
+        ElseIf TextBox18.Text.Length <= 0 Then 'sjekker at det er skrevet inn etternavn
+            MsgBox("Du må skrive inn et etternavn.")
+        ElseIf TextBox20.Text.Length <= 0 And TextBox21.Text.Length <= 0 Then 'sjekker at e-post eller telefonnummer er skrevet inn
+            MsgBox("Du må skrive inn e-postadresse eller telefonnummer slik at kunden kan kontaktes.")
+        ElseIf TextBox20.Text.Length > 0 And TextBox20.Text.IndexOf(".") = -1 Then 'sjekker at e-postadressen inneholder punktum
+            MsgBox("Sjekk at e-postadressen er riktig og prøv igjen.")
+        ElseIf TextBox20.Text.Length > 0 And TextBox20.Text.IndexOf("@") = -1 Then 'sjekker at e-postadressen inneholder alfakrøll
+            MsgBox("Sjekk at e-postadressen er riktig og prøv igjen.")
+
+
+        End If
+
+        'MsgBox("slutten av koden")
+
+        'Dim data As New DataTable
+        'Dim sql As String = "SELECT * FROM pdk_kunde " _
+        '                   & "WHERE kepost = '" & TextBox9.Text & "'"
+        'data = query(sql)
+
+
+    End Sub
 End Class

@@ -23,8 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TabPage1Innlogging = New System.Windows.Forms.TabPage()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.TextBox14 = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -32,7 +31,7 @@ Partial Class Form1
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabPage2Medlemsinfo = New System.Windows.Forms.TabPage()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,7 +46,7 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabPage3StatusBegrensning = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Button21 = New System.Windows.Forms.Button()
@@ -57,7 +56,7 @@ Partial Class Form1
         Me.Label22 = New System.Windows.Forms.Label()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.Button20 = New System.Windows.Forms.Button()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.TabPage4UtstyrStatus = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Utstyr = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -75,7 +74,7 @@ Partial Class Form1
         Me.Button16 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.TabPage5RegistrerKunde = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.ComboBox11 = New System.Windows.Forms.ComboBox()
@@ -96,7 +95,7 @@ Partial Class Form1
         Me.TextBox20 = New System.Windows.Forms.TextBox()
         Me.TextBox21 = New System.Windows.Forms.TextBox()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.TabPage6RedigerKunde = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.ComboBox6 = New System.Windows.Forms.ComboBox()
@@ -117,7 +116,7 @@ Partial Class Form1
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.TabPage7TilgjengeligUtstyr = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button26 = New System.Windows.Forms.Button()
         Me.Button25 = New System.Windows.Forms.Button()
@@ -143,7 +142,7 @@ Partial Class Form1
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Button23 = New System.Windows.Forms.Button()
-        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.TabPage8Hovedmeny = New System.Windows.Forms.TabPage()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.Button31 = New System.Windows.Forms.Button()
         Me.Button30 = New System.Windows.Forms.Button()
@@ -166,25 +165,25 @@ Partial Class Form1
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
+        Me.TabPage2Medlemsinfo.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
+        Me.TabPage3StatusBegrensning.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
-        Me.TabPage4.SuspendLayout()
+        Me.TabPage4UtstyrStatus.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage5.SuspendLayout()
+        Me.TabPage5RegistrerKunde.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        Me.TabPage6.SuspendLayout()
+        Me.TabPage6RedigerKunde.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.TabPage7.SuspendLayout()
+        Me.TabPage7TilgjengeligUtstyr.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.TabPage8.SuspendLayout()
+        Me.TabPage8Hovedmeny.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -192,40 +191,30 @@ Partial Class Form1
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Controls.Add(Me.TabPage5)
-        Me.TabControl1.Controls.Add(Me.TabPage6)
-        Me.TabControl1.Controls.Add(Me.TabPage7)
-        Me.TabControl1.Controls.Add(Me.TabPage8)
+        Me.TabControl1.Controls.Add(Me.TabPage1Innlogging)
+        Me.TabControl1.Controls.Add(Me.TabPage2Medlemsinfo)
+        Me.TabControl1.Controls.Add(Me.TabPage3StatusBegrensning)
+        Me.TabControl1.Controls.Add(Me.TabPage4UtstyrStatus)
+        Me.TabControl1.Controls.Add(Me.TabPage5RegistrerKunde)
+        Me.TabControl1.Controls.Add(Me.TabPage6RedigerKunde)
+        Me.TabControl1.Controls.Add(Me.TabPage7TilgjengeligUtstyr)
+        Me.TabControl1.Controls.Add(Me.TabPage8Hovedmeny)
         Me.TabControl1.Location = New System.Drawing.Point(12, 8)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1203, 578)
         Me.TabControl1.TabIndex = 0
         '
-        'TabPage1
+        'TabPage1Innlogging
         '
-        Me.TabPage1.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.GroupBox8)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(144, 64)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(35, 13)
-        Me.Label1.TabIndex = 19
-        Me.Label1.Text = "TEST"
+        Me.TabPage1Innlogging.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage1Innlogging.Controls.Add(Me.GroupBox8)
+        Me.TabPage1Innlogging.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1Innlogging.Name = "TabPage1Innlogging"
+        Me.TabPage1Innlogging.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1Innlogging.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage1Innlogging.TabIndex = 0
+        Me.TabPage1Innlogging.Text = "TabPage1"
         '
         'GroupBox8
         '
@@ -292,18 +281,18 @@ Partial Class Form1
         Me.TextBox13.Size = New System.Drawing.Size(155, 20)
         Me.TextBox13.TabIndex = 14
         '
-        'TabPage2
+        'TabPage2Medlemsinfo
         '
-        Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage2.Controls.Add(Me.GroupBox7)
-        Me.TabPage2.Controls.Add(Me.Button11)
-        Me.TabPage2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2Medlemsinfo.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage2Medlemsinfo.Controls.Add(Me.GroupBox7)
+        Me.TabPage2Medlemsinfo.Controls.Add(Me.Button11)
+        Me.TabPage2Medlemsinfo.Cursor = System.Windows.Forms.Cursors.Default
+        Me.TabPage2Medlemsinfo.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2Medlemsinfo.Name = "TabPage2Medlemsinfo"
+        Me.TabPage2Medlemsinfo.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2Medlemsinfo.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage2Medlemsinfo.TabIndex = 1
+        Me.TabPage2Medlemsinfo.Text = "TabPage2"
         '
         'GroupBox7
         '
@@ -408,17 +397,17 @@ Partial Class Form1
         Me.Button11.Text = "Tilbake"
         Me.Button11.UseVisualStyleBackColor = True
         '
-        'TabPage3
+        'TabPage3StatusBegrensning
         '
-        Me.TabPage3.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage3.Controls.Add(Me.GroupBox6)
-        Me.TabPage3.Controls.Add(Me.Button20)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "TabPage3"
+        Me.TabPage3StatusBegrensning.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage3StatusBegrensning.Controls.Add(Me.GroupBox6)
+        Me.TabPage3StatusBegrensning.Controls.Add(Me.Button20)
+        Me.TabPage3StatusBegrensning.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3StatusBegrensning.Name = "TabPage3StatusBegrensning"
+        Me.TabPage3StatusBegrensning.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3StatusBegrensning.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage3StatusBegrensning.TabIndex = 2
+        Me.TabPage3StatusBegrensning.Text = "TabPage3"
         '
         'GroupBox6
         '
@@ -506,17 +495,17 @@ Partial Class Form1
         Me.Button20.Text = "Tilbake"
         Me.Button20.UseVisualStyleBackColor = True
         '
-        'TabPage4
+        'TabPage4UtstyrStatus
         '
-        Me.TabPage4.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage4.Controls.Add(Me.GroupBox5)
-        Me.TabPage4.Controls.Add(Me.Button10)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "TabPage4"
+        Me.TabPage4UtstyrStatus.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage4UtstyrStatus.Controls.Add(Me.GroupBox5)
+        Me.TabPage4UtstyrStatus.Controls.Add(Me.Button10)
+        Me.TabPage4UtstyrStatus.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4UtstyrStatus.Name = "TabPage4UtstyrStatus"
+        Me.TabPage4UtstyrStatus.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4UtstyrStatus.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage4UtstyrStatus.TabIndex = 3
+        Me.TabPage4UtstyrStatus.Text = "TabPage4"
         '
         'GroupBox5
         '
@@ -655,17 +644,17 @@ Partial Class Form1
         Me.Button10.Text = "Tilbake"
         Me.Button10.UseVisualStyleBackColor = True
         '
-        'TabPage5
+        'TabPage5RegistrerKunde
         '
-        Me.TabPage5.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage5.Controls.Add(Me.GroupBox4)
-        Me.TabPage5.Controls.Add(Me.Button9)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "TabPage5"
+        Me.TabPage5RegistrerKunde.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage5RegistrerKunde.Controls.Add(Me.GroupBox4)
+        Me.TabPage5RegistrerKunde.Controls.Add(Me.Button9)
+        Me.TabPage5RegistrerKunde.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5RegistrerKunde.Name = "TabPage5RegistrerKunde"
+        Me.TabPage5RegistrerKunde.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5RegistrerKunde.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage5RegistrerKunde.TabIndex = 4
+        Me.TabPage5RegistrerKunde.Text = "TabPage5"
         '
         'GroupBox4
         '
@@ -852,17 +841,17 @@ Partial Class Form1
         Me.Button9.Text = "Tilbake"
         Me.Button9.UseVisualStyleBackColor = True
         '
-        'TabPage6
+        'TabPage6RedigerKunde
         '
-        Me.TabPage6.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage6.Controls.Add(Me.GroupBox3)
-        Me.TabPage6.Controls.Add(Me.Button8)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "TabPage6"
+        Me.TabPage6RedigerKunde.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage6RedigerKunde.Controls.Add(Me.GroupBox3)
+        Me.TabPage6RedigerKunde.Controls.Add(Me.Button8)
+        Me.TabPage6RedigerKunde.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6RedigerKunde.Name = "TabPage6RedigerKunde"
+        Me.TabPage6RedigerKunde.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6RedigerKunde.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage6RedigerKunde.TabIndex = 5
+        Me.TabPage6RedigerKunde.Text = "TabPage6"
         '
         'GroupBox3
         '
@@ -1049,19 +1038,19 @@ Partial Class Form1
         Me.Button8.Text = "Tilbake"
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'TabPage7
+        'TabPage7TilgjengeligUtstyr
         '
-        Me.TabPage7.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage7.Controls.Add(Me.GroupBox2)
-        Me.TabPage7.Controls.Add(Me.Button24)
-        Me.TabPage7.Controls.Add(Me.GroupBox1)
-        Me.TabPage7.Controls.Add(Me.Button23)
-        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage7.TabIndex = 6
-        Me.TabPage7.Text = "TabPage7"
+        Me.TabPage7TilgjengeligUtstyr.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.GroupBox2)
+        Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.Button24)
+        Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.GroupBox1)
+        Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.Button23)
+        Me.TabPage7TilgjengeligUtstyr.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7TilgjengeligUtstyr.Name = "TabPage7TilgjengeligUtstyr"
+        Me.TabPage7TilgjengeligUtstyr.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage7TilgjengeligUtstyr.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage7TilgjengeligUtstyr.TabIndex = 6
+        Me.TabPage7TilgjengeligUtstyr.Text = "TabPage7"
         '
         'GroupBox2
         '
@@ -1272,16 +1261,16 @@ Partial Class Form1
         Me.Button23.Text = "Tilbake"
         Me.Button23.UseVisualStyleBackColor = True
         '
-        'TabPage8
+        'TabPage8Hovedmeny
         '
-        Me.TabPage8.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage8.Controls.Add(Me.GroupBox9)
-        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage8.TabIndex = 7
-        Me.TabPage8.Text = "TabPage8"
+        Me.TabPage8Hovedmeny.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage8Hovedmeny.Controls.Add(Me.GroupBox9)
+        Me.TabPage8Hovedmeny.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage8Hovedmeny.Name = "TabPage8Hovedmeny"
+        Me.TabPage8Hovedmeny.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage8Hovedmeny.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage8Hovedmeny.TabIndex = 7
+        Me.TabPage8Hovedmeny.Text = "TabPage8"
         '
         'GroupBox9
         '
@@ -1452,33 +1441,32 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        Me.TabPage1Innlogging.ResumeLayout(False)
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2Medlemsinfo.ResumeLayout(False)
         Me.GroupBox7.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3StatusBegrensning.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4UtstyrStatus.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5RegistrerKunde.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6RedigerKunde.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.TabPage7.ResumeLayout(False)
+        Me.TabPage7TilgjengeligUtstyr.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.TabPage8.ResumeLayout(False)
+        Me.TabPage8Hovedmeny.ResumeLayout(False)
         Me.GroupBox9.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -1488,9 +1476,9 @@ Partial Class Form1
 
     End Sub
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage1Innlogging As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage2Medlemsinfo As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage3StatusBegrensning As System.Windows.Forms.TabPage
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
@@ -1503,7 +1491,7 @@ Partial Class Form1
     Friend WithEvents ToolStripMenuItem6 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LokaleNr3ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Side3ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage4UtstyrStatus As System.Windows.Forms.TabPage
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
     Friend WithEvents ID As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1516,9 +1504,9 @@ Partial Class Form1
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage5RegistrerKunde As System.Windows.Forms.TabPage
     Friend WithEvents UtstyrToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage6RedigerKunde As System.Windows.Forms.TabPage
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
@@ -1571,7 +1559,7 @@ Partial Class Form1
     Friend WithEvents Button18 As System.Windows.Forms.Button
     Friend WithEvents ComboBox6 As System.Windows.Forms.ComboBox
     Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage7TilgjengeligUtstyr As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Button26 As System.Windows.Forms.Button
     Friend WithEvents Button25 As System.Windows.Forms.Button
@@ -1621,7 +1609,7 @@ Partial Class Form1
     Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents TabPage8 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage8Hovedmeny As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
     Friend WithEvents Button31 As System.Windows.Forms.Button
     Friend WithEvents Button30 As System.Windows.Forms.Button
@@ -1629,6 +1617,5 @@ Partial Class Form1
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class
