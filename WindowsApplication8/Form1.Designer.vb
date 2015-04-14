@@ -48,10 +48,10 @@ Partial Class Form1
         Me.Button11 = New System.Windows.Forms.Button()
         Me.TabPage3StatusBegrensning = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Button21 = New System.Windows.Forms.Button()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
@@ -414,10 +414,10 @@ Partial Class Form1
         '
         'GroupBox6
         '
+        Me.GroupBox6.Controls.Add(Me.ComboBox1)
         Me.GroupBox6.Controls.Add(Me.RichTextBox1)
         Me.GroupBox6.Controls.Add(Me.Button21)
         Me.GroupBox6.Controls.Add(Me.Label21)
-        Me.GroupBox6.Controls.Add(Me.TextBox15)
         Me.GroupBox6.Controls.Add(Me.Label23)
         Me.GroupBox6.Controls.Add(Me.Label22)
         Me.GroupBox6.Controls.Add(Me.ComboBox4)
@@ -427,6 +427,14 @@ Partial Class Form1
         Me.GroupBox6.TabIndex = 38
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Status/Begrensning"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(59, 40)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 38
         '
         'RichTextBox1
         '
@@ -453,14 +461,6 @@ Partial Class Form1
         Me.Label21.Size = New System.Drawing.Size(33, 13)
         Me.Label21.TabIndex = 0
         Me.Label21.Text = "Navn"
-        '
-        'TextBox15
-        '
-        Me.TextBox15.Location = New System.Drawing.Point(59, 39)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox15.TabIndex = 7
-        Me.TextBox15.Text = "DBS INTRUDER"
         '
         'Label23
         '
@@ -1391,7 +1391,7 @@ Partial Class Form1
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
         Me.LoginToolStripMenuItem.Text = "Login"
         '
         'ToolStripMenuItem3
@@ -1428,19 +1428,19 @@ Partial Class Form1
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(135, 22)
         Me.ToolStripMenuItem5.Text = "Utleiested 1"
         '
         'ToolStripMenuItem6
         '
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(135, 22)
         Me.ToolStripMenuItem6.Text = "Utleiested 2"
         '
         'LokaleNr3ToolStripMenuItem
         '
         Me.LokaleNr3ToolStripMenuItem.Name = "LokaleNr3ToolStripMenuItem"
-        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.LokaleNr3ToolStripMenuItem.Text = "Utleiested 3"
         '
         'ToolStripTextBox1
@@ -1577,7 +1577,6 @@ Partial Class Form1
     Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
-    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents Button19 As System.Windows.Forms.Button
     Friend WithEvents Button18 As System.Windows.Forms.Button
@@ -1643,5 +1642,6 @@ Partial Class Form1
     Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ComboBoxRegistrerteKunder As System.Windows.Forms.ComboBox
     Friend WithEvents ButtonLastInnRegistrerteKunder As System.Windows.Forms.Button
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
 
 End Class

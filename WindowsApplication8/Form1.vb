@@ -212,4 +212,54 @@ Public Class Form1
             MenuStrip1.Hide()
         End If
     End Sub
+
+    Private Sub ComboBox1_dropdown(sender As Object, e As EventArgs) Handles ComboBox1.DropDown
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_sykkel"
+        data = query(sql)
+
+        'SLetter unna slik at det ikke vises samme info mange ganger
+        ComboBox1.Items.Clear()
+
+        If data.Rows.Count >= 1 Then
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("merke") & " " & row("modell")
+                ComboBox1.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen sykkelmodeller funnet i databasen.")
+        End If
+    End Sub
+
+    Private Sub ComboBox4_dropdown(sender As Object, e As EventArgs) Handles ComboBox4.DropDown
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_status"
+        data = query(sql)
+
+        'SLetter unna slik at det ikke vises samme info mange ganger
+        ComboBox4.Items.Clear()
+
+        If data.Rows.Count >= 1 Then
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("statusnavn")
+                ComboBox4.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen status funnet i databasen.")
+        End If
+    End Sub
+
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+
+    End Sub
 End Class
