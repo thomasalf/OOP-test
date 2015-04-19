@@ -29,7 +29,8 @@ Public Class Form1
     Private brukernavn As String = "bruker"
     Private passord As String = "passord"
 
-
+    'Array som lagrer kundeID til bruk under "redigering av kunde"
+    Private kundeIDinformasjon() As Double
 
 
     'Funksjon for kobling til database
@@ -96,33 +97,33 @@ Public Class Form1
 
 
     Private Sub TextBox8_TextChanged(sender As Object, e As EventArgs) Handles TextBox8.TextChanged
-        Dim data As New DataTable
-        Dim sql As String = "SELECT * FROM pdk_kunde " _
-                           & "WHERE ktelefon = '" & TextBox8.Text & "'"
-        data = query(sql)
-        If data.Rows.Count = 1 Then
-            Dim row As DataRow = data.Rows(0)
-            TextBox12.Text = row("kfornavn")
-            TextBox11.Text = row("ketternavn")
-            TextBox10.Text = row("kadresse")
-            TextBox9.Text = row("kepost")
-            TextBox8.Text = row("ktelefon")
-        End If
+        '        Dim data As New DataTable
+        '        Dim sql As String = "SELECT * FROM pdk_kunde " _
+        '                           & "WHERE ktelefon = '" & TextBox8.Text & "'"
+        '        data = query(sql)
+        '        If data.Rows.Count = 1 Then
+        ' Dim row As DataRow = Data.Rows(0)
+        ' TextBox12.Text = row("kfornavn")
+        ' TextBox11.Text = row("ketternavn")
+        ' TextBox10.Text = row("kadresse")
+        ' TextBox9.Text = row("kepost")
+        ' TextBox8.Text = row("ktelefon")
+        ' End If
     End Sub
 
     Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs) Handles TextBox9.TextChanged
-        Dim data As New DataTable
-        Dim sql As String = "SELECT * FROM pdk_kunde " _
-                           & "WHERE kepost = '" & TextBox9.Text & "'"
-        data = query(sql)
-        If data.Rows.Count = 1 Then
-            Dim row As DataRow = data.Rows(0)
-            TextBox12.Text = row("kfornavn")
-            TextBox11.Text = row("ketternavn")
-            TextBox10.Text = row("kadresse")
-            TextBox9.Text = row("kepost")
-            TextBox8.Text = row("ktelefon")
-        End If
+        '        Dim data As New DataTable
+        '        Dim sql As String = "SELECT * FROM pdk_kunde " _
+        '                           & "WHERE kepost = '" & TextBox9.Text & "'"
+        '        data = query(sql)
+        '        If data.Rows.Count = 1 Then
+        ' Dim row As DataRow = Data.Rows(0)
+        ' TextBox12.Text = row("kfornavn")
+        ' TextBox11.Text = row("ketternavn")
+        ' TextBox10.Text = row("kadresse")
+        ' TextBox9.Text = row("kepost")
+        ' TextBox8.Text = row("ktelefon")
+        ' End If
     End Sub
 
     Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
@@ -171,7 +172,7 @@ Public Class Form1
     End Sub
 
     Private Sub ComboBoxRegistrerteKunder_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxRegistrerteKunder.SelectedIndexChanged
-        GroupBox3.Visible = True
+        MsgBox("Kunde-ID = " & kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex))
     End Sub
 
     Private Sub ButtonLastInnRegistrerteKunder_Click(sender As Object, e As EventArgs) Handles ButtonLastInnRegistrerteKunder.Click
@@ -180,7 +181,8 @@ Public Class Form1
         data = query(sql)
 
 
-        If data.Rows.Count >= 1 Then
+        If data.Rows.Count >= 1 Then 'Fyller combobox med kundeinformasjon
+            ReDim kundeIDinformasjon(data.Rows.Count - 1) 'justerer lengde på array 
             Dim teller As Integer
             teller = data.Rows.Count
 
@@ -189,10 +191,13 @@ Public Class Form1
                 Dim row As DataRow = data.Rows(teller)
                 ComboboxTekst = "Kunde-ID: " & row("kundeID") & " " & row("kfornavn") & " " & row("ketternavn") & " " & row("kadresse")
                 ComboBoxRegistrerteKunder.Items.Add(ComboboxTekst)
+                kundeIDinformasjon(teller) = row("kundeID") 'lagrer kundeID i array
             Next
         Else
             MsgBox("Ingen kundeinformasjon funnet.")
         End If
+
+
 
     End Sub
 
@@ -261,5 +266,9 @@ Public Class Form1
 
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
 
+    End Sub
+
+    Private Sub Button32_Click(sender As Object, e As EventArgs)
+        MenuStrip1.Show()
     End Sub
 End Class
