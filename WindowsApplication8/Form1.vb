@@ -58,6 +58,7 @@ Public Class Form1
     End Sub
 
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+        GroupBox3.Visible = False
         TabControl1.SelectTab(1)
     End Sub
 
@@ -172,7 +173,25 @@ Public Class Form1
     End Sub
 
     Private Sub ComboBoxRegistrerteKunder_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxRegistrerteKunder.SelectedIndexChanged
-        MsgBox("Kunde-ID = " & kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex))
+        'MsgBox("Kunde-ID = " & kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex))
+
+        'Fyller kundeinformasjonsfelt med informasjonen som finnes i databasen
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_kunde " _
+                                   & "WHERE kundeID = '" & kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex) & "'"
+        data = query(sql)
+        If data.Rows.Count = 1 Then
+            Dim row As DataRow = data.Rows(0)
+            Label3.Text = row("kundeID")
+            TextBox12.Text = row("kfornavn")
+            TextBox11.Text = row("ketternavn")
+            TextBox10.Text = row("kadresse")
+            TextBox9.Text = row("kepost")
+            TextBox8.Text = row("ktelefon")
+        End If
+
+        'Viser kundeinformasjonsfelter
+        GroupBox3.Visible = True
     End Sub
 
     Private Sub ButtonLastInnRegistrerteKunder_Click(sender As Object, e As EventArgs) Handles ButtonLastInnRegistrerteKunder.Click
@@ -270,5 +289,18 @@ Public Class Form1
 
     Private Sub Button32_Click(sender As Object, e As EventArgs)
         MenuStrip1.Show()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Dim data As New DataTable
+        Dim sql As String = "UPDATE pdk_kunde " _
+                                & "SET kfornavn = '" & TextBox12.Text _
+                                & "', ketternavn = '" & TextBox11.Text _
+                                & "', kadresse = '" & TextBox10.Text _
+                                & "', kepost = '" & TextBox9.Text _
+                                & "', ktelefon = '" & TextBox8.Text _
+                                & "' WHERE kundeID = '" & Label3.Text & "'"
+        data = query(sql)
+
     End Sub
 End Class
