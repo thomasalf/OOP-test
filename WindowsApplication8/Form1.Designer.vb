@@ -99,6 +99,8 @@ Partial Class Form1
         Me.ButtonLastInnRegistrerteKunder = New System.Windows.Forms.Button()
         Me.ComboBoxRegistrerteKunder = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -159,15 +161,12 @@ Partial Class Form1
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Side3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UtstyrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UtleieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -908,6 +907,24 @@ Partial Class Form1
         Me.GroupBox3.Text = "REDIGER KUNDE"
         Me.GroupBox3.Visible = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(136, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(58, 13)
+        Me.Label3.TabIndex = 38
+        Me.Label3.Text = "(Kunde-ID)"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(80, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(52, 13)
+        Me.Label1.TabIndex = 37
+        Me.Label1.Text = "Kunde-ID"
+        '
         'Label17
         '
         Me.Label17.AutoSize = True
@@ -1363,7 +1380,7 @@ Partial Class Form1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel1.Controls.Add(Me.MenuStrip1)
-        Me.Panel1.Location = New System.Drawing.Point(-1, 0)
+        Me.Panel1.Location = New System.Drawing.Point(-1, 33)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1235, 30)
         Me.Panel1.TabIndex = 1
@@ -1380,7 +1397,7 @@ Partial Class Form1
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem, Me.UtleieToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 23)
         Me.ToolStripMenuItem1.Text = "Meny"
@@ -1395,7 +1412,7 @@ Partial Class Form1
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LoginToolStripMenuItem.Text = "Login"
         '
         'ToolStripMenuItem3
@@ -1414,13 +1431,7 @@ Partial Class Form1
         '
         Me.UtstyrToolStripMenuItem.Name = "UtstyrToolStripMenuItem"
         Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.UtstyrToolStripMenuItem.Text = "Utstyr"
-        '
-        'UtleieToolStripMenuItem
-        '
-        Me.UtleieToolStripMenuItem.Name = "UtleieToolStripMenuItem"
-        Me.UtleieToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.UtleieToolStripMenuItem.Text = "Utleie"
+        Me.UtstyrToolStripMenuItem.Text = "Utstyr / Utleie"
         '
         'ToolStripMenuItem4
         '
@@ -1432,19 +1443,19 @@ Partial Class Form1
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(135, 22)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem5.Text = "Utleiested 1"
         '
         'ToolStripMenuItem6
         '
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(135, 22)
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem6.Text = "Utleiested 2"
         '
         'LokaleNr3ToolStripMenuItem
         '
         Me.LokaleNr3ToolStripMenuItem.Name = "LokaleNr3ToolStripMenuItem"
-        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LokaleNr3ToolStripMenuItem.Text = "Utleiested 3"
         '
         'ToolStripTextBox1
@@ -1457,24 +1468,6 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(80, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 13)
-        Me.Label1.TabIndex = 37
-        Me.Label1.Text = "Kunde-ID"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(136, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(58, 13)
-        Me.Label3.TabIndex = 38
-        Me.Label3.Text = "(Kunde-ID)"
         '
         'Form1
         '
@@ -1585,7 +1578,6 @@ Partial Class Form1
     Friend WithEvents Button10 As System.Windows.Forms.Button
     Friend WithEvents Button9 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
-    Friend WithEvents UtleieToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Utstyr As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Pris As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Tilgjengelighet As System.Windows.Forms.DataGridViewTextBoxColumn

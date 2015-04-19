@@ -80,7 +80,7 @@ Public Class Form1
 
 
     Private Sub UtstyrToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UtstyrToolStripMenuItem.Click
-        TabControl1.SelectTab(4)
+        TabControl1.SelectTab(3)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -318,6 +318,29 @@ Public Class Form1
                                 & "', ktelefon = '" & TextBox8.Text _
                                 & "' WHERE kundeID = '" & Label3.Text & "'"
         data = query(sql)
+
+    End Sub
+
+
+    'knapp til utleie/bestillingsskjerm
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        TabControl1.SelectTab(6)
+    End Sub
+
+    'knapp for tilgjengelighet basert på dato
+    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+        Dim fra As Date = DateTimePicker1.Value
+        Dim til As Date = DateTimePicker2.Value
+
+        ' If setningen under tror jeg her kan gjøres til "If not" setning, hvor resultatet vil være at vi henter ut alle syklene/utstyret som ER tilgjengelig
+        ' fremfor å komme med en feilmelding på hvilke sykler som ikke er tilgjengelig. tilgjengelighet har et eget felt når syklene er "lastet inn".
+        ' Hvordan vi kan få dette over til en fornuftig sql spørring er en annen problemstilling. 
+        ' if(DateTimePicker1.Value >= fra Or DateTimePicker2.Value <= til Or DateTimePicker1.Value < fra And DateTimePicker2.Value > til) then
+        '   MsgBox("Sykkel er allerede utleid i perioden: " & DateTimePicker1.Value " til " & DateTimePicker2.Value
+        ' SELECT * from "Utstyr?" WHERE fradato < fra Or tildato > ?? Alternativt henter vi inn alt utstyr og sorterer i Visual Basic ved hjelp av
+        ' foreslått IF NOT setning. 
+
+
 
     End Sub
 End Class
