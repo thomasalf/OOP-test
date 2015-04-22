@@ -680,7 +680,7 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.Button28)
         Me.GroupBox4.Controls.Add(Me.TextBox20)
         Me.GroupBox4.Controls.Add(Me.TextBox21)
-        Me.GroupBox4.Location = New System.Drawing.Point(127, 19)
+        Me.GroupBox4.Location = New System.Drawing.Point(143, 75)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(377, 264)
         Me.GroupBox4.TabIndex = 38
@@ -1406,31 +1406,31 @@ Partial Class Form1
         '
         Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem})
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(146, 22)
         Me.ToolStripMenuItem2.Text = "Hovedside"
         '
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
         Me.LoginToolStripMenuItem.Text = "Login"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(146, 22)
         Me.ToolStripMenuItem3.Text = "Medlemmer"
         '
         'Side3ToolStripMenuItem
         '
         Me.Side3ToolStripMenuItem.Name = "Side3ToolStripMenuItem"
-        Me.Side3ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.Side3ToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.Side3ToolStripMenuItem.Text = "Status"
         '
         'UtstyrToolStripMenuItem
         '
         Me.UtstyrToolStripMenuItem.Name = "UtstyrToolStripMenuItem"
-        Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.UtstyrToolStripMenuItem.Text = "Utstyr / Utleie"
         '
         'ToolStripMenuItem4
@@ -1443,19 +1443,19 @@ Partial Class Form1
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(135, 22)
         Me.ToolStripMenuItem5.Text = "Utleiested 1"
         '
         'ToolStripMenuItem6
         '
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(135, 22)
         Me.ToolStripMenuItem6.Text = "Utleiested 2"
         '
         'LokaleNr3ToolStripMenuItem
         '
         Me.LokaleNr3ToolStripMenuItem.Name = "LokaleNr3ToolStripMenuItem"
-        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.LokaleNr3ToolStripMenuItem.Text = "Utleiested 3"
         '
         'ToolStripTextBox1

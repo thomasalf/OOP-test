@@ -195,6 +195,7 @@ Public Class Form1
     End Sub
 
     Private Sub ButtonLastInnRegistrerteKunder_Click(sender As Object, e As EventArgs) Handles ButtonLastInnRegistrerteKunder.Click
+        ComboBoxRegistrerteKunder.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data As New DataTable
         Dim sql As String = "SELECT * FROM pdk_kunde"
         data = query(sql)
@@ -213,7 +214,7 @@ Public Class Form1
                 kundeIDinformasjon(teller) = row("kundeID") 'lagrer kundeID i array
             Next
         Else
-            MsgBox("Ingen kundeinformasjon funnet.")
+            MsgBox("Ingen informasjon funnet.")
         End If
 
 
