@@ -1,6 +1,41 @@
 ﻿Public Class Person
-        Private fornavn, etternavn, adresse, epost, telefon As String
-        Private fødselsdato As Date
+    Private fornavn As String = ""
+    Private etternavn As String = ""
+    Private adresse As String = ""
+    Private postnummer As String = ""
+    Private epost As String = ""
+    Private telefon As String = ""
+
+
+
+    'Konstruktører/Constructors
+    Public Sub New(ByVal etFornavn As String, _
+                   etEtternavn As String, _
+                   enTelefon As String, _
+                   enAdresse As String, _
+                   enEpost As String)
+        fornavn = etFornavn
+        etternavn = etEtternavn
+        telefon = enTelefon
+        adresse = enAdresse
+        epost = enEpost
+    End Sub
+
+    Public Sub New(ByVal etFornavn As String, _
+                   etEtternavn As String)
+        fornavn = etFornavn
+        etternavn = etEtternavn
+    End Sub
+
+    Public Sub New(ByVal etFornavn As String, _
+                   etEtternavn As String, _
+                   enTelefon As String, _
+                   enEpost As String)
+        fornavn = etFornavn
+        etternavn = etEtternavn
+        telefon = enTelefon
+        epost = enEpost
+    End Sub
 
         'Get- og set-funksjoner
         Public Property Fornavnet() As String
@@ -33,14 +68,6 @@
         End Property
 
 
-        Public Property Fødselsdatoen() As Date
-            Get
-                Return fødselsdato
-            End Get
-            Set(ByVal value As Date)
-                fødselsdato = value
-            End Set
-        End Property
 
 
         Public Property Telefonen() As String
@@ -71,36 +98,7 @@
         End Property
 
 
-        'Konstruktører/Constructors
-        Public Sub New(ByVal etFornavn As String, _
-                       etEtternavn As String, _
-                       enFødselsdato As Date, _
-                       enTelefon As String, _
-                       enAdresse As String, _
-                       enEpost As String)
-            fornavn = etFornavn
-            etternavn = etEtternavn
-            fødselsdato = enFødselsdato
-            telefon = enTelefon
-            adresse = enAdresse
-            epost = enEpost
-        End Sub
-
-        Public Sub New(ByVal etFornavn As String, _
-                       etEtternavn As String)
-            fornavn = etFornavn
-            etternavn = etEtternavn
-        End Sub
-
-        Public Sub New(ByVal etFornavn As String, _
-                       etEtternavn As String, _
-                       enTelefon As String, _
-                       enEpost As String)
-            fornavn = etFornavn
-            etternavn = etEtternavn
-            telefon = enTelefon
-            epost = enEpost
-        End Sub
+        
 
 
 
