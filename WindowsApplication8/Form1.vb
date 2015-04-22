@@ -25,6 +25,7 @@ Public Class Form1
     'End Function
 
 
+
     'Brukernavn og passord
     Private brukernavn As String = "bruker"
     Private passord As String = "passord"
