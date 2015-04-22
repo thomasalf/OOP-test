@@ -1,81 +1,73 @@
 ﻿Public Class Kunde
     Inherits Person
 
-    Private rabatt As String = "0"
+    Private rabatt As Integer = 0
+
+    Private Const MIN As Integer = 0
+    Private Const MAX As Integer = 50 'Antar at ingen får mer enn 50% rabatt
+
+    'Konstruktører
+
+    'Setter alle verdier + rabatt
+    Public Sub New(ByVal fn As String, _
+                   en As String, _
+                   tlf As String, _
+                   pnr As String, _
+                   adr As String, _
+                   ep As String, _
+                   rab As Integer)
+        MyBase.New(fn, en, tlf, pnr, adr, ep)
+        setRabatt(rab)
+    End Sub
+
+    'Setter navn og telefonnummer + rabatt
+    Public Sub New(ByVal fn As String, _
+               en As String, _
+               tlf As String, _
+               rab As Integer)
+        MyBase.New(fn, en, tlf)
+        setRabatt(rab)
+    End Sub
+
+    'Setter navn og e-post + rabatt
+    'Public Sub New(ByVal fn As String, _
+    '            en As String, _
+    '            ep As String, _
+    '          rab As Integer)
+    '     MyBase.New(fn, en, ep)
+    '  setRabatt(rab)
+    ' End Sub
 
 
 
 
 
 
-    Private stilling As String
-    Private lønnstrinn As Integer
 
-    Private Const MIN As Integer = 1
-    Private Const MAX As Integer = 99
+
+
+
 
     'Get- og Set-funksjoner
-    Public Property Stillingen() As String
-        Get
-            Return stilling
-        End Get
-        Set(ByVal value As String)
-            value = stilling
-        End Set
-    End Property
+    Public Function getRabatt() As Integer
+        Return rabatt
+    End Function
 
-
-    Public Property Lønnstrinnet() As Integer
-        Get
-            Return lønnstrinn
-        End Get
-        Set(ByVal value As Integer)
-            If value < MIN Then
-                lønnstrinn = MIN
-            ElseIf value > MAX Then
-                lønnstrinn = MAX
-            Else
-                lønnstrinn = value
-            End If
-        End Set
-    End Property
-
-    'Konstruktører/Constructors
-    Public Sub New(ByVal etFornavn As String, _
-                   etEtternavn As String, _
-                   enStilling As String, _
-                   etLønnstrinn As Integer)
-        MyBase.New(etFornavn, etEtternavn)
-        stilling = enStilling
-        lønnstrinn = etLønnstrinn
+    Public Sub setRabatt(ByVal rab As Integer)
+        If rab < MIN Then
+            rabatt = MIN
+        ElseIf rab > MAX Then
+            rabatt = MAX
+        Else
+            rabatt = rab
+        End If
     End Sub
 
-
-
-    Public Sub New(ByVal etFornavn As String, _
-           etEtternavn As String, _
-           enFødselsdato As Date, _
-           enTelefon As String, _
-           enAdresse As String, _
-           enEpost As String, _
-           enStilling As String, _
-           etLønnstrinn As Integer)
-        MyBase.New(etFornavn, etEtternavn, enFødselsdato, enTelefon, enAdresse, enEpost)
-        stilling = enStilling
-        lønnstrinn = etLønnstrinn
-    End Sub
-
-    Public Sub New(ByVal etFornavn As String, _
-           etEtternavn As String, _
-           etLønnstrinn As Integer)
-        MyBase.New(etFornavn, etEtternavn)
-        lønnstrinn = etLønnstrinn
-    End Sub
 
     'ToString()-funksjon
-    Public Overrides Function ToString() As String
-        Return MyBase.ToString() & " Stilling: " & stilling & " Lønnstrinn: " & lønnstrinn
-    End Function
+    ' Public Overrides Function ToString() As String
+    '    Return MyBase.ToString() & " Stilling: " & stilling & " Lønnstrinn: " & lønnstrinn
+    'End Function
 
 
 End Class

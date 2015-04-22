@@ -1,7 +1,7 @@
 ﻿Public Class Person
     Private fornavn As String = ""
     Private etternavn As String = ""
-    Private adresse As String = ""
+    Private gateadresse As String = ""
     Private postnummer As String = ""
     Private epost As String = ""
     Private telefon As String = ""
@@ -19,7 +19,7 @@
                    ep As String)
         setFornavn(fn)
         setEtternavn(en)
-        setAdresse(adr)
+        setGateadresse(adr)
         setPostnummer(pnr)
         setEpost(ep)
         setTelefon(tlf)
@@ -35,13 +35,19 @@
     End Sub
 
     'Setter navn og e-post
-    Public Sub New(ByVal fn As String, _
-                   en As String, _
-                   ep As String)
-        setFornavn(fn)
-        setEtternavn(en)
-        setEpost(ep)
-    End Sub
+    ' Public Sub New(ByVal fn As String, _
+    '                en As String, _
+    '                ep As String)
+    '     setFornavn(fn)
+    '     setEtternavn(en)
+    '     setEpost(ep)
+    ' End Sub
+
+
+
+
+
+
 
 
 
@@ -56,7 +62,82 @@
         Else
             Throw New Exception("Ugyldig fornavn")
         End If
+    End Sub
 
+
+
+    Public Function getEtternavn() As String
+        Return etternavn
+    End Function
+
+    Public Sub setEtternavn(ByVal en As String)
+        If en.Length > 0 Then 'sjekker at etternavnet er skrevet inn
+            etternavn = en
+        Else
+            Throw New Exception("Ugyldig etternavn")
+        End If
+    End Sub
+
+
+
+    Public Function getGateadresse() As String
+        Return gateadresse
+    End Function
+
+    Public Sub setGateadresse(ByVal adr As String)
+        If adr.Length > 0 Then 'sjekker at gateadressen er skrevet inn
+            gateadresse = adr
+        Else
+            Throw New Exception("Ugyldig gateadresse")
+        End If
+    End Sub
+
+
+
+
+    Public Function getPostnummer() As String
+        Return postnummer
+    End Function
+
+    Public Sub setPostnummer(ByVal pnr As String)
+        If pnr.Length <> 4 Or IsNumeric(pnr) = False Then 'sjekker at postnummer består av tall og har riktig lengde
+            Throw New Exception("Ugyldig postnummer")
+        Else
+            postnummer = pnr
+        End If
+    End Sub
+
+
+
+
+    Public Function getEpost() As String
+        Return epost
+    End Function
+
+    Public Sub setEpost(ByVal ep As String) 'sjekker at e-postadressen inneholder alfakrøll og punktum
+        If ep.Length > 0 _
+            And ep.IndexOf("@") = -1 _
+            And ep.IndexOf(".") = -1 Then
+            epost = ep
+        Else
+            Throw New Exception("Ugyldig epostadresse")
+        End If
+    End Sub
+
+
+
+
+
+    Public Function getTelefon() As String
+        Return telefon
+    End Function
+
+    Public Sub setTelefon(ByVal tlf As String)
+        If tlf.Length <> 8 Or IsNumeric(tlf) = False Then 'sjekker at telefonnummer består av tall og har riktig lengde
+            Throw New Exception("Ugyldig telefonnummer")
+        Else
+            telefon = tlf
+        End If
     End Sub
 
 
@@ -64,70 +145,7 @@
 
 
 
-    'Get- og set-funksjoner
-    Public Property Fornavnet() As String
-        Get
-            Return fornavn
-        End Get
-        Set(ByVal value As String)
-            fornavn = value
-        End Set
-    End Property
-
-
-    Public Property Etternavnet() As String
-        Get
-            Return etternavn
-        End Get
-        Set(ByVal value As String)
-            etternavn = value
-        End Set
-    End Property
-
-
-    Public Property Adressen() As String
-        Get
-            Return adresse
-        End Get
-        Set(ByVal value As String)
-            adresse = value
-        End Set
-    End Property
-
-
-
-
-    Public Property Telefonen() As String
-        Get
-            Return telefon
-        End Get
-        Set(ByVal value As String)
-            If IsNumeric(value) And value.Length = 8 Then
-                telefon = value
-            Else
-                Throw New Exception("Ugyldig telefonnummer")
-            End If
-        End Set
-    End Property
-
-
-    Public Property Eposten() As String
-        Get
-            Return epost
-        End Get
-        Set(ByVal value As String)
-            If value.Contains("@") And value.Contains(".") Then
-                epost = value
-            Else
-                Throw New Exception("Ugyldig e-postadresse")
-            End If
-        End Set
-    End Property
-
-
-
-
-
+ 
 
 
     '    Public Sub New(ByVal etfornavn As String, _
