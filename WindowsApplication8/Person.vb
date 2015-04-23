@@ -115,12 +115,14 @@
     End Function
 
     Public Sub setEpost(ByVal ep As String) 'sjekker at e-postadressen inneholder alfakrøll og punktum
-        If ep.Length > 0 _
-            And ep.IndexOf("@") = -1 _
-            And ep.IndexOf(".") = -1 Then
-            epost = ep
-        Else
+        If ep.Length <= 0 _
+            Or ep.IndexOf("@") = -1 _
+            Or ep.IndexOf(".") = -1 Then
             Throw New Exception("Ugyldig epostadresse")
+            'epost = ep
+        Else
+            epost = ep
+            'Throw New Exception("Ugyldig epostadresse")
         End If
     End Sub
 

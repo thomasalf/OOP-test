@@ -129,45 +129,70 @@ Public Class Form1
     End Sub
 
     Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
-        If TextBox17.Text.Length <= 0 Then 'sjekker at det er skrevet inn fornavn
-            MsgBox("Du må skrive inn et fornavn.")
-        ElseIf TextBox18.Text.Length <= 0 Then 'sjekker at det er skrevet inn etternavn
-            MsgBox("Du må skrive inn et etternavn.")
-        ElseIf TextBox20.Text.Length <= 0 And TextBox21.Text.Length <= 0 Then 'sjekker at e-post eller telefonnummer er skrevet inn
-            MsgBox("Du må skrive inn e-postadresse eller telefonnummer slik at kunden kan kontaktes.")
-        ElseIf TextBox20.Text.Length > 0 And TextBox20.Text.IndexOf(".") = -1 Then 'sjekker at e-postadressen inneholder punktum
-            MsgBox("Sjekk at e-postadressen er riktig og prøv igjen.")
-        ElseIf TextBox20.Text.Length > 0 And TextBox20.Text.IndexOf("@") = -1 Then 'sjekker at e-postadressen inneholder alfakrøll
-            MsgBox("Sjekk at e-postadressen er riktig og prøv igjen.")
-        ElseIf TextBox21.Text.Length > 0 And IsNumeric(TextBox21.Text) = False Then 'sjekker at telefonnummeret består av tall
-            MsgBox("Sjekk at telefonnummeret er riktig og prøv igjen.")
-        ElseIf TextBox16.Text.Length > 0 And IsNumeric(TextBox16.Text) = False Then 'sjekker at postnummeret består av tall
-            MsgBox("Sjekk at postnummeret er riktig og prøv igjen.")
-        ElseIf TextBox16.Text.Length <> 4 Then 'sjekker at postnummeret består av 4 tall
-            MsgBox("Sjekk at postnummeret er riktig og prøv igjen. Det ser ut til å ha feil lengde.")
-        Else
-            MsgBox("Alt ser ut til å være riktig utfylt. Lagrer til databasen.")
-            'Lagrer informasjon fra textboxer til variabler
-            Dim fornavnet As String = TextBox17.Text
-            Dim etternavnet As String = TextBox18.Text
-            Dim adresse As String = TextBox19.Text & ", " & TextBox16.Text
-            Dim epost As String = TextBox20.Text
-            Dim telefon As String = TextBox21.Text
 
-            'bruker variabler for å lage SQL-kommando
+        'Sjekker inndata
+        Try
+            'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
+            Dim kunde As New Kunde(TextBox17.Text, TextBox18.Text, _
+                                   TextBox21.Text, TextBox16.Text, _
+                                   TextBox19.Text, TextBox20.Text, _
+                                   ComboBox11.SelectedValue)
+            'bruker data fra opprettet kunde for å lage SQL-kommando
             Dim data As New DataTable
             Dim sql As String = "INSERT INTO pdk_kunde SET kfornavn = '" _
-                                & fornavnet & "', ketternavn = '" _
-                                & etternavnet & "', kadresse = '" _
-                                & adresse & "', kepost = '" _
-                                & epost & "', ktelefon = '" _
-                                & telefon & "';"
-
+                                 & kunde.getFornavn() & "', ketternavn = '" _
+                                 & kunde.getEtternavn() & "', kadresse = '" _
+                                 & kunde.getGateadresse() & ", " & kunde.getPostnummer() & "', kepost = '" _
+                                 & kunde.getEpost() & "', ktelefon = '" _
+                                 & kunde.getTelefon() & "';"
             data = query(sql)
+        Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+            MessageBox.Show("Feil: " & ex.Message)
+        End Try
 
 
-        End If
 
+
+        'DETTE ER STARTEN PÅ DEN GAMLE KODEN
+        '        If TextBox17.Text.Length <= 0 Then 'sjekker at det er skrevet inn fornavn
+        'MsgBox("Du må skrive inn et fornavn.")
+        'ElseIf TextBox18.Text.Length <= 0 Then 'sjekker at det er skrevet inn etternavn
+        'MsgBox("Du må skrive inn et etternavn.")
+        ' ElseIf TextBox20.Text.Length <= 0 And TextBox21.Text.Length <= 0 Then 'sjekker at e-post eller telefonnummer er skrevet inn
+        ' MsgBox("Du må skrive inn e-postadresse eller telefonnummer slik at kunden kan kontaktes.")
+        ' ElseIf TextBox20.Text.Length > 0 And TextBox20.Text.IndexOf(".") = -1 Then 'sjekker at e-postadressen inneholder punktum
+        ' MsgBox("Sjekk at e-postadressen er riktig og prøv igjen.")
+        ' ElseIf TextBox20.Text.Length > 0 And TextBox20.Text.IndexOf("@") = -1 Then 'sjekker at e-postadressen inneholder alfakrøll
+        ' MsgBox("Sjekk at e-postadressen er riktig og prøv igjen.")
+        ' ElseIf TextBox21.Text.Length > 0 And IsNumeric(TextBox21.Text) = False Then 'sjekker at telefonnummeret består av tall
+        ' MsgBox("Sjekk at telefonnummeret er riktig og prøv igjen.")
+        ' ElseIf TextBox16.Text.Length > 0 And IsNumeric(TextBox16.Text) = False Then 'sjekker at postnummeret består av tall
+        ' MsgBox("Sjekk at postnummeret er riktig og prøv igjen.")
+        ' ElseIf TextBox16.Text.Length <> 4 Then 'sjekker at postnummeret består av 4 tall
+        ' MsgBox("Sjekk at postnummeret er riktig og prøv igjen. Det ser ut til å ha feil lengde.")
+        ' Else
+        ' MsgBox("Alt ser ut til å være riktig utfylt. Lagrer til databasen.")
+        ' 'Lagrer informasjon fra textboxer til variabler
+        ' Dim fornavnet As String = TextBox17.Text
+        ' Dim etternavnet As String = TextBox18.Text
+        ' Dim adresse As String = TextBox19.Text & ", " & TextBox16.Text
+        ' Dim epost As String = TextBox20.Text
+        ' Dim telefon As String = TextBox21.Text
+        '
+        'bruker variabler for å lage SQL-kommando
+        'Dim data As New DataTable
+        ' Dim sql As String = "INSERT INTO pdk_kunde SET kfornavn = '" _
+        '                     & fornavnet & "', ketternavn = '" _
+        '                     & etternavnet & "', kadresse = '" _
+        '                     & adresse & "', kepost = '" _
+        '                     & epost & "', ktelefon = '" _
+        '                     & telefon & "';"
+        '
+        '        data = query(sql)
+
+
+        '        End If
+        'DETTE ER SLUTTEN PÅ DEN GAMLE KODEN
 
 
 
@@ -311,15 +336,42 @@ Public Class Form1
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Dim data As New DataTable
-        Dim sql As String = "UPDATE pdk_kunde " _
-                                & "SET kfornavn = '" & TextBox12.Text _
-                                & "', ketternavn = '" & TextBox11.Text _
-                                & "', kadresse = '" & TextBox10.Text _
-                                & "', kepost = '" & TextBox9.Text _
-                                & "', ktelefon = '" & TextBox8.Text _
+        'Sjekker inndata
+        Try
+            'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
+            Dim kunde As New Kunde(TextBox12.Text, TextBox11.Text, _
+                                   TextBox8.Text, TextBox7.Text, _
+                                   TextBox10.Text, TextBox9.Text, _
+                                   ComboBox6.SelectedValue)
+            'bruker data fra opprettet kunde for å lage SQL-kommando
+            Dim data As New DataTable
+            Dim sql As String = "UPDATE pdk_kunde " _
+                                & "SET kfornavn = '" & kunde.getFornavn() _
+                                & "', ketternavn = '" & kunde.getEtternavn() _
+                                & "', kadresse = '" & kunde.getGateadresse() & ", " & kunde.getPostnummer() _
+                                & "', kepost = '" & kunde.getEpost() _
+                                & "', ktelefon = '" & kunde.getTelefon() _
                                 & "' WHERE kundeID = '" & Label3.Text & "'"
-        data = query(sql)
+
+            data = query(sql)
+        Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+            MessageBox.Show("Feil: " & ex.Message)
+        End Try
+
+
+
+
+        'DETTE ER STARTEN PÅ DEN GAMLE KODEN
+        'Dim data As New DataTable
+        'Dim sql As String = "UPDATE pdk_kunde " _
+        '                             & "SET kfornavn = '" & TextBox12.Text _
+        '                              & "', ketternavn = '" & TextBox11.Text _
+        '                      & "', kadresse = '" & TextBox10.Text _
+        '                      & "', kepost = '" & TextBox9.Text _
+        '                      & "', ktelefon = '" & TextBox8.Text _
+        '                      & "' WHERE kundeID = '" & Label3.Text & "'"
+        'data = query(sql)
+        'DETTE ER SLUTTEN PÅ DEN GAMLE KODEN
 
     End Sub
 
