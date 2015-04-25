@@ -377,7 +377,7 @@ Public Class Form1
 
 
     'knapp til utleie/bestillingsskjerm
-    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles btnRegUtleie.Click
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
         TabControl1.SelectTab(6)
     End Sub
 
@@ -397,35 +397,4 @@ Public Class Form1
 
 
     End Sub
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> origin/master
-    
-    Private Sub btnRegUtstyr_Click(sender As Object, e As EventArgs) Handles btnRegUtstyr.Click
-        Try 'sjekker for feil
-            Dim utstyr As New utstyr
-            utstyr.utstyrType = _
-            InputBox("Skriv inn utstyrstype her", "Registrer utstyr")
-
-            Dim data As New DataTable
-            Dim sql As String = "INSERT INTO pdk_ekstrautstyr SET utstyrstype = '" & utstyr.utstyrType & "'"
-
-
-
-            data = query(sql)
-        Catch ex As Exception 'Viser feilmelding hvis noe går galt
-            MessageBox.Show("Feil: " & ex.Message)
-        End Try
-        'MsgBox(utstyr.utstyrType)
-    End Sub
-
-    
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 End Class
