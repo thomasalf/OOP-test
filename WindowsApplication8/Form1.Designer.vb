@@ -65,13 +65,13 @@ Partial Class Form1
         Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Utleidtil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Lokale = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button19 = New System.Windows.Forms.Button()
+        Me.btnRegInnlevering = New System.Windows.Forms.Button()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button16 = New System.Windows.Forms.Button()
+        Me.btnUtvidetInfo = New System.Windows.Forms.Button()
+        Me.btnRegUtstyr = New System.Windows.Forms.Button()
+        Me.btnRegUtleie = New System.Windows.Forms.Button()
+        Me.btnEndreUtstyr = New System.Windows.Forms.Button()
+        Me.btnVisBegr = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.TabPage5RegistrerKunde = New System.Windows.Forms.TabPage()
@@ -514,17 +514,17 @@ Partial Class Form1
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.DataGridView1)
-        Me.GroupBox5.Controls.Add(Me.Button19)
+        Me.GroupBox5.Controls.Add(Me.btnRegInnlevering)
         Me.GroupBox5.Controls.Add(Me.ComboBox3)
-        Me.GroupBox5.Controls.Add(Me.Button18)
-        Me.GroupBox5.Controls.Add(Me.Button12)
-        Me.GroupBox5.Controls.Add(Me.Button17)
-        Me.GroupBox5.Controls.Add(Me.Button13)
-        Me.GroupBox5.Controls.Add(Me.Button16)
+        Me.GroupBox5.Controls.Add(Me.btnUtvidetInfo)
+        Me.GroupBox5.Controls.Add(Me.btnRegUtstyr)
+        Me.GroupBox5.Controls.Add(Me.btnRegUtleie)
+        Me.GroupBox5.Controls.Add(Me.btnEndreUtstyr)
+        Me.GroupBox5.Controls.Add(Me.btnVisBegr)
         Me.GroupBox5.Controls.Add(Me.Label2)
         Me.GroupBox5.Location = New System.Drawing.Point(127, 16)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(856, 289)
+        Me.GroupBox5.Size = New System.Drawing.Size(856, 390)
         Me.GroupBox5.TabIndex = 44
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Utstyr/Status"
@@ -568,14 +568,14 @@ Partial Class Form1
         Me.Lokale.HeaderText = "Leveringssted"
         Me.Lokale.Name = "Lokale"
         '
-        'Button19
+        'btnRegInnlevering
         '
-        Me.Button19.Location = New System.Drawing.Point(37, 194)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(115, 23)
-        Me.Button19.TabIndex = 43
-        Me.Button19.Text = "Registrer Innlevering"
-        Me.Button19.UseVisualStyleBackColor = True
+        Me.btnRegInnlevering.Location = New System.Drawing.Point(37, 194)
+        Me.btnRegInnlevering.Name = "btnRegInnlevering"
+        Me.btnRegInnlevering.Size = New System.Drawing.Size(115, 23)
+        Me.btnRegInnlevering.TabIndex = 43
+        Me.btnRegInnlevering.Text = "Registrer Innlevering"
+        Me.btnRegInnlevering.UseVisualStyleBackColor = True
         '
         'ComboBox3
         '
@@ -585,50 +585,50 @@ Partial Class Form1
         Me.ComboBox3.Size = New System.Drawing.Size(115, 21)
         Me.ComboBox3.TabIndex = 38
         '
-        'Button18
+        'btnUtvidetInfo
         '
-        Me.Button18.Location = New System.Drawing.Point(37, 223)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(115, 23)
-        Me.Button18.TabIndex = 42
-        Me.Button18.Text = "Utvidet info"
-        Me.Button18.UseVisualStyleBackColor = True
+        Me.btnUtvidetInfo.Location = New System.Drawing.Point(37, 223)
+        Me.btnUtvidetInfo.Name = "btnUtvidetInfo"
+        Me.btnUtvidetInfo.Size = New System.Drawing.Size(115, 23)
+        Me.btnUtvidetInfo.TabIndex = 42
+        Me.btnUtvidetInfo.Text = "Utvidet info"
+        Me.btnUtvidetInfo.UseVisualStyleBackColor = True
         '
-        'Button12
+        'btnRegUtstyr
         '
-        Me.Button12.Location = New System.Drawing.Point(37, 78)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(115, 23)
-        Me.Button12.TabIndex = 36
-        Me.Button12.Text = "Registrer Utstyr"
-        Me.Button12.UseVisualStyleBackColor = True
+        Me.btnRegUtstyr.Location = New System.Drawing.Point(37, 78)
+        Me.btnRegUtstyr.Name = "btnRegUtstyr"
+        Me.btnRegUtstyr.Size = New System.Drawing.Size(115, 23)
+        Me.btnRegUtstyr.TabIndex = 36
+        Me.btnRegUtstyr.Text = "Registrer Utstyr"
+        Me.btnRegUtstyr.UseVisualStyleBackColor = True
         '
-        'Button17
+        'btnRegUtleie
         '
-        Me.Button17.Location = New System.Drawing.Point(37, 165)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(115, 23)
-        Me.Button17.TabIndex = 41
-        Me.Button17.Text = "Registrer utleie"
-        Me.Button17.UseVisualStyleBackColor = True
+        Me.btnRegUtleie.Location = New System.Drawing.Point(37, 165)
+        Me.btnRegUtleie.Name = "btnRegUtleie"
+        Me.btnRegUtleie.Size = New System.Drawing.Size(115, 23)
+        Me.btnRegUtleie.TabIndex = 41
+        Me.btnRegUtleie.Text = "Registrer utleie"
+        Me.btnRegUtleie.UseVisualStyleBackColor = True
         '
-        'Button13
+        'btnEndreUtstyr
         '
-        Me.Button13.Location = New System.Drawing.Point(37, 107)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(115, 23)
-        Me.Button13.TabIndex = 37
-        Me.Button13.Text = "Endre Utstyr"
-        Me.Button13.UseVisualStyleBackColor = True
+        Me.btnEndreUtstyr.Location = New System.Drawing.Point(37, 107)
+        Me.btnEndreUtstyr.Name = "btnEndreUtstyr"
+        Me.btnEndreUtstyr.Size = New System.Drawing.Size(115, 23)
+        Me.btnEndreUtstyr.TabIndex = 37
+        Me.btnEndreUtstyr.Text = "Endre Utstyr"
+        Me.btnEndreUtstyr.UseVisualStyleBackColor = True
         '
-        'Button16
+        'btnVisBegr
         '
-        Me.Button16.Location = New System.Drawing.Point(37, 136)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(115, 23)
-        Me.Button16.TabIndex = 40
-        Me.Button16.Text = "Vis begrensninger"
-        Me.Button16.UseVisualStyleBackColor = True
+        Me.btnVisBegr.Location = New System.Drawing.Point(37, 136)
+        Me.btnVisBegr.Name = "btnVisBegr"
+        Me.btnVisBegr.Size = New System.Drawing.Size(115, 23)
+        Me.btnVisBegr.TabIndex = 40
+        Me.btnVisBegr.Text = "Vis begrensninger"
+        Me.btnVisBegr.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -1569,12 +1569,12 @@ Partial Class Form1
     Friend WithEvents Button15 As System.Windows.Forms.Button
     Friend WithEvents Button14 As System.Windows.Forms.Button
     Friend WithEvents Button11 As System.Windows.Forms.Button
-    Friend WithEvents Button17 As System.Windows.Forms.Button
-    Friend WithEvents Button16 As System.Windows.Forms.Button
+    Friend WithEvents btnRegUtleie As System.Windows.Forms.Button
+    Friend WithEvents btnVisBegr As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents Button13 As System.Windows.Forms.Button
-    Friend WithEvents Button12 As System.Windows.Forms.Button
+    Friend WithEvents btnEndreUtstyr As System.Windows.Forms.Button
+    Friend WithEvents btnRegUtstyr As System.Windows.Forms.Button
     Friend WithEvents Button10 As System.Windows.Forms.Button
     Friend WithEvents Button9 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
@@ -1592,8 +1592,8 @@ Partial Class Form1
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents Button19 As System.Windows.Forms.Button
-    Friend WithEvents Button18 As System.Windows.Forms.Button
+    Friend WithEvents btnRegInnlevering As System.Windows.Forms.Button
+    Friend WithEvents btnUtvidetInfo As System.Windows.Forms.Button
     Friend WithEvents ComboBox6 As System.Windows.Forms.ComboBox
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents TabPage7TilgjengeligUtstyr As System.Windows.Forms.TabPage
