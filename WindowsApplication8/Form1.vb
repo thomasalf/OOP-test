@@ -1,5 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
-Imports System.Configuration
+﻿Imports MySql.Data.MySqlClient 'kan fjernes når vi har opprettet egne DAO-klasser for alt
+Imports System.Configuration 'kan fjernes når vi har opprettet egne DAO-klasser for alt
 
 Public Class Form1
     'TAH: Funksjon som automatisk fyller ut resten av kundeinformasjonen
@@ -23,6 +23,19 @@ Public Class Form1
     '    Return false
     'End If
     'End Function
+
+    Private personDAO As New PersonDAO
+
+
+    'funksjon som tømmer groupbox
+    Private Sub clearGroupbox(ByVal Gruppeboksnavn As GroupBox)
+        Dim a As Control
+        For Each a In Gruppeboksnavn.Controls
+            If TypeOf a Is TextBox Then
+                a.Text = Nothing
+            End If
+        Next
+    End Sub
 
 
 
@@ -129,23 +142,15 @@ Public Class Form1
     End Sub
 
     Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
-
-        'Sjekker inndata
         Try
             'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
             Dim kunde As New Kunde(TextBox17.Text, TextBox18.Text, _
                                    TextBox21.Text, TextBox16.Text, _
                                    TextBox19.Text, TextBox20.Text, _
                                    ComboBox11.SelectedValue)
-            'bruker data fra opprettet kunde for å lage SQL-kommando
-            Dim data As New DataTable
-            Dim sql As String = "INSERT INTO pdk_kunde SET kfornavn = '" _
-                                 & kunde.getFornavn() & "', ketternavn = '" _
-                                 & kunde.getEtternavn() & "', kadresse = '" _
-                                 & kunde.getGateadresse() & ", " & kunde.getPostnummer() & "', kepost = '" _
-                                 & kunde.getEpost() & "', ktelefon = '" _
-                                 & kunde.getTelefon() & "';"
-            data = query(sql)
+            'bruker data fra opprettet kunde for å lage SQL-spørring
+            personDAO.query(personDAO.kundedataSQL(kunde))
+            MsgBox("Ny kunde er opprettet")
         Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
             MessageBox.Show("Feil: " & ex.Message)
         End Try
@@ -153,46 +158,29 @@ Public Class Form1
 
 
 
-        'DETTE ER STARTEN PÅ DEN GAMLE KODEN
-        '        If TextBox17.Text.Length <= 0 Then 'sjekker at det er skrevet inn fornavn
-        'MsgBox("Du må skrive inn et fornavn.")
-        'ElseIf TextBox18.Text.Length <= 0 Then 'sjekker at det er skrevet inn etternavn
-        'MsgBox("Du må skrive inn et etternavn.")
-        ' ElseIf TextBox20.Text.Length <= 0 And TextBox21.Text.Length <= 0 Then 'sjekker at e-post eller telefonnummer er skrevet inn
-        ' MsgBox("Du må skrive inn e-postadresse eller telefonnummer slik at kunden kan kontaktes.")
-        ' ElseIf TextBox20.Text.Length > 0 And TextBox20.Text.IndexOf(".") = -1 Then 'sjekker at e-postadressen inneholder punktum
-        ' MsgBox("Sjekk at e-postadressen er riktig og prøv igjen.")
-        ' ElseIf TextBox20.Text.Length > 0 And TextBox20.Text.IndexOf("@") = -1 Then 'sjekker at e-postadressen inneholder alfakrøll
-        ' MsgBox("Sjekk at e-postadressen er riktig og prøv igjen.")
-        ' ElseIf TextBox21.Text.Length > 0 And IsNumeric(TextBox21.Text) = False Then 'sjekker at telefonnummeret består av tall
-        ' MsgBox("Sjekk at telefonnummeret er riktig og prøv igjen.")
-        ' ElseIf TextBox16.Text.Length > 0 And IsNumeric(TextBox16.Text) = False Then 'sjekker at postnummeret består av tall
-        ' MsgBox("Sjekk at postnummeret er riktig og prøv igjen.")
-        ' ElseIf TextBox16.Text.Length <> 4 Then 'sjekker at postnummeret består av 4 tall
-        ' MsgBox("Sjekk at postnummeret er riktig og prøv igjen. Det ser ut til å ha feil lengde.")
-        ' Else
-        ' MsgBox("Alt ser ut til å være riktig utfylt. Lagrer til databasen.")
-        ' 'Lagrer informasjon fra textboxer til variabler
-        ' Dim fornavnet As String = TextBox17.Text
-        ' Dim etternavnet As String = TextBox18.Text
-        ' Dim adresse As String = TextBox19.Text & ", " & TextBox16.Text
-        ' Dim epost As String = TextBox20.Text
-        ' Dim telefon As String = TextBox21.Text
-        '
-        'bruker variabler for å lage SQL-kommando
-        'Dim data As New DataTable
+
+
+        'START: GAMMEL KODE FØR BRUK AV PERSONDAO
+        'Sjekker inndata
+        '        Try
+        'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
+        ' Dim kunde As New Kunde(TextBox17.Text, TextBox18.Text, _
+        '                        TextBox21.Text, TextBox16.Text, _
+        '                        TextBox19.Text, TextBox20.Text, _
+        '                        ComboBox11.SelectedValue)
+        'bruker data fra opprettet kunde for å lage SQL-kommando
+        ' Dim data As New DataTable
         ' Dim sql As String = "INSERT INTO pdk_kunde SET kfornavn = '" _
-        '                     & fornavnet & "', ketternavn = '" _
-        '                     & etternavnet & "', kadresse = '" _
-        '                     & adresse & "', kepost = '" _
-        '                     & epost & "', ktelefon = '" _
-        '                     & telefon & "';"
-        '
-        '        data = query(sql)
-
-
-        '        End If
-        'DETTE ER SLUTTEN PÅ DEN GAMLE KODEN
+        '                      & kunde.getFornavn() & "', ketternavn = '" _
+        '                      & kunde.getEtternavn() & "', kadresse = '" _
+        '                      & kunde.getGateadresse() & ", " & kunde.getPostnummer() & "', kepost = '" _
+        '                      & kunde.getEpost() & "', ktelefon = '" _
+        '                      & kunde.getTelefon() & "';"
+        ' data = query(sql)
+        'Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+        ' MessageBox.Show("Feil: " & ex.Message)
+        'End Try
+        'SLUTT: GAMMEL KODE FØR BRUK AV PERSONDAO
 
 
 
@@ -398,7 +386,7 @@ Public Class Form1
 
     End Sub
 
-    
+
     Private Sub btnRegUtstyr_Click(sender As Object, e As EventArgs) Handles btnRegUtstyr.Click
         Try 'sjekker for feil
             Dim utstyr As New utstyr
@@ -417,5 +405,12 @@ Public Class Form1
         'MsgBox(utstyr.utstyrType)
     End Sub
 
-    
+
+    Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
+        clearGroupbox(GroupBox4)
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+
+    End Sub
 End Class

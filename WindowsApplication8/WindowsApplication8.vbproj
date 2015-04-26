@@ -99,6 +99,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Person.vb" />
+    <Compile Include="PersonDAO.vb" />
     <Compile Include="utstyr.vb" />
   </ItemGroup>
   <ItemGroup>
