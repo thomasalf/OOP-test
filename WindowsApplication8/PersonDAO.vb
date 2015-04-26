@@ -5,7 +5,7 @@ Imports System.Configuration
 
 Public Class PersonDAO
 
-
+    'Funksjon for kobling til database
     Public Function query(sql As String) As DataTable
         Dim data As New DataTable
         Dim conn As MySqlConnection = New MySqlConnection

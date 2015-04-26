@@ -2,9 +2,7 @@
 Imports System.Configuration 'kan fjernes når vi har opprettet egne DAO-klasser for alt
 
 Public Class Form1
-
     Private personDAO As New PersonDAO
-
 
     'funksjon som tømmer groupbox
     Private Sub clearGroupbox(ByVal Gruppeboksnavn As GroupBox)
@@ -15,7 +13,6 @@ Public Class Form1
             End If
         Next
     End Sub
-
 
 
     'Brukernavn og passord
@@ -91,37 +88,6 @@ Public Class Form1
         TabControl1.SelectTab(0)
     End Sub
 
-
-
-    Private Sub TextBox8_TextChanged(sender As Object, e As EventArgs) Handles TextBox8.TextChanged
-        '        Dim data As New DataTable
-        '        Dim sql As String = "SELECT * FROM pdk_kunde " _
-        '                           & "WHERE ktelefon = '" & TextBox8.Text & "'"
-        '        data = query(sql)
-        '        If data.Rows.Count = 1 Then
-        ' Dim row As DataRow = Data.Rows(0)
-        ' TextBox12.Text = row("kfornavn")
-        ' TextBox11.Text = row("ketternavn")
-        ' TextBox10.Text = row("kadresse")
-        ' TextBox9.Text = row("kepost")
-        ' TextBox8.Text = row("ktelefon")
-        ' End If
-    End Sub
-
-    Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs) Handles TextBox9.TextChanged
-        '        Dim data As New DataTable
-        '        Dim sql As String = "SELECT * FROM pdk_kunde " _
-        '                           & "WHERE kepost = '" & TextBox9.Text & "'"
-        '        data = query(sql)
-        '        If data.Rows.Count = 1 Then
-        ' Dim row As DataRow = Data.Rows(0)
-        ' TextBox12.Text = row("kfornavn")
-        ' TextBox11.Text = row("ketternavn")
-        ' TextBox10.Text = row("kadresse")
-        ' TextBox9.Text = row("kepost")
-        ' TextBox8.Text = row("ktelefon")
-        ' End If
-    End Sub
 
     Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
         Try
