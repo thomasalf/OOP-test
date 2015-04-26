@@ -2,27 +2,6 @@
 Imports System.Configuration 'kan fjernes når vi har opprettet egne DAO-klasser for alt
 
 Public Class Form1
-    'TAH: Funksjon som automatisk fyller ut resten av kundeinformasjonen
-    'hvis bruker skriver inn informasjon som entydig identifiserer
-    'en spesifikk kunde (f.eks. telefonnummer)
-    '
-    '    Private Function autofill(ByVal tabellnavn As String, ByVal tekstboksnavn As String)
-    '    Dim data As New DataTable
-    '   Dim sql As String = "SELECT * FROM " & tabellnavn _
-    '                      & " WHERE " & tabellnavn _
-    '                     & " = '" & Me.Controls(tekstboksnavn).Text & "'"
-    '    data = query(sql)
-    '   If data.Rows.Count = 1 Then
-    'Dim row As DataRow = Data.Rows(0)
-    '       TextBox12.Text = row("kfornavn")
-    '      TextBox11.Text = row("ketternavn")
-    '     TextBox10.Text = row("kadresse")
-    '    TextBox9.Text = row("kepost")
-    '   TextBox8.Text = row("ktelefon")
-    'Else
-    '    Return false
-    'End If
-    'End Function
 
     Private personDAO As New PersonDAO
 
@@ -45,6 +24,9 @@ Public Class Form1
 
     'Array som lagrer kundeID til bruk under "redigering av kunde"
     Private kundeIDinformasjon() As Double
+
+    'Lagrer ID til kunde som skal redigeres
+    Private kundeIDtilRedigering As Integer
 
 
     'Funksjon for kobling til database
@@ -149,41 +131,11 @@ Public Class Form1
                                    TextBox19.Text, TextBox20.Text, _
                                    ComboBox11.SelectedValue)
             'bruker data fra opprettet kunde for å lage SQL-spørring
-            personDAO.query(personDAO.kundedataSQL(kunde))
+            personDAO.query(personDAO.lagreKundedataSQL(kunde))
             MsgBox("Ny kunde er opprettet")
         Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
             MessageBox.Show("Feil: " & ex.Message)
         End Try
-
-
-
-
-
-
-        'START: GAMMEL KODE FØR BRUK AV PERSONDAO
-        'Sjekker inndata
-        '        Try
-        'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
-        ' Dim kunde As New Kunde(TextBox17.Text, TextBox18.Text, _
-        '                        TextBox21.Text, TextBox16.Text, _
-        '                        TextBox19.Text, TextBox20.Text, _
-        '                        ComboBox11.SelectedValue)
-        'bruker data fra opprettet kunde for å lage SQL-kommando
-        ' Dim data As New DataTable
-        ' Dim sql As String = "INSERT INTO pdk_kunde SET kfornavn = '" _
-        '                      & kunde.getFornavn() & "', ketternavn = '" _
-        '                      & kunde.getEtternavn() & "', kadresse = '" _
-        '                      & kunde.getGateadresse() & ", " & kunde.getPostnummer() & "', kepost = '" _
-        '                      & kunde.getEpost() & "', ktelefon = '" _
-        '                      & kunde.getTelefon() & "';"
-        ' data = query(sql)
-        'Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
-        ' MessageBox.Show("Feil: " & ex.Message)
-        'End Try
-        'SLUTT: GAMMEL KODE FØR BRUK AV PERSONDAO
-
-
-
     End Sub
 
     Private Sub ComboBoxRegistrerteKunder_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxRegistrerteKunder.SelectedIndexChanged
@@ -195,14 +147,17 @@ Public Class Form1
                                    & "WHERE kundeID = '" & kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex) & "'"
         data = query(sql)
         If data.Rows.Count = 1 Then
+            clearGroupbox(GroupBox3)
             Dim row As DataRow = data.Rows(0)
-            Label3.Text = row("kundeID")
+            kundeIDtilRedigering = row("kundeID")
+            Label3.Text = kundeIDtilRedigering
             TextBox12.Text = row("kfornavn")
             TextBox11.Text = row("ketternavn")
             TextBox10.Text = row("kadresse")
             TextBox9.Text = row("kepost")
             TextBox8.Text = row("ktelefon")
         End If
+
 
         'Viser kundeinformasjonsfelter
         GroupBox3.Visible = True
@@ -324,24 +279,16 @@ Public Class Form1
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        'Sjekker inndata
+
         Try
             'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
             Dim kunde As New Kunde(TextBox12.Text, TextBox11.Text, _
                                    TextBox8.Text, TextBox7.Text, _
                                    TextBox10.Text, TextBox9.Text, _
                                    ComboBox6.SelectedValue)
-            'bruker data fra opprettet kunde for å lage SQL-kommando
-            Dim data As New DataTable
-            Dim sql As String = "UPDATE pdk_kunde " _
-                                & "SET kfornavn = '" & kunde.getFornavn() _
-                                & "', ketternavn = '" & kunde.getEtternavn() _
-                                & "', kadresse = '" & kunde.getGateadresse() & ", " & kunde.getPostnummer() _
-                                & "', kepost = '" & kunde.getEpost() _
-                                & "', ktelefon = '" & kunde.getTelefon() _
-                                & "' WHERE kundeID = '" & Label3.Text & "'"
-
-            data = query(sql)
+            'bruker data fra opprettet kunde for å lage SQL-spørring
+            personDAO.query(personDAO.endreKundedataSQL(kunde, kundeIDtilRedigering))
+            MsgBox("Kundeinformasjon er oppdatert")
         Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
             MessageBox.Show("Feil: " & ex.Message)
         End Try
@@ -349,17 +296,34 @@ Public Class Form1
 
 
 
-        'DETTE ER STARTEN PÅ DEN GAMLE KODEN
-        'Dim data As New DataTable
-        'Dim sql As String = "UPDATE pdk_kunde " _
-        '                             & "SET kfornavn = '" & TextBox12.Text _
-        '                              & "', ketternavn = '" & TextBox11.Text _
-        '                      & "', kadresse = '" & TextBox10.Text _
-        '                      & "', kepost = '" & TextBox9.Text _
-        '                      & "', ktelefon = '" & TextBox8.Text _
+
+
+        'START: GAMMEL KODE
+        'Sjekker inndata
+        ' Try
+        'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
+        '  Dim kunde As New Kunde(TextBox12.Text, TextBox11.Text, _
+        '                         TextBox8.Text, TextBox7.Text, _
+        '                         TextBox10.Text, TextBox9.Text, _
+        '                         ComboBox6.SelectedValue)
+        'bruker data fra opprettet kunde for å lage SQL-kommando
+        '  Dim data As New DataTable
+        '  Dim sql As String = "UPDATE pdk_kunde " _
+        '                      & "SET kfornavn = '" & kunde.getFornavn() _
+        '                      & "', ketternavn = '" & kunde.getEtternavn() _
+        '                      & "', kadresse = '" & kunde.getGateadresse() & ", " & kunde.getPostnummer() _
+        '                      & "', kepost = '" & kunde.getEpost() _
+        '                      & "', ktelefon = '" & kunde.getTelefon() _
         '                      & "' WHERE kundeID = '" & Label3.Text & "'"
-        'data = query(sql)
-        'DETTE ER SLUTTEN PÅ DEN GAMLE KODEN
+        '
+        '       data = query(sql)
+        '      Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+        'MessageBox.Show("Feil: " & ex.Message)
+        'End Try
+        'SLUTT: GAMMEL KODE
+
+
+
 
     End Sub
 
