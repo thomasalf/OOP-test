@@ -1,5 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient 'kan fjernes når vi har opprettet egne DAO-klasser for alt
 Imports System.Configuration 'kan fjernes når vi har opprettet egne DAO-klasser for alt
+Imports System.Data
+Imports System.Data.SqlClient
 
 Public Class Form1
     Private personDAO As New PersonDAO
@@ -304,13 +306,15 @@ Public Class Form1
         Dim fra As Date = DateTimePicker1.Value
         Dim til As Date = DateTimePicker2.Value
 
-        ' If setningen under tror jeg her kan gjøres til "If not" setning, hvor resultatet vil være at vi henter ut alle syklene/utstyret som ER tilgjengelig
-        ' fremfor å komme med en feilmelding på hvilke sykler som ikke er tilgjengelig. tilgjengelighet har et eget felt når syklene er "lastet inn".
-        ' Hvordan vi kan få dette over til en fornuftig sql spørring er en annen problemstilling. 
-        ' if(DateTimePicker1.Value >= fra Or DateTimePicker2.Value <= til Or DateTimePicker1.Value < fra And DateTimePicker2.Value > til) then
-        '   MsgBox("Sykkel er allerede utleid i perioden: " & DateTimePicker1.Value " til " & DateTimePicker2.Value
-        ' SELECT * from "Utstyr?" WHERE fradato < fra Or tildato > ?? Alternativt henter vi inn alt utstyr og sorterer i Visual Basic ved hjelp av
-        ' foreslått IF NOT setning. 
+        Dim adapter As MySqlDataAdapter
+        Dim data As New DataTable
+        Dim sql As String = "SELECT SELECT merke, prisprosent, bstatus, statusnavn, inntid FROM pdk_sykkel e JOIN pdk_booking b ON e.sykkelID=b.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON b.prisID=p.prisID WHERE bstatus='tilgjengelig' OR (bstatus='utleid' AND " & fra & " < uttid AND " & til & " < uttid) OR (bstatus='utleid' AND " & fra & " > inntid AND " & til & " < inntid)"
+
+        data = query(sql)
+
+        adapter = New MySqlDataAdapter(sql, sds)
+        Dim ds As DataSet = New DataSet()
+        adapter.Fill(ds)
 
 
 
