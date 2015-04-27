@@ -306,21 +306,11 @@ Public Class Form1
         Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
         Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
 
-        MsgBox(fra)
 
-        Dim ds As DataSet
-        Dim adapter As MySqlDataAdapter
         Dim data As New DataTable
         Dim sql As String = "SELECT merke, prisprosent, bstatus, statusnavn, inntid FROM pdk_sykkel e JOIN pdk_booking b ON e.sykkelID=b.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON b.prisID=p.prisID WHERE bstatus='tilgjengelig' OR (bstatus='utleid' AND " & fra & " < uttid AND " & til & " < uttid) OR (bstatus='utleid' AND " & fra & " > inntid AND " & til & " < inntid)"
-        Dim conn As MySqlConnection = New MySqlConnection
-        conn.ConnectionString = ConfigurationManager.ConnectionStrings("mysql").ConnectionString
 
-
-
-
-        adapter = New MySqlDataAdapter(sql, conn)
-        data = New DataTable
-        adapter.Fill(data)
+        data = query(sql)
         DataGridView3.DataSource = data
 
 
