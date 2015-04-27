@@ -167,6 +167,7 @@ Partial Class Form1
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -202,6 +203,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage6RedigerKunde)
         Me.TabControl1.Controls.Add(Me.TabPage7TilgjengeligUtstyr)
         Me.TabControl1.Controls.Add(Me.TabPage8Hovedmeny)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Location = New System.Drawing.Point(12, 8)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -1469,6 +1471,16 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
         '
+        'TabPage1
+        '
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage1.TabIndex = 8
+        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1659,5 +1671,6 @@ Partial Class Form1
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
 
 End Class
