@@ -148,6 +148,8 @@ Partial Class Form1
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.lstSokResult = New System.Windows.Forms.ListBox()
+        Me.txtUniversalSok = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -162,8 +164,7 @@ Partial Class Form1
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.txtUniversalSok = New System.Windows.Forms.TextBox()
-        Me.lstSokResult = New System.Windows.Forms.ListBox()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -201,6 +202,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage7TilgjengeligUtstyr)
         Me.TabControl1.Controls.Add(Me.TabPage8Hovedmeny)
         Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(12, 8)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -1356,6 +1358,21 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 8
         Me.TabPage1.Text = "TabPage9Søk"
         '
+        'lstSokResult
+        '
+        Me.lstSokResult.FormattingEnabled = True
+        Me.lstSokResult.Location = New System.Drawing.Point(463, 150)
+        Me.lstSokResult.Name = "lstSokResult"
+        Me.lstSokResult.Size = New System.Drawing.Size(228, 121)
+        Me.lstSokResult.TabIndex = 1
+        '
+        'txtUniversalSok
+        '
+        Me.txtUniversalSok.Location = New System.Drawing.Point(276, 150)
+        Me.txtUniversalSok.Name = "txtUniversalSok"
+        Me.txtUniversalSok.Size = New System.Drawing.Size(158, 20)
+        Me.txtUniversalSok.TabIndex = 0
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -1449,20 +1466,15 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
         '
-        'txtUniversalSok
+        'TabPage2
         '
-        Me.txtUniversalSok.Location = New System.Drawing.Point(276, 150)
-        Me.txtUniversalSok.Name = "txtUniversalSok"
-        Me.txtUniversalSok.Size = New System.Drawing.Size(158, 20)
-        Me.txtUniversalSok.TabIndex = 0
-        '
-        'lstSokResult
-        '
-        Me.lstSokResult.FormattingEnabled = True
-        Me.lstSokResult.Location = New System.Drawing.Point(463, 150)
-        Me.lstSokResult.Name = "lstSokResult"
-        Me.lstSokResult.Size = New System.Drawing.Size(228, 121)
-        Me.lstSokResult.TabIndex = 1
+        Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage2.TabIndex = 9
+        Me.TabPage2.Text = "TabPage10Statistikk"
         '
         'Form1
         '
@@ -1653,5 +1665,6 @@ Partial Class Form1
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents lstSokResult As System.Windows.Forms.ListBox
     Friend WithEvents txtUniversalSok As System.Windows.Forms.TextBox
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
 
 End Class
