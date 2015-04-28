@@ -147,6 +147,7 @@ Partial Class Form1
         Me.Button29 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -161,6 +162,8 @@ Partial Class Form1
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.txtUniversalSok = New System.Windows.Forms.TextBox()
+        Me.lstSokResult = New System.Windows.Forms.ListBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -182,6 +185,7 @@ Partial Class Form1
         Me.GroupBox1.SuspendLayout()
         Me.TabPage8Hovedmeny.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -196,6 +200,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage6RedigerKunde)
         Me.TabControl1.Controls.Add(Me.TabPage7TilgjengeligUtstyr)
         Me.TabControl1.Controls.Add(Me.TabPage8Hovedmeny)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Location = New System.Drawing.Point(12, 8)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -1339,6 +1344,18 @@ Partial Class Form1
         Me.Button4.Text = "Medlemmer"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'TabPage1
+        '
+        Me.TabPage1.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage1.Controls.Add(Me.lstSokResult)
+        Me.TabPage1.Controls.Add(Me.txtUniversalSok)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPage1.TabIndex = 8
+        Me.TabPage1.Text = "TabPage9Søk"
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -1432,6 +1449,21 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
         '
+        'txtUniversalSok
+        '
+        Me.txtUniversalSok.Location = New System.Drawing.Point(276, 150)
+        Me.txtUniversalSok.Name = "txtUniversalSok"
+        Me.txtUniversalSok.Size = New System.Drawing.Size(158, 20)
+        Me.txtUniversalSok.TabIndex = 0
+        '
+        'lstSokResult
+        '
+        Me.lstSokResult.FormattingEnabled = True
+        Me.lstSokResult.Location = New System.Drawing.Point(463, 150)
+        Me.lstSokResult.Name = "lstSokResult"
+        Me.lstSokResult.Size = New System.Drawing.Size(228, 121)
+        Me.lstSokResult.TabIndex = 1
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1470,6 +1502,8 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.TabPage8Hovedmeny.ResumeLayout(False)
         Me.GroupBox9.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
@@ -1616,5 +1650,8 @@ Partial Class Form1
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents lstSokResult As System.Windows.Forms.ListBox
+    Friend WithEvents txtUniversalSok As System.Windows.Forms.TextBox
 
 End Class
