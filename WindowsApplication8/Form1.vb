@@ -308,7 +308,7 @@ Public Class Form1
 
 
         Dim data As New DataTable
-        Dim sql As String = "SELECT merke, prisprosent, bstatus, statusnavn, inntid FROM pdk_sykkel e JOIN pdk_booking b ON e.sykkelID=b.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON b.prisID=p.prisID WHERE bstatus='tilgjengelig' OR (bstatus='utleid' AND " & fra & " < uttid AND " & til & " < uttid) OR (bstatus='utleid' AND " & fra & " > inntid AND " & til & " < inntid)"
+        Dim sql As String = "SELECT merke, prisprosent, bstatus, statusnavn, inntid FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.bookingID JOIN pdk_booking a ON b.bookingID=a.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON a.prisID=p.prisID WHERE bstatus='tilgjengelig' OR (bstatus='utleid' AND " & fra & " < uttid AND " & til & " < uttid) OR (bstatus='utleid' AND " & fra & " > inntid AND " & til & " < inntid)"
 
         data = query(sql)
         DataGridView3.DataSource = data
