@@ -349,4 +349,14 @@ Public Class Form1
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
 
     End Sub
+
+    Private Sub btnVisBestillinger_Click(sender As Object, e As EventArgs) Handles btnVisBestillinger.Click
+        Dim bestillinger As New DataTable
+        'Dim rad As DataRow
+        Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid,b.kundeID, CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt,CONCAT( s.fornavn,  ' ', s.etternavn) AS selger FROM pdk_booking b, pdk_kunde k, pdk_ansatt s WHERE b.kundeID = k.kundeID and b.selgerID = s.selgerID;"
+
+        bestillinger = query(sql)
+        dgvStatistikk.DataSource = bestillinger
+
+    End Sub
 End Class
