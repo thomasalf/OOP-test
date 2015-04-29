@@ -2,6 +2,10 @@
     Inherits Person
 
     Private lonn As Integer = 0
+    Private provisjon As Integer = 0
+
+    Private Const MIN As Integer = 10
+    Private Const MAX As Integer = 20 'Antar at ingen selgere får mer enn 10% provisjon
 
     'Konstruktører
 
@@ -29,5 +33,17 @@
             Throw New Exception("Ugyldig lønn")
         End If
     End Sub
+
+    'prosedyre for å sjekke at provisjon er innenfor MAX og MIN
+    Public Sub setprovisjon(ByVal prov As Integer)
+        If prov < MIN Then
+            provisjon = MIN
+        ElseIf prov > MAX Then
+            provisjon = MAX
+        Else
+            provisjon = prov
+        End If
+    End Sub
+
 
 End Class

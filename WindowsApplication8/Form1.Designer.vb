@@ -148,8 +148,6 @@ Partial Class Form1
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.cmbSokeValg = New System.Windows.Forms.ComboBox()
-        Me.btnDataSok = New System.Windows.Forms.Button()
         Me.lstSokResult = New System.Windows.Forms.ListBox()
         Me.txtUniversalSok = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -167,13 +165,9 @@ Partial Class Form1
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-<<<<<<< HEAD
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnVisBestillinger = New System.Windows.Forms.Button()
-        Me.btnOkonomi = New System.Windows.Forms.Button()
-        Me.dgvStatistikk = New System.Windows.Forms.DataGridView()
-=======
->>>>>>> origin/master
+        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -196,10 +190,10 @@ Partial Class Form1
         Me.TabPage8Hovedmeny.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        CType(Me.dgvStatistikk, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -1360,8 +1354,6 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage1.Controls.Add(Me.cmbSokeValg)
-        Me.TabPage1.Controls.Add(Me.btnDataSok)
         Me.TabPage1.Controls.Add(Me.lstSokResult)
         Me.TabPage1.Controls.Add(Me.txtUniversalSok)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
@@ -1370,24 +1362,6 @@ Partial Class Form1
         Me.TabPage1.Size = New System.Drawing.Size(1195, 552)
         Me.TabPage1.TabIndex = 8
         Me.TabPage1.Text = "TabPage9Søk"
-        '
-        'cmbSokeValg
-        '
-        Me.cmbSokeValg.FormattingEnabled = True
-        Me.cmbSokeValg.Location = New System.Drawing.Point(285, 197)
-        Me.cmbSokeValg.Name = "cmbSokeValg"
-        Me.cmbSokeValg.Size = New System.Drawing.Size(129, 21)
-        Me.cmbSokeValg.TabIndex = 3
-        Me.cmbSokeValg.Text = "Velg søkekategori:"
-        '
-        'btnDataSok
-        '
-        Me.btnDataSok.Location = New System.Drawing.Point(285, 232)
-        Me.btnDataSok.Name = "btnDataSok"
-        Me.btnDataSok.Size = New System.Drawing.Size(130, 27)
-        Me.btnDataSok.TabIndex = 2
-        Me.btnDataSok.Text = "Søk"
-        Me.btnDataSok.UseVisualStyleBackColor = True
         '
         'lstSokResult
         '
@@ -1407,6 +1381,9 @@ Partial Class Form1
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage2.Controls.Add(Me.Button13)
+        Me.TabPage2.Controls.Add(Me.Button12)
+        Me.TabPage2.Controls.Add(Me.DataGridView4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -1507,48 +1484,33 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
         '
-<<<<<<< HEAD
-        'TabPage2
+        'DataGridView4
         '
-        Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage2.Controls.Add(Me.dgvStatistikk)
-        Me.TabPage2.Controls.Add(Me.btnOkonomi)
-        Me.TabPage2.Controls.Add(Me.btnVisBestillinger)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1195, 552)
-        Me.TabPage2.TabIndex = 9
-        Me.TabPage2.Text = "TabPage10Statistikk"
+        Me.DataGridView4.AllowUserToOrderColumns = True
+        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView4.Location = New System.Drawing.Point(32, 231)
+        Me.DataGridView4.Name = "DataGridView4"
+        Me.DataGridView4.Size = New System.Drawing.Size(887, 222)
+        Me.DataGridView4.TabIndex = 0
         '
-        'btnVisBestillinger
+        'Button12
         '
-        Me.btnVisBestillinger.Location = New System.Drawing.Point(33, 79)
-        Me.btnVisBestillinger.Name = "btnVisBestillinger"
-        Me.btnVisBestillinger.Size = New System.Drawing.Size(146, 23)
-        Me.btnVisBestillinger.TabIndex = 1
-        Me.btnVisBestillinger.Text = "Vis bestillinger"
-        Me.btnVisBestillinger.UseVisualStyleBackColor = True
+        Me.Button12.Location = New System.Drawing.Point(46, 56)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(75, 23)
+        Me.Button12.TabIndex = 1
+        Me.Button12.Text = "Button12"
+        Me.Button12.UseVisualStyleBackColor = True
         '
-        'btnOkonomi
+        'Button13
         '
-        Me.btnOkonomi.Location = New System.Drawing.Point(33, 109)
-        Me.btnOkonomi.Name = "btnOkonomi"
-        Me.btnOkonomi.Size = New System.Drawing.Size(146, 23)
-        Me.btnOkonomi.TabIndex = 2
-        Me.btnOkonomi.Text = "Vis avanse"
-        Me.btnOkonomi.UseVisualStyleBackColor = True
+        Me.Button13.Location = New System.Drawing.Point(46, 103)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(75, 23)
+        Me.Button13.TabIndex = 2
+        Me.Button13.Text = "Button13"
+        Me.Button13.UseVisualStyleBackColor = True
         '
-        'dgvStatistikk
-        '
-        Me.dgvStatistikk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvStatistikk.Location = New System.Drawing.Point(33, 171)
-        Me.dgvStatistikk.Name = "dgvStatistikk"
-        Me.dgvStatistikk.Size = New System.Drawing.Size(786, 333)
-        Me.dgvStatistikk.TabIndex = 3
-        '
-=======
->>>>>>> origin/master
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1589,12 +1551,12 @@ Partial Class Form1
         Me.GroupBox9.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        CType(Me.dgvStatistikk, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1741,13 +1703,8 @@ Partial Class Form1
     Friend WithEvents lstSokResult As System.Windows.Forms.ListBox
     Friend WithEvents txtUniversalSok As System.Windows.Forms.TextBox
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-<<<<<<< HEAD
-    Friend WithEvents btnOkonomi As System.Windows.Forms.Button
-    Friend WithEvents btnVisBestillinger As System.Windows.Forms.Button
-    Friend WithEvents dgvStatistikk As System.Windows.Forms.DataGridView
-=======
-    Friend WithEvents cmbSokeValg As System.Windows.Forms.ComboBox
-    Friend WithEvents btnDataSok As System.Windows.Forms.Button
->>>>>>> origin/master
+    Friend WithEvents Button13 As System.Windows.Forms.Button
+    Friend WithEvents Button12 As System.Windows.Forms.Button
+    Friend WithEvents DataGridView4 As System.Windows.Forms.DataGridView
 
 End Class
