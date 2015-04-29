@@ -349,7 +349,15 @@ Public Class Form1
 
     '' Regrister Booking
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+        Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
+        Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
+        Dim utpost As String = ComboBox7.SelectedText ' usikker på om det skal være text eller value eller noe annet. 
+        Dim innpost As String = ComboBox10.SelectedText
+        Dim selgerID As Integer ' må hente selgerID fra en plass?
+        Dim PrisID As Integer ' PrisID må også hentes, kanskje i forbindelse med henting av tilgjengelige sykler.
+        Dim kundeID As String = ComboBox8.SelectedText
 
+        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & ",'Utleid'"
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
