@@ -369,7 +369,7 @@ Public Class Form1
 
         Dim sql As String = "SELECT * from pdk_ansatt where ansattype = 'Selger'"
 
-        'legge till kommentar
+        'legge til kommentar
 
 
     End Sub
