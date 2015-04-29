@@ -16,6 +16,7 @@ Public Class Form1
         Next
     End Sub
 
+    ' DERSOM DETTE FUNKER BLIR VI GLAD
 
     'Brukernavn og passord
     Private brukernavn As String = "bruker"
