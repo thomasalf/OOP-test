@@ -148,6 +148,10 @@ Partial Class Form1
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.cmbSokValg = New System.Windows.Forms.ComboBox()
+        Me.btnSok = New System.Windows.Forms.Button()
+        Me.lstSokResult = New System.Windows.Forms.ListBox()
+        Me.txtUniversalSok = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -162,8 +166,6 @@ Partial Class Form1
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.txtUniversalSok = New System.Windows.Forms.TextBox()
-        Me.lstSokResult = New System.Windows.Forms.ListBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1347,6 +1349,8 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage1.Controls.Add(Me.cmbSokValg)
+        Me.TabPage1.Controls.Add(Me.btnSok)
         Me.TabPage1.Controls.Add(Me.lstSokResult)
         Me.TabPage1.Controls.Add(Me.txtUniversalSok)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
@@ -1355,6 +1359,39 @@ Partial Class Form1
         Me.TabPage1.Size = New System.Drawing.Size(1195, 552)
         Me.TabPage1.TabIndex = 8
         Me.TabPage1.Text = "TabPage9Søk"
+        '
+        'cmbSokValg
+        '
+        Me.cmbSokValg.FormattingEnabled = True
+        Me.cmbSokValg.Location = New System.Drawing.Point(276, 191)
+        Me.cmbSokValg.Name = "cmbSokValg"
+        Me.cmbSokValg.Size = New System.Drawing.Size(111, 21)
+        Me.cmbSokValg.TabIndex = 3
+        Me.cmbSokValg.Text = "Velg søkekategori her:"
+        '
+        'btnSok
+        '
+        Me.btnSok.Location = New System.Drawing.Point(276, 226)
+        Me.btnSok.Name = "btnSok"
+        Me.btnSok.Size = New System.Drawing.Size(112, 22)
+        Me.btnSok.TabIndex = 2
+        Me.btnSok.Text = "Søk i databasen"
+        Me.btnSok.UseVisualStyleBackColor = True
+        '
+        'lstSokResult
+        '
+        Me.lstSokResult.FormattingEnabled = True
+        Me.lstSokResult.Location = New System.Drawing.Point(463, 150)
+        Me.lstSokResult.Name = "lstSokResult"
+        Me.lstSokResult.Size = New System.Drawing.Size(228, 121)
+        Me.lstSokResult.TabIndex = 1
+        '
+        'txtUniversalSok
+        '
+        Me.txtUniversalSok.Location = New System.Drawing.Point(276, 150)
+        Me.txtUniversalSok.Name = "txtUniversalSok"
+        Me.txtUniversalSok.Size = New System.Drawing.Size(158, 20)
+        Me.txtUniversalSok.TabIndex = 0
         '
         'Panel1
         '
@@ -1448,21 +1485,6 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
-        '
-        'txtUniversalSok
-        '
-        Me.txtUniversalSok.Location = New System.Drawing.Point(276, 150)
-        Me.txtUniversalSok.Name = "txtUniversalSok"
-        Me.txtUniversalSok.Size = New System.Drawing.Size(158, 20)
-        Me.txtUniversalSok.TabIndex = 0
-        '
-        'lstSokResult
-        '
-        Me.lstSokResult.FormattingEnabled = True
-        Me.lstSokResult.Location = New System.Drawing.Point(463, 150)
-        Me.lstSokResult.Name = "lstSokResult"
-        Me.lstSokResult.Size = New System.Drawing.Size(228, 121)
-        Me.lstSokResult.TabIndex = 1
         '
         'Form1
         '
@@ -1653,5 +1675,7 @@ Partial Class Form1
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents lstSokResult As System.Windows.Forms.ListBox
     Friend WithEvents txtUniversalSok As System.Windows.Forms.TextBox
+    Friend WithEvents btnSok As System.Windows.Forms.Button
+    Friend WithEvents cmbSokValg As System.Windows.Forms.ComboBox
 
 End Class

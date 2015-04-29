@@ -349,4 +349,76 @@ Public Class Form1
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
 
     End Sub
+
+    Private Sub btnSok_Click(sender As Object, e As EventArgs) Handles btnSok.Click
+        Dim valg As String = cmbSokValg.Text
+
+        Select Case valg
+            Case "Kundenavn"
+                Dim data As New DataTable
+                Dim sql As String = "SELECT * FROM pdk_kunde where kfornavn = '" & txtUniversalSok.Text & "'"
+                data = query(Sql)
+
+                Dim fornavn, etternavn As String
+                For Each temprad In data.Rows
+                    'Hver rad har felter, som vi kan hente ut vha navnet og hermetegn
+                    fornavn = temprad("kfornavn")
+                    etternavn = temprad("ketternavn")
+                   lstSokResult.Items.Add(fornavn & " " & etternavn) 'utskriften
+                Next temprad
+
+            Case "Sykkelmerke"
+                Dim data As New DataTable
+                Dim sql As String = "SELECT * FROM pdk_sykkel where merke = '" & txtUniversalSok.Text & "'"
+                data = query(sql)
+
+                Dim merke, modell, sykkeltype As String
+                For Each temprad In data.Rows
+                    'Hver rad har felter, som vi kan hente ut vha navnet og hermetegn
+                    merke = temprad("merke")
+                    modell = temprad("modell")
+                    sykkeltype = temprad("sykkeltype")
+                    lstSokResult.Items.Add(merke & " " & modell & " " & sykkeltype) 'utskriften
+                Next temprad
+
+            Case "Sykkeltype"
+                Dim data As New DataTable
+                Dim sql As String = "SELECT * FROM pdk_sykkel where sykkeltype = '" & txtUniversalSok.Text & "'"
+                data = query(sql)
+
+                Dim merke, modell, sykkeltype As String
+                For Each temprad In data.Rows
+                    'Hver rad har felter, som vi kan hente ut vha navnet og hermetegn
+                    merke = temprad("merke")
+                    modell = temprad("modell")
+                    sykkeltype = temprad("sykkeltype")
+                    lstSokResult.Items.Add(merke & " " & modell & " " & sykkeltype) 'utskriften
+                Next temprad
+
+            Case "Ekstrautstyr"
+                Dim data As New DataTable
+                Dim sql As String = "SELECT * FROM pdk_ekstrautstyr where utstyrstype = '" & txtUniversalSok.Text & "'"
+                data = query(sql)
+
+                Dim utstyrstype As String
+                For Each temprad In data.Rows
+                    'Hver rad har felter, som vi kan hente ut vha navnet og hermetegn
+                    utstyrstype = temprad("utstyrstype")
+                     lstSokResult.Items.Add(utstyrstype) 'utskriften
+                Next temprad
+        End Select
+
+    End Sub
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
+    End Sub
+
+    Private Sub cmbSokValg_clicked(sender As Object, e As EventArgs) Handles cmbSokValg.Click
+        cmbSokValg.Items.Clear()
+        cmbSokValg.Items.Add("Kundenavn")
+        cmbSokValg.Items.Add("Sykkelmerke")
+        cmbSokValg.Items.Add("Sykkeltype")
+        cmbSokValg.Items.Add("Ekstrautstyr")
+    End Sub
 End Class
