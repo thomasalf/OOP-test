@@ -359,4 +359,105 @@ Public Class Form1
         dgvStatistikk.DataSource = bestillinger
 
     End Sub
+
+  
+    Private Sub cmbSokeValg_clicked(sender As Object, e As EventArgs) Handles cmbSokeValg.Click
+        cmbSokeValg.Items.Add("Fornavn")
+        cmbSokeValg.Items.Add("Sykkelmerke")
+        cmbSokeValg.Items.Add("Sykkeltype")
+        cmbSokeValg.Items.Add("Utstyr")
+    End Sub
+
+    Private Sub btnDataSok_Click(sender As Object, e As EventArgs) Handles btnDataSok.Click
+        Dim valg As String = cmbSokeValg.Text
+        Select Case valg
+            Case "Fornavn"
+                Dim data As New DataTable
+                Dim sql As String = "SELECT * FROM pdk_kunde where kfornavn ='" & txtUniversalSok.Text & "'"
+                data = query(sql)
+
+                'SLetter unna slik at det ikke vises samme info mange ganger
+                lstSokResult.Items.Clear()
+
+                If data.Rows.Count >= 1 Then
+                    Dim teller As Integer
+                    teller = data.Rows.Count
+
+                    For teller = 0 To (teller - 1)
+                        Dim sokRes As String
+                        Dim row As DataRow = data.Rows(teller)
+                        sokRes = row("kfornavn") & " " & row("ketternavn")
+                        lstSokResult.Items.Add(sokRes)
+                    Next
+                Else
+                    lstSokResult.Items.Add("Ingen treff")
+                End If
+
+            Case "Sykkelmerke"
+                Dim data As New DataTable
+                Dim sql As String = "SELECT * FROM pdk_sykkel where merke ='" & txtUniversalSok.Text & "'"
+                data = query(sql)
+
+                'SLetter unna slik at det ikke vises samme info mange ganger
+                lstSokResult.Items.Clear()
+
+                If data.Rows.Count >= 1 Then
+                    Dim teller As Integer
+                    teller = data.Rows.Count
+
+                    For teller = 0 To (teller - 1)
+                        Dim sokRes As String
+                        Dim row As DataRow = data.Rows(teller)
+                        sokRes = row("merke") & " " & row("modell") & " " & row("sykkeltype")
+                        lstSokResult.Items.Add(sokRes)
+                    Next
+                Else
+                    lstSokResult.Items.Add("Ingen treff")
+                End If
+
+            Case "Sykkeltype"
+                Dim data As New DataTable
+                Dim sql As String = "SELECT * FROM pdk_sykkel where type ='" & txtUniversalSok.Text & "'"
+                data = query(sql)
+
+                'SLetter unna slik at det ikke vises samme info mange ganger
+                lstSokResult.Items.Clear()
+
+                If data.Rows.Count >= 1 Then
+                    Dim teller As Integer
+                    teller = data.Rows.Count
+
+                    For teller = 0 To (teller - 1)
+                        Dim sokRes As String
+                        Dim row As DataRow = data.Rows(teller)
+                        sokRes = row("merke") & " " & row("modell") & " " & row("sykkeltype")
+                        lstSokResult.Items.Add(sokRes)
+                    Next
+                Else
+                    lstSokResult.Items.Add("Ingen treff")
+                End If
+
+            Case "Utstyr"
+                Dim data As New DataTable
+                Dim sql As String = "SELECT * FROM pdk_ekstrautstyr where utstyrstype ='" & txtUniversalSok.Text & "'"
+                data = query(sql)
+
+                'SLetter unna slik at det ikke vises samme info mange ganger
+                lstSokResult.Items.Clear()
+
+                If data.Rows.Count >= 1 Then
+                    Dim teller As Integer
+                    teller = data.Rows.Count
+
+                    For teller = 0 To (teller - 1)
+                        Dim sokRes As String
+                        Dim row As DataRow = data.Rows(teller)
+                        sokRes = row("utstyrstype")
+                        lstSokResult.Items.Add(sokRes)
+                    Next
+                Else
+                    lstSokResult.Items.Add("Ingen treff")
+                End If
+        End Select
+    End Sub
 End Class
