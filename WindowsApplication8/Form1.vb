@@ -308,7 +308,7 @@ Public Class Form1
 
 
         Dim data As New DataTable
-        Dim sql As String = "SELECT merke, prisprosent, bstatus, statusnavn, inntid FROM pdk_sykkel e JOIN pdk_booking b ON e.sykkelID=b.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON b.prisID=p.prisID WHERE bstatus='tilgjengelig' OR (bstatus='utleid' AND " & fra & " < uttid AND " & til & " < uttid) OR (bstatus='utleid' AND " & fra & " > inntid AND " & til & " < inntid)"
+        Dim sql As String = "SELECT merke, prisprosent, bstatus, statusnavn, inntid FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.bookingID JOIN pdk_booking a ON b.bookingID=a.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON a.prisID=p.prisID WHERE bstatus='tilgjengelig' OR (bstatus='utleid' AND " & fra & " < uttid AND " & til & " < uttid) OR (bstatus='utleid' AND " & fra & " > inntid AND " & til & " < inntid)"
 
         data = query(sql)
         DataGridView3.DataSource = data
@@ -350,75 +350,13 @@ Public Class Form1
 
     End Sub
 
-    Private Sub btnSok_Click(sender As Object, e As EventArgs) Handles btnSok.Click
-        Dim valg As String = cmbSokValg.Text
+    Private Sub btnVisBestillinger_Click(sender As Object, e As EventArgs) Handles btnVisBestillinger.Click
+        Dim bestillinger As New DataTable
+        'Dim rad As DataRow
+        Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid,b.kundeID, CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt,CONCAT( s.fornavn,  ' ', s.etternavn) AS selger FROM pdk_booking b, pdk_kunde k, pdk_ansatt s WHERE b.kundeID = k.kundeID and b.selgerID = s.selgerID;"
 
-        Select Case valg
-            Case "Kundenavn"
-                Dim data As New DataTable
-                Dim sql As String = "SELECT * FROM pdk_kunde where kfornavn = '" & txtUniversalSok.Text & "'"
-                data = query(Sql)
+        bestillinger = query(sql)
+        dgvStatistikk.DataSource = bestillinger
 
-                Dim fornavn, etternavn As String
-                For Each temprad In data.Rows
-                    'Hver rad har felter, som vi kan hente ut vha navnet og hermetegn
-                    fornavn = temprad("kfornavn")
-                    etternavn = temprad("ketternavn")
-                   lstSokResult.Items.Add(fornavn & " " & etternavn) 'utskriften
-                Next temprad
-
-            Case "Sykkelmerke"
-                Dim data As New DataTable
-                Dim sql As String = "SELECT * FROM pdk_sykkel where merke = '" & txtUniversalSok.Text & "'"
-                data = query(sql)
-
-                Dim merke, modell, sykkeltype As String
-                For Each temprad In data.Rows
-                    'Hver rad har felter, som vi kan hente ut vha navnet og hermetegn
-                    merke = temprad("merke")
-                    modell = temprad("modell")
-                    sykkeltype = temprad("sykkeltype")
-                    lstSokResult.Items.Add(merke & " " & modell & " " & sykkeltype) 'utskriften
-                Next temprad
-
-            Case "Sykkeltype"
-                Dim data As New DataTable
-                Dim sql As String = "SELECT * FROM pdk_sykkel where sykkeltype = '" & txtUniversalSok.Text & "'"
-                data = query(sql)
-
-                Dim merke, modell, sykkeltype As String
-                For Each temprad In data.Rows
-                    'Hver rad har felter, som vi kan hente ut vha navnet og hermetegn
-                    merke = temprad("merke")
-                    modell = temprad("modell")
-                    sykkeltype = temprad("sykkeltype")
-                    lstSokResult.Items.Add(merke & " " & modell & " " & sykkeltype) 'utskriften
-                Next temprad
-
-            Case "Ekstrautstyr"
-                Dim data As New DataTable
-                Dim sql As String = "SELECT * FROM pdk_ekstrautstyr where utstyrstype = '" & txtUniversalSok.Text & "'"
-                data = query(sql)
-
-                Dim utstyrstype As String
-                For Each temprad In data.Rows
-                    'Hver rad har felter, som vi kan hente ut vha navnet og hermetegn
-                    utstyrstype = temprad("utstyrstype")
-                     lstSokResult.Items.Add(utstyrstype) 'utskriften
-                Next temprad
-        End Select
-
-    End Sub
-
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
-
-    End Sub
-
-    Private Sub cmbSokValg_clicked(sender As Object, e As EventArgs) Handles cmbSokValg.Click
-        cmbSokValg.Items.Clear()
-        cmbSokValg.Items.Add("Kundenavn")
-        cmbSokValg.Items.Add("Sykkelmerke")
-        cmbSokValg.Items.Add("Sykkeltype")
-        cmbSokValg.Items.Add("Ekstrautstyr")
     End Sub
 End Class
