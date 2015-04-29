@@ -165,6 +165,9 @@ Partial Class Form1
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnVisBestillinger = New System.Windows.Forms.Button()
+        Me.btnOkonomi = New System.Windows.Forms.Button()
+        Me.dgvStatistikk = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -189,6 +192,8 @@ Partial Class Form1
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.dgvStatistikk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -1469,12 +1474,41 @@ Partial Class Form1
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage2.Controls.Add(Me.dgvStatistikk)
+        Me.TabPage2.Controls.Add(Me.btnOkonomi)
+        Me.TabPage2.Controls.Add(Me.btnVisBestillinger)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(1195, 552)
         Me.TabPage2.TabIndex = 9
         Me.TabPage2.Text = "TabPage10Statistikk"
+        '
+        'btnVisBestillinger
+        '
+        Me.btnVisBestillinger.Location = New System.Drawing.Point(33, 79)
+        Me.btnVisBestillinger.Name = "btnVisBestillinger"
+        Me.btnVisBestillinger.Size = New System.Drawing.Size(146, 23)
+        Me.btnVisBestillinger.TabIndex = 1
+        Me.btnVisBestillinger.Text = "Vis bestillinger"
+        Me.btnVisBestillinger.UseVisualStyleBackColor = True
+        '
+        'btnOkonomi
+        '
+        Me.btnOkonomi.Location = New System.Drawing.Point(33, 109)
+        Me.btnOkonomi.Name = "btnOkonomi"
+        Me.btnOkonomi.Size = New System.Drawing.Size(146, 23)
+        Me.btnOkonomi.TabIndex = 2
+        Me.btnOkonomi.Text = "Vis avanse"
+        Me.btnOkonomi.UseVisualStyleBackColor = True
+        '
+        'dgvStatistikk
+        '
+        Me.dgvStatistikk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvStatistikk.Location = New System.Drawing.Point(33, 171)
+        Me.dgvStatistikk.Name = "dgvStatistikk"
+        Me.dgvStatistikk.Size = New System.Drawing.Size(786, 333)
+        Me.dgvStatistikk.TabIndex = 3
         '
         'Form1
         '
@@ -1520,6 +1554,8 @@ Partial Class Form1
         Me.Panel1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        CType(Me.dgvStatistikk, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1666,5 +1702,8 @@ Partial Class Form1
     Friend WithEvents lstSokResult As System.Windows.Forms.ListBox
     Friend WithEvents txtUniversalSok As System.Windows.Forms.TextBox
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents btnOkonomi As System.Windows.Forms.Button
+    Friend WithEvents btnVisBestillinger As System.Windows.Forms.Button
+    Friend WithEvents dgvStatistikk As System.Windows.Forms.DataGridView
 
 End Class
