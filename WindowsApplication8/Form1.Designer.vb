@@ -177,6 +177,18 @@ Partial Class Form1
         Me.btnUtvideMedNyModell = New System.Windows.Forms.Button()
         Me.btnOppdatereEksisterendeSykkel = New System.Windows.Forms.Button()
         Me.ComboBoxEksisterendeSykler = New System.Windows.Forms.ComboBox()
+        Me.GroupBoxSykkelinformasjon = New System.Windows.Forms.GroupBox()
+        Me.labelSykkel2 = New System.Windows.Forms.Label()
+        Me.labelSykkel3 = New System.Windows.Forms.Label()
+        Me.labelSykkel4 = New System.Windows.Forms.Label()
+        Me.labelSykkel5 = New System.Windows.Forms.Label()
+        Me.labelSykkel6 = New System.Windows.Forms.Label()
+        Me.labelSykkel7 = New System.Windows.Forms.Label()
+        Me.TextBoxSkl1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxSkl2 = New System.Windows.Forms.TextBox()
+        Me.btnSklNullUtSkjema = New System.Windows.Forms.Button()
+        Me.TextBoxSkl3 = New System.Windows.Forms.TextBox()
+        Me.btnSklRegistrerEndringer = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -204,6 +216,7 @@ Partial Class Form1
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabPageSykkelregistrering.SuspendLayout()
+        Me.GroupBoxSykkelinformasjon.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -1547,6 +1560,7 @@ Partial Class Form1
         'TabPageSykkelregistrering
         '
         Me.TabPageSykkelregistrering.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPageSykkelregistrering.Controls.Add(Me.GroupBoxSykkelinformasjon)
         Me.TabPageSykkelregistrering.Controls.Add(Me.btnOppdatereEksisterendeSykkel)
         Me.TabPageSykkelregistrering.Controls.Add(Me.ComboBoxEksisterendeSykler)
         Me.TabPageSykkelregistrering.Controls.Add(Me.btnUtvideMedNyModell)
@@ -1613,6 +1627,119 @@ Partial Class Form1
         Me.ComboBoxEksisterendeSykler.TabIndex = 4
         Me.ComboBoxEksisterendeSykler.Text = "Velg sykkel som skal oppdateres"
         '
+        'GroupBoxSykkelinformasjon
+        '
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel2)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel3)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel4)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel5)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel6)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel7)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.TextBoxSkl1)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.TextBoxSkl2)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklNullUtSkjema)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.TextBoxSkl3)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklRegistrerEndringer)
+        Me.GroupBoxSykkelinformasjon.Location = New System.Drawing.Point(160, 224)
+        Me.GroupBoxSykkelinformasjon.Name = "GroupBoxSykkelinformasjon"
+        Me.GroupBoxSykkelinformasjon.Size = New System.Drawing.Size(400, 248)
+        Me.GroupBoxSykkelinformasjon.TabIndex = 6
+        Me.GroupBoxSykkelinformasjon.TabStop = False
+        Me.GroupBoxSykkelinformasjon.Text = "Sykkelinformasjon"
+        '
+        'labelSykkel2
+        '
+        Me.labelSykkel2.AutoSize = True
+        Me.labelSykkel2.Location = New System.Drawing.Point(95, 21)
+        Me.labelSykkel2.Name = "labelSykkel2"
+        Me.labelSykkel2.Size = New System.Drawing.Size(37, 13)
+        Me.labelSykkel2.TabIndex = 37
+        Me.labelSykkel2.Text = "Merke"
+        '
+        'labelSykkel3
+        '
+        Me.labelSykkel3.AutoSize = True
+        Me.labelSykkel3.Location = New System.Drawing.Point(88, 51)
+        Me.labelSykkel3.Name = "labelSykkel3"
+        Me.labelSykkel3.Size = New System.Drawing.Size(38, 13)
+        Me.labelSykkel3.TabIndex = 38
+        Me.labelSykkel3.Text = "Modell"
+        '
+        'labelSykkel4
+        '
+        Me.labelSykkel4.AutoSize = True
+        Me.labelSykkel4.Location = New System.Drawing.Point(96, 73)
+        Me.labelSykkel4.Name = "labelSykkel4"
+        Me.labelSykkel4.Size = New System.Drawing.Size(31, 13)
+        Me.labelSykkel4.TabIndex = 39
+        Me.labelSykkel4.Text = "Type"
+        '
+        'labelSykkel5
+        '
+        Me.labelSykkel5.AutoSize = True
+        Me.labelSykkel5.Location = New System.Drawing.Point(88, 96)
+        Me.labelSykkel5.Name = "labelSykkel5"
+        Me.labelSykkel5.Size = New System.Drawing.Size(37, 13)
+        Me.labelSykkel5.TabIndex = 40
+        Me.labelSykkel5.Text = "Status"
+        '
+        'labelSykkel6
+        '
+        Me.labelSykkel6.AutoSize = True
+        Me.labelSykkel6.Location = New System.Drawing.Point(82, 122)
+        Me.labelSykkel6.Name = "labelSykkel6"
+        Me.labelSykkel6.Size = New System.Drawing.Size(56, 13)
+        Me.labelSykkel6.TabIndex = 41
+        Me.labelSykkel6.Text = "Tilhørighet"
+        '
+        'labelSykkel7
+        '
+        Me.labelSykkel7.AutoSize = True
+        Me.labelSykkel7.Location = New System.Drawing.Point(69, 147)
+        Me.labelSykkel7.Name = "labelSykkel7"
+        Me.labelSykkel7.Size = New System.Drawing.Size(61, 13)
+        Me.labelSykkel7.TabIndex = 42
+        Me.labelSykkel7.Text = "Transportør"
+        '
+        'TextBoxSkl1
+        '
+        Me.TextBoxSkl1.Location = New System.Drawing.Point(147, 18)
+        Me.TextBoxSkl1.Name = "TextBoxSkl1"
+        Me.TextBoxSkl1.Size = New System.Drawing.Size(121, 20)
+        Me.TextBoxSkl1.TabIndex = 43
+        '
+        'TextBoxSkl2
+        '
+        Me.TextBoxSkl2.Location = New System.Drawing.Point(147, 44)
+        Me.TextBoxSkl2.Name = "TextBoxSkl2"
+        Me.TextBoxSkl2.Size = New System.Drawing.Size(121, 20)
+        Me.TextBoxSkl2.TabIndex = 44
+        '
+        'btnSklNullUtSkjema
+        '
+        Me.btnSklNullUtSkjema.Location = New System.Drawing.Point(88, 207)
+        Me.btnSklNullUtSkjema.Name = "btnSklNullUtSkjema"
+        Me.btnSklNullUtSkjema.Size = New System.Drawing.Size(92, 23)
+        Me.btnSklNullUtSkjema.TabIndex = 49
+        Me.btnSklNullUtSkjema.Text = "Null ut skjema"
+        Me.btnSklNullUtSkjema.UseVisualStyleBackColor = True
+        '
+        'TextBoxSkl3
+        '
+        Me.TextBoxSkl3.Location = New System.Drawing.Point(147, 70)
+        Me.TextBoxSkl3.Name = "TextBoxSkl3"
+        Me.TextBoxSkl3.Size = New System.Drawing.Size(121, 20)
+        Me.TextBoxSkl3.TabIndex = 45
+        '
+        'btnSklRegistrerEndringer
+        '
+        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(204, 207)
+        Me.btnSklRegistrerEndringer.Name = "btnSklRegistrerEndringer"
+        Me.btnSklRegistrerEndringer.Size = New System.Drawing.Size(92, 23)
+        Me.btnSklRegistrerEndringer.TabIndex = 48
+        Me.btnSklRegistrerEndringer.Text = "Registrer"
+        Me.btnSklRegistrerEndringer.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1660,6 +1787,8 @@ Partial Class Form1
         Me.MenuStrip1.PerformLayout()
         Me.TabPageSykkelregistrering.ResumeLayout(False)
         Me.TabPageSykkelregistrering.PerformLayout()
+        Me.GroupBoxSykkelinformasjon.ResumeLayout(False)
+        Me.GroupBoxSykkelinformasjon.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1818,5 +1947,17 @@ Partial Class Form1
     Friend WithEvents labelSykkel1 As System.Windows.Forms.Label
     Friend WithEvents ComboEksisterendeMerker As System.Windows.Forms.ComboBox
     Friend WithEvents btnRegistrereNySykkel As System.Windows.Forms.Button
+    Friend WithEvents GroupBoxSykkelinformasjon As System.Windows.Forms.GroupBox
+    Friend WithEvents labelSykkel2 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel3 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel4 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel5 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel6 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel7 As System.Windows.Forms.Label
+    Friend WithEvents TextBoxSkl1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxSkl2 As System.Windows.Forms.TextBox
+    Friend WithEvents btnSklNullUtSkjema As System.Windows.Forms.Button
+    Friend WithEvents TextBoxSkl3 As System.Windows.Forms.TextBox
+    Friend WithEvents btnSklRegistrerEndringer As System.Windows.Forms.Button
 
 End Class
