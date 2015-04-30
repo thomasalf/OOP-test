@@ -363,13 +363,13 @@ Public Class Form1
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles btnBestillinger.Click
         Dim bestillinger As New DataTable
-        'Dim rad As DataRow
-        Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid,b.kundeID, " _
-& "CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt," _
-& "CONCAT( s.fornavn,  ' ', s.etternavn) AS selger FROM pdk_booking b," _
-& "pdk_kunde k, pdk_ansatt s WHERE b.kundeID = k.kundeID and b.selgerID = s.selgerID;"
 
-        bestillinger = query(sql)
+        Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid, b.kundeID, " _
+        & "CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt," _
+        & "CONCAT( s.fornavn,  ' ', s.etternavn) AS selger FROM pdk_booking b," _
+        & "pdk_kunde k, pdk_ansatt s WHERE b.kundeID = k.kundeID and b.selgerID = s.selgerID;"
+
+        bestillinger = query(Sql)
         dgvStatistikk.DataSource = bestillinger
 
         lstAvanse.Visible = False
@@ -379,11 +379,10 @@ Public Class Form1
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles btnAvanse.Click
         Dim avanse As New DataTable
-        Dim rad As DataRow
+        'Dim rad As DataRow
 
         Dim sql As String = "SELECT * from pdk_ansatt where ansattype = 'Selger'"
 
-        'legge til kommentar
         dgvStatistikk.Visible = False
         lstAvanse.Visible = True
 
