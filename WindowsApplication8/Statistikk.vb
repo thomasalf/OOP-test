@@ -52,5 +52,10 @@
         Return utsPris
     End Function
 
+    'Må lage en metode for å få ut totalprisen per booking
+
+
+
+
 
 End Class
