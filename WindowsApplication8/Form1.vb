@@ -372,6 +372,7 @@ Public Class Form1
         bestillinger = query(sql)
         dgvStatistikk.DataSource = bestillinger
 
+        lstAvanse.Visible = False
         dgvStatistikk.Visible = True
 
     End Sub
@@ -383,7 +384,8 @@ Public Class Form1
         Dim sql As String = "SELECT * from pdk_ansatt where ansattype = 'Selger'"
 
         'legge til kommentar
-
+        dgvStatistikk.Visible = False
+        lstAvanse.Visible = True
 
     End Sub
 End Class

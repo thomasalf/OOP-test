@@ -168,6 +168,7 @@ Partial Class Form1
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lstAvanse = New System.Windows.Forms.ListBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1381,6 +1382,7 @@ Partial Class Form1
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage2.Controls.Add(Me.lstAvanse)
         Me.TabPage2.Controls.Add(Me.btnAvanse)
         Me.TabPage2.Controls.Add(Me.btnBestillinger)
         Me.TabPage2.Controls.Add(Me.dgvStatistikk)
@@ -1511,6 +1513,15 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
+        '
+        'lstAvanse
+        '
+        Me.lstAvanse.FormattingEnabled = True
+        Me.lstAvanse.Location = New System.Drawing.Point(57, 173)
+        Me.lstAvanse.Name = "lstAvanse"
+        Me.lstAvanse.Size = New System.Drawing.Size(844, 342)
+        Me.lstAvanse.TabIndex = 3
+        Me.lstAvanse.Visible = False
         '
         'Form1
         '
@@ -1707,5 +1718,6 @@ Partial Class Form1
     Friend WithEvents btnAvanse As System.Windows.Forms.Button
     Friend WithEvents btnBestillinger As System.Windows.Forms.Button
     Friend WithEvents dgvStatistikk As System.Windows.Forms.DataGridView
+    Friend WithEvents lstAvanse As System.Windows.Forms.ListBox
 
 End Class
