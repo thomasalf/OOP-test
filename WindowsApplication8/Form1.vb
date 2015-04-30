@@ -606,4 +606,32 @@ Public Class Form1
 
     End Sub
 
+    Private Sub ComboSykkelSomSkalTransporteres_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSykkelSomSkalTransporteres.SelectedIndexChanged
+
+       
+    End Sub
+
+    Private Sub btnLastInnTransportinfo_Click(sender As Object, e As EventArgs) Handles btnLastInnTransportinfo.Click
+        'fyller combobox
+        ComboSykkelSomSkalTransporteres.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim data As New DataTable
+        Dim sql As String = "SELECT DISTINCT stedsnavn FROM pdk_sted"
+        data = query(sql)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med steder
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("stedsnavn")
+                ComboSykkelSomSkalTransporteres.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+
+    End Sub
 End Class

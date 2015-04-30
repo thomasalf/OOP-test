@@ -205,6 +205,7 @@ Partial Class Form1
         Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
         Me.LabelTransportFraSted = New System.Windows.Forms.Label()
         Me.LabelTransportTilSted = New System.Windows.Forms.Label()
+        Me.btnLastInnTransportinfo = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1836,6 +1837,7 @@ Partial Class Form1
         'TabPageSykkeltransport
         '
         Me.TabPageSykkeltransport.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPageSykkeltransport.Controls.Add(Me.btnLastInnTransportinfo)
         Me.TabPageSykkeltransport.Controls.Add(Me.LabelTransportTilSted)
         Me.TabPageSykkeltransport.Controls.Add(Me.LabelTransportFraSted)
         Me.TabPageSykkeltransport.Controls.Add(Me.DataGridViewSykkeltransport)
@@ -1906,6 +1908,15 @@ Partial Class Form1
         Me.LabelTransportTilSted.Size = New System.Drawing.Size(130, 13)
         Me.LabelTransportTilSted.TabIndex = 5
         Me.LabelTransportTilSted.Text = "Transporter valgt sykkel til"
+        '
+        'btnLastInnTransportinfo
+        '
+        Me.btnLastInnTransportinfo.Location = New System.Drawing.Point(144, 8)
+        Me.btnLastInnTransportinfo.Name = "btnLastInnTransportinfo"
+        Me.btnLastInnTransportinfo.Size = New System.Drawing.Size(136, 23)
+        Me.btnLastInnTransportinfo.TabIndex = 6
+        Me.btnLastInnTransportinfo.Text = "Last inn informasjon"
+        Me.btnLastInnTransportinfo.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2145,5 +2156,6 @@ Partial Class Form1
     Friend WithEvents LabelTransportTilSted As System.Windows.Forms.Label
     Friend WithEvents LabelTransportFraSted As System.Windows.Forms.Label
     Friend WithEvents ComboSykkelSomSkalTransporteres As System.Windows.Forms.ComboBox
+    Friend WithEvents btnLastInnTransportinfo As System.Windows.Forms.Button
 
 End Class
