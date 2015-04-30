@@ -3,7 +3,7 @@ Imports System.Configuration
 
 Public Class StatistikkDAO
 
-
+    'Kan tas i bruk for datainnhenting for statistikker
     Public Function visBestillingerSQL(utdata As String)
         Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid,b.kundeID, " _
         & "CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt," _
