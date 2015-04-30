@@ -171,6 +171,7 @@ Partial Class Form1
         Me.btnBestillinger = New System.Windows.Forms.Button()
         Me.dgvStatistikk = New System.Windows.Forms.DataGridView()
         Me.TabPageSykkelregistrering = New System.Windows.Forms.TabPage()
+        Me.btnSklVisSykkelmeny = New System.Windows.Forms.Button()
         Me.GroupBoxHvaVilDuGjore = New System.Windows.Forms.GroupBox()
         Me.btnRegistrereNySykkel = New System.Windows.Forms.Button()
         Me.ComboEksisterendeMerker = New System.Windows.Forms.ComboBox()
@@ -178,6 +179,8 @@ Partial Class Form1
         Me.btnUtvideMedNyModell = New System.Windows.Forms.Button()
         Me.ComboEksisterendeSykler = New System.Windows.Forms.ComboBox()
         Me.GroupBoxSykkelinformasjon = New System.Windows.Forms.GroupBox()
+        Me.btnSklLagreOppdatering = New System.Windows.Forms.Button()
+        Me.btnSklLagreNyModell = New System.Windows.Forms.Button()
         Me.btnSklSlettSykkel = New System.Windows.Forms.Button()
         Me.ComboVelgTransportor = New System.Windows.Forms.ComboBox()
         Me.ComboVelgHjemsted = New System.Windows.Forms.ComboBox()
@@ -193,9 +196,15 @@ Partial Class Form1
         Me.btnSklNullUtSkjema = New System.Windows.Forms.Button()
         Me.TextBoxSkl3 = New System.Windows.Forms.TextBox()
         Me.btnSklRegistrerEndringer = New System.Windows.Forms.Button()
-        Me.btnSklLagreNyModell = New System.Windows.Forms.Button()
-        Me.btnSklLagreOppdatering = New System.Windows.Forms.Button()
-        Me.btnSklVisSykkelmeny = New System.Windows.Forms.Button()
+        Me.TabPageSykkeltransport = New System.Windows.Forms.TabPage()
+        Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
+        Me.TransportSykkelID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TransportSykkelMerkeOgModell = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TransportSykkelFraSted = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
+        Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
+        Me.LabelTransportFraSted = New System.Windows.Forms.Label()
+        Me.LabelTransportTilSted = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -225,6 +234,8 @@ Partial Class Form1
         Me.TabPageSykkelregistrering.SuspendLayout()
         Me.GroupBoxHvaVilDuGjore.SuspendLayout()
         Me.GroupBoxSykkelinformasjon.SuspendLayout()
+        Me.TabPageSykkeltransport.SuspendLayout()
+        CType(Me.DataGridViewSykkeltransport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -240,6 +251,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPageSykkelregistrering)
+        Me.TabControl1.Controls.Add(Me.TabPageSykkeltransport)
         Me.TabControl1.Location = New System.Drawing.Point(12, 8)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -1577,6 +1589,15 @@ Partial Class Form1
         Me.TabPageSykkelregistrering.TabIndex = 10
         Me.TabPageSykkelregistrering.Text = "Sykkelregistrering"
         '
+        'btnSklVisSykkelmeny
+        '
+        Me.btnSklVisSykkelmeny.Location = New System.Drawing.Point(24, 40)
+        Me.btnSklVisSykkelmeny.Name = "btnSklVisSykkelmeny"
+        Me.btnSklVisSykkelmeny.Size = New System.Drawing.Size(75, 40)
+        Me.btnSklVisSykkelmeny.TabIndex = 8
+        Me.btnSklVisSykkelmeny.Text = "Vis sykkelmeny"
+        Me.btnSklVisSykkelmeny.UseVisualStyleBackColor = True
+        '
         'GroupBoxHvaVilDuGjore
         '
         Me.GroupBoxHvaVilDuGjore.Controls.Add(Me.btnRegistrereNySykkel)
@@ -1664,6 +1685,24 @@ Partial Class Form1
         Me.GroupBoxSykkelinformasjon.TabStop = False
         Me.GroupBoxSykkelinformasjon.Text = "Sykkelinformasjon"
         Me.GroupBoxSykkelinformasjon.Visible = False
+        '
+        'btnSklLagreOppdatering
+        '
+        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(192, 224)
+        Me.btnSklLagreOppdatering.Name = "btnSklLagreOppdatering"
+        Me.btnSklLagreOppdatering.Size = New System.Drawing.Size(104, 23)
+        Me.btnSklLagreOppdatering.TabIndex = 54
+        Me.btnSklLagreOppdatering.Text = "Lagre oppdatering"
+        Me.btnSklLagreOppdatering.UseVisualStyleBackColor = True
+        '
+        'btnSklLagreNyModell
+        '
+        Me.btnSklLagreNyModell.Location = New System.Drawing.Point(184, 176)
+        Me.btnSklLagreNyModell.Name = "btnSklLagreNyModell"
+        Me.btnSklLagreNyModell.Size = New System.Drawing.Size(96, 23)
+        Me.btnSklLagreNyModell.TabIndex = 53
+        Me.btnSklLagreNyModell.Text = "Lagre ny modell"
+        Me.btnSklLagreNyModell.UseVisualStyleBackColor = True
         '
         'btnSklSlettSykkel
         '
@@ -1794,32 +1833,79 @@ Partial Class Form1
         Me.btnSklRegistrerEndringer.Text = "Registrer ny"
         Me.btnSklRegistrerEndringer.UseVisualStyleBackColor = True
         '
-        'btnSklLagreNyModell
+        'TabPageSykkeltransport
         '
-        Me.btnSklLagreNyModell.Location = New System.Drawing.Point(184, 176)
-        Me.btnSklLagreNyModell.Name = "btnSklLagreNyModell"
-        Me.btnSklLagreNyModell.Size = New System.Drawing.Size(96, 23)
-        Me.btnSklLagreNyModell.TabIndex = 53
-        Me.btnSklLagreNyModell.Text = "Lagre ny modell"
-        Me.btnSklLagreNyModell.UseVisualStyleBackColor = True
+        Me.TabPageSykkeltransport.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPageSykkeltransport.Controls.Add(Me.LabelTransportTilSted)
+        Me.TabPageSykkeltransport.Controls.Add(Me.LabelTransportFraSted)
+        Me.TabPageSykkeltransport.Controls.Add(Me.DataGridViewSykkeltransport)
+        Me.TabPageSykkeltransport.Controls.Add(Me.ComboStedSykkelSkalTil)
+        Me.TabPageSykkeltransport.Controls.Add(Me.ComboSykkelSomSkalTransporteres)
+        Me.TabPageSykkeltransport.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageSykkeltransport.Name = "TabPageSykkeltransport"
+        Me.TabPageSykkeltransport.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPageSykkeltransport.TabIndex = 11
+        Me.TabPageSykkeltransport.Text = "Sykkeltransport"
         '
-        'btnSklLagreOppdatering
+        'DataGridViewSykkeltransport
         '
-        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(192, 224)
-        Me.btnSklLagreOppdatering.Name = "btnSklLagreOppdatering"
-        Me.btnSklLagreOppdatering.Size = New System.Drawing.Size(104, 23)
-        Me.btnSklLagreOppdatering.TabIndex = 54
-        Me.btnSklLagreOppdatering.Text = "Lagre oppdatering"
-        Me.btnSklLagreOppdatering.UseVisualStyleBackColor = True
+        Me.DataGridViewSykkeltransport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewSykkeltransport.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TransportSykkelID, Me.TransportSykkelMerkeOgModell, Me.TransportSykkelFraSted})
+        Me.DataGridViewSykkeltransport.Location = New System.Drawing.Point(144, 104)
+        Me.DataGridViewSykkeltransport.Name = "DataGridViewSykkeltransport"
+        Me.DataGridViewSykkeltransport.Size = New System.Drawing.Size(384, 296)
+        Me.DataGridViewSykkeltransport.TabIndex = 3
         '
-        'btnSklVisSykkelmeny
+        'TransportSykkelID
         '
-        Me.btnSklVisSykkelmeny.Location = New System.Drawing.Point(24, 40)
-        Me.btnSklVisSykkelmeny.Name = "btnSklVisSykkelmeny"
-        Me.btnSklVisSykkelmeny.Size = New System.Drawing.Size(75, 40)
-        Me.btnSklVisSykkelmeny.TabIndex = 8
-        Me.btnSklVisSykkelmeny.Text = "Vis sykkelmeny"
-        Me.btnSklVisSykkelmeny.UseVisualStyleBackColor = True
+        Me.TransportSykkelID.HeaderText = "ID"
+        Me.TransportSykkelID.Name = "TransportSykkelID"
+        Me.TransportSykkelID.Width = 40
+        '
+        'TransportSykkelMerkeOgModell
+        '
+        Me.TransportSykkelMerkeOgModell.HeaderText = "Sykkel"
+        Me.TransportSykkelMerkeOgModell.Name = "TransportSykkelMerkeOgModell"
+        Me.TransportSykkelMerkeOgModell.Width = 200
+        '
+        'TransportSykkelFraSted
+        '
+        Me.TransportSykkelFraSted.HeaderText = "Fra"
+        Me.TransportSykkelFraSted.Name = "TransportSykkelFraSted"
+        '
+        'ComboStedSykkelSkalTil
+        '
+        Me.ComboStedSykkelSkalTil.FormattingEnabled = True
+        Me.ComboStedSykkelSkalTil.Location = New System.Drawing.Point(352, 64)
+        Me.ComboStedSykkelSkalTil.Name = "ComboStedSykkelSkalTil"
+        Me.ComboStedSykkelSkalTil.Size = New System.Drawing.Size(192, 21)
+        Me.ComboStedSykkelSkalTil.TabIndex = 2
+        '
+        'ComboSykkelSomSkalTransporteres
+        '
+        Me.ComboSykkelSomSkalTransporteres.FormattingEnabled = True
+        Me.ComboSykkelSomSkalTransporteres.Location = New System.Drawing.Point(144, 64)
+        Me.ComboSykkelSomSkalTransporteres.Name = "ComboSykkelSomSkalTransporteres"
+        Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
+        Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
+        '
+        'LabelTransportFraSted
+        '
+        Me.LabelTransportFraSted.AutoSize = True
+        Me.LabelTransportFraSted.Location = New System.Drawing.Point(144, 48)
+        Me.LabelTransportFraSted.Name = "LabelTransportFraSted"
+        Me.LabelTransportFraSted.Size = New System.Drawing.Size(76, 13)
+        Me.LabelTransportFraSted.TabIndex = 4
+        Me.LabelTransportFraSted.Text = "Transporter fra"
+        '
+        'LabelTransportTilSted
+        '
+        Me.LabelTransportTilSted.AutoSize = True
+        Me.LabelTransportTilSted.Location = New System.Drawing.Point(352, 48)
+        Me.LabelTransportTilSted.Name = "LabelTransportTilSted"
+        Me.LabelTransportTilSted.Size = New System.Drawing.Size(130, 13)
+        Me.LabelTransportTilSted.TabIndex = 5
+        Me.LabelTransportTilSted.Text = "Transporter valgt sykkel til"
         '
         'Form1
         '
@@ -1870,6 +1956,9 @@ Partial Class Form1
         Me.GroupBoxHvaVilDuGjore.ResumeLayout(False)
         Me.GroupBoxSykkelinformasjon.ResumeLayout(False)
         Me.GroupBoxSykkelinformasjon.PerformLayout()
+        Me.TabPageSykkeltransport.ResumeLayout(False)
+        Me.TabPageSykkeltransport.PerformLayout()
+        CType(Me.DataGridViewSykkeltransport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2047,5 +2136,14 @@ Partial Class Form1
     Friend WithEvents btnSklLagreOppdatering As System.Windows.Forms.Button
     Friend WithEvents btnSklLagreNyModell As System.Windows.Forms.Button
     Friend WithEvents btnSklVisSykkelmeny As System.Windows.Forms.Button
+    Friend WithEvents TabPageSykkeltransport As System.Windows.Forms.TabPage
+    Friend WithEvents DataGridViewSykkeltransport As System.Windows.Forms.DataGridView
+    Friend WithEvents TransportSykkelID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TransportSykkelMerkeOgModell As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TransportSykkelFraSted As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ComboStedSykkelSkalTil As System.Windows.Forms.ComboBox
+    Friend WithEvents LabelTransportTilSted As System.Windows.Forms.Label
+    Friend WithEvents LabelTransportFraSted As System.Windows.Forms.Label
+    Friend WithEvents ComboSykkelSomSkalTransporteres As System.Windows.Forms.ComboBox
 
 End Class
