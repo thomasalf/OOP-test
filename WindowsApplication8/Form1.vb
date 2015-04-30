@@ -358,10 +358,10 @@ Public Class Form1
         Dim kundeID As String = ComboBox8.SelectedText
         Dim SykkelID As Integer ' Må være String for spørringen sin del? 
 
-        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & sykkelID & ")"
+        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles btnBestillinger.Click
         Dim bestillinger As New DataTable
         'Dim rad As DataRow
         Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid,b.kundeID, " _
@@ -370,10 +370,13 @@ Public Class Form1
 & "pdk_kunde k, pdk_ansatt s WHERE b.kundeID = k.kundeID and b.selgerID = s.selgerID;"
 
         bestillinger = query(sql)
-        DataGridView4.DataSource = bestillinger
+        dgvStatistikk.DataSource = bestillinger
+
+        dgvStatistikk.Visible = True
+
     End Sub
 
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles btnAvanse.Click
         Dim avanse As New DataTable
         Dim rad As DataRow
 
