@@ -195,7 +195,7 @@ Public Class Form1
             For teller = 0 To (teller - 1)
                 Dim ComboboxTekst As String
                 Dim row As DataRow = data.Rows(teller)
-                ComboboxTekst = row("merke") & " " & row("modell")
+                ComboboxTekst = row("sykkelID") & " " & row("merke") & " " & row("modell")
                 ComboBox1.Items.Add(ComboboxTekst)
             Next
         Else
@@ -230,7 +230,9 @@ Public Class Form1
         Try
             Dim sykkelnavn As String = ComboBox1.SelectedItem
             Dim status As String = ComboBox4.SelectedItem
+            Dim statusbeskrivelse As String = rtbSykkelstatus.Text
             Dim data As New DataTable
+
 
             Dim sqlHjelp As String = status.Substring(0, status.IndexOf(" "))
             'Lager variabel med bare sykkelmerke, og ikke modell utifra valg i combobox
@@ -242,17 +244,16 @@ Public Class Form1
             'Dim sql As String = "Update pdk_sykkel SET statusID='" & sqlHjelp & "'" & "WHERE merke='" & sykkelnavn.Substring(0, sykkelnavn.IndexOf(" ")) & "';"
             Dim sql As String = "UPDATE pdk_sykkel sy SET sy.statusID = " _
                                 & "(SELECT st.statusID from pdk_status st " _
-                                & "WHERE st.statusnavn = " & "'" & status & "') " _
-                                & "WHERE CONCAT(sy.merke, ' ',sy.modell) = " & "'" & sykkelnavn & "';"
+                                & "WHERE st.statusnavn = " & "'" & status & "'), " _
+                                & "sy.statusbeskrivelse = " & "'" & statusbeskrivelse & "'" _
+                                & "WHERE sy.sykkelID = " & "SUBSTR('" & sykkelnavn & "',1,INSTR('" _
+                                & sykkelnavn & "',' '));"
 
             data = query(sql)
 
         Catch ex As Exception 'Viser feilmelding hvis noe går galt
             MessageBox.Show("Feil: " & ex.Message)
         End Try
-        'Hjelp
-
-        'Vi må hente hver enkelt sykkel her utifra sykkelID, siden vi kan ha flere DBS Intruder f.eks.
 
 
     End Sub
@@ -380,6 +381,7 @@ Public Class Form1
 
         'Ønsker her å hente inn data fra funksjon visBestillingerSQL i StatistikkDAO
         'I tillegg skal bookingprisen inn bakerst
+        'flytte oppkobling til db over til StatistikkDAO
         Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid, b.kundeID, " _
         & "CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt," _
         & "CONCAT( s.fornavn,  ' ', s.etternavn) AS selger FROM pdk_booking b," _

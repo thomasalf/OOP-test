@@ -24,4 +24,7 @@ Public Class StatistikkDAO
         Return sql
     End Function
 
+
+
+
 End Class
