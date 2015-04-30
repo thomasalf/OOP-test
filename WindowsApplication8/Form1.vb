@@ -25,6 +25,9 @@ Public Class Form1
     'Array som lagrer kundeID til bruk under "redigering av kunde"
     Private kundeIDinformasjon() As Double
 
+    'Array som lagrer sykkelID til bruk under "registrere sykkel"
+    Private sykkelIDinformasjon() As Double
+
     'Lagrer ID til kunde som skal redigeres
     Private kundeIDtilRedigering As Integer
 
@@ -415,10 +418,79 @@ Public Class Form1
     End Sub
 
     Private Sub btnUtvideMedNyModell_Click(sender As Object, e As EventArgs) Handles btnUtvideMedNyModell.Click
+        ComboEksisterendeMerker.Items.Clear() 'Fjerner gammel informasjon fra combobox
         ComboEksisterendeMerker.Visible = True
+        Dim data As New DataTable
+        Dim sql As String = "SELECT DISTINCT merke FROM pdk_sykkel"
+        data = query(sql)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med sykkelinformasjon
+            'ReDim sykkelIDinformasjon(data.Rows.Count - 1) 'justerer lengde på array 
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("merke")
+                ComboEksisterendeMerker.Items.Add(ComboboxTekst)
+                'kundeIDinformasjon(teller) = row("kundeID") 'lagrer kundeID i array
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+
     End Sub
 
     Private Sub btnOppdatereEksisterendeSykkel_Click(sender As Object, e As EventArgs) Handles btnOppdatereEksisterendeSykkel.Click
+        ComboEksisterendeSykler.Items.Clear() 'Fjerner gammel informasjon fra combobox
         ComboEksisterendeSykler.Visible = True
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_sykkel"
+        data = query(sql)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med sykkelinformasjon
+            ReDim sykkelIDinformasjon(data.Rows.Count - 1) 'justerer lengde på array 
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("merke")
+                ComboEksisterendeSykler.Items.Add(ComboboxTekst)
+                sykkelIDinformasjon(teller) = row("sykkelID") 'lagrer sykkelID i array
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+
+    End Sub
+
+    Private Sub btnRegistrereNySykkel_Click(sender As Object, e As EventArgs) Handles btnRegistrereNySykkel.Click
+        GroupBoxSykkelinformasjon.Visible = True
+        GroupBoxHvaVilDuGjore.Visible = False
+    End Sub
+
+    Private Sub ComboEksisterendeMerker_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeMerker.SelectedIndexChanged
+        GroupBoxSykkelinformasjon.Visible = True
+        GroupBoxHvaVilDuGjore.Visible = False
+    End Sub
+
+    Private Sub ComboEksisterendeSykler_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeSykler.SelectedIndexChanged
+        GroupBoxSykkelinformasjon.Visible = True
+        GroupBoxHvaVilDuGjore.Visible = False
+    End Sub
+
+    Private Sub btnSklRegistrerEndringer_Click(sender As Object, e As EventArgs) Handles btnSklRegistrerEndringer.Click
+        GroupBoxSykkelinformasjon.Visible = False
+        GroupBoxHvaVilDuGjore.Visible = True
+    End Sub
+
+    Private Sub btnSklSlettSykkel_Click(sender As Object, e As EventArgs) Handles btnSklSlettSykkel.Click
+        GroupBoxSykkelinformasjon.Visible = False
+        GroupBoxHvaVilDuGjore.Visible = True
     End Sub
 End Class

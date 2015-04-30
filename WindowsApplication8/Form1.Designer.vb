@@ -1643,6 +1643,7 @@ Partial Class Form1
         Me.GroupBoxSykkelinformasjon.TabIndex = 6
         Me.GroupBoxSykkelinformasjon.TabStop = False
         Me.GroupBoxSykkelinformasjon.Text = "Sykkelinformasjon"
+        Me.GroupBoxSykkelinformasjon.Visible = False
         '
         'labelSykkel2
         '

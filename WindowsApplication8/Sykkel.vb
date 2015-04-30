@@ -36,12 +36,23 @@
         setSykkelStatus(stat)
     End Sub
 
+    'Setter alle verdier bortsett fra transportør
+    Public Sub New(ByVal mer As String, _
+                       mdl As String, _
+                       typ As String, _
+                       stat As String, _
+                       hjem As String)
+        setSykkelMerke(mer)
+        setSykkelModell(mdl)
+        setSykkelType(typ)
+        setSykkelStatus(stat)
+        setSykkelHjemsted(hjem)
+    End Sub
 
 
 
 
-
-        'Get- og set-funksjoner
+    'Get- og set-funksjoner
     Public Function getSykkelModell() As String
         Return sykkelmodell
     End Function
