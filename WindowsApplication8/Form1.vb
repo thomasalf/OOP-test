@@ -347,7 +347,7 @@ Public Class Form1
 
     End Sub
 
-    '' Regrister Booking
+    'Registrer Booking
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
         Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
@@ -364,6 +364,8 @@ Public Class Form1
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles btnBestillinger.Click
         Dim bestillinger As New DataTable
 
+        'Ønsker her å hente inn data fra funksjon visBestillingerSQL i StatistikkDAO
+        'I tillegg skal bookingprisen inn bakerst
         Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid, b.kundeID, " _
         & "CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt," _
         & "CONCAT( s.fornavn,  ' ', s.etternavn) AS selger FROM pdk_booking b," _
@@ -382,6 +384,8 @@ Public Class Form1
         'Dim rad As DataRow
 
         Dim sql As String = "SELECT * from pdk_ansatt where ansattype = 'Selger'"
+
+
 
         dgvStatistikk.Visible = False
         lstAvanse.Visible = True
