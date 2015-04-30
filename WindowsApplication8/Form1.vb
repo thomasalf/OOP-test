@@ -387,4 +387,16 @@ Public Class Form1
         lstAvanse.Visible = True
 
     End Sub
+
+    Private Sub ButtonSlettKunde_Click(sender As Object, e As EventArgs) Handles ButtonSlettKunde.Click
+        Try
+            personDAO.query(personDAO.slettKundedataSQL(kundeIDtilRedigering))
+            MsgBox("Kunden er slettet fra databasen.")
+            ComboBoxRegistrerteKunder.Items.Clear() 'Fjerner gammel informasjon fra combobox
+            ComboBoxRegistrerteKunder.Text = "Registrerte kunder"
+            clearGroupbox(GroupBox3)
+        Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+            MessageBox.Show("Feil: " & ex.Message)
+        End Try
+    End Sub
 End Class

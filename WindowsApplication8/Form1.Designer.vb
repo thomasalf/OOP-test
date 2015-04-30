@@ -151,6 +151,7 @@ Partial Class Form1
         Me.lstSokResult = New System.Windows.Forms.ListBox()
         Me.txtUniversalSok = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.lstAvanse = New System.Windows.Forms.ListBox()
         Me.btnAvanse = New System.Windows.Forms.Button()
         Me.btnBestillinger = New System.Windows.Forms.Button()
         Me.dgvStatistikk = New System.Windows.Forms.DataGridView()
@@ -168,7 +169,7 @@ Partial Class Form1
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.lstAvanse = New System.Windows.Forms.ListBox()
+        Me.ButtonSlettKunde = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -886,6 +887,7 @@ Partial Class Form1
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.ButtonSlettKunde)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.Label17)
@@ -1044,7 +1046,7 @@ Partial Class Form1
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(76, 220)
+        Me.Button6.Location = New System.Drawing.Point(24, 224)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(92, 23)
         Me.Button6.TabIndex = 29
@@ -1060,7 +1062,7 @@ Partial Class Form1
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(192, 220)
+        Me.Button7.Location = New System.Drawing.Point(128, 224)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(92, 23)
         Me.Button7.TabIndex = 28
@@ -1393,6 +1395,15 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 9
         Me.TabPage2.Text = "TabPage10Statistikk"
         '
+        'lstAvanse
+        '
+        Me.lstAvanse.FormattingEnabled = True
+        Me.lstAvanse.Location = New System.Drawing.Point(57, 173)
+        Me.lstAvanse.Name = "lstAvanse"
+        Me.lstAvanse.Size = New System.Drawing.Size(844, 342)
+        Me.lstAvanse.TabIndex = 3
+        Me.lstAvanse.Visible = False
+        '
         'btnAvanse
         '
         Me.btnAvanse.Location = New System.Drawing.Point(46, 103)
@@ -1514,14 +1525,14 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
         '
-        'lstAvanse
+        'ButtonSlettKunde
         '
-        Me.lstAvanse.FormattingEnabled = True
-        Me.lstAvanse.Location = New System.Drawing.Point(57, 173)
-        Me.lstAvanse.Name = "lstAvanse"
-        Me.lstAvanse.Size = New System.Drawing.Size(844, 342)
-        Me.lstAvanse.TabIndex = 3
-        Me.lstAvanse.Visible = False
+        Me.ButtonSlettKunde.Location = New System.Drawing.Point(240, 224)
+        Me.ButtonSlettKunde.Name = "ButtonSlettKunde"
+        Me.ButtonSlettKunde.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonSlettKunde.TabIndex = 39
+        Me.ButtonSlettKunde.Text = "Slett kunde"
+        Me.ButtonSlettKunde.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1719,5 +1730,6 @@ Partial Class Form1
     Friend WithEvents btnBestillinger As System.Windows.Forms.Button
     Friend WithEvents dgvStatistikk As System.Windows.Forms.DataGridView
     Friend WithEvents lstAvanse As System.Windows.Forms.ListBox
+    Friend WithEvents ButtonSlettKunde As System.Windows.Forms.Button
 
 End Class
