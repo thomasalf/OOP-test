@@ -1,12 +1,30 @@
 ﻿Public Class Statistikk
 
+    'Jeg ønsker her å hente data fra sql'er i StatistikkDAO 
+    '(Her må også de riktige verdiene plukkes ut, 
+    'putte inn her og få ut riktig pris og utstpris, som igjen kan hentes ut i statistikk
+
+    Private prisnokkel As Integer = 0
+
+    'Setter prisnøkkel 
+    'Public Sub New(ByVal pn As integer)
+    'setPrisnokkel(pn) - HER FÅR JEG PROBLEM, IKKE ACCESSIBLE
+    ' End Sub
+
+    'Get- og set-funksjoner
+    Public Function getPrisnokkel() As String
+        Return prisnokkel
+    End Function
+
+
+
     'Konstant dagspris for sykkelleie
     Const dagspris As Integer = 500
     Private inntid, uttid As Date
 
     'Funksjon for å finne prisen for en sykkelbestilling
     'Må bytte ut prosentkonstanter her med tallene fra prisnøkkeltabellen
-    Public Function leieprisSykkel(ByVal pris As Double)
+    Public Function leieprisSykkel(ByVal pris As Integer)
 
         Dim prisnokkel As Integer
 
@@ -26,9 +44,9 @@
 
     'Funksjon for å hente finne prisen for et utstyrsleie
     'Må hente pris fra tabell pdk_Ekstrautstyr
-    Public Function leieprisUtstyr(ByVal utsPris As Double)
+    Public Function leieprisUtstyr(ByVal utsPris As Integer)
 
-        Dim utstyrpris As Double = 0
+        Dim utstyrpris As Integer = 0
 
         utsPris = utstyrpris * (uttid.Day - inntid.Day)
         Return utsPris
