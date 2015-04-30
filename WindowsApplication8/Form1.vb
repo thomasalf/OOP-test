@@ -194,7 +194,7 @@ Public Class Form1
             For teller = 0 To (teller - 1)
                 Dim ComboboxTekst As String
                 Dim row As DataRow = data.Rows(teller)
-                ComboboxTekst = row("merke") & " " & row("modell")
+                ComboboxTekst = row("sykkelID") & " " & row("merke") & " " & row("modell")
                 ComboBox1.Items.Add(ComboboxTekst)
             Next
         Else
@@ -245,16 +245,14 @@ Public Class Form1
                                 & "(SELECT st.statusID from pdk_status st " _
                                 & "WHERE st.statusnavn = " & "'" & status & "'), " _
                                 & "sy.statusbeskrivelse = " & "'" & statusbeskrivelse & "'" _
-                                & "WHERE CONCAT(sy.merke, ' ',sy.modell) = " & "'" & sykkelnavn & "';"
+                                & "WHERE sy.sykkelID = " & "SUBSTR('" & sykkelnavn & "',1,INSTR('" _
+                                & sykkelnavn & "',' '));"
 
             data = query(sql)
 
         Catch ex As Exception 'Viser feilmelding hvis noe går galt
             MessageBox.Show("Feil: " & ex.Message)
         End Try
-        'Hjelp
-
-        'Vi må hente hver enkelt sykkel her utifra sykkelID, siden vi kan ha flere DBS Intruder f.eks.
 
 
     End Sub
