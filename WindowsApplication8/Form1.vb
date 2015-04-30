@@ -5,6 +5,7 @@ Imports System.Data.SqlClient
 
 Public Class Form1
     Private personDAO As New PersonDAO
+    Private sykkelDAO As New SykkelDAO
 
     'funksjon som tømmer groupbox
     Private Sub clearGroupbox(ByVal Gruppeboksnavn As GroupBox)
@@ -426,7 +427,6 @@ Public Class Form1
 
 
         If data.Rows.Count >= 1 Then 'Fyller combobox med sykkelinformasjon
-            'ReDim sykkelIDinformasjon(data.Rows.Count - 1) 'justerer lengde på array 
             Dim teller As Integer
             teller = data.Rows.Count
 
@@ -435,7 +435,6 @@ Public Class Form1
                 Dim row As DataRow = data.Rows(teller)
                 ComboboxTekst = row("merke")
                 ComboEksisterendeMerker.Items.Add(ComboboxTekst)
-                'kundeIDinformasjon(teller) = row("kundeID") 'lagrer kundeID i array
             Next
         Else
             MsgBox("Ingen informasjon funnet.")
@@ -470,27 +469,134 @@ Public Class Form1
     End Sub
 
     Private Sub btnRegistrereNySykkel_Click(sender As Object, e As EventArgs) Handles btnRegistrereNySykkel.Click
-        GroupBoxSykkelinformasjon.Visible = True
         GroupBoxHvaVilDuGjore.Visible = False
+        btnSklLagreNyModell.Visible = False
+        btnSklLagreOppdatering.Visible = False
+        btnSklRegistrerEndringer.Visible = True
+        GroupBoxSykkelinformasjon.Visible = True
+
+        'START: fyll "status"-combobox
+        ComboVelgStatus.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_status"
+        data = query(sql)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med statusinformasjon
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("statusnavn")
+                ComboVelgStatus.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+        'SLUTT: fyll "status"-combobox
+
+
+        'Start: fyll "tilhørighet"-combobox
+        ComboVelgHjemsted.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim data2 As New DataTable
+        Dim sql2 As String = "SELECT DISTINCT stedsnavn, postnr FROM pdk_sted"
+        data = query(sql2)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med statusinformasjon
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("postnr") & " " & row("stedsnavn")
+                ComboVelgHjemsted.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+        'Slutt: fyll "tilhørighet"-combobox
+
+
+        'Start: fyll "transportør"-combobox
+        ComboVelgTransportor.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim data3 As New DataTable
+        Dim sql3 As String = "SELECT * FROM pdk_transportor"
+        data = query(sql3)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med statusinformasjon
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("transportornavn")
+                ComboVelgTransportor.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+        'Slutt: fyll "transportør"-combobox
+
     End Sub
 
     Private Sub ComboEksisterendeMerker_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeMerker.SelectedIndexChanged
-        GroupBoxSykkelinformasjon.Visible = True
         GroupBoxHvaVilDuGjore.Visible = False
+        btnSklLagreNyModell.Visible = True
+        btnSklLagreOppdatering.Visible = False
+        btnSklRegistrerEndringer.Visible = False
+        GroupBoxSykkelinformasjon.Visible = True
     End Sub
 
     Private Sub ComboEksisterendeSykler_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeSykler.SelectedIndexChanged
-        GroupBoxSykkelinformasjon.Visible = True
         GroupBoxHvaVilDuGjore.Visible = False
+        btnSklLagreNyModell.Visible = False
+        btnSklLagreOppdatering.Visible = True
+        btnSklRegistrerEndringer.Visible = False
+        GroupBoxSykkelinformasjon.Visible = True
     End Sub
 
     Private Sub btnSklRegistrerEndringer_Click(sender As Object, e As EventArgs) Handles btnSklRegistrerEndringer.Click
         GroupBoxSykkelinformasjon.Visible = False
         GroupBoxHvaVilDuGjore.Visible = True
+
+
+
+        'START: TESTKODE
+        Try
+            'Bruker tekstboksdata for å opprette ny sykkel (bruker klassen "Sykkel")
+            Dim sykkel As New Sykkel(TextBoxSkl1.Text, TextBoxSkl2.Text, _
+                                   TextBoxSkl3.Text, ComboVelgStatus.SelectedValue, _
+                                           ComboVelgHjemsted.SelectedValue, ComboVelgTransportor.SelectedValue)
+            'bruker data fra opprettet sykkel for å lage SQL-spørring
+            sykkelDAO.query(sykkelDAO.lagreSykkeldataSQL(sykkel))
+            MsgBox("Ny sykkel er opprettet")
+        Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+            MessageBox.Show("Feil: " & ex.Message)
+        End Try
+        'SLUTT: TESTKODE
+
     End Sub
 
     Private Sub btnSklSlettSykkel_Click(sender As Object, e As EventArgs) Handles btnSklSlettSykkel.Click
         GroupBoxSykkelinformasjon.Visible = False
         GroupBoxHvaVilDuGjore.Visible = True
+
+    End Sub
+
+    Private Sub btnSklLagreNyModell_Click(sender As Object, e As EventArgs) Handles btnSklLagreNyModell.Click
+
+    End Sub
+
+    Private Sub btnSklVisSykkelmeny_Click(sender As Object, e As EventArgs) Handles btnSklVisSykkelmeny.Click
+        GroupBoxHvaVilDuGjore.Visible = True
+        GroupBoxSykkelinformasjon.Visible = False
+        ComboEksisterendeMerker.Visible = False
+        ComboEksisterendeSykler.Visible = False
     End Sub
 End Class
