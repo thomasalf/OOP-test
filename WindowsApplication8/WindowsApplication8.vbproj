@@ -104,6 +104,7 @@
     <Compile Include="PersonDAO.vb" />
     <Compile Include="StatistikkDAO.vb" />
     <Compile Include="Statistikk.vb" />
+    <Compile Include="Sykkel.vb" />
     <Compile Include="utstyr.vb" />
   </ItemGroup>
   <ItemGroup>
