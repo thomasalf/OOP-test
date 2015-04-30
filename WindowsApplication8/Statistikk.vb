@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Configuration
 
-Public Class StatistikkDAO
+Public Class Statistikk
 
     Public Function visBestillingerSQL(utdata As String)
         Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid,b.kundeID, " _
