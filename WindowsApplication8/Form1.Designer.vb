@@ -170,6 +170,7 @@ Partial Class Form1
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ButtonSlettKunde = New System.Windows.Forms.Button()
+        Me.TabPageSykkelregistrering = New System.Windows.Forms.TabPage()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -210,6 +211,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage8Hovedmeny)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPageSykkelregistrering)
         Me.TabControl1.Location = New System.Drawing.Point(12, 8)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -296,6 +298,7 @@ Partial Class Form1
         'TabPage2Medlemsinfo
         '
         Me.TabPage2Medlemsinfo.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage2Medlemsinfo.Controls.Add(Me.Panel1)
         Me.TabPage2Medlemsinfo.Controls.Add(Me.GroupBox7)
         Me.TabPage2Medlemsinfo.Controls.Add(Me.Button11)
         Me.TabPage2Medlemsinfo.Cursor = System.Windows.Forms.Cursors.Default
@@ -1436,7 +1439,7 @@ Partial Class Form1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel1.Controls.Add(Me.MenuStrip1)
-        Me.Panel1.Location = New System.Drawing.Point(-1, 29)
+        Me.Panel1.Location = New System.Drawing.Point(0, 450)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1235, 30)
         Me.Panel1.TabIndex = 1
@@ -1534,12 +1537,20 @@ Partial Class Form1
         Me.ButtonSlettKunde.Text = "Slett kunde"
         Me.ButtonSlettKunde.UseVisualStyleBackColor = True
         '
+        'TabPageSykkelregistrering
+        '
+        Me.TabPageSykkelregistrering.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageSykkelregistrering.Name = "TabPageSykkelregistrering"
+        Me.TabPageSykkelregistrering.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPageSykkelregistrering.TabIndex = 10
+        Me.TabPageSykkelregistrering.Text = "Sykkelregistrering"
+        Me.TabPageSykkelregistrering.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1227, 598)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TabControl1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
@@ -1731,5 +1742,6 @@ Partial Class Form1
     Friend WithEvents dgvStatistikk As System.Windows.Forms.DataGridView
     Friend WithEvents lstAvanse As System.Windows.Forms.ListBox
     Friend WithEvents ButtonSlettKunde As System.Windows.Forms.Button
+    Friend WithEvents TabPageSykkelregistrering As System.Windows.Forms.TabPage
 
 End Class
