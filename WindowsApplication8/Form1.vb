@@ -226,7 +226,9 @@ Public Class Form1
         Try
             Dim sykkelnavn As String = ComboBox1.SelectedItem
             Dim status As String = ComboBox4.SelectedItem
+            Dim statusbeskrivelse As String = rtbSykkelstatus.Text
             Dim data As New DataTable
+
 
             Dim sqlHjelp As String = status.Substring(0, status.IndexOf(" "))
             'Lager variabel med bare sykkelmerke, og ikke modell utifra valg i combobox
@@ -238,7 +240,8 @@ Public Class Form1
             'Dim sql As String = "Update pdk_sykkel SET statusID='" & sqlHjelp & "'" & "WHERE merke='" & sykkelnavn.Substring(0, sykkelnavn.IndexOf(" ")) & "';"
             Dim sql As String = "UPDATE pdk_sykkel sy SET sy.statusID = " _
                                 & "(SELECT st.statusID from pdk_status st " _
-                                & "WHERE st.statusnavn = " & "'" & status & "') " _
+                                & "WHERE st.statusnavn = " & "'" & status & "'), " _
+                                & "sy.statusbeskrivelse = " & "'" & statusbeskrivelse & "'" _
                                 & "WHERE CONCAT(sy.merke, ' ',sy.modell) = " & "'" & sykkelnavn & "';"
 
             data = query(sql)
