@@ -95,7 +95,7 @@
         If tran.Length <= 0 Or IsNumeric(tran) = False Then 'sjekker at transportørID består av tall og har riktig lengde
             Throw New Exception("Ugyldig transportørID")
         Else
-            sykkeltransportør = tran
+            sykkeltransportor = tran
         End If
     End Sub
 
