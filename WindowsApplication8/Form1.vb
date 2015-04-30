@@ -380,6 +380,7 @@ Public Class Form1
 
         'Ønsker her å hente inn data fra funksjon visBestillingerSQL i StatistikkDAO
         'I tillegg skal bookingprisen inn bakerst
+        'flytte oppkobling til db over til StatistikkDAO
         Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid, b.kundeID, " _
         & "CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt," _
         & "CONCAT( s.fornavn,  ' ', s.etternavn) AS selger FROM pdk_booking b," _
