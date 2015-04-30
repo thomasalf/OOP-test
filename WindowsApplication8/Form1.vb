@@ -223,22 +223,32 @@ Public Class Form1
     End Sub
 
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
-        Dim sykkelnavn As String = ComboBox1.SelectedItem
-        Dim status As String = ComboBox4.SelectedItem
-        Dim data As New DataTable
+        Try
+            Dim sykkelnavn As String = ComboBox1.SelectedItem
+            Dim status As String = ComboBox4.SelectedItem
+            Dim data As New DataTable
 
-        Dim sqlHjelp As String = status.Substring(0, status.IndexOf(" "))
-        'LAger variabel med bare sykkelmerke, og ikke modell utifra valg i combobox
-        'Dim sykkelnavnMerke As String() = sykkelnavn.Split(" ") 'sykkelnavnMerke(0) angir kun første ordet i setiningen
-        'MsgBox(sykkelnavn.Substring(0, sykkelnavn.IndexOf(" ")))
+            Dim sqlHjelp As String = status.Substring(0, status.IndexOf(" "))
+            'Lager variabel med bare sykkelmerke, og ikke modell utifra valg i combobox
+            'Dim sykkelnavnMerke As String() = sykkelnavn.Split(" ") 'sykkelnavnMerke(0) angir kun første ordet i setiningen
+            'MsgBox(sykkelnavn.Substring(0, sykkelnavn.IndexOf(" ")))
 
-        'sykkelnavn.Substring(0, sykkelnavn.IndexOf(" "))
+            'sykkelnavn.Substring(0, sykkelnavn.IndexOf(" "))
 
-        Dim sql As String = "Update pdk_sykkel SET statusID='" & sqlHjelp & "'" & "WHERE merke='" & sykkelnavn.Substring(0, sykkelnavn.IndexOf(" ")) & "';"
-        data = query(sql)
+            'Dim sql As String = "Update pdk_sykkel SET statusID='" & sqlHjelp & "'" & "WHERE merke='" & sykkelnavn.Substring(0, sykkelnavn.IndexOf(" ")) & "';"
+            Dim sql As String = "UPDATE pdk_sykkel sy SET sy.statusID = " _
+                                & "(SELECT st.statusID from pdk_status st " _
+                                & "WHERE st.statusnavn = " & "'" & status & "') " _
+                                & "WHERE CONCAT(sy.merke, ' ',sy.modell) = " & "'" & sykkelnavn & "';"
+
+            data = query(sql)
+
+        Catch ex As Exception 'Viser feilmelding hvis noe går galt
+            MessageBox.Show("Feil: " & ex.Message)
+        End Try
         'Hjelp
 
-
+        'Vi må hente hver enkelt sykkel her utifra sykkelID, siden vi kan ha flere DBS Intruder f.eks.
 
 
     End Sub
