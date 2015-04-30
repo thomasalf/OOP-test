@@ -413,4 +413,12 @@ Public Class Form1
             MessageBox.Show("Feil: " & ex.Message)
         End Try
     End Sub
+
+    Private Sub btnUtvideMedNyModell_Click(sender As Object, e As EventArgs) Handles btnUtvideMedNyModell.Click
+        ComboEksisterendeMerker.Visible = True
+    End Sub
+
+    Private Sub btnOppdatereEksisterendeSykkel_Click(sender As Object, e As EventArgs) Handles btnOppdatereEksisterendeSykkel.Click
+        ComboEksisterendeSykler.Visible = True
+    End Sub
 End Class

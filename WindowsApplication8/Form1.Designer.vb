@@ -173,10 +173,26 @@ Partial Class Form1
         Me.TabPageSykkelregistrering = New System.Windows.Forms.TabPage()
         Me.btnRegistrereNySykkel = New System.Windows.Forms.Button()
         Me.ComboEksisterendeMerker = New System.Windows.Forms.ComboBox()
-        Me.labelSykkel1 = New System.Windows.Forms.Label()
         Me.btnUtvideMedNyModell = New System.Windows.Forms.Button()
         Me.btnOppdatereEksisterendeSykkel = New System.Windows.Forms.Button()
-        Me.ComboBoxEksisterendeSykler = New System.Windows.Forms.ComboBox()
+        Me.ComboEksisterendeSykler = New System.Windows.Forms.ComboBox()
+        Me.GroupBoxSykkelinformasjon = New System.Windows.Forms.GroupBox()
+        Me.labelSykkel2 = New System.Windows.Forms.Label()
+        Me.labelSykkel3 = New System.Windows.Forms.Label()
+        Me.labelSykkel4 = New System.Windows.Forms.Label()
+        Me.labelSykkel5 = New System.Windows.Forms.Label()
+        Me.labelSykkel6 = New System.Windows.Forms.Label()
+        Me.labelSykkel7 = New System.Windows.Forms.Label()
+        Me.TextBoxSkl1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxSkl2 = New System.Windows.Forms.TextBox()
+        Me.btnSklNullUtSkjema = New System.Windows.Forms.Button()
+        Me.TextBoxSkl3 = New System.Windows.Forms.TextBox()
+        Me.btnSklRegistrerEndringer = New System.Windows.Forms.Button()
+        Me.ComboVelgStatus = New System.Windows.Forms.ComboBox()
+        Me.ComboVelgHjemsted = New System.Windows.Forms.ComboBox()
+        Me.ComboVelgTransportor = New System.Windows.Forms.ComboBox()
+        Me.GroupBoxHvaVilDuGjore = New System.Windows.Forms.GroupBox()
+        Me.btnSklSlettSykkel = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -204,6 +220,8 @@ Partial Class Form1
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabPageSykkelregistrering.SuspendLayout()
+        Me.GroupBoxSykkelinformasjon.SuspendLayout()
+        Me.GroupBoxHvaVilDuGjore.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -1547,12 +1565,8 @@ Partial Class Form1
         'TabPageSykkelregistrering
         '
         Me.TabPageSykkelregistrering.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPageSykkelregistrering.Controls.Add(Me.btnOppdatereEksisterendeSykkel)
-        Me.TabPageSykkelregistrering.Controls.Add(Me.ComboBoxEksisterendeSykler)
-        Me.TabPageSykkelregistrering.Controls.Add(Me.btnUtvideMedNyModell)
-        Me.TabPageSykkelregistrering.Controls.Add(Me.labelSykkel1)
-        Me.TabPageSykkelregistrering.Controls.Add(Me.ComboEksisterendeMerker)
-        Me.TabPageSykkelregistrering.Controls.Add(Me.btnRegistrereNySykkel)
+        Me.TabPageSykkelregistrering.Controls.Add(Me.GroupBoxHvaVilDuGjore)
+        Me.TabPageSykkelregistrering.Controls.Add(Me.GroupBoxSykkelinformasjon)
         Me.TabPageSykkelregistrering.Location = New System.Drawing.Point(4, 22)
         Me.TabPageSykkelregistrering.Name = "TabPageSykkelregistrering"
         Me.TabPageSykkelregistrering.Size = New System.Drawing.Size(1195, 552)
@@ -1561,7 +1575,7 @@ Partial Class Form1
         '
         'btnRegistrereNySykkel
         '
-        Me.btnRegistrereNySykkel.Location = New System.Drawing.Point(160, 56)
+        Me.btnRegistrereNySykkel.Location = New System.Drawing.Point(8, 24)
         Me.btnRegistrereNySykkel.Name = "btnRegistrereNySykkel"
         Me.btnRegistrereNySykkel.Size = New System.Drawing.Size(144, 40)
         Me.btnRegistrereNySykkel.TabIndex = 0
@@ -1571,24 +1585,16 @@ Partial Class Form1
         'ComboEksisterendeMerker
         '
         Me.ComboEksisterendeMerker.FormattingEnabled = True
-        Me.ComboEksisterendeMerker.Location = New System.Drawing.Point(312, 112)
+        Me.ComboEksisterendeMerker.Location = New System.Drawing.Point(160, 80)
         Me.ComboEksisterendeMerker.Name = "ComboEksisterendeMerker"
         Me.ComboEksisterendeMerker.Size = New System.Drawing.Size(240, 21)
         Me.ComboEksisterendeMerker.TabIndex = 1
         Me.ComboEksisterendeMerker.Text = "Velg merke som skal utvides med ny modell"
-        '
-        'labelSykkel1
-        '
-        Me.labelSykkel1.AutoSize = True
-        Me.labelSykkel1.Location = New System.Drawing.Point(160, 32)
-        Me.labelSykkel1.Name = "labelSykkel1"
-        Me.labelSykkel1.Size = New System.Drawing.Size(87, 13)
-        Me.labelSykkel1.TabIndex = 2
-        Me.labelSykkel1.Text = "Hva vil du gjøre?"
+        Me.ComboEksisterendeMerker.Visible = False
         '
         'btnUtvideMedNyModell
         '
-        Me.btnUtvideMedNyModell.Location = New System.Drawing.Point(160, 104)
+        Me.btnUtvideMedNyModell.Location = New System.Drawing.Point(8, 72)
         Me.btnUtvideMedNyModell.Name = "btnUtvideMedNyModell"
         Me.btnUtvideMedNyModell.Size = New System.Drawing.Size(144, 40)
         Me.btnUtvideMedNyModell.TabIndex = 3
@@ -1597,21 +1603,189 @@ Partial Class Form1
         '
         'btnOppdatereEksisterendeSykkel
         '
-        Me.btnOppdatereEksisterendeSykkel.Location = New System.Drawing.Point(160, 152)
+        Me.btnOppdatereEksisterendeSykkel.Location = New System.Drawing.Point(8, 120)
         Me.btnOppdatereEksisterendeSykkel.Name = "btnOppdatereEksisterendeSykkel"
         Me.btnOppdatereEksisterendeSykkel.Size = New System.Drawing.Size(144, 40)
         Me.btnOppdatereEksisterendeSykkel.TabIndex = 5
         Me.btnOppdatereEksisterendeSykkel.Text = "Oppdatere eksisterende sykkel"
         Me.btnOppdatereEksisterendeSykkel.UseVisualStyleBackColor = True
         '
-        'ComboBoxEksisterendeSykler
+        'ComboEksisterendeSykler
         '
-        Me.ComboBoxEksisterendeSykler.FormattingEnabled = True
-        Me.ComboBoxEksisterendeSykler.Location = New System.Drawing.Point(312, 160)
-        Me.ComboBoxEksisterendeSykler.Name = "ComboBoxEksisterendeSykler"
-        Me.ComboBoxEksisterendeSykler.Size = New System.Drawing.Size(240, 21)
-        Me.ComboBoxEksisterendeSykler.TabIndex = 4
-        Me.ComboBoxEksisterendeSykler.Text = "Velg sykkel som skal oppdateres"
+        Me.ComboEksisterendeSykler.FormattingEnabled = True
+        Me.ComboEksisterendeSykler.Location = New System.Drawing.Point(160, 128)
+        Me.ComboEksisterendeSykler.Name = "ComboEksisterendeSykler"
+        Me.ComboEksisterendeSykler.Size = New System.Drawing.Size(240, 21)
+        Me.ComboEksisterendeSykler.TabIndex = 4
+        Me.ComboEksisterendeSykler.Text = "Velg sykkel som skal oppdateres"
+        Me.ComboEksisterendeSykler.Visible = False
+        '
+        'GroupBoxSykkelinformasjon
+        '
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklSlettSykkel)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboVelgTransportor)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboVelgHjemsted)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboVelgStatus)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel2)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel3)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel4)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel5)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel6)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel7)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.TextBoxSkl1)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.TextBoxSkl2)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklNullUtSkjema)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.TextBoxSkl3)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklRegistrerEndringer)
+        Me.GroupBoxSykkelinformasjon.Location = New System.Drawing.Point(160, 224)
+        Me.GroupBoxSykkelinformasjon.Name = "GroupBoxSykkelinformasjon"
+        Me.GroupBoxSykkelinformasjon.Size = New System.Drawing.Size(432, 248)
+        Me.GroupBoxSykkelinformasjon.TabIndex = 6
+        Me.GroupBoxSykkelinformasjon.TabStop = False
+        Me.GroupBoxSykkelinformasjon.Text = "Sykkelinformasjon"
+        '
+        'labelSykkel2
+        '
+        Me.labelSykkel2.AutoSize = True
+        Me.labelSykkel2.Location = New System.Drawing.Point(80, 16)
+        Me.labelSykkel2.Name = "labelSykkel2"
+        Me.labelSykkel2.Size = New System.Drawing.Size(37, 13)
+        Me.labelSykkel2.TabIndex = 37
+        Me.labelSykkel2.Text = "Merke"
+        '
+        'labelSykkel3
+        '
+        Me.labelSykkel3.AutoSize = True
+        Me.labelSykkel3.Location = New System.Drawing.Point(80, 40)
+        Me.labelSykkel3.Name = "labelSykkel3"
+        Me.labelSykkel3.Size = New System.Drawing.Size(38, 13)
+        Me.labelSykkel3.TabIndex = 38
+        Me.labelSykkel3.Text = "Modell"
+        '
+        'labelSykkel4
+        '
+        Me.labelSykkel4.AutoSize = True
+        Me.labelSykkel4.Location = New System.Drawing.Point(80, 64)
+        Me.labelSykkel4.Name = "labelSykkel4"
+        Me.labelSykkel4.Size = New System.Drawing.Size(31, 13)
+        Me.labelSykkel4.TabIndex = 39
+        Me.labelSykkel4.Text = "Type"
+        '
+        'labelSykkel5
+        '
+        Me.labelSykkel5.AutoSize = True
+        Me.labelSykkel5.Location = New System.Drawing.Point(80, 96)
+        Me.labelSykkel5.Name = "labelSykkel5"
+        Me.labelSykkel5.Size = New System.Drawing.Size(37, 13)
+        Me.labelSykkel5.TabIndex = 40
+        Me.labelSykkel5.Text = "Status"
+        '
+        'labelSykkel6
+        '
+        Me.labelSykkel6.AutoSize = True
+        Me.labelSykkel6.Location = New System.Drawing.Point(80, 120)
+        Me.labelSykkel6.Name = "labelSykkel6"
+        Me.labelSykkel6.Size = New System.Drawing.Size(56, 13)
+        Me.labelSykkel6.TabIndex = 41
+        Me.labelSykkel6.Text = "Tilhørighet"
+        '
+        'labelSykkel7
+        '
+        Me.labelSykkel7.AutoSize = True
+        Me.labelSykkel7.Location = New System.Drawing.Point(80, 144)
+        Me.labelSykkel7.Name = "labelSykkel7"
+        Me.labelSykkel7.Size = New System.Drawing.Size(61, 13)
+        Me.labelSykkel7.TabIndex = 42
+        Me.labelSykkel7.Text = "Transportør"
+        '
+        'TextBoxSkl1
+        '
+        Me.TextBoxSkl1.Location = New System.Drawing.Point(144, 16)
+        Me.TextBoxSkl1.Name = "TextBoxSkl1"
+        Me.TextBoxSkl1.Size = New System.Drawing.Size(136, 20)
+        Me.TextBoxSkl1.TabIndex = 43
+        '
+        'TextBoxSkl2
+        '
+        Me.TextBoxSkl2.Location = New System.Drawing.Point(144, 40)
+        Me.TextBoxSkl2.Name = "TextBoxSkl2"
+        Me.TextBoxSkl2.Size = New System.Drawing.Size(136, 20)
+        Me.TextBoxSkl2.TabIndex = 44
+        '
+        'btnSklNullUtSkjema
+        '
+        Me.btnSklNullUtSkjema.Location = New System.Drawing.Point(88, 207)
+        Me.btnSklNullUtSkjema.Name = "btnSklNullUtSkjema"
+        Me.btnSklNullUtSkjema.Size = New System.Drawing.Size(92, 23)
+        Me.btnSklNullUtSkjema.TabIndex = 49
+        Me.btnSklNullUtSkjema.Text = "Null ut skjema"
+        Me.btnSklNullUtSkjema.UseVisualStyleBackColor = True
+        '
+        'TextBoxSkl3
+        '
+        Me.TextBoxSkl3.Location = New System.Drawing.Point(144, 64)
+        Me.TextBoxSkl3.Name = "TextBoxSkl3"
+        Me.TextBoxSkl3.Size = New System.Drawing.Size(136, 20)
+        Me.TextBoxSkl3.TabIndex = 45
+        '
+        'btnSklRegistrerEndringer
+        '
+        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(204, 207)
+        Me.btnSklRegistrerEndringer.Name = "btnSklRegistrerEndringer"
+        Me.btnSklRegistrerEndringer.Size = New System.Drawing.Size(92, 23)
+        Me.btnSklRegistrerEndringer.TabIndex = 48
+        Me.btnSklRegistrerEndringer.Text = "Registrer"
+        Me.btnSklRegistrerEndringer.UseVisualStyleBackColor = True
+        '
+        'ComboVelgStatus
+        '
+        Me.ComboVelgStatus.FormattingEnabled = True
+        Me.ComboVelgStatus.Location = New System.Drawing.Point(144, 96)
+        Me.ComboVelgStatus.Name = "ComboVelgStatus"
+        Me.ComboVelgStatus.Size = New System.Drawing.Size(136, 21)
+        Me.ComboVelgStatus.TabIndex = 7
+        Me.ComboVelgStatus.Text = "Velg status"
+        '
+        'ComboVelgHjemsted
+        '
+        Me.ComboVelgHjemsted.FormattingEnabled = True
+        Me.ComboVelgHjemsted.Location = New System.Drawing.Point(144, 120)
+        Me.ComboVelgHjemsted.Name = "ComboVelgHjemsted"
+        Me.ComboVelgHjemsted.Size = New System.Drawing.Size(136, 21)
+        Me.ComboVelgHjemsted.TabIndex = 50
+        Me.ComboVelgHjemsted.Text = "Velg hjemsted"
+        '
+        'ComboVelgTransportor
+        '
+        Me.ComboVelgTransportor.FormattingEnabled = True
+        Me.ComboVelgTransportor.Location = New System.Drawing.Point(144, 144)
+        Me.ComboVelgTransportor.Name = "ComboVelgTransportor"
+        Me.ComboVelgTransportor.Size = New System.Drawing.Size(136, 21)
+        Me.ComboVelgTransportor.TabIndex = 51
+        Me.ComboVelgTransportor.Text = "Velg transportør"
+        '
+        'GroupBoxHvaVilDuGjore
+        '
+        Me.GroupBoxHvaVilDuGjore.Controls.Add(Me.btnRegistrereNySykkel)
+        Me.GroupBoxHvaVilDuGjore.Controls.Add(Me.ComboEksisterendeMerker)
+        Me.GroupBoxHvaVilDuGjore.Controls.Add(Me.btnOppdatereEksisterendeSykkel)
+        Me.GroupBoxHvaVilDuGjore.Controls.Add(Me.btnUtvideMedNyModell)
+        Me.GroupBoxHvaVilDuGjore.Controls.Add(Me.ComboEksisterendeSykler)
+        Me.GroupBoxHvaVilDuGjore.Location = New System.Drawing.Point(160, 24)
+        Me.GroupBoxHvaVilDuGjore.Name = "GroupBoxHvaVilDuGjore"
+        Me.GroupBoxHvaVilDuGjore.Size = New System.Drawing.Size(432, 200)
+        Me.GroupBoxHvaVilDuGjore.TabIndex = 7
+        Me.GroupBoxHvaVilDuGjore.TabStop = False
+        Me.GroupBoxHvaVilDuGjore.Text = "Hva vil du gjøre?"
+        '
+        'btnSklSlettSykkel
+        '
+        Me.btnSklSlettSykkel.Location = New System.Drawing.Point(312, 208)
+        Me.btnSklSlettSykkel.Name = "btnSklSlettSykkel"
+        Me.btnSklSlettSykkel.Size = New System.Drawing.Size(92, 23)
+        Me.btnSklSlettSykkel.TabIndex = 52
+        Me.btnSklSlettSykkel.Text = "Slett sykkel"
+        Me.btnSklSlettSykkel.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1659,7 +1833,9 @@ Partial Class Form1
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.TabPageSykkelregistrering.ResumeLayout(False)
-        Me.TabPageSykkelregistrering.PerformLayout()
+        Me.GroupBoxSykkelinformasjon.ResumeLayout(False)
+        Me.GroupBoxSykkelinformasjon.PerformLayout()
+        Me.GroupBoxHvaVilDuGjore.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1813,10 +1989,26 @@ Partial Class Form1
     Friend WithEvents ButtonSlettKunde As System.Windows.Forms.Button
     Friend WithEvents TabPageSykkelregistrering As System.Windows.Forms.TabPage
     Friend WithEvents btnOppdatereEksisterendeSykkel As System.Windows.Forms.Button
-    Friend WithEvents ComboBoxEksisterendeSykler As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboEksisterendeSykler As System.Windows.Forms.ComboBox
     Friend WithEvents btnUtvideMedNyModell As System.Windows.Forms.Button
-    Friend WithEvents labelSykkel1 As System.Windows.Forms.Label
     Friend WithEvents ComboEksisterendeMerker As System.Windows.Forms.ComboBox
     Friend WithEvents btnRegistrereNySykkel As System.Windows.Forms.Button
+    Friend WithEvents GroupBoxSykkelinformasjon As System.Windows.Forms.GroupBox
+    Friend WithEvents labelSykkel2 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel3 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel4 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel5 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel6 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel7 As System.Windows.Forms.Label
+    Friend WithEvents TextBoxSkl1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxSkl2 As System.Windows.Forms.TextBox
+    Friend WithEvents btnSklNullUtSkjema As System.Windows.Forms.Button
+    Friend WithEvents TextBoxSkl3 As System.Windows.Forms.TextBox
+    Friend WithEvents btnSklRegistrerEndringer As System.Windows.Forms.Button
+    Friend WithEvents ComboVelgTransportor As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboVelgHjemsted As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboVelgStatus As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBoxHvaVilDuGjore As System.Windows.Forms.GroupBox
+    Friend WithEvents btnSklSlettSykkel As System.Windows.Forms.Button
 
 End Class
