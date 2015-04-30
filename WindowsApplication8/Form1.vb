@@ -174,6 +174,7 @@ Public Class Form1
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
         If TextBox14.Text = brukernavn And TextBox13.Text = passord Then
             MenuStrip1.Show()
+            TabControl1.SelectTab(7)
         Else
             MsgBox("Feil brukernavn/passord")
             MenuStrip1.Hide()
