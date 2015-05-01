@@ -309,10 +309,18 @@ Public Class Form1
 
 
         Dim data As New DataTable
-        Dim sql As String = "SELECT merke, prisprosent, bstatus, statusnavn, inntid FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.bookingID JOIN pdk_booking a ON b.bookingID=a.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON a.prisID=p.prisID WHERE bstatus='tilgjengelig' OR (bstatus='utleid' AND " & fra & " < uttid AND " & til & " < uttid) OR (bstatus='utleid' AND " & fra & " > inntid AND " & til & " < inntid)"
+        Dim sql As String = "SELECT merke,sykkeltype, prisprosent, a.bstatus, statusnavn, a.inntid FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.sykkelID JOIN pdk_booking a ON b.bookingID=a.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON a.prisID=p.prisID WHERE a.bstatus='tilgjengelig' OR (a.bstatus='utleid' AND " & fra & " < a.uttid AND " & til & " < a.uttid) OR (a.bstatus='utleid' AND " & fra & " > a.inntid AND " & til & " < a.inntid)"
+
+        
 
         data = query(sql)
         DataGridView3.DataSource = data
+
+        Dim data2 As New DataTable
+        Dim sql2 As String = "Select * from pdk_ekstrautstyr"
+
+        data2 = query(sql2)
+        DataGridView5.DataSource = data2
 
 
 
@@ -351,14 +359,26 @@ Public Class Form1
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
         Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
-        Dim utpost As String = ComboBox7.SelectedText ' usikker på om det skal være text eller value eller noe annet. 
-        Dim innpost As String = ComboBox10.SelectedText
-        Dim selgerID As Integer ' må hente selgerID fra en plass?
-        Dim PrisID As Integer ' PrisID må også hentes, kanskje i forbindelse med henting av tilgjengelige sykler.
-        Dim kundeID As String = ComboBox8.SelectedText
-        Dim SykkelID As Integer ' Må være String for spørringen sin del? 
 
-        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & sykkelID & ")"
+        
+
+        Const Pris As Integer = 500
+
+        Dim utpost As String = 4001 ' usikker på om det skal være text eller value eller noe annet. 
+        Dim innpost As String = 4001
+        Dim selgerID As String = 2 ' må hente selgerID fra en plass?
+        Dim kundeID As String = 2
+        Dim SykkelID As String = 1 ' Må være String for spørringen sin del? 
+        Dim Antalldager = DateTimePicker2.Value.Subtract(DateTimePicker1.Value).Days
+
+        Dim salgspris As String = Pris * Antalldager 'Vi tar dette med timer i en "hvis vi hadde tid versjon"
+
+        Dim prisID As String = 2
+
+        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & prisID & "," & kundeID & "," & salgspris & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
+
+        query(sql)
+
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
@@ -375,7 +395,7 @@ Public Class Form1
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
         Dim avanse As New DataTable
-        Dim rad As DataRow
+        'Dim rad As DataRow
 
         Dim sql As String = "SELECT * from pdk_ansatt where ansattype = 'Selger'"
 
@@ -383,4 +403,7 @@ Public Class Form1
 
 
     End Sub
+
+    
+  
 End Class
