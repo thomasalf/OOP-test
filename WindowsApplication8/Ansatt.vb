@@ -5,7 +5,7 @@
     Private provisjon As Integer = 0
 
     Private Const MIN As Integer = 10
-    Private Const MAX As Integer = 20 'Antar at ingen selgere får mer enn 10% provisjon
+    Private Const MAX As Integer = 20 'Antar at ingen selgere får mindre enn 10% eller mer enn 20% provisjon
 
     'Konstruktører
 
