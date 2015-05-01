@@ -32,6 +32,20 @@ Partial Class Form1
         Me.Button15 = New System.Windows.Forms.Button()
         Me.TextBox13 = New System.Windows.Forms.TextBox()
         Me.TabPage2Medlemsinfo = New System.Windows.Forms.TabPage()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Side3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UtstyrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,7 +63,7 @@ Partial Class Form1
         Me.TabPage3StatusBegrensning = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.rtbSykkelstatus = New System.Windows.Forms.RichTextBox()
         Me.Button21 = New System.Windows.Forms.Button()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -58,20 +72,12 @@ Partial Class Form1
         Me.Button20 = New System.Windows.Forms.Button()
         Me.TabPage4UtstyrStatus = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.btnLastInnUtstyr = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Utstyr = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Pris = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tilgjengelighet = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Utleidtil = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Lokale = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnRegInnlevering = New System.Windows.Forms.Button()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.btnUtvidetInfo = New System.Windows.Forms.Button()
+        Me.cmbUtstyrskategorier = New System.Windows.Forms.ComboBox()
         Me.btnRegUtstyr = New System.Windows.Forms.Button()
         Me.btnRegUtleie = New System.Windows.Forms.Button()
         Me.btnEndreUtstyr = New System.Windows.Forms.Button()
-        Me.btnVisBegr = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.TabPage5RegistrerKunde = New System.Windows.Forms.TabPage()
@@ -99,6 +105,7 @@ Partial Class Form1
         Me.ButtonLastInnRegistrerteKunder = New System.Windows.Forms.Button()
         Me.ComboBoxRegistrerteKunder = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.ButtonSlettKunde = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -151,9 +158,6 @@ Partial Class Form1
         Me.lstSokResult = New System.Windows.Forms.ListBox()
         Me.txtUniversalSok = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -168,13 +172,15 @@ Partial Class Form1
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DataGridView5 = New System.Windows.Forms.DataGridView()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         Me.TabPage2Medlemsinfo.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3StatusBegrensning.SuspendLayout()
@@ -194,10 +200,9 @@ Partial Class Form1
         Me.GroupBox9.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -212,6 +217,8 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage8Hovedmeny)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPageSykkelregistrering)
+        Me.TabControl1.Controls.Add(Me.TabPageSykkeltransport)
         Me.TabControl1.Location = New System.Drawing.Point(12, 8)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -298,6 +305,7 @@ Partial Class Form1
         'TabPage2Medlemsinfo
         '
         Me.TabPage2Medlemsinfo.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage2Medlemsinfo.Controls.Add(Me.Panel1)
         Me.TabPage2Medlemsinfo.Controls.Add(Me.GroupBox7)
         Me.TabPage2Medlemsinfo.Controls.Add(Me.Button11)
         Me.TabPage2Medlemsinfo.Cursor = System.Windows.Forms.Cursors.Default
@@ -307,6 +315,99 @@ Partial Class Form1
         Me.TabPage2Medlemsinfo.Size = New System.Drawing.Size(1195, 552)
         Me.TabPage2Medlemsinfo.TabIndex = 1
         Me.TabPage2Medlemsinfo.Text = "TabPage2"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.MenuStrip1)
+        Me.Panel1.Location = New System.Drawing.Point(0, 450)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1235, 30)
+        Me.Panel1.TabIndex = 1
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem4, Me.ToolStripTextBox1, Me.SøkMedlemToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1235, 27)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem})
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 23)
+        Me.ToolStripMenuItem1.Text = "Meny"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem})
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(146, 22)
+        Me.ToolStripMenuItem2.Text = "Hovedside"
+        '
+        'LoginToolStripMenuItem
+        '
+        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.LoginToolStripMenuItem.Text = "Login"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(146, 22)
+        Me.ToolStripMenuItem3.Text = "Medlemmer"
+        '
+        'Side3ToolStripMenuItem
+        '
+        Me.Side3ToolStripMenuItem.Name = "Side3ToolStripMenuItem"
+        Me.Side3ToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.Side3ToolStripMenuItem.Text = "Status"
+        '
+        'UtstyrToolStripMenuItem
+        '
+        Me.UtstyrToolStripMenuItem.Name = "UtstyrToolStripMenuItem"
+        Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.UtstyrToolStripMenuItem.Text = "Utstyr / Utleie"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.LokaleNr3ToolStripMenuItem})
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(125, 23)
+        Me.ToolStripMenuItem4.Text = "Sjekk tilgjengelighet"
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(135, 22)
+        Me.ToolStripMenuItem5.Text = "Utleiested 1"
+        '
+        'ToolStripMenuItem6
+        '
+        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(135, 22)
+        Me.ToolStripMenuItem6.Text = "Utleiested 2"
+        '
+        'LokaleNr3ToolStripMenuItem
+        '
+        Me.LokaleNr3ToolStripMenuItem.Name = "LokaleNr3ToolStripMenuItem"
+        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.LokaleNr3ToolStripMenuItem.Text = "Utleiested 3"
+        '
+        'ToolStripTextBox1
+        '
+        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 23)
+        '
+        'SøkMedlemToolStripMenuItem
+        '
+        Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
+        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
+        Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
         '
         'GroupBox7
         '
@@ -426,7 +527,7 @@ Partial Class Form1
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.ComboBox1)
-        Me.GroupBox6.Controls.Add(Me.RichTextBox1)
+        Me.GroupBox6.Controls.Add(Me.rtbSykkelstatus)
         Me.GroupBox6.Controls.Add(Me.Button21)
         Me.GroupBox6.Controls.Add(Me.Label21)
         Me.GroupBox6.Controls.Add(Me.Label23)
@@ -447,13 +548,13 @@ Partial Class Form1
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 38
         '
-        'RichTextBox1
+        'rtbSykkelstatus
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(59, 122)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(256, 96)
-        Me.RichTextBox1.TabIndex = 9
-        Me.RichTextBox1.Text = "Sykkelen har et punktert dekk."
+        Me.rtbSykkelstatus.Location = New System.Drawing.Point(59, 122)
+        Me.rtbSykkelstatus.Name = "rtbSykkelstatus"
+        Me.rtbSykkelstatus.Size = New System.Drawing.Size(256, 96)
+        Me.rtbSykkelstatus.TabIndex = 9
+        Me.rtbSykkelstatus.Text = "Sykkelen har et punktert dekk."
         '
         'Button21
         '
@@ -523,14 +624,19 @@ Partial Class Form1
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.btnLagreUtstyr)
+        Me.GroupBox5.Controls.Add(Me.lblAntallInnkjopt)
+        Me.GroupBox5.Controls.Add(Me.lblUtstLeiepris)
+        Me.GroupBox5.Controls.Add(Me.lblUtstyrsType)
+        Me.GroupBox5.Controls.Add(Me.txtAntallInnkjopt)
+        Me.GroupBox5.Controls.Add(Me.txtUtstyrLeiepris)
+        Me.GroupBox5.Controls.Add(Me.txtUtstyrstype)
+        Me.GroupBox5.Controls.Add(Me.btnLastInnUtstyr)
         Me.GroupBox5.Controls.Add(Me.DataGridView1)
-        Me.GroupBox5.Controls.Add(Me.btnRegInnlevering)
-        Me.GroupBox5.Controls.Add(Me.ComboBox3)
-        Me.GroupBox5.Controls.Add(Me.btnUtvidetInfo)
+        Me.GroupBox5.Controls.Add(Me.cmbUtstyrskategorier)
         Me.GroupBox5.Controls.Add(Me.btnRegUtstyr)
         Me.GroupBox5.Controls.Add(Me.btnRegUtleie)
         Me.GroupBox5.Controls.Add(Me.btnEndreUtstyr)
-        Me.GroupBox5.Controls.Add(Me.btnVisBegr)
         Me.GroupBox5.Controls.Add(Me.Label2)
         Me.GroupBox5.Location = New System.Drawing.Point(127, 16)
         Me.GroupBox5.Name = "GroupBox5"
@@ -539,74 +645,34 @@ Partial Class Form1
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Utstyr/Status"
         '
+        'btnLastInnUtstyr
+        '
+        Me.btnLastInnUtstyr.Location = New System.Drawing.Point(37, 43)
+        Me.btnLastInnUtstyr.Name = "btnLastInnUtstyr"
+        Me.btnLastInnUtstyr.Size = New System.Drawing.Size(115, 23)
+        Me.btnLastInnUtstyr.TabIndex = 44
+        Me.btnLastInnUtstyr.Text = "Last inn utstyr"
+        Me.btnLastInnUtstyr.UseVisualStyleBackColor = True
+        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Utstyr, Me.Pris, Me.Tilgjengelighet, Me.Status, Me.Utleidtil, Me.Lokale})
         Me.DataGridView1.Location = New System.Drawing.Point(171, 33)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(643, 231)
         Me.DataGridView1.TabIndex = 0
         '
-        'Utstyr
+        'cmbUtstyrskategorier
         '
-        Me.Utstyr.HeaderText = "Utstyr"
-        Me.Utstyr.Name = "Utstyr"
-        '
-        'Pris
-        '
-        Me.Pris.HeaderText = "Pris"
-        Me.Pris.Name = "Pris"
-        '
-        'Tilgjengelighet
-        '
-        Me.Tilgjengelighet.HeaderText = "Tilgjengelighet"
-        Me.Tilgjengelighet.Name = "Tilgjengelighet"
-        '
-        'Status
-        '
-        Me.Status.HeaderText = "Status"
-        Me.Status.Name = "Status"
-        '
-        'Utleidtil
-        '
-        Me.Utleidtil.HeaderText = "Utleid til"
-        Me.Utleidtil.Name = "Utleidtil"
-        '
-        'Lokale
-        '
-        Me.Lokale.HeaderText = "Leveringssted"
-        Me.Lokale.Name = "Lokale"
-        '
-        'btnRegInnlevering
-        '
-        Me.btnRegInnlevering.Location = New System.Drawing.Point(37, 194)
-        Me.btnRegInnlevering.Name = "btnRegInnlevering"
-        Me.btnRegInnlevering.Size = New System.Drawing.Size(115, 23)
-        Me.btnRegInnlevering.TabIndex = 43
-        Me.btnRegInnlevering.Text = "Registrer Innlevering"
-        Me.btnRegInnlevering.UseVisualStyleBackColor = True
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(37, 49)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(115, 21)
-        Me.ComboBox3.TabIndex = 38
-        '
-        'btnUtvidetInfo
-        '
-        Me.btnUtvidetInfo.Location = New System.Drawing.Point(37, 223)
-        Me.btnUtvidetInfo.Name = "btnUtvidetInfo"
-        Me.btnUtvidetInfo.Size = New System.Drawing.Size(115, 23)
-        Me.btnUtvidetInfo.TabIndex = 42
-        Me.btnUtvidetInfo.Text = "Utvidet info"
-        Me.btnUtvidetInfo.UseVisualStyleBackColor = True
+        Me.cmbUtstyrskategorier.FormattingEnabled = True
+        Me.cmbUtstyrskategorier.Location = New System.Drawing.Point(37, 93)
+        Me.cmbUtstyrskategorier.Name = "cmbUtstyrskategorier"
+        Me.cmbUtstyrskategorier.Size = New System.Drawing.Size(115, 21)
+        Me.cmbUtstyrskategorier.TabIndex = 38
         '
         'btnRegUtstyr
         '
-        Me.btnRegUtstyr.Location = New System.Drawing.Point(37, 78)
+        Me.btnRegUtstyr.Location = New System.Drawing.Point(24, 290)
         Me.btnRegUtstyr.Name = "btnRegUtstyr"
         Me.btnRegUtstyr.Size = New System.Drawing.Size(115, 23)
         Me.btnRegUtstyr.TabIndex = 36
@@ -615,7 +681,7 @@ Partial Class Form1
         '
         'btnRegUtleie
         '
-        Me.btnRegUtleie.Location = New System.Drawing.Point(37, 165)
+        Me.btnRegUtleie.Location = New System.Drawing.Point(699, 340)
         Me.btnRegUtleie.Name = "btnRegUtleie"
         Me.btnRegUtleie.Size = New System.Drawing.Size(115, 23)
         Me.btnRegUtleie.TabIndex = 41
@@ -624,26 +690,17 @@ Partial Class Form1
         '
         'btnEndreUtstyr
         '
-        Me.btnEndreUtstyr.Location = New System.Drawing.Point(37, 107)
+        Me.btnEndreUtstyr.Location = New System.Drawing.Point(24, 323)
         Me.btnEndreUtstyr.Name = "btnEndreUtstyr"
         Me.btnEndreUtstyr.Size = New System.Drawing.Size(115, 23)
         Me.btnEndreUtstyr.TabIndex = 37
         Me.btnEndreUtstyr.Text = "Endre Utstyr"
         Me.btnEndreUtstyr.UseVisualStyleBackColor = True
         '
-        'btnVisBegr
-        '
-        Me.btnVisBegr.Location = New System.Drawing.Point(37, 136)
-        Me.btnVisBegr.Name = "btnVisBegr"
-        Me.btnVisBegr.Size = New System.Drawing.Size(115, 23)
-        Me.btnVisBegr.TabIndex = 40
-        Me.btnVisBegr.Text = "Vis begrensninger"
-        Me.btnVisBegr.UseVisualStyleBackColor = True
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(75, 33)
+        Me.Label2.Location = New System.Drawing.Point(74, 77)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 13)
         Me.Label2.TabIndex = 39
@@ -889,6 +946,7 @@ Partial Class Form1
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.ButtonSlettKunde)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.Label17)
@@ -916,6 +974,15 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "REDIGER KUNDE"
         Me.GroupBox3.Visible = False
+        '
+        'ButtonSlettKunde
+        '
+        Me.ButtonSlettKunde.Location = New System.Drawing.Point(240, 224)
+        Me.ButtonSlettKunde.Name = "ButtonSlettKunde"
+        Me.ButtonSlettKunde.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonSlettKunde.TabIndex = 39
+        Me.ButtonSlettKunde.Text = "Slett kunde"
+        Me.ButtonSlettKunde.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -1047,7 +1114,7 @@ Partial Class Form1
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(76, 220)
+        Me.Button6.Location = New System.Drawing.Point(24, 224)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(92, 23)
         Me.Button6.TabIndex = 29
@@ -1063,7 +1130,7 @@ Partial Class Form1
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(192, 220)
+        Me.Button7.Location = New System.Drawing.Point(128, 224)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(92, 23)
         Me.Button7.TabIndex = 28
@@ -1392,9 +1459,10 @@ Partial Class Form1
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage2.Controls.Add(Me.Button13)
-        Me.TabPage2.Controls.Add(Me.Button12)
-        Me.TabPage2.Controls.Add(Me.DataGridView4)
+        Me.TabPage2.Controls.Add(Me.lstAvanse)
+        Me.TabPage2.Controls.Add(Me.btnAvanse)
+        Me.TabPage2.Controls.Add(Me.btnBestillinger)
+        Me.TabPage2.Controls.Add(Me.dgvStatistikk)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -1402,23 +1470,280 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 9
         Me.TabPage2.Text = "TabPage10Statistikk"
         '
-        'Button13
+        'Panel1
         '
-        Me.Button13.Location = New System.Drawing.Point(46, 103)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(75, 23)
-        Me.Button13.TabIndex = 2
-        Me.Button13.Text = "Button13"
-        Me.Button13.UseVisualStyleBackColor = True
+        Me.LabelSklOpprettNy.AutoSize = True
+        Me.LabelSklOpprettNy.Location = New System.Drawing.Point(264, 32)
+        Me.LabelSklOpprettNy.Name = "LabelSklOpprettNy"
+        Me.LabelSklOpprettNy.Size = New System.Drawing.Size(56, 13)
+        Me.LabelSklOpprettNy.TabIndex = 60
+        Me.LabelSklOpprettNy.Text = "Opprett ny"
         '
-        'Button12
+        'LabelSklSykkelIDSomRedigeres
         '
-        Me.Button12.Location = New System.Drawing.Point(46, 56)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(75, 23)
-        Me.Button12.TabIndex = 1
-        Me.Button12.Text = "Button12"
-        Me.Button12.UseVisualStyleBackColor = True
+        Me.LabelSklSykkelIDSomRedigeres.AutoSize = True
+        Me.LabelSklSykkelIDSomRedigeres.Location = New System.Drawing.Point(16, 24)
+        Me.LabelSklSykkelIDSomRedigeres.Name = "LabelSklSykkelIDSomRedigeres"
+        Me.LabelSklSykkelIDSomRedigeres.Size = New System.Drawing.Size(18, 13)
+        Me.LabelSklSykkelIDSomRedigeres.TabIndex = 59
+        Me.LabelSklSykkelIDSomRedigeres.Text = "ID"
+        '
+        'ComboSklVelgType
+        '
+        Me.ComboSklVelgType.FormattingEnabled = True
+        Me.ComboSklVelgType.Location = New System.Drawing.Point(80, 96)
+        Me.ComboSklVelgType.Name = "ComboSklVelgType"
+        Me.ComboSklVelgType.Size = New System.Drawing.Size(152, 21)
+        Me.ComboSklVelgType.TabIndex = 58
+        Me.ComboSklVelgType.Text = "Velg eksisterende type"
+        '
+        'btnSklLagreOppdatering
+        '
+        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(176, 256)
+        Me.btnSklLagreOppdatering.Name = "btnSklLagreOppdatering"
+        Me.btnSklLagreOppdatering.Size = New System.Drawing.Size(104, 23)
+        Me.btnSklLagreOppdatering.TabIndex = 54
+        Me.btnSklLagreOppdatering.Text = "Lagre oppdatering"
+        Me.btnSklLagreOppdatering.UseVisualStyleBackColor = True
+        '
+        'ComboSklVelgModell
+        '
+        Me.ComboSklVelgModell.FormattingEnabled = True
+        Me.ComboSklVelgModell.Location = New System.Drawing.Point(80, 72)
+        Me.ComboSklVelgModell.Name = "ComboSklVelgModell"
+        Me.ComboSklVelgModell.Size = New System.Drawing.Size(152, 21)
+        Me.ComboSklVelgModell.TabIndex = 58
+        Me.ComboSklVelgModell.Text = "Velg eksisterende modell"
+        '
+        'ComboSklVelgMerke
+        '
+        Me.ComboSklVelgMerke.FormattingEnabled = True
+        Me.ComboSklVelgMerke.Location = New System.Drawing.Point(80, 48)
+        Me.ComboSklVelgMerke.Name = "ComboSklVelgMerke"
+        Me.ComboSklVelgMerke.Size = New System.Drawing.Size(152, 21)
+        Me.ComboSklVelgMerke.TabIndex = 58
+        Me.ComboSklVelgMerke.Text = "Velg eksisterende merke"
+        '
+        'btnSklSlettSykkel
+        '
+        Me.btnSklSlettSykkel.Location = New System.Drawing.Point(296, 240)
+        Me.btnSklSlettSykkel.Name = "btnSklSlettSykkel"
+        Me.btnSklSlettSykkel.Size = New System.Drawing.Size(92, 23)
+        Me.btnSklSlettSykkel.TabIndex = 52
+        Me.btnSklSlettSykkel.Text = "Slett sykkel"
+        Me.btnSklSlettSykkel.UseVisualStyleBackColor = True
+        '
+        'ComboVelgTransportor
+        '
+        Me.ComboVelgTransportor.FormattingEnabled = True
+        Me.ComboVelgTransportor.Location = New System.Drawing.Point(80, 176)
+        Me.ComboVelgTransportor.Name = "ComboVelgTransportor"
+        Me.ComboVelgTransportor.Size = New System.Drawing.Size(136, 21)
+        Me.ComboVelgTransportor.TabIndex = 51
+        Me.ComboVelgTransportor.Text = "Velg transportør"
+        '
+        'ComboVelgHjemsted
+        '
+        Me.ComboVelgHjemsted.FormattingEnabled = True
+        Me.ComboVelgHjemsted.Location = New System.Drawing.Point(80, 152)
+        Me.ComboVelgHjemsted.Name = "ComboVelgHjemsted"
+        Me.ComboVelgHjemsted.Size = New System.Drawing.Size(136, 21)
+        Me.ComboVelgHjemsted.TabIndex = 50
+        Me.ComboVelgHjemsted.Text = "Velg hjemsted"
+        '
+        'ComboVelgStatus
+        '
+        Me.ComboVelgStatus.FormattingEnabled = True
+        Me.ComboVelgStatus.Location = New System.Drawing.Point(80, 128)
+        Me.ComboVelgStatus.Name = "ComboVelgStatus"
+        Me.ComboVelgStatus.Size = New System.Drawing.Size(136, 21)
+        Me.ComboVelgStatus.TabIndex = 7
+        Me.ComboVelgStatus.Text = "Velg status"
+        '
+        'labelSykkel2
+        '
+        Me.labelSykkel2.AutoSize = True
+        Me.labelSykkel2.Location = New System.Drawing.Point(8, 48)
+        Me.labelSykkel2.Name = "labelSykkel2"
+        Me.labelSykkel2.Size = New System.Drawing.Size(37, 13)
+        Me.labelSykkel2.TabIndex = 37
+        Me.labelSykkel2.Text = "Merke"
+        '
+        'labelSykkel3
+        '
+        Me.labelSykkel3.AutoSize = True
+        Me.labelSykkel3.Location = New System.Drawing.Point(8, 72)
+        Me.labelSykkel3.Name = "labelSykkel3"
+        Me.labelSykkel3.Size = New System.Drawing.Size(38, 13)
+        Me.labelSykkel3.TabIndex = 38
+        Me.labelSykkel3.Text = "Modell"
+        '
+        'labelSykkel4
+        '
+        Me.labelSykkel4.AutoSize = True
+        Me.labelSykkel4.Location = New System.Drawing.Point(8, 96)
+        Me.labelSykkel4.Name = "labelSykkel4"
+        Me.labelSykkel4.Size = New System.Drawing.Size(31, 13)
+        Me.labelSykkel4.TabIndex = 39
+        Me.labelSykkel4.Text = "Type"
+        '
+        'labelSykkel5
+        '
+        Me.labelSykkel5.AutoSize = True
+        Me.labelSykkel5.Location = New System.Drawing.Point(8, 128)
+        Me.labelSykkel5.Name = "labelSykkel5"
+        Me.labelSykkel5.Size = New System.Drawing.Size(37, 13)
+        Me.labelSykkel5.TabIndex = 40
+        Me.labelSykkel5.Text = "Status"
+        '
+        'labelSykkel6
+        '
+        Me.labelSykkel6.AutoSize = True
+        Me.labelSykkel6.Location = New System.Drawing.Point(8, 152)
+        Me.labelSykkel6.Name = "labelSykkel6"
+        Me.labelSykkel6.Size = New System.Drawing.Size(56, 13)
+        Me.labelSykkel6.TabIndex = 41
+        Me.labelSykkel6.Text = "Tilhørighet"
+        '
+        'labelSykkel7
+        '
+        Me.labelSykkel7.AutoSize = True
+        Me.labelSykkel7.Location = New System.Drawing.Point(8, 176)
+        Me.labelSykkel7.Name = "labelSykkel7"
+        Me.labelSykkel7.Size = New System.Drawing.Size(61, 13)
+        Me.labelSykkel7.TabIndex = 42
+        Me.labelSykkel7.Text = "Transportør"
+        '
+        'TextBoxSkl1
+        '
+        Me.TextBoxSkl1.Location = New System.Drawing.Point(264, 48)
+        Me.TextBoxSkl1.Name = "TextBoxSkl1"
+        Me.TextBoxSkl1.Size = New System.Drawing.Size(136, 20)
+        Me.TextBoxSkl1.TabIndex = 43
+        '
+        'TextBoxSkl2
+        '
+        Me.TextBoxSkl2.Location = New System.Drawing.Point(264, 72)
+        Me.TextBoxSkl2.Name = "TextBoxSkl2"
+        Me.TextBoxSkl2.Size = New System.Drawing.Size(136, 20)
+        Me.TextBoxSkl2.TabIndex = 44
+        '
+        'btnSklNullUtSkjema
+        '
+        Me.btnSklNullUtSkjema.Location = New System.Drawing.Point(72, 239)
+        Me.btnSklNullUtSkjema.Name = "btnSklNullUtSkjema"
+        Me.btnSklNullUtSkjema.Size = New System.Drawing.Size(92, 23)
+        Me.btnSklNullUtSkjema.TabIndex = 49
+        Me.btnSklNullUtSkjema.Text = "Null ut skjema"
+        Me.btnSklNullUtSkjema.UseVisualStyleBackColor = True
+        '
+        'btnSklRegistrerEndringer
+        '
+        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(176, 232)
+        Me.btnSklRegistrerEndringer.Name = "btnSklRegistrerEndringer"
+        Me.btnSklRegistrerEndringer.Size = New System.Drawing.Size(104, 23)
+        Me.btnSklRegistrerEndringer.TabIndex = 48
+        Me.btnSklRegistrerEndringer.Text = "Registrer ny"
+        Me.btnSklRegistrerEndringer.UseVisualStyleBackColor = True
+        '
+        'TabPageSykkeltransport
+        '
+        Me.TabPageSykkeltransport.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPageSykkeltransport.Controls.Add(Me.btnLastInnTransportinfo)
+        Me.TabPageSykkeltransport.Controls.Add(Me.LabelTransportTilSted)
+        Me.TabPageSykkeltransport.Controls.Add(Me.LabelTransportFraSted)
+        Me.TabPageSykkeltransport.Controls.Add(Me.DataGridViewSykkeltransport)
+        Me.TabPageSykkeltransport.Controls.Add(Me.ComboStedSykkelSkalTil)
+        Me.TabPageSykkeltransport.Controls.Add(Me.ComboSykkelSomSkalTransporteres)
+        Me.TabPageSykkeltransport.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageSykkeltransport.Name = "TabPageSykkeltransport"
+        Me.TabPageSykkeltransport.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPageSykkeltransport.TabIndex = 11
+        Me.TabPageSykkeltransport.Text = "Sykkeltransport"
+        '
+        'btnLastInnTransportinfo
+        '
+        Me.btnLastInnTransportinfo.Location = New System.Drawing.Point(144, 8)
+        Me.btnLastInnTransportinfo.Name = "btnLastInnTransportinfo"
+        Me.btnLastInnTransportinfo.Size = New System.Drawing.Size(136, 23)
+        Me.btnLastInnTransportinfo.TabIndex = 6
+        Me.btnLastInnTransportinfo.Text = "Last inn informasjon"
+        Me.btnLastInnTransportinfo.UseVisualStyleBackColor = True
+        '
+        'LabelTransportTilSted
+        '
+        Me.LabelTransportTilSted.AutoSize = True
+        Me.LabelTransportTilSted.Location = New System.Drawing.Point(352, 48)
+        Me.LabelTransportTilSted.Name = "LabelTransportTilSted"
+        Me.LabelTransportTilSted.Size = New System.Drawing.Size(130, 13)
+        Me.LabelTransportTilSted.TabIndex = 5
+        Me.LabelTransportTilSted.Text = "Transporter valgt sykkel til"
+        '
+        'LabelTransportFraSted
+        '
+        Me.LabelTransportFraSted.AutoSize = True
+        Me.LabelTransportFraSted.Location = New System.Drawing.Point(144, 48)
+        Me.LabelTransportFraSted.Name = "LabelTransportFraSted"
+        Me.LabelTransportFraSted.Size = New System.Drawing.Size(76, 13)
+        Me.LabelTransportFraSted.TabIndex = 4
+        Me.LabelTransportFraSted.Text = "Transporter fra"
+        '
+        'DataGridViewSykkeltransport
+        '
+        Me.DataGridViewSykkeltransport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewSykkeltransport.Location = New System.Drawing.Point(144, 104)
+        Me.DataGridViewSykkeltransport.Name = "DataGridViewSykkeltransport"
+        Me.DataGridViewSykkeltransport.Size = New System.Drawing.Size(384, 296)
+        Me.DataGridViewSykkeltransport.TabIndex = 3
+        '
+        'ComboStedSykkelSkalTil
+        '
+        Me.ComboStedSykkelSkalTil.FormattingEnabled = True
+        Me.ComboStedSykkelSkalTil.Location = New System.Drawing.Point(352, 64)
+        Me.ComboStedSykkelSkalTil.Name = "ComboStedSykkelSkalTil"
+        Me.ComboStedSykkelSkalTil.Size = New System.Drawing.Size(192, 21)
+        Me.ComboStedSykkelSkalTil.TabIndex = 2
+        '
+        'ComboSykkelSomSkalTransporteres
+        '
+        Me.ComboSykkelSomSkalTransporteres.FormattingEnabled = True
+        Me.ComboSykkelSomSkalTransporteres.Location = New System.Drawing.Point(144, 64)
+        Me.ComboSykkelSomSkalTransporteres.Name = "ComboSykkelSomSkalTransporteres"
+        Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
+        Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
+        '
+        'txtUtstyrstype
+        '
+        Me.txtUtstyrstype.Location = New System.Drawing.Point(254, 290)
+        Me.txtUtstyrstype.Name = "txtUtstyrstype"
+        Me.txtUtstyrstype.Size = New System.Drawing.Size(178, 20)
+        Me.txtUtstyrstype.TabIndex = 45
+        Me.txtUtstyrstype.Visible = False
+        '
+        'txtUtstyrLeiepris
+        '
+        Me.txtUtstyrLeiepris.Location = New System.Drawing.Point(254, 316)
+        Me.txtUtstyrLeiepris.Name = "txtUtstyrLeiepris"
+        Me.txtUtstyrLeiepris.Size = New System.Drawing.Size(100, 20)
+        Me.txtUtstyrLeiepris.TabIndex = 46
+        Me.txtUtstyrLeiepris.Visible = False
+        '
+        'txtAntallInnkjopt
+        '
+        Me.txtAntallInnkjopt.Location = New System.Drawing.Point(254, 343)
+        Me.txtAntallInnkjopt.Name = "txtAntallInnkjopt"
+        Me.txtAntallInnkjopt.Size = New System.Drawing.Size(100, 20)
+        Me.txtAntallInnkjopt.TabIndex = 47
+        Me.txtAntallInnkjopt.Visible = False
+        '
+        'lblUtstyrsType
+        '
+        Me.lblUtstyrsType.AutoSize = True
+        Me.lblUtstyrsType.Location = New System.Drawing.Point(171, 296)
+        Me.lblUtstyrsType.Name = "lblUtstyrsType"
+        Me.lblUtstyrsType.Size = New System.Drawing.Size(59, 13)
+        Me.lblUtstyrsType.TabIndex = 48
+        Me.lblUtstyrsType.Text = "Utstyrstype"
         '
         'DataGridView4
         '
@@ -1429,131 +1754,29 @@ Partial Class Form1
         Me.DataGridView4.Size = New System.Drawing.Size(887, 222)
         Me.DataGridView4.TabIndex = 0
         '
-        'Panel1
+        'Button12
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.MenuStrip1)
-        Me.Panel1.Location = New System.Drawing.Point(-1, 29)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1235, 30)
-        Me.Panel1.TabIndex = 1
+        Me.Button12.Location = New System.Drawing.Point(46, 56)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(75, 23)
+        Me.Button12.TabIndex = 1
+        Me.Button12.Text = "Button12"
+        Me.Button12.UseVisualStyleBackColor = True
         '
-        'MenuStrip1
+        'Button13
         '
-        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem4, Me.ToolStripTextBox1, Me.SøkMedlemToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1235, 27)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem})
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 23)
-        Me.ToolStripMenuItem1.Text = "Meny"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem})
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(146, 22)
-        Me.ToolStripMenuItem2.Text = "Hovedside"
-        '
-        'LoginToolStripMenuItem
-        '
-        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
-        Me.LoginToolStripMenuItem.Text = "Login"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(146, 22)
-        Me.ToolStripMenuItem3.Text = "Medlemmer"
-        '
-        'Side3ToolStripMenuItem
-        '
-        Me.Side3ToolStripMenuItem.Name = "Side3ToolStripMenuItem"
-        Me.Side3ToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.Side3ToolStripMenuItem.Text = "Status"
-        '
-        'UtstyrToolStripMenuItem
-        '
-        Me.UtstyrToolStripMenuItem.Name = "UtstyrToolStripMenuItem"
-        Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.UtstyrToolStripMenuItem.Text = "Utstyr / Utleie"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.LokaleNr3ToolStripMenuItem})
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(125, 23)
-        Me.ToolStripMenuItem4.Text = "Sjekk tilgjengelighet"
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(135, 22)
-        Me.ToolStripMenuItem5.Text = "Utleiested 1"
-        '
-        'ToolStripMenuItem6
-        '
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(135, 22)
-        Me.ToolStripMenuItem6.Text = "Utleiested 2"
-        '
-        'LokaleNr3ToolStripMenuItem
-        '
-        Me.LokaleNr3ToolStripMenuItem.Name = "LokaleNr3ToolStripMenuItem"
-        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
-        Me.LokaleNr3ToolStripMenuItem.Text = "Utleiested 3"
-        '
-        'ToolStripTextBox1
-        '
-        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 23)
-        '
-        'SøkMedlemToolStripMenuItem
-        '
-        Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
-        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
-        Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
-        '
-        'DataGridView5
-        '
-        Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView5.Location = New System.Drawing.Point(30, 150)
-        Me.DataGridView5.Name = "DataGridView5"
-        Me.DataGridView5.Size = New System.Drawing.Size(643, 116)
-        Me.DataGridView5.TabIndex = 41
-        '
-        'ComboBox5
-        '
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.ComboBox5.Location = New System.Drawing.Point(256, 308)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox5.TabIndex = 42
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(197, 313)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 13)
-        Me.Label4.TabIndex = 43
-        Me.Label4.Text = "Selger(ID)"
+        Me.Button13.Location = New System.Drawing.Point(46, 103)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(75, 23)
+        Me.Button13.TabIndex = 2
+        Me.Button13.Text = "Button13"
+        Me.Button13.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1227, 598)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TabControl1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
@@ -1563,6 +1786,10 @@ Partial Class Form1
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout()
         Me.TabPage2Medlemsinfo.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3StatusBegrensning.ResumeLayout(False)
@@ -1589,12 +1816,11 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1654,30 +1880,21 @@ Partial Class Form1
     Friend WithEvents Button14 As System.Windows.Forms.Button
     Friend WithEvents Button11 As System.Windows.Forms.Button
     Friend WithEvents btnRegUtleie As System.Windows.Forms.Button
-    Friend WithEvents btnVisBegr As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbUtstyrskategorier As System.Windows.Forms.ComboBox
     Friend WithEvents btnEndreUtstyr As System.Windows.Forms.Button
     Friend WithEvents btnRegUtstyr As System.Windows.Forms.Button
     Friend WithEvents Button10 As System.Windows.Forms.Button
     Friend WithEvents Button9 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
-    Friend WithEvents Utstyr As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Pris As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Tilgjengelighet As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Status As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Utleidtil As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Lokale As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button22 As System.Windows.Forms.Button
     Friend WithEvents Button21 As System.Windows.Forms.Button
     Friend WithEvents Button20 As System.Windows.Forms.Button
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
     Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtbSykkelstatus As System.Windows.Forms.RichTextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents btnRegInnlevering As System.Windows.Forms.Button
-    Friend WithEvents btnUtvidetInfo As System.Windows.Forms.Button
     Friend WithEvents ComboBox6 As System.Windows.Forms.ComboBox
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents TabPage7TilgjengeligUtstyr As System.Windows.Forms.TabPage
@@ -1744,8 +1961,5 @@ Partial Class Form1
     Friend WithEvents Button13 As System.Windows.Forms.Button
     Friend WithEvents Button12 As System.Windows.Forms.Button
     Friend WithEvents DataGridView4 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridView5 As System.Windows.Forms.DataGridView
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox5 As System.Windows.Forms.ComboBox
 
 End Class

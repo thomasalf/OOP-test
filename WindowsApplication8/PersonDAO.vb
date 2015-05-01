@@ -47,5 +47,18 @@ Public Class PersonDAO
         Return sql
     End Function
 
+    Public Function slettKundedataSQL(kundeIDlabel As Integer)
+        Dim sql As String = "DELETE FROM pdk_kunde " _
+                                & "WHERE kundeID = '" & kundeIDlabel & "';"
+        Return sql
+    End Function
+
+    Public Function velgAlleKunder()
+        Dim sql As String = "SELECT * FROM pdk_kunde;"
+        Return sql
+    End Function
+
 
 End Class
+
+
