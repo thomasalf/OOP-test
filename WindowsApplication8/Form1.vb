@@ -81,11 +81,11 @@ Public Class Form1
     Private brukernavn As String = "bruker"
     Private passord As String = "passord"
 
-    'Arrays til bruk i sammenheng med "redigering av kunde"
+    'Arrays/variabler til bruk i sammenheng med "redigering av kunde"
     Private kundeIDinformasjon() As Double 'Array som lagrer kundeID
     Private kundeIDtilRedigering As Integer 'Lagrer ID til kunde som skal redigeres
 
-    'Arrays til bruk i sammenheng med "registrere sykkel"
+    'Arrays/variabler til bruk i sammenheng med "registrere sykkel"
     Private sykkelIDinformasjon() As Double 'Lagrer sykkelID
     Private transportorIDinformasjon() As Double 'Lagrer transportørID
     Private statusIDinformasjon() As Double 'Lagrer statusID
