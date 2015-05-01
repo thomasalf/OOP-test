@@ -478,7 +478,6 @@ Public Class Form1
 
     Private Sub btnRegistrereNySykkel_Click(sender As Object, e As EventArgs) Handles btnRegistrereNySykkel.Click
         GroupBoxHvaVilDuGjore.Visible = False
-        btnSklLagreNyModell.Visible = False
         btnSklLagreOppdatering.Visible = False
         btnSklRegistrerEndringer.Visible = True
         GroupBoxSykkelinformasjon.Visible = True
@@ -551,11 +550,76 @@ Public Class Form1
         End If
         'Slutt: fyll "transportør"-combobox
 
+        'START: fyll "merke"-combobox
+        ComboSklVelgMerke.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim data4 As New DataTable
+        Dim sql4 As String = "SELECT * FROM pdk_sykkelmerke"
+        data = query(sql4)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med merkeinformasjon
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("merke")
+                ComboSklVelgMerke.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+        'SLUTT: fyll "merke"-combobox
+
+        'START: fyll "modell"-combobox
+        ComboSklVelgModell.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim data5 As New DataTable
+        Dim sql5 As String = "SELECT * FROM pdk_sykkelmodell"
+        data = query(sql5)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med modellinformasjon
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("modell")
+                ComboSklVelgModell.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+        'SLUTT: fyll "modell"-combobox
+
+        'START: fyll "type"-combobox
+        ComboSklVelgType.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim data6 As New DataTable
+        Dim sql6 As String = "SELECT * FROM pdk_sykkeltype"
+        data = query(sql6)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med typeinformasjon
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("sykkeltype")
+                ComboSklVelgType.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+        'SLUTT: fyll "type"-combobox
+
     End Sub
 
     Private Sub ComboEksisterendeMerker_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeMerker.SelectedIndexChanged
         GroupBoxHvaVilDuGjore.Visible = False
-        btnSklLagreNyModell.Visible = True
         btnSklLagreOppdatering.Visible = False
         btnSklRegistrerEndringer.Visible = False
         GroupBoxSykkelinformasjon.Visible = True
@@ -563,10 +627,29 @@ Public Class Form1
 
     Private Sub ComboEksisterendeSykler_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeSykler.SelectedIndexChanged
         GroupBoxHvaVilDuGjore.Visible = False
-        btnSklLagreNyModell.Visible = False
         btnSklLagreOppdatering.Visible = True
         btnSklRegistrerEndringer.Visible = False
         GroupBoxSykkelinformasjon.Visible = True
+
+        'Ny kode
+        'Fyller kundeinformasjonsfelt med informasjonen som finnes i databasen
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_sykkel " _
+                                   & "WHERE sykkelID = '" & sykkelIDinformasjon(ComboEksisterendeSykler.SelectedIndex) & "'"
+        data = query(sql)
+        If data.Rows.Count = 1 Then
+            clearGroupbox(GroupBoxSykkelinformasjon)
+            Dim row As DataRow = data.Rows(0)
+            'kundeIDtilRedigering = row("kundeID")
+            'Label3.Text = kundeIDtilRedigering
+            TextBoxSkl1.Text = row("merke")
+            TextBoxSkl2.Text = row("modell")
+            TextBoxSkl3.Text = row("sykkeltype")
+        End If
+
+
+        'Viser kundeinformasjonsfelter
+        GroupBox3.Visible = True
     End Sub
 
     Private Sub btnSklRegistrerEndringer_Click(sender As Object, e As EventArgs) Handles btnSklRegistrerEndringer.Click
@@ -582,7 +665,7 @@ Public Class Form1
                                    TextBoxSkl3.Text, ComboVelgStatus.SelectedValue, _
                                            ComboVelgHjemsted.SelectedValue, ComboVelgTransportor.SelectedValue)
             'bruker data fra opprettet sykkel for å lage SQL-spørring
-            sykkelDAO.query(sykkelDAO.lagreSykkeldataSQL(sykkel))
+            sykkelDAO.query(sykkelDAO.lagreNySykkeldataSQL(sykkel))
             MsgBox("Ny sykkel er opprettet")
         Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
             MessageBox.Show("Feil: " & ex.Message)
@@ -597,7 +680,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub btnSklLagreNyModell_Click(sender As Object, e As EventArgs) Handles btnSklLagreNyModell.Click
+    Private Sub btnSklLagreNyModell_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -608,9 +691,7 @@ Public Class Form1
         ComboEksisterendeSykler.Visible = False
     End Sub
 
-    Private Sub btnSklLagreNyModell_Click_1(sender As Object, e As EventArgs) Handles btnSklLagreNyModell.Click
 
-    End Sub
 
     Private Sub ComboSykkelSomSkalTransporteres_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSykkelSomSkalTransporteres.SelectedIndexChanged
 
@@ -640,4 +721,18 @@ Public Class Form1
         End If
 
     End Sub
+
+    Private Sub ComboSklVelgMerke_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSklVelgMerke.SelectedIndexChanged
+        TextBoxSkl1.Clear()
+    End Sub
+
+    Private Sub ComboSklVelgModell_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSklVelgModell.SelectedIndexChanged
+        TextBoxSkl2.Clear()
+    End Sub
+
+    Private Sub ComboSklVelgType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSklVelgType.SelectedIndexChanged
+        TextBoxSkl3.Clear()
+    End Sub
+
+
 End Class

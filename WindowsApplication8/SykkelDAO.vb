@@ -26,7 +26,7 @@ Public Class SykkelDAO
 
 
 
-    Public Function lagreSykkeldataSQL(inndata As Sykkel)
+    Public Function lagreNySykkeldataSQL(inndata As Sykkel)
         Dim sql As String = "INSERT INTO pdk_sykkel SET merke = '" _
                              & inndata.getSykkelMerke() & "', modell = '" _
                              & inndata.getSykkelModell() & "', sykkeltype = '" _
@@ -35,6 +35,12 @@ Public Class SykkelDAO
                              & inndata.getSykkelTransportor() & "';"
         Return sql
     End Function
+
+    ' Public Function lagreNySykkeldataSQLTEST(inndata As Sykkel)
+    ' Dim sql As String = "INSERT INTO pdk_sykkel SET modell = '" _
+    '                      & inndata.getSykkelModell() & "';"
+    '     Return sql
+    ' End Function
 
     ' Public Function endreKundedataSQL(inndata As Kunde, kundeIDlabel As Integer)
     ' Dim sql As String = "UPDATE pdk_kunde " _
