@@ -391,6 +391,29 @@ Public Class Form1
         DataGridView3.DataSource = data
 
 
+        ComboBox8.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim databox As New DataTable
+        'Dim sql As String = "SELECT * FROM pdk_kunde"
+        'data = query(sql)
+
+        databox = personDAO.query(personDAO.velgAlleKunder())
+
+        If databox.Rows.Count >= 1 Then 'Fyller combobox med kundeinformasjon
+            ReDim kundeIDinformasjon(databox.Rows.Count - 1) 'justerer lengde på array 
+            Dim teller As Integer
+            teller = databox.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = databox.Rows(teller)
+                ComboboxTekst = "Kunde-ID: " & row("kundeID") & " " & row("kfornavn") & " " & row("ketternavn") & " " & row("kadresse")
+                ComboBox8.Items.Add(ComboboxTekst)
+                kundeIDinformasjon(teller) = row("kundeID") 'lagrer kundeID i array
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+
 
 
     End Sub
