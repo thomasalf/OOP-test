@@ -180,7 +180,6 @@ Partial Class Form1
         Me.ComboEksisterendeSykler = New System.Windows.Forms.ComboBox()
         Me.GroupBoxSykkelinformasjon = New System.Windows.Forms.GroupBox()
         Me.btnSklLagreOppdatering = New System.Windows.Forms.Button()
-        Me.btnSklLagreNyModell = New System.Windows.Forms.Button()
         Me.btnSklSlettSykkel = New System.Windows.Forms.Button()
         Me.ComboVelgTransportor = New System.Windows.Forms.ComboBox()
         Me.ComboVelgHjemsted = New System.Windows.Forms.ComboBox()
@@ -1670,7 +1669,6 @@ Partial Class Form1
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboSklVelgType)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklLagreOppdatering)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboSklVelgModell)
-        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklLagreNyModell)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboSklVelgMerke)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklSlettSykkel)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboVelgTransportor)
@@ -1703,15 +1701,6 @@ Partial Class Form1
         Me.btnSklLagreOppdatering.TabIndex = 54
         Me.btnSklLagreOppdatering.Text = "Lagre oppdatering"
         Me.btnSklLagreOppdatering.UseVisualStyleBackColor = True
-        '
-        'btnSklLagreNyModell
-        '
-        Me.btnSklLagreNyModell.Location = New System.Drawing.Point(168, 208)
-        Me.btnSklLagreNyModell.Name = "btnSklLagreNyModell"
-        Me.btnSklLagreNyModell.Size = New System.Drawing.Size(96, 23)
-        Me.btnSklLagreNyModell.TabIndex = 53
-        Me.btnSklLagreNyModell.Text = "Lagre ny modell"
-        Me.btnSklLagreNyModell.UseVisualStyleBackColor = True
         '
         'btnSklSlettSykkel
         '
@@ -1835,9 +1824,9 @@ Partial Class Form1
         '
         'btnSklRegistrerEndringer
         '
-        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(184, 232)
+        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(176, 232)
         Me.btnSklRegistrerEndringer.Name = "btnSklRegistrerEndringer"
-        Me.btnSklRegistrerEndringer.Size = New System.Drawing.Size(92, 23)
+        Me.btnSklRegistrerEndringer.Size = New System.Drawing.Size(104, 23)
         Me.btnSklRegistrerEndringer.TabIndex = 48
         Me.btnSklRegistrerEndringer.Text = "Registrer ny"
         Me.btnSklRegistrerEndringer.UseVisualStyleBackColor = True
@@ -2189,7 +2178,6 @@ Partial Class Form1
     Friend WithEvents GroupBoxHvaVilDuGjore As System.Windows.Forms.GroupBox
     Friend WithEvents btnSklSlettSykkel As System.Windows.Forms.Button
     Friend WithEvents btnSklLagreOppdatering As System.Windows.Forms.Button
-    Friend WithEvents btnSklLagreNyModell As System.Windows.Forms.Button
     Friend WithEvents btnSklVisSykkelmeny As System.Windows.Forms.Button
     Friend WithEvents TabPageSykkeltransport As System.Windows.Forms.TabPage
     Friend WithEvents DataGridViewSykkeltransport As System.Windows.Forms.DataGridView

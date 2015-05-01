@@ -473,7 +473,6 @@ Public Class Form1
 
     Private Sub btnRegistrereNySykkel_Click(sender As Object, e As EventArgs) Handles btnRegistrereNySykkel.Click
         GroupBoxHvaVilDuGjore.Visible = False
-        btnSklLagreNyModell.Visible = False
         btnSklLagreOppdatering.Visible = False
         btnSklRegistrerEndringer.Visible = True
         GroupBoxSykkelinformasjon.Visible = True
@@ -550,7 +549,6 @@ Public Class Form1
 
     Private Sub ComboEksisterendeMerker_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeMerker.SelectedIndexChanged
         GroupBoxHvaVilDuGjore.Visible = False
-        btnSklLagreNyModell.Visible = True
         btnSklLagreOppdatering.Visible = False
         btnSklRegistrerEndringer.Visible = False
         GroupBoxSykkelinformasjon.Visible = True
@@ -558,7 +556,6 @@ Public Class Form1
 
     Private Sub ComboEksisterendeSykler_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeSykler.SelectedIndexChanged
         GroupBoxHvaVilDuGjore.Visible = False
-        btnSklLagreNyModell.Visible = False
         btnSklLagreOppdatering.Visible = True
         btnSklRegistrerEndringer.Visible = False
         GroupBoxSykkelinformasjon.Visible = True
@@ -612,7 +609,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub btnSklLagreNyModell_Click(sender As Object, e As EventArgs) Handles btnSklLagreNyModell.Click
+    Private Sub btnSklLagreNyModell_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -623,9 +620,7 @@ Public Class Form1
         ComboEksisterendeSykler.Visible = False
     End Sub
 
-    Private Sub btnSklLagreNyModell_Click_1(sender As Object, e As EventArgs) Handles btnSklLagreNyModell.Click
 
-    End Sub
 
     Private Sub ComboSykkelSomSkalTransporteres_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSykkelSomSkalTransporteres.SelectedIndexChanged
 
