@@ -562,6 +562,29 @@ Public Class Form1
         btnSklLagreOppdatering.Visible = True
         btnSklRegistrerEndringer.Visible = False
         GroupBoxSykkelinformasjon.Visible = True
+
+        'Ny kode
+        'Fyller kundeinformasjonsfelt med informasjonen som finnes i databasen
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_sykkel " _
+                                   & "WHERE sykkelID = '" & sykkelIDinformasjon(ComboEksisterendeSykler.SelectedIndex) & "'"
+        data = query(sql)
+        If data.Rows.Count = 1 Then
+            clearGroupbox(GroupBoxSykkelinformasjon)
+            Dim row As DataRow = data.Rows(0)
+            'kundeIDtilRedigering = row("kundeID")
+            'Label3.Text = kundeIDtilRedigering
+            TextBoxSkl1.Text = row("merke")
+            TextBoxSkl2.Text = row("modell")
+            TextBoxSkl3.Text = row("sykkeltype")
+        End If
+
+        LabelSklGammelStatus.Visible = True
+        LabelSklGammelTilhorighet.Visible = True
+        LabelSklGammelTransportor.Visible = True
+
+        'Viser kundeinformasjonsfelter
+        GroupBox3.Visible = True
     End Sub
 
     Private Sub btnSklRegistrerEndringer_Click(sender As Object, e As EventArgs) Handles btnSklRegistrerEndringer.Click

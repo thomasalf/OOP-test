@@ -206,6 +206,9 @@ Partial Class Form1
         Me.LabelTransportFraSted = New System.Windows.Forms.Label()
         Me.LabelTransportTilSted = New System.Windows.Forms.Label()
         Me.btnLastInnTransportinfo = New System.Windows.Forms.Button()
+        Me.LabelSklGammelStatus = New System.Windows.Forms.Label()
+        Me.LabelSklGammelTilhorighet = New System.Windows.Forms.Label()
+        Me.LabelSklGammelTransportor = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1662,6 +1665,9 @@ Partial Class Form1
         '
         'GroupBoxSykkelinformasjon
         '
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklGammelTransportor)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklGammelTilhorighet)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklGammelStatus)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklLagreOppdatering)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklLagreNyModell)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklSlettSykkel)
@@ -1918,6 +1924,36 @@ Partial Class Form1
         Me.btnLastInnTransportinfo.Text = "Last inn informasjon"
         Me.btnLastInnTransportinfo.UseVisualStyleBackColor = True
         '
+        'LabelSklGammelStatus
+        '
+        Me.LabelSklGammelStatus.AutoSize = True
+        Me.LabelSklGammelStatus.Location = New System.Drawing.Point(288, 96)
+        Me.LabelSklGammelStatus.Name = "LabelSklGammelStatus"
+        Me.LabelSklGammelStatus.Size = New System.Drawing.Size(71, 13)
+        Me.LabelSklGammelStatus.TabIndex = 55
+        Me.LabelSklGammelStatus.Text = "gammelstatus"
+        Me.LabelSklGammelStatus.Visible = False
+        '
+        'LabelSklGammelTilhorighet
+        '
+        Me.LabelSklGammelTilhorighet.AutoSize = True
+        Me.LabelSklGammelTilhorighet.Location = New System.Drawing.Point(288, 120)
+        Me.LabelSklGammelTilhorighet.Name = "LabelSklGammelTilhorighet"
+        Me.LabelSklGammelTilhorighet.Size = New System.Drawing.Size(94, 13)
+        Me.LabelSklGammelTilhorighet.TabIndex = 56
+        Me.LabelSklGammelTilhorighet.Text = "gammeltilhøringhet"
+        Me.LabelSklGammelTilhorighet.Visible = False
+        '
+        'LabelSklGammelTransportor
+        '
+        Me.LabelSklGammelTransportor.AutoSize = True
+        Me.LabelSklGammelTransportor.Location = New System.Drawing.Point(288, 144)
+        Me.LabelSklGammelTransportor.Name = "LabelSklGammelTransportor"
+        Me.LabelSklGammelTransportor.Size = New System.Drawing.Size(93, 13)
+        Me.LabelSklGammelTransportor.TabIndex = 57
+        Me.LabelSklGammelTransportor.Text = "gammeltransportør"
+        Me.LabelSklGammelTransportor.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2157,5 +2193,8 @@ Partial Class Form1
     Friend WithEvents LabelTransportFraSted As System.Windows.Forms.Label
     Friend WithEvents ComboSykkelSomSkalTransporteres As System.Windows.Forms.ComboBox
     Friend WithEvents btnLastInnTransportinfo As System.Windows.Forms.Button
+    Friend WithEvents LabelSklGammelTransportor As System.Windows.Forms.Label
+    Friend WithEvents LabelSklGammelTilhorighet As System.Windows.Forms.Label
+    Friend WithEvents LabelSklGammelStatus As System.Windows.Forms.Label
 
 End Class
