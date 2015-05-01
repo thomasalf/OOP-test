@@ -468,7 +468,7 @@ Public Class Form1
             personDAO.query(personDAO.slettKundedataSQL(kundeIDtilRedigering))
             MsgBox("Kunden er slettet fra databasen.")
             ComboBoxRegistrerteKunder.Items.Clear() 'Fjerner gammel informasjon fra combobox
-            ComboBoxRegistrerteKunder.Text = "Registrerte kunder"
+            ComboBoxRegistrerteKunder.SelectedIndex = -1
             clearGroupbox(GroupBox3)
         Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
             MessageBox.Show("Feil: " & ex.Message)
@@ -585,7 +585,8 @@ Public Class Form1
 
 
         'START: fyll "merke"-combobox
-        comboBoxUtil.fyllComboBoxMedSykkelmerke(ComboSklVelgMerke)
+        comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
+        'comboBoxUtil.fyllComboBoxMedSykkelmerke(ComboSklVelgMerke)
         'GAMMEL KODE:
         '  ComboSklVelgMerke.Items.Clear() 'Fjerner gammel informasjon fra combobox
         '  Dim data4 As New DataTable
@@ -609,7 +610,8 @@ Public Class Form1
         'SLUTT: fyll "merke"-combobox
 
         'START: fyll "modell"-combobox
-        comboBoxUtil.fyllComboboxMedSykkelmodell(ComboSklVelgModell)
+        'comboBoxUtil.fyllComboboxMedSykkelmodell(ComboSklVelgModell)
+        comboBoxUtil.fyllCombobox1(ComboSklVelgModell, "pdk_sykkelmodell", "modell")
         'GAMMEL KODE:
         '  ComboSklVelgModell.Items.Clear() 'Fjerner gammel informasjon fra combobox
         '  Dim data5 As New DataTable
@@ -633,25 +635,27 @@ Public Class Form1
         'SLUTT: fyll "modell"-combobox
 
         'START: fyll "type"-combobox
-        ComboSklVelgType.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        Dim data6 As New DataTable
-        Dim sql6 As String = "SELECT * FROM pdk_sykkeltype"
-        data = query(sql6)
-
-
-        If data.Rows.Count >= 1 Then 'Fyller combobox med typeinformasjon
-            Dim teller As Integer
-            teller = data.Rows.Count
-
-            For teller = 0 To (teller - 1)
-                Dim ComboboxTekst As String
-                Dim row As DataRow = data.Rows(teller)
-                ComboboxTekst = row("sykkeltype")
-                ComboSklVelgType.Items.Add(ComboboxTekst)
-            Next
-        Else
-            MsgBox("Ingen informasjon funnet.")
-        End If
+        comboBoxUtil.fyllCombobox1(ComboSklVelgType, "pdk_sykkeltype", "sykkeltype")
+        'GAMMEL KODE:
+        '   ComboSklVelgType.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        '   Dim data6 As New DataTable
+        '   Dim sql6 As String = "SELECT * FROM pdk_sykkeltype"
+        '   data = query(sql6)
+        '
+        '
+        '        If data.Rows.Count >= 1 Then 'Fyller combobox med typeinformasjon
+        ' Dim teller As Integer
+        ' teller = data.Rows.Count
+        '
+        '        For teller = 0 To (teller - 1)
+        ' Dim ComboboxTekst As String
+        ' Dim row As DataRow = data.Rows(teller)
+        ' ComboboxTekst = row("sykkeltype")
+        ' ComboSklVelgType.Items.Add(ComboboxTekst)
+        ' Next
+        ' Else
+        ' MsgBox("Ingen informasjon funnet.")
+        ' End If
         'SLUTT: fyll "type"-combobox
 
     End Sub
