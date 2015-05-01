@@ -1,6 +1,8 @@
 ﻿Public Class utstyr
     Private utId As String = "" 'Idnr til utstyret
     Private utType As String = "" 'Beskrivelse av type utstyr
+    Private pris As String = "" 'Dagspris utleie av utstyret
+    Private antall As String = "" 'Antall innkjøpte
 
     'tester property
     Public Property utstyrId() As String

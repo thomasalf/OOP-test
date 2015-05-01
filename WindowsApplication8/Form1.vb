@@ -399,7 +399,7 @@ Public Class Form1
         Try 'sjekker for feil
             Dim utstyr As New utstyr
             utstyr.utstyrType = _
-            InputBox("Skriv inn utstyrstype her", "Registrer utstyr")
+            InputBox("Skriv inn utstyrstype her", "Registrer nytt utstyr")
 
             Dim data As New DataTable
             Dim sql As String = "INSERT INTO pdk_ekstrautstyr SET utstyrstype = '" & utstyr.utstyrType & "'"
@@ -883,4 +883,6 @@ Public Class Form1
             MsgBox("Ingen informasjon funnet.")
         End If
     End Sub
+
+
 End Class
