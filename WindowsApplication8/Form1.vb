@@ -339,36 +339,6 @@ Public Class Form1
 
 
 
-
-
-
-        'START: GAMMEL KODE
-        'Sjekker inndata
-        ' Try
-        'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
-        '  Dim kunde As New Kunde(TextBox12.Text, TextBox11.Text, _
-        '                         TextBox8.Text, TextBox7.Text, _
-        '                         TextBox10.Text, TextBox9.Text, _
-        '                         ComboBox6.SelectedValue)
-        'bruker data fra opprettet kunde for å lage SQL-kommando
-        '  Dim data As New DataTable
-        '  Dim sql As String = "UPDATE pdk_kunde " _
-        '                      & "SET kfornavn = '" & kunde.getFornavn() _
-        '                      & "', ketternavn = '" & kunde.getEtternavn() _
-        '                      & "', kadresse = '" & kunde.getGateadresse() & ", " & kunde.getPostnummer() _
-        '                      & "', kepost = '" & kunde.getEpost() _
-        '                      & "', ktelefon = '" & kunde.getTelefon() _
-        '                      & "' WHERE kundeID = '" & Label3.Text & "'"
-        '
-        '       data = query(sql)
-        '      Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
-        'MessageBox.Show("Feil: " & ex.Message)
-        'End Try
-        'SLUTT: GAMMEL KODE
-
-
-
-
     End Sub
 
 
@@ -384,10 +354,18 @@ Public Class Form1
 
 
         Dim data As New DataTable
-        Dim sql As String = "SELECT merke, prisprosent, bstatus, statusnavn, inntid FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.bookingID JOIN pdk_booking a ON b.bookingID=a.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON a.prisID=p.prisID WHERE bstatus='tilgjengelig' OR (bstatus='utleid' AND " & fra & " < uttid AND " & til & " < uttid) OR (bstatus='utleid' AND " & fra & " > inntid AND " & til & " < inntid)"
+        Dim sql As String = "SELECT merke,sykkeltype, prisprosent, a.bstatus, statusnavn, a.inntid FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.sykkelID JOIN pdk_booking a ON b.bookingID=a.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON a.prisID=p.prisID WHERE a.bstatus='tilgjengelig' OR (a.bstatus='utleid' AND " & fra & " < a.uttid AND " & til & " < a.uttid) OR (a.bstatus='utleid' AND " & fra & " > a.inntid AND " & til & " < a.inntid)"
+
+
 
         data = query(sql)
         DataGridView3.DataSource = data
+
+        Dim data2 As New DataTable
+        Dim sql2 As String = "Select * from pdk_ekstrautstyr"
+
+        data2 = query(sql2)
+        DataGridView5.DataSource = data2
 
 
 
@@ -400,7 +378,7 @@ Public Class Form1
         txtUtstyrstype.Visible = True
         txtUtstyrLeiepris.Visible = True
         txtAntallInnkjopt.Visible = True
-       
+
     End Sub
 
 
@@ -416,14 +394,27 @@ Public Class Form1
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
         Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
-        Dim utpost As String = ComboBox7.SelectedText ' usikker på om det skal være text eller value eller noe annet. 
-        Dim innpost As String = ComboBox10.SelectedText
-        Dim selgerID As Integer ' må hente selgerID fra en plass?
-        Dim PrisID As Integer ' PrisID må også hentes, kanskje i forbindelse med henting av tilgjengelige sykler.
-        Dim kundeID As String = ComboBox8.SelectedText
-        Dim SykkelID As Integer ' Må være String for spørringen sin del? 
 
-        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
+
+
+        Const Pris As Integer = 500
+
+        Dim utpost As String = 4001 ' usikker på om det skal være text eller value eller noe annet. 
+        Dim innpost As String = 4001
+        Dim selgerID As String = 2 ' må hente selgerID fra en plass?
+        Dim kundeID As String = 2
+        Dim SykkelID As String = 1 ' Må være String for spørringen sin del? 
+        Dim Antalldager = DateTimePicker2.Value.Subtract(DateTimePicker1.Value).Days
+
+        Dim salgspris As String = Pris * Antalldager 'Vi tar dette med timer i en "hvis vi hadde tid versjon"
+
+        Dim prisID As String = 2
+
+        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & prisID & "," & kundeID & "," & salgspris & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
+
+        query(sql)
+
+        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & sykkelID & ")"
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles btnBestillinger.Click
@@ -433,9 +424,9 @@ Public Class Form1
         'I tillegg skal bookingprisen inn bakerst
         'flytte oppkobling til db over til StatistikkDAO
         Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid, b.kundeID, " _
-        & "CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt," _
-        & "CONCAT( s.fornavn,  ' ', s.etternavn) AS selger FROM pdk_booking b," _
-        & "pdk_kunde k, pdk_ansatt s WHERE b.kundeID = k.kundeID and b.selgerID = s.selgerID;"
+& "CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt," _
+& "CONCAT( s.fornavn,  ' ', s.etternavn) AS selger FROM pdk_booking b," _
+& "pdk_kunde k, pdk_ansatt s WHERE b.kundeID = k.kundeID and b.selgerID = s.selgerID;"
 
         bestillinger = query(sql)
         dgvStatistikk.DataSource = bestillinger
@@ -500,6 +491,11 @@ Public Class Form1
             MsgBox("Ingen informasjon funnet.")
         End If
 
+
+        comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
+        comboBoxUtil.fyllCombobox1(ComboSklVelgModell, "pdk_sykkelmodell", "modell")
+        comboBoxUtil.fyllCombobox1(ComboSklVelgType, "pdk_sykkeltype", "sykkeltype")
+
     End Sub
 
     Private Sub btnRegistrereNySykkel_Click(sender As Object, e As EventArgs) Handles btnRegistrereNySykkel.Click
@@ -511,6 +507,8 @@ Public Class Form1
         GroupBoxSykkelinformasjon.Visible = True
 
         'START: fyll "status"-combobox
+        'comboBoxUtil.fyllCombobox2(ComboVelgStatus, "pdk_status", "statusnavn", "statusID", statusIDinformasjon)
+
         ComboVelgStatus.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data As New DataTable
         Dim sql As String = "SELECT * FROM pdk_status"
@@ -583,80 +581,10 @@ Public Class Form1
         'Slutt: fyll "transportør"-combobox
 
 
-
-        'START: fyll "merke"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
-        'comboBoxUtil.fyllComboBoxMedSykkelmerke(ComboSklVelgMerke)
-        'GAMMEL KODE:
-        '  ComboSklVelgMerke.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        '  Dim data4 As New DataTable
-        '  Dim sql4 As String = "SELECT * FROM pdk_sykkelmerke"
-        '  data = query(sql4)
-        '
-        '
-        '        If data.Rows.Count >= 1 Then 'Fyller combobox med merkeinformasjon
-        ' Dim teller As Integer
-        ' teller = data.Rows.Count
-        '
-        '        For teller = 0 To (teller - 1)
-        ' Dim ComboboxTekst As String
-        ' Dim row As DataRow = data.Rows(teller)
-        ' ComboboxTekst = row("merke")
-        ' ComboSklVelgMerke.Items.Add(ComboboxTekst)
-        ' Next
-        ' Else
-        ' MsgBox("Ingen informasjon funnet.")
-        ' End If
-        'SLUTT: fyll "merke"-combobox
-
-        'START: fyll "modell"-combobox
-        'comboBoxUtil.fyllComboboxMedSykkelmodell(ComboSklVelgModell)
         comboBoxUtil.fyllCombobox1(ComboSklVelgModell, "pdk_sykkelmodell", "modell")
-        'GAMMEL KODE:
-        '  ComboSklVelgModell.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        '  Dim data5 As New DataTable
-        '  Dim sql5 As String = "SELECT * FROM pdk_sykkelmodell"
-        '  data = query(sql5)
-        '
-        '
-        '        If data.Rows.Count >= 1 Then 'Fyller combobox med modellinformasjon
-        ' Dim teller As Integer
-        ' teller = data.Rows.Count
-        '
-        '        For teller = 0 To (teller - 1)
-        ' Dim ComboboxTekst As String
-        ' Dim row As DataRow = data.Rows(teller)
-        ' ComboboxTekst = row("modell")
-        ' ComboSklVelgModell.Items.Add(ComboboxTekst)
-        ' Next
-        ' Else
-        ' MsgBox("Ingen informasjon funnet.")
-        ' End If
-        'SLUTT: fyll "modell"-combobox
-
-        'START: fyll "type"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgType, "pdk_sykkeltype", "sykkeltype")
-        'GAMMEL KODE:
-        '   ComboSklVelgType.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        '   Dim data6 As New DataTable
-        '   Dim sql6 As String = "SELECT * FROM pdk_sykkeltype"
-        '   data = query(sql6)
-        '
-        '
-        '        If data.Rows.Count >= 1 Then 'Fyller combobox med typeinformasjon
-        ' Dim teller As Integer
-        ' teller = data.Rows.Count
-        '
-        '        For teller = 0 To (teller - 1)
-        ' Dim ComboboxTekst As String
-        ' Dim row As DataRow = data.Rows(teller)
-        ' ComboboxTekst = row("sykkeltype")
-        ' ComboSklVelgType.Items.Add(ComboboxTekst)
-        ' Next
-        ' Else
-        ' MsgBox("Ingen informasjon funnet.")
-        ' End If
-        'SLUTT: fyll "type"-combobox
+
 
     End Sub
 
@@ -876,87 +804,28 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        Dim avanse As New DataTable
+        Dim rad As DataRow
 
-    Private Sub btnLagreUtstyr_Click(sender As Object, e As EventArgs) Handles btnLagreUtstyr.Click
-        Try 'sjekker for feil
-            Dim utstyr As New utstyr
-
-            utstyr.utstyrType = txtUtstyrstype.Text
-            'InputBox("Skriv inn utstyrstype her", "Registrer nytt utstyr")
-            utstyr.utstyrPris = txtUtstyrLeiepris.Text
-            utstyr.utstyrAntall = txtAntallInnkjopt.Text
+        utstyr.utstyrType = txtUtstyrstype.Text
+        'InputBox("Skriv inn utstyrstype her", "Registrer nytt utstyr")
+        utstyr.utstyrPris = txtUtstyrLeiepris.Text
+        utstyr.utstyrAntall = txtAntallInnkjopt.Text
 
 
-            Dim data As New DataTable
-            Dim sql As String = "INSERT INTO pdk_ekstrautstyr SET utstyrstype = '" & utstyr.utstyrType & "', " _
-                                & "dagpris = '" & utstyr.utstyrPris & "', " _
-                                & "antalltotal = '" & utstyr.utstyrAntall & "'; "
+        Dim data As New DataTable
+        Dim sql As String = "INSERT INTO pdk_ekstrautstyr SET utstyrstype = '" & utstyr.utstyrType & "', " _
+                            & "dagpris = '" & utstyr.utstyrPris & "', " _
+                            & "antalltotal = '" & utstyr.utstyrAntall & "'; "
 
-            data = query(sql)
+        data = query(sql)
         Catch ex As Exception 'Viser feilmelding hvis noe går galt
             MessageBox.Show("Feil: " & ex.Message)
         End Try
         'MsgBox(utstyr.utstyrType)
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        TabControl1.SelectTab(1)
-    End Sub
-
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        TabControl1.SelectTab(7)
-    End Sub
 
 
-    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
-        TabControl1.SelectTab(10)
-    End Sub
-
-    Private Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
-        TabControl1.SelectTab(9)
-    End Sub
-
-    Private Sub btnTransport_Click(sender As Object, e As EventArgs) Handles btnTransport.Click
-        TabControl1.SelectTab(11)
-    End Sub
-
-    Private Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
-        TabControl1.SelectTab(6)
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        TabControl1.SelectTab(3)
-    End Sub
-
-    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
-        TabControl1.SelectTab(7)
-    End Sub
-
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        TabControl1.SelectTab(7)
-    End Sub
-
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        TabControl1.SelectTab(1)
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        TabControl1.SelectTab(1)
-    End Sub
-
-    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
-        TabControl1.SelectTab(7)
-    End Sub
-
-    Private Sub btnTilbaketab9_Click(sender As Object, e As EventArgs) Handles btnTilbaketab9.Click
-        TabControl1.SelectTab(7)
-    End Sub
-
-    Private Sub btnTibaketab10_Click(sender As Object, e As EventArgs) Handles btnTibaketab10.Click
-        TabControl1.SelectTab(7)
-    End Sub
-
-    Private Sub btnTilbakeTab11_Click(sender As Object, e As EventArgs) Handles btnTilbakeTab11.Click
-        TabControl1.SelectTab(7)
-    End Sub
 End Class
