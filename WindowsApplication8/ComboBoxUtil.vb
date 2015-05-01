@@ -20,6 +20,33 @@
         End If
     End Sub
 
+    '  Public Function fyllCombobox2(comboboxnavn As ComboBox, tabellnavn As String, tekstradnavn As String, _
+    '                           IDradnavn As String, IDarray As Array)
+    '  Dim sykkeldao As New SykkelDAO
+    '      comboboxnavn.Items.Clear() 'Fjerner gammel informasjon fra combobox
+    '  Dim data As New DataTable
+    '  Dim sql As String = "SELECT * FROM " & tabellnavn & ";"
+    '      data = sykkeldao.query(sql)
+    '
+    '
+    '        If data.Rows.Count >= 1 Then 'Fyller combobox med statusinformasjon
+    '    Dim tempArray(Data.Rows.Count - 1) 'justerer lengde på array
+    '    Dim teller As Integer
+    '            teller = data.Rows.Count
+    '
+    '            For teller = 0 To (teller - 1)
+    '    Dim ComboboxTekst As String
+    '    Dim row As DataRow = Data.Rows(teller)
+    '                ComboboxTekst = row(tekstradnavn)
+    '                comboboxnavn.Items.Add(ComboboxTekst)
+    '                tempArray(teller) = row(IDradnavn)
+    '                MsgBox(tempArray(teller))
+    '            Next
+    '        End If
+    '
+    '        Return False
+    '    End Function
+
     '   Public Sub fyllComboBoxMedSykkelmerke(comboboxnavn As ComboBox)
     ' Dim sykkeldao As New SykkelDAO
     '     comboboxnavn.Items.Clear() 'Fjerner gammel informasjon fra combobox

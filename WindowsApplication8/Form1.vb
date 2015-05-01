@@ -339,36 +339,6 @@ Public Class Form1
 
 
 
-
-
-
-        'START: GAMMEL KODE
-        'Sjekker inndata
-        ' Try
-        'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
-        '  Dim kunde As New Kunde(TextBox12.Text, TextBox11.Text, _
-        '                         TextBox8.Text, TextBox7.Text, _
-        '                         TextBox10.Text, TextBox9.Text, _
-        '                         ComboBox6.SelectedValue)
-        'bruker data fra opprettet kunde for å lage SQL-kommando
-        '  Dim data As New DataTable
-        '  Dim sql As String = "UPDATE pdk_kunde " _
-        '                      & "SET kfornavn = '" & kunde.getFornavn() _
-        '                      & "', ketternavn = '" & kunde.getEtternavn() _
-        '                      & "', kadresse = '" & kunde.getGateadresse() & ", " & kunde.getPostnummer() _
-        '                      & "', kepost = '" & kunde.getEpost() _
-        '                      & "', ktelefon = '" & kunde.getTelefon() _
-        '                      & "' WHERE kundeID = '" & Label3.Text & "'"
-        '
-        '       data = query(sql)
-        '      Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
-        'MessageBox.Show("Feil: " & ex.Message)
-        'End Try
-        'SLUTT: GAMMEL KODE
-
-
-
-
     End Sub
 
 
@@ -508,6 +478,11 @@ Public Class Form1
             MsgBox("Ingen informasjon funnet.")
         End If
 
+
+        comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
+        comboBoxUtil.fyllCombobox1(ComboSklVelgModell, "pdk_sykkelmodell", "modell")
+        comboBoxUtil.fyllCombobox1(ComboSklVelgType, "pdk_sykkeltype", "sykkeltype")
+
     End Sub
 
     Private Sub btnRegistrereNySykkel_Click(sender As Object, e As EventArgs) Handles btnRegistrereNySykkel.Click
@@ -519,6 +494,8 @@ Public Class Form1
         GroupBoxSykkelinformasjon.Visible = True
 
         'START: fyll "status"-combobox
+        'comboBoxUtil.fyllCombobox2(ComboVelgStatus, "pdk_status", "statusnavn", "statusID", statusIDinformasjon)
+
         ComboVelgStatus.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data As New DataTable
         Dim sql As String = "SELECT * FROM pdk_status"
@@ -591,80 +568,10 @@ Public Class Form1
         'Slutt: fyll "transportør"-combobox
 
 
-
-        'START: fyll "merke"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
-        'comboBoxUtil.fyllComboBoxMedSykkelmerke(ComboSklVelgMerke)
-        'GAMMEL KODE:
-        '  ComboSklVelgMerke.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        '  Dim data4 As New DataTable
-        '  Dim sql4 As String = "SELECT * FROM pdk_sykkelmerke"
-        '  data = query(sql4)
-        '
-        '
-        '        If data.Rows.Count >= 1 Then 'Fyller combobox med merkeinformasjon
-        ' Dim teller As Integer
-        ' teller = data.Rows.Count
-        '
-        '        For teller = 0 To (teller - 1)
-        ' Dim ComboboxTekst As String
-        ' Dim row As DataRow = data.Rows(teller)
-        ' ComboboxTekst = row("merke")
-        ' ComboSklVelgMerke.Items.Add(ComboboxTekst)
-        ' Next
-        ' Else
-        ' MsgBox("Ingen informasjon funnet.")
-        ' End If
-        'SLUTT: fyll "merke"-combobox
-
-        'START: fyll "modell"-combobox
-        'comboBoxUtil.fyllComboboxMedSykkelmodell(ComboSklVelgModell)
         comboBoxUtil.fyllCombobox1(ComboSklVelgModell, "pdk_sykkelmodell", "modell")
-        'GAMMEL KODE:
-        '  ComboSklVelgModell.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        '  Dim data5 As New DataTable
-        '  Dim sql5 As String = "SELECT * FROM pdk_sykkelmodell"
-        '  data = query(sql5)
-        '
-        '
-        '        If data.Rows.Count >= 1 Then 'Fyller combobox med modellinformasjon
-        ' Dim teller As Integer
-        ' teller = data.Rows.Count
-        '
-        '        For teller = 0 To (teller - 1)
-        ' Dim ComboboxTekst As String
-        ' Dim row As DataRow = data.Rows(teller)
-        ' ComboboxTekst = row("modell")
-        ' ComboSklVelgModell.Items.Add(ComboboxTekst)
-        ' Next
-        ' Else
-        ' MsgBox("Ingen informasjon funnet.")
-        ' End If
-        'SLUTT: fyll "modell"-combobox
-
-        'START: fyll "type"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgType, "pdk_sykkeltype", "sykkeltype")
-        'GAMMEL KODE:
-        '   ComboSklVelgType.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        '   Dim data6 As New DataTable
-        '   Dim sql6 As String = "SELECT * FROM pdk_sykkeltype"
-        '   data = query(sql6)
-        '
-        '
-        '        If data.Rows.Count >= 1 Then 'Fyller combobox med typeinformasjon
-        ' Dim teller As Integer
-        ' teller = data.Rows.Count
-        '
-        '        For teller = 0 To (teller - 1)
-        ' Dim ComboboxTekst As String
-        ' Dim row As DataRow = data.Rows(teller)
-        ' ComboboxTekst = row("sykkeltype")
-        ' ComboSklVelgType.Items.Add(ComboboxTekst)
-        ' Next
-        ' Else
-        ' MsgBox("Ingen informasjon funnet.")
-        ' End If
-        'SLUTT: fyll "type"-combobox
+
 
     End Sub
 
