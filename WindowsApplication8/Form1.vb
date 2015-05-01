@@ -848,4 +848,30 @@ Public Class Form1
         ComboSklVelgMerke.SelectedIndex = -1
     End Sub
 
+    Private Sub btnLastInnUtstyr_Click(sender As Object, e As EventArgs) Handles btnLastInnUtstyr.Click
+        'fyller comboboxer
+        cmbUtstyrskategorier.Items.Clear() 'Fjerner gammel informasjon fra combobox
+
+        Dim data As New DataTable
+        'Dim sql As String = "SELECT DISTINCT utstyrstype FROM pdk_ekstrautstyr"
+        Dim sql As String = "SELECT * FROM pdk_ekstrautstyr"
+
+        data = query(sql)
+        DataGridView1.DataSource = data
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med utstyrstyper
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("utstyrstype")
+                cmbUtstyrskategorier.Items.Add(ComboboxTekst)
+            Next
+
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+    End Sub
 End Class
