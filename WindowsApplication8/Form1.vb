@@ -461,7 +461,7 @@ Public Class Form1
 
         Dim selgerID As String = 1 ' må hente selgerID fra en plass?
         Dim PrisID As String = 2
-        Dim kundeID As String = 1
+        Dim kundeID As String = Label5.Text
         Dim SykkelID As String = 1 ' Må være String for spørringen sin del? 
         Dim Antalldager = DateTimePicker2.Value.Subtract(DateTimePicker1.Value).Days + 1
 
