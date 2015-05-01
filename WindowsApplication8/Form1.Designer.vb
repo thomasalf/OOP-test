@@ -1310,6 +1310,7 @@ Partial Class Form1
         'ComboBox10
         '
         Me.ComboBox10.FormattingEnabled = True
+        Me.ComboBox10.Items.AddRange(New Object() {"4001", "7051"})
         Me.ComboBox10.Location = New System.Drawing.Point(476, 259)
         Me.ComboBox10.Name = "ComboBox10"
         Me.ComboBox10.Size = New System.Drawing.Size(121, 21)
@@ -1318,6 +1319,7 @@ Partial Class Form1
         'ComboBox9
         '
         Me.ComboBox9.FormattingEnabled = True
+        Me.ComboBox9.Items.AddRange(New Object() {"10", "25"})
         Me.ComboBox9.Location = New System.Drawing.Point(256, 259)
         Me.ComboBox9.Name = "ComboBox9"
         Me.ComboBox9.Size = New System.Drawing.Size(121, 21)
@@ -1345,9 +1347,9 @@ Partial Class Form1
         Me.Label30.AutoSize = True
         Me.Label30.Location = New System.Drawing.Point(208, 262)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(42, 13)
+        Me.Label30.Size = New System.Drawing.Size(50, 13)
         Me.Label30.TabIndex = 18
-        Me.Label30.Text = "Rabatt:"
+        Me.Label30.Text = "Rabatt%:"
         '
         'Label29
         '
@@ -1393,6 +1395,7 @@ Partial Class Form1
         'ComboBox7
         '
         Me.ComboBox7.FormattingEnabled = True
+        Me.ComboBox7.Items.AddRange(New Object() {"4001", "7051"})
         Me.ComboBox7.Location = New System.Drawing.Point(37, 81)
         Me.ComboBox7.Name = "ComboBox7"
         Me.ComboBox7.Size = New System.Drawing.Size(200, 21)
