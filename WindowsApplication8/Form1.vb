@@ -418,15 +418,20 @@ Public Class Form1
         Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
         Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
 
-        Dim utpost As String = ComboBox7.SelectedItem.ToString ' usikker på om det skal være text eller value eller noe annet. 
-        Dim innpost As String = ComboBox10.SelectedItem.ToString
+        Dim utpost As String = 4011 ' usikker på om det skal være text eller value eller noe annet. 
+        Dim innpost As String = 4011
 
-        Dim selgerID As Integer ' må hente selgerID fra en plass?
-        Dim PrisID As Integer
-        Dim kundeID As String = ComboBox8.SelectedItem.ToString
-        Dim SykkelID As Integer ' Må være String for spørringen sin del? 
+        Const pris As Integer = 500
 
-        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
+        Dim selgerID As String = 1 ' må hente selgerID fra en plass?
+        Dim PrisID As String = 2
+        Dim kundeID As String = 1
+        Dim SykkelID As String = 1 ' Må være String for spørringen sin del? 
+        Dim Antalldager = DateTimePicker2.Value.Subtract(DateTimePicker1.Value).Days
+
+        Dim salgspris As String = Antalldager * pris
+
+        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles btnBestillinger.Click
