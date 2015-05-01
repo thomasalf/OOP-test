@@ -402,8 +402,6 @@ Public Class Form1
             Dim data As New DataTable
             Dim sql As String = "INSERT INTO pdk_ekstrautstyr SET utstyrstype = '" & utstyr.utstyrType & "'"
 
-
-
             data = query(sql)
         Catch ex As Exception 'Viser feilmelding hvis noe går galt
             MessageBox.Show("Feil: " & ex.Message)
@@ -849,4 +847,5 @@ Public Class Form1
     Private Sub Button12asdgsdfbsdgbdfb_Click(sender As Object, e As EventArgs) Handles Button12asdgsdfbsdgbdfb.Click
         ComboSklVelgMerke.SelectedIndex = -1
     End Sub
+
 End Class
