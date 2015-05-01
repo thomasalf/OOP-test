@@ -72,6 +72,13 @@ Partial Class Form1
         Me.Button20 = New System.Windows.Forms.Button()
         Me.TabPage4UtstyrStatus = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.btnLagreUtstyr = New System.Windows.Forms.Button()
+        Me.lblAntallInnkjopt = New System.Windows.Forms.Label()
+        Me.lblUtstLeiepris = New System.Windows.Forms.Label()
+        Me.lblUtstyrsType = New System.Windows.Forms.Label()
+        Me.txtAntallInnkjopt = New System.Windows.Forms.TextBox()
+        Me.txtUtstyrLeiepris = New System.Windows.Forms.TextBox()
+        Me.txtUtstyrstype = New System.Windows.Forms.TextBox()
         Me.btnLastInnUtstyr = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.cmbUtstyrskategorier = New System.Windows.Forms.ComboBox()
@@ -158,23 +165,50 @@ Partial Class Form1
         Me.lstSokResult = New System.Windows.Forms.ListBox()
         Me.txtUniversalSok = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Side3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UtstyrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
-        Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
+        Me.lstAvanse = New System.Windows.Forms.ListBox()
+        Me.btnAvanse = New System.Windows.Forms.Button()
+        Me.btnBestillinger = New System.Windows.Forms.Button()
+        Me.dgvStatistikk = New System.Windows.Forms.DataGridView()
+        Me.TabPageSykkelregistrering = New System.Windows.Forms.TabPage()
+        Me.Button12asdgsdfbsdgbdfb = New System.Windows.Forms.Button()
+        Me.btnSklVisSykkelmeny = New System.Windows.Forms.Button()
+        Me.GroupBoxHvaVilDuGjore = New System.Windows.Forms.GroupBox()
+        Me.btnRegistrereNySykkel = New System.Windows.Forms.Button()
+        Me.btnOppdatereEksisterendeSykkel = New System.Windows.Forms.Button()
+        Me.ComboEksisterendeSykler = New System.Windows.Forms.ComboBox()
+        Me.GroupBoxSykkelinformasjon = New System.Windows.Forms.GroupBox()
+        Me.LabelSklOpprettNy = New System.Windows.Forms.Label()
+        Me.LabelSklSykkelIDSomRedigeres = New System.Windows.Forms.Label()
+        Me.ComboSklVelgType = New System.Windows.Forms.ComboBox()
+        Me.btnSklLagreOppdatering = New System.Windows.Forms.Button()
+        Me.ComboSklVelgModell = New System.Windows.Forms.ComboBox()
+        Me.ComboSklVelgMerke = New System.Windows.Forms.ComboBox()
+        Me.btnSklSlettSykkel = New System.Windows.Forms.Button()
+        Me.ComboVelgTransportor = New System.Windows.Forms.ComboBox()
+        Me.ComboVelgHjemsted = New System.Windows.Forms.ComboBox()
+        Me.ComboVelgStatus = New System.Windows.Forms.ComboBox()
+        Me.labelSykkel2 = New System.Windows.Forms.Label()
+        Me.labelSykkel3 = New System.Windows.Forms.Label()
+        Me.labelSykkel4 = New System.Windows.Forms.Label()
+        Me.labelSykkel5 = New System.Windows.Forms.Label()
+        Me.labelSykkel6 = New System.Windows.Forms.Label()
+        Me.labelSykkel7 = New System.Windows.Forms.Label()
+        Me.TextBoxSkl1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxSkl2 = New System.Windows.Forms.TextBox()
+        Me.btnSklNullUtSkjema = New System.Windows.Forms.Button()
+        Me.btnSklRegistrerEndringer = New System.Windows.Forms.Button()
+        Me.TabPageSykkeltransport = New System.Windows.Forms.TabPage()
+        Me.btnLastInnTransportinfo = New System.Windows.Forms.Button()
+        Me.LabelTransportTilSted = New System.Windows.Forms.Label()
+        Me.LabelTransportFraSted = New System.Windows.Forms.Label()
+        Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
+        Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
+        Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
+        Me.btnTransport = New System.Windows.Forms.Button()
+        Me.btnAdministrasjon = New System.Windows.Forms.Button()
+        Me.btnTilbaketab9 = New System.Windows.Forms.Button()
+        Me.btnTibaketab10 = New System.Windows.Forms.Button()
+        Me.btnTilbakeTab11 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -200,9 +234,12 @@ Partial Class Form1
         Me.GroupBox9.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvStatistikk, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPageSykkelregistrering.SuspendLayout()
+        Me.GroupBoxHvaVilDuGjore.SuspendLayout()
+        Me.GroupBoxSykkelinformasjon.SuspendLayout()
+        Me.TabPageSykkeltransport.SuspendLayout()
+        CType(Me.DataGridViewSykkeltransport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -421,7 +458,7 @@ Partial Class Form1
         Me.GroupBox7.Size = New System.Drawing.Size(927, 255)
         Me.GroupBox7.TabIndex = 37
         Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "Medlemsinformasjon"
+        Me.GroupBox7.Text = "Kundeinformasjon"
         '
         'DataGridView2
         '
@@ -603,7 +640,7 @@ Partial Class Form1
         '
         'Button20
         '
-        Me.Button20.Location = New System.Drawing.Point(6, 6)
+        Me.Button20.Location = New System.Drawing.Point(6, 16)
         Me.Button20.Name = "Button20"
         Me.Button20.Size = New System.Drawing.Size(92, 23)
         Me.Button20.TabIndex = 36
@@ -644,6 +681,66 @@ Partial Class Form1
         Me.GroupBox5.TabIndex = 44
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Utstyr/Status"
+        '
+        'btnLagreUtstyr
+        '
+        Me.btnLagreUtstyr.Location = New System.Drawing.Point(462, 330)
+        Me.btnLagreUtstyr.Name = "btnLagreUtstyr"
+        Me.btnLagreUtstyr.Size = New System.Drawing.Size(74, 32)
+        Me.btnLagreUtstyr.TabIndex = 51
+        Me.btnLagreUtstyr.Text = "Lagre"
+        Me.btnLagreUtstyr.UseVisualStyleBackColor = True
+        '
+        'lblAntallInnkjopt
+        '
+        Me.lblAntallInnkjopt.AutoSize = True
+        Me.lblAntallInnkjopt.Location = New System.Drawing.Point(171, 350)
+        Me.lblAntallInnkjopt.Name = "lblAntallInnkjopt"
+        Me.lblAntallInnkjopt.Size = New System.Drawing.Size(74, 13)
+        Me.lblAntallInnkjopt.TabIndex = 50
+        Me.lblAntallInnkjopt.Text = "Antall på lager"
+        '
+        'lblUtstLeiepris
+        '
+        Me.lblUtstLeiepris.AutoSize = True
+        Me.lblUtstLeiepris.Location = New System.Drawing.Point(171, 323)
+        Me.lblUtstLeiepris.Name = "lblUtstLeiepris"
+        Me.lblUtstLeiepris.Size = New System.Drawing.Size(43, 13)
+        Me.lblUtstLeiepris.TabIndex = 49
+        Me.lblUtstLeiepris.Text = "Leiepris"
+        '
+        'lblUtstyrsType
+        '
+        Me.lblUtstyrsType.AutoSize = True
+        Me.lblUtstyrsType.Location = New System.Drawing.Point(171, 296)
+        Me.lblUtstyrsType.Name = "lblUtstyrsType"
+        Me.lblUtstyrsType.Size = New System.Drawing.Size(59, 13)
+        Me.lblUtstyrsType.TabIndex = 48
+        Me.lblUtstyrsType.Text = "Utstyrstype"
+        '
+        'txtAntallInnkjopt
+        '
+        Me.txtAntallInnkjopt.Location = New System.Drawing.Point(254, 343)
+        Me.txtAntallInnkjopt.Name = "txtAntallInnkjopt"
+        Me.txtAntallInnkjopt.Size = New System.Drawing.Size(100, 20)
+        Me.txtAntallInnkjopt.TabIndex = 47
+        Me.txtAntallInnkjopt.Visible = False
+        '
+        'txtUtstyrLeiepris
+        '
+        Me.txtUtstyrLeiepris.Location = New System.Drawing.Point(254, 316)
+        Me.txtUtstyrLeiepris.Name = "txtUtstyrLeiepris"
+        Me.txtUtstyrLeiepris.Size = New System.Drawing.Size(100, 20)
+        Me.txtUtstyrLeiepris.TabIndex = 46
+        Me.txtUtstyrLeiepris.Visible = False
+        '
+        'txtUtstyrstype
+        '
+        Me.txtUtstyrstype.Location = New System.Drawing.Point(254, 290)
+        Me.txtUtstyrstype.Name = "txtUtstyrstype"
+        Me.txtUtstyrstype.Size = New System.Drawing.Size(178, 20)
+        Me.txtUtstyrstype.TabIndex = 45
+        Me.txtUtstyrstype.Visible = False
         '
         'btnLastInnUtstyr
         '
@@ -1176,9 +1273,6 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.ComboBox5)
-        Me.GroupBox2.Controls.Add(Me.DataGridView5)
         Me.GroupBox2.Controls.Add(Me.Button26)
         Me.GroupBox2.Controls.Add(Me.Button25)
         Me.GroupBox2.Controls.Add(Me.ComboBox10)
@@ -1216,8 +1310,7 @@ Partial Class Form1
         'ComboBox10
         '
         Me.ComboBox10.FormattingEnabled = True
-        Me.ComboBox10.Items.AddRange(New Object() {"4001", "7051"})
-        Me.ComboBox10.Location = New System.Drawing.Point(476, 272)
+        Me.ComboBox10.Location = New System.Drawing.Point(476, 259)
         Me.ComboBox10.Name = "ComboBox10"
         Me.ComboBox10.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox10.TabIndex = 22
@@ -1225,8 +1318,7 @@ Partial Class Form1
         'ComboBox9
         '
         Me.ComboBox9.FormattingEnabled = True
-        Me.ComboBox9.Items.AddRange(New Object() {"10", "25"})
-        Me.ComboBox9.Location = New System.Drawing.Point(256, 272)
+        Me.ComboBox9.Location = New System.Drawing.Point(256, 259)
         Me.ComboBox9.Name = "ComboBox9"
         Me.ComboBox9.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox9.TabIndex = 21
@@ -1234,8 +1326,7 @@ Partial Class Form1
         'ComboBox8
         '
         Me.ComboBox8.FormattingEnabled = True
-        Me.ComboBox8.Items.AddRange(New Object() {"1"})
-        Me.ComboBox8.Location = New System.Drawing.Point(74, 272)
+        Me.ComboBox8.Location = New System.Drawing.Point(74, 259)
         Me.ComboBox8.Name = "ComboBox8"
         Me.ComboBox8.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox8.TabIndex = 20
@@ -1243,7 +1334,7 @@ Partial Class Form1
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(394, 275)
+        Me.Label31.Location = New System.Drawing.Point(394, 262)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(76, 13)
         Me.Label31.TabIndex = 19
@@ -1252,16 +1343,16 @@ Partial Class Form1
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(208, 275)
+        Me.Label30.Location = New System.Drawing.Point(208, 262)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(50, 13)
+        Me.Label30.Size = New System.Drawing.Size(42, 13)
         Me.Label30.TabIndex = 18
-        Me.Label30.Text = "Rabatt%:"
+        Me.Label30.Text = "Rabatt:"
         '
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(27, 275)
+        Me.Label29.Location = New System.Drawing.Point(27, 262)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(41, 13)
         Me.Label29.TabIndex = 17
@@ -1272,7 +1363,7 @@ Partial Class Form1
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Location = New System.Drawing.Point(30, 19)
         Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(643, 116)
+        Me.DataGridView3.Size = New System.Drawing.Size(643, 231)
         Me.DataGridView3.TabIndex = 1
         '
         'Button24
@@ -1302,7 +1393,6 @@ Partial Class Form1
         'ComboBox7
         '
         Me.ComboBox7.FormattingEnabled = True
-        Me.ComboBox7.Items.AddRange(New Object() {"4001", "7051"})
         Me.ComboBox7.Location = New System.Drawing.Point(37, 81)
         Me.ComboBox7.Name = "ComboBox7"
         Me.ComboBox7.Size = New System.Drawing.Size(200, 21)
@@ -1352,7 +1442,7 @@ Partial Class Form1
         '
         'Button23
         '
-        Me.Button23.Location = New System.Drawing.Point(3, 32)
+        Me.Button23.Location = New System.Drawing.Point(18, 16)
         Me.Button23.Name = "Button23"
         Me.Button23.Size = New System.Drawing.Size(92, 23)
         Me.Button23.TabIndex = 35
@@ -1372,21 +1462,23 @@ Partial Class Form1
         '
         'GroupBox9
         '
+        Me.GroupBox9.Controls.Add(Me.btnAdministrasjon)
+        Me.GroupBox9.Controls.Add(Me.btnTransport)
         Me.GroupBox9.Controls.Add(Me.Button31)
         Me.GroupBox9.Controls.Add(Me.Button30)
         Me.GroupBox9.Controls.Add(Me.Button29)
         Me.GroupBox9.Controls.Add(Me.Button5)
         Me.GroupBox9.Controls.Add(Me.Button4)
-        Me.GroupBox9.Location = New System.Drawing.Point(433, 187)
+        Me.GroupBox9.Location = New System.Drawing.Point(433, 162)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(226, 195)
+        Me.GroupBox9.Size = New System.Drawing.Size(226, 306)
         Me.GroupBox9.TabIndex = 0
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Hovedmeny"
         '
         'Button31
         '
-        Me.Button31.Location = New System.Drawing.Point(56, 144)
+        Me.Button31.Location = New System.Drawing.Point(56, 204)
         Me.Button31.Name = "Button31"
         Me.Button31.Size = New System.Drawing.Size(115, 23)
         Me.Button31.TabIndex = 6
@@ -1395,38 +1487,39 @@ Partial Class Form1
         '
         'Button30
         '
-        Me.Button30.Location = New System.Drawing.Point(56, 115)
+        Me.Button30.Location = New System.Drawing.Point(56, 129)
         Me.Button30.Name = "Button30"
         Me.Button30.Size = New System.Drawing.Size(115, 23)
         Me.Button30.TabIndex = 5
-        Me.Button30.Text = "Registrer Kunde"
+        Me.Button30.Text = "Sykler"
         Me.Button30.UseVisualStyleBackColor = True
         '
         'Button29
         '
-        Me.Button29.Location = New System.Drawing.Point(56, 86)
+        Me.Button29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button29.Location = New System.Drawing.Point(56, 19)
         Me.Button29.Name = "Button29"
         Me.Button29.Size = New System.Drawing.Size(115, 23)
         Me.Button29.TabIndex = 4
-        Me.Button29.Text = "Registrer Utleie"
+        Me.Button29.Text = "Utleie"
         Me.Button29.UseVisualStyleBackColor = True
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(56, 57)
+        Me.Button5.Location = New System.Drawing.Point(56, 100)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(115, 23)
         Me.Button5.TabIndex = 3
-        Me.Button5.Text = "Utstyr og Status"
+        Me.Button5.Text = "Utstyr"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(56, 28)
+        Me.Button4.Location = New System.Drawing.Point(56, 71)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(115, 23)
         Me.Button4.TabIndex = 2
-        Me.Button4.Text = "Medlemmer"
+        Me.Button4.Text = "Kunder"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'TabPage1
@@ -1459,6 +1552,7 @@ Partial Class Form1
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage2.Controls.Add(Me.btnTilbaketab9)
         Me.TabPage2.Controls.Add(Me.lstAvanse)
         Me.TabPage2.Controls.Add(Me.btnAvanse)
         Me.TabPage2.Controls.Add(Me.btnBestillinger)
@@ -1470,7 +1564,146 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 9
         Me.TabPage2.Text = "TabPage10Statistikk"
         '
-        'Panel1
+        'lstAvanse
+        '
+        Me.lstAvanse.FormattingEnabled = True
+        Me.lstAvanse.Location = New System.Drawing.Point(57, 173)
+        Me.lstAvanse.Name = "lstAvanse"
+        Me.lstAvanse.Size = New System.Drawing.Size(844, 342)
+        Me.lstAvanse.TabIndex = 3
+        Me.lstAvanse.Visible = False
+        '
+        'btnAvanse
+        '
+        Me.btnAvanse.Location = New System.Drawing.Point(46, 113)
+        Me.btnAvanse.Name = "btnAvanse"
+        Me.btnAvanse.Size = New System.Drawing.Size(107, 23)
+        Me.btnAvanse.TabIndex = 2
+        Me.btnAvanse.Text = "Vis avanse"
+        Me.btnAvanse.UseVisualStyleBackColor = True
+        '
+        'btnBestillinger
+        '
+        Me.btnBestillinger.Location = New System.Drawing.Point(46, 84)
+        Me.btnBestillinger.Name = "btnBestillinger"
+        Me.btnBestillinger.Size = New System.Drawing.Size(107, 23)
+        Me.btnBestillinger.TabIndex = 1
+        Me.btnBestillinger.Text = "Vis bestillinger"
+        Me.btnBestillinger.UseVisualStyleBackColor = True
+        '
+        'dgvStatistikk
+        '
+        Me.dgvStatistikk.AllowUserToOrderColumns = True
+        Me.dgvStatistikk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvStatistikk.Location = New System.Drawing.Point(32, 231)
+        Me.dgvStatistikk.Name = "dgvStatistikk"
+        Me.dgvStatistikk.Size = New System.Drawing.Size(887, 222)
+        Me.dgvStatistikk.TabIndex = 0
+        Me.dgvStatistikk.Visible = False
+        '
+        'TabPageSykkelregistrering
+        '
+        Me.TabPageSykkelregistrering.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPageSykkelregistrering.Controls.Add(Me.btnTibaketab10)
+        Me.TabPageSykkelregistrering.Controls.Add(Me.Button12asdgsdfbsdgbdfb)
+        Me.TabPageSykkelregistrering.Controls.Add(Me.btnSklVisSykkelmeny)
+        Me.TabPageSykkelregistrering.Controls.Add(Me.GroupBoxHvaVilDuGjore)
+        Me.TabPageSykkelregistrering.Controls.Add(Me.GroupBoxSykkelinformasjon)
+        Me.TabPageSykkelregistrering.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageSykkelregistrering.Name = "TabPageSykkelregistrering"
+        Me.TabPageSykkelregistrering.Size = New System.Drawing.Size(1195, 552)
+        Me.TabPageSykkelregistrering.TabIndex = 10
+        Me.TabPageSykkelregistrering.Text = "Sykkelregistrering"
+        '
+        'Button12asdgsdfbsdgbdfb
+        '
+        Me.Button12asdgsdfbsdgbdfb.Location = New System.Drawing.Point(40, 120)
+        Me.Button12asdgsdfbsdgbdfb.Name = "Button12asdgsdfbsdgbdfb"
+        Me.Button12asdgsdfbsdgbdfb.Size = New System.Drawing.Size(75, 23)
+        Me.Button12asdgsdfbsdgbdfb.TabIndex = 9
+        Me.Button12asdgsdfbsdgbdfb.Text = "test"
+        Me.Button12asdgsdfbsdgbdfb.UseVisualStyleBackColor = True
+        '
+        'btnSklVisSykkelmeny
+        '
+        Me.btnSklVisSykkelmeny.Location = New System.Drawing.Point(40, 63)
+        Me.btnSklVisSykkelmeny.Name = "btnSklVisSykkelmeny"
+        Me.btnSklVisSykkelmeny.Size = New System.Drawing.Size(75, 40)
+        Me.btnSklVisSykkelmeny.TabIndex = 8
+        Me.btnSklVisSykkelmeny.Text = "Vis sykkelmeny"
+        Me.btnSklVisSykkelmeny.UseVisualStyleBackColor = True
+        '
+        'GroupBoxHvaVilDuGjore
+        '
+        Me.GroupBoxHvaVilDuGjore.Controls.Add(Me.btnRegistrereNySykkel)
+        Me.GroupBoxHvaVilDuGjore.Controls.Add(Me.btnOppdatereEksisterendeSykkel)
+        Me.GroupBoxHvaVilDuGjore.Controls.Add(Me.ComboEksisterendeSykler)
+        Me.GroupBoxHvaVilDuGjore.Location = New System.Drawing.Point(160, 24)
+        Me.GroupBoxHvaVilDuGjore.Name = "GroupBoxHvaVilDuGjore"
+        Me.GroupBoxHvaVilDuGjore.Size = New System.Drawing.Size(432, 200)
+        Me.GroupBoxHvaVilDuGjore.TabIndex = 7
+        Me.GroupBoxHvaVilDuGjore.TabStop = False
+        Me.GroupBoxHvaVilDuGjore.Text = "Hva vil du gjøre?"
+        '
+        'btnRegistrereNySykkel
+        '
+        Me.btnRegistrereNySykkel.Location = New System.Drawing.Point(8, 24)
+        Me.btnRegistrereNySykkel.Name = "btnRegistrereNySykkel"
+        Me.btnRegistrereNySykkel.Size = New System.Drawing.Size(144, 40)
+        Me.btnRegistrereNySykkel.TabIndex = 0
+        Me.btnRegistrereNySykkel.Text = "Registrere ny sykkel"
+        Me.btnRegistrereNySykkel.UseVisualStyleBackColor = True
+        '
+        'btnOppdatereEksisterendeSykkel
+        '
+        Me.btnOppdatereEksisterendeSykkel.Location = New System.Drawing.Point(8, 72)
+        Me.btnOppdatereEksisterendeSykkel.Name = "btnOppdatereEksisterendeSykkel"
+        Me.btnOppdatereEksisterendeSykkel.Size = New System.Drawing.Size(144, 40)
+        Me.btnOppdatereEksisterendeSykkel.TabIndex = 5
+        Me.btnOppdatereEksisterendeSykkel.Text = "Oppdatere eksisterende sykkel"
+        Me.btnOppdatereEksisterendeSykkel.UseVisualStyleBackColor = True
+        '
+        'ComboEksisterendeSykler
+        '
+        Me.ComboEksisterendeSykler.FormattingEnabled = True
+        Me.ComboEksisterendeSykler.Location = New System.Drawing.Point(160, 80)
+        Me.ComboEksisterendeSykler.Name = "ComboEksisterendeSykler"
+        Me.ComboEksisterendeSykler.Size = New System.Drawing.Size(240, 21)
+        Me.ComboEksisterendeSykler.TabIndex = 4
+        Me.ComboEksisterendeSykler.Text = "Velg sykkel som skal oppdateres"
+        Me.ComboEksisterendeSykler.Visible = False
+        '
+        'GroupBoxSykkelinformasjon
+        '
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklOpprettNy)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklSykkelIDSomRedigeres)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboSklVelgType)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklLagreOppdatering)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboSklVelgModell)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboSklVelgMerke)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklSlettSykkel)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboVelgTransportor)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboVelgHjemsted)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboVelgStatus)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel2)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel3)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel4)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel5)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel6)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.labelSykkel7)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.TextBoxSkl1)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.TextBoxSkl2)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklNullUtSkjema)
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklRegistrerEndringer)
+        Me.GroupBoxSykkelinformasjon.Location = New System.Drawing.Point(160, 224)
+        Me.GroupBoxSykkelinformasjon.Name = "GroupBoxSykkelinformasjon"
+        Me.GroupBoxSykkelinformasjon.Size = New System.Drawing.Size(432, 288)
+        Me.GroupBoxSykkelinformasjon.TabIndex = 6
+        Me.GroupBoxSykkelinformasjon.TabStop = False
+        Me.GroupBoxSykkelinformasjon.Text = "Sykkelinformasjon"
+        Me.GroupBoxSykkelinformasjon.Visible = False
+        '
+        'LabelSklOpprettNy
         '
         Me.LabelSklOpprettNy.AutoSize = True
         Me.LabelSklOpprettNy.Location = New System.Drawing.Point(264, 32)
@@ -1649,6 +1882,7 @@ Partial Class Form1
         'TabPageSykkeltransport
         '
         Me.TabPageSykkeltransport.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPageSykkeltransport.Controls.Add(Me.btnTilbakeTab11)
         Me.TabPageSykkeltransport.Controls.Add(Me.btnLastInnTransportinfo)
         Me.TabPageSykkeltransport.Controls.Add(Me.LabelTransportTilSted)
         Me.TabPageSykkeltransport.Controls.Add(Me.LabelTransportFraSted)
@@ -1712,65 +1946,50 @@ Partial Class Form1
         Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
         Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
         '
-        'txtUtstyrstype
+        'btnTransport
         '
-        Me.txtUtstyrstype.Location = New System.Drawing.Point(254, 290)
-        Me.txtUtstyrstype.Name = "txtUtstyrstype"
-        Me.txtUtstyrstype.Size = New System.Drawing.Size(178, 20)
-        Me.txtUtstyrstype.TabIndex = 45
-        Me.txtUtstyrstype.Visible = False
+        Me.btnTransport.Location = New System.Drawing.Point(56, 159)
+        Me.btnTransport.Name = "btnTransport"
+        Me.btnTransport.Size = New System.Drawing.Size(115, 23)
+        Me.btnTransport.TabIndex = 7
+        Me.btnTransport.Text = "Transport"
+        Me.btnTransport.UseVisualStyleBackColor = True
         '
-        'txtUtstyrLeiepris
+        'btnAdministrasjon
         '
-        Me.txtUtstyrLeiepris.Location = New System.Drawing.Point(254, 316)
-        Me.txtUtstyrLeiepris.Name = "txtUtstyrLeiepris"
-        Me.txtUtstyrLeiepris.Size = New System.Drawing.Size(100, 20)
-        Me.txtUtstyrLeiepris.TabIndex = 46
-        Me.txtUtstyrLeiepris.Visible = False
+        Me.btnAdministrasjon.Location = New System.Drawing.Point(56, 266)
+        Me.btnAdministrasjon.Name = "btnAdministrasjon"
+        Me.btnAdministrasjon.Size = New System.Drawing.Size(115, 23)
+        Me.btnAdministrasjon.TabIndex = 8
+        Me.btnAdministrasjon.Text = "Administrasjon"
+        Me.btnAdministrasjon.UseVisualStyleBackColor = True
         '
-        'txtAntallInnkjopt
+        'btnTilbaketab9
         '
-        Me.txtAntallInnkjopt.Location = New System.Drawing.Point(254, 343)
-        Me.txtAntallInnkjopt.Name = "txtAntallInnkjopt"
-        Me.txtAntallInnkjopt.Size = New System.Drawing.Size(100, 20)
-        Me.txtAntallInnkjopt.TabIndex = 47
-        Me.txtAntallInnkjopt.Visible = False
+        Me.btnTilbaketab9.Location = New System.Drawing.Point(46, 23)
+        Me.btnTilbaketab9.Name = "btnTilbaketab9"
+        Me.btnTilbaketab9.Size = New System.Drawing.Size(106, 23)
+        Me.btnTilbaketab9.TabIndex = 4
+        Me.btnTilbaketab9.Text = "Tilbake"
+        Me.btnTilbaketab9.UseVisualStyleBackColor = True
         '
-        'lblUtstyrsType
+        'btnTibaketab10
         '
-        Me.lblUtstyrsType.AutoSize = True
-        Me.lblUtstyrsType.Location = New System.Drawing.Point(171, 296)
-        Me.lblUtstyrsType.Name = "lblUtstyrsType"
-        Me.lblUtstyrsType.Size = New System.Drawing.Size(59, 13)
-        Me.lblUtstyrsType.TabIndex = 48
-        Me.lblUtstyrsType.Text = "Utstyrstype"
+        Me.btnTibaketab10.Location = New System.Drawing.Point(38, 20)
+        Me.btnTibaketab10.Name = "btnTibaketab10"
+        Me.btnTibaketab10.Size = New System.Drawing.Size(76, 23)
+        Me.btnTibaketab10.TabIndex = 10
+        Me.btnTibaketab10.Text = "Tilbake"
+        Me.btnTibaketab10.UseVisualStyleBackColor = True
         '
-        'DataGridView4
+        'btnTilbakeTab11
         '
-        Me.DataGridView4.AllowUserToOrderColumns = True
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Location = New System.Drawing.Point(32, 231)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.Size = New System.Drawing.Size(887, 222)
-        Me.DataGridView4.TabIndex = 0
-        '
-        'Button12
-        '
-        Me.Button12.Location = New System.Drawing.Point(46, 56)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(75, 23)
-        Me.Button12.TabIndex = 1
-        Me.Button12.Text = "Button12"
-        Me.Button12.UseVisualStyleBackColor = True
-        '
-        'Button13
-        '
-        Me.Button13.Location = New System.Drawing.Point(46, 103)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(75, 23)
-        Me.Button13.TabIndex = 2
-        Me.Button13.Text = "Button13"
-        Me.Button13.UseVisualStyleBackColor = True
+        Me.btnTilbakeTab11.Location = New System.Drawing.Point(33, 8)
+        Me.btnTilbakeTab11.Name = "btnTilbakeTab11"
+        Me.btnTilbakeTab11.Size = New System.Drawing.Size(85, 23)
+        Me.btnTilbakeTab11.TabIndex = 7
+        Me.btnTilbakeTab11.Text = "Tilbake"
+        Me.btnTilbakeTab11.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1816,11 +2035,14 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvStatistikk, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPageSykkelregistrering.ResumeLayout(False)
+        Me.GroupBoxHvaVilDuGjore.ResumeLayout(False)
+        Me.GroupBoxSykkelinformasjon.ResumeLayout(False)
+        Me.GroupBoxSykkelinformasjon.PerformLayout()
+        Me.TabPageSykkeltransport.ResumeLayout(False)
+        Me.TabPageSykkeltransport.PerformLayout()
+        CType(Me.DataGridViewSykkeltransport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1958,8 +2180,58 @@ Partial Class Form1
     Friend WithEvents lstSokResult As System.Windows.Forms.ListBox
     Friend WithEvents txtUniversalSok As System.Windows.Forms.TextBox
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents Button13 As System.Windows.Forms.Button
-    Friend WithEvents Button12 As System.Windows.Forms.Button
-    Friend WithEvents DataGridView4 As System.Windows.Forms.DataGridView
+    Friend WithEvents btnAvanse As System.Windows.Forms.Button
+    Friend WithEvents btnBestillinger As System.Windows.Forms.Button
+    Friend WithEvents dgvStatistikk As System.Windows.Forms.DataGridView
+    Friend WithEvents lstAvanse As System.Windows.Forms.ListBox
+    Friend WithEvents ButtonSlettKunde As System.Windows.Forms.Button
+    Friend WithEvents TabPageSykkelregistrering As System.Windows.Forms.TabPage
+    Friend WithEvents btnOppdatereEksisterendeSykkel As System.Windows.Forms.Button
+    Friend WithEvents ComboEksisterendeSykler As System.Windows.Forms.ComboBox
+    Friend WithEvents btnRegistrereNySykkel As System.Windows.Forms.Button
+    Friend WithEvents GroupBoxSykkelinformasjon As System.Windows.Forms.GroupBox
+    Friend WithEvents labelSykkel2 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel3 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel4 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel5 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel6 As System.Windows.Forms.Label
+    Friend WithEvents labelSykkel7 As System.Windows.Forms.Label
+    Friend WithEvents TextBoxSkl1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxSkl2 As System.Windows.Forms.TextBox
+    Friend WithEvents btnSklNullUtSkjema As System.Windows.Forms.Button
+    Friend WithEvents btnSklRegistrerEndringer As System.Windows.Forms.Button
+    Friend WithEvents ComboVelgTransportor As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboVelgHjemsted As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboVelgStatus As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBoxHvaVilDuGjore As System.Windows.Forms.GroupBox
+    Friend WithEvents btnSklSlettSykkel As System.Windows.Forms.Button
+    Friend WithEvents btnSklLagreOppdatering As System.Windows.Forms.Button
+    Friend WithEvents btnSklVisSykkelmeny As System.Windows.Forms.Button
+    Friend WithEvents TabPageSykkeltransport As System.Windows.Forms.TabPage
+    Friend WithEvents DataGridViewSykkeltransport As System.Windows.Forms.DataGridView
+    Friend WithEvents ComboStedSykkelSkalTil As System.Windows.Forms.ComboBox
+    Friend WithEvents LabelTransportTilSted As System.Windows.Forms.Label
+    Friend WithEvents LabelTransportFraSted As System.Windows.Forms.Label
+    Friend WithEvents ComboSykkelSomSkalTransporteres As System.Windows.Forms.ComboBox
+    Friend WithEvents btnLastInnTransportinfo As System.Windows.Forms.Button
+    Friend WithEvents ComboSklVelgType As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboSklVelgModell As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboSklVelgMerke As System.Windows.Forms.ComboBox
+    Friend WithEvents LabelSklSykkelIDSomRedigeres As System.Windows.Forms.Label
+    Friend WithEvents LabelSklOpprettNy As System.Windows.Forms.Label
+    Friend WithEvents Button12asdgsdfbsdgbdfb As System.Windows.Forms.Button
+    Friend WithEvents btnLastInnUtstyr As System.Windows.Forms.Button
+    Friend WithEvents lblAntallInnkjopt As System.Windows.Forms.Label
+    Friend WithEvents lblUtstLeiepris As System.Windows.Forms.Label
+    Friend WithEvents lblUtstyrsType As System.Windows.Forms.Label
+    Friend WithEvents txtAntallInnkjopt As System.Windows.Forms.TextBox
+    Friend WithEvents txtUtstyrLeiepris As System.Windows.Forms.TextBox
+    Friend WithEvents txtUtstyrstype As System.Windows.Forms.TextBox
+    Friend WithEvents btnLagreUtstyr As System.Windows.Forms.Button
+    Friend WithEvents btnAdministrasjon As System.Windows.Forms.Button
+    Friend WithEvents btnTransport As System.Windows.Forms.Button
+    Friend WithEvents btnTilbaketab9 As System.Windows.Forms.Button
+    Friend WithEvents btnTibaketab10 As System.Windows.Forms.Button
+    Friend WithEvents btnTilbakeTab11 As System.Windows.Forms.Button
 
 End Class
