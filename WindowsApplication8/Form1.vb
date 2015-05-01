@@ -196,9 +196,10 @@ Public Class Form1
     Private Sub ButtonLastInnRegistrerteKunder_Click(sender As Object, e As EventArgs) Handles ButtonLastInnRegistrerteKunder.Click
         ComboBoxRegistrerteKunder.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data As New DataTable
-        Dim sql As String = "SELECT * FROM pdk_kunde"
-        data = query(sql)
+        'Dim sql As String = "SELECT * FROM pdk_kunde"
+        'data = query(sql)
 
+        data = personDAO.query(personDAO.velgAlleKunder())
 
         If data.Rows.Count >= 1 Then 'Fyller combobox med kundeinformasjon
             ReDim kundeIDinformasjon(data.Rows.Count - 1) 'justerer lengde på array 
@@ -486,10 +487,9 @@ Public Class Form1
     Private Sub btnOppdatereEksisterendeSykkel_Click(sender As Object, e As EventArgs) Handles btnOppdatereEksisterendeSykkel.Click
         ComboEksisterendeSykler.Items.Clear() 'Fjerner gammel informasjon fra combobox
         ComboEksisterendeSykler.Visible = True
-        Dim data As New DataTable
-        Dim sql As String = "SELECT * FROM pdk_sykkel"
-        data = query(sql)
 
+        Dim data As New DataTable
+        data = sykkelDAO.query(sykkelDAO.velgAlleSykler())
 
         If data.Rows.Count >= 1 Then 'Fyller combobox med sykkelinformasjon
             ReDim sykkelIDinformasjon(data.Rows.Count - 1) 'justerer lengde på array 
@@ -828,12 +828,12 @@ Public Class Form1
 
 
     Private Sub TextBoxSkl1_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSkl1.TextChanged
-        ComboSklVelgMerke.Visible = False
-        ComboSklVelgModell.Visible = False
+        ComboSklVelgMerke.SelectedIndex = -1
+        ComboSklVelgModell.SelectedIndex = -1
     End Sub
 
     Private Sub TextBoxSkl2_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSkl2.TextChanged
-        ComboSklVelgModell.Visible = False
+        ComboSklVelgModell.SelectedIndex = -1
     End Sub
 
     Private Sub btnVisAltTest_Click(sender As Object, e As EventArgs)
