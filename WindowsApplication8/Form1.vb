@@ -579,9 +579,6 @@ Public Class Form1
             TextBoxSkl3.Text = row("sykkeltype")
         End If
 
-        LabelSklGammelStatus.Visible = True
-        LabelSklGammelTilhorighet.Visible = True
-        LabelSklGammelTransportor.Visible = True
 
         'Viser kundeinformasjonsfelter
         GroupBox3.Visible = True
