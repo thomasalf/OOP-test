@@ -41,6 +41,12 @@ Public Class SykkelDAO
         Return sql
     End Function
 
+    Public Function slettSykkeldataSQL(sykkelID As Integer)
+        Dim sql As String = "DELETE FROM pdk_sykkel " _
+                                & "WHERE sykkelID = '" & sykkelID & "';"
+        Return sql
+    End Function
+
     '    Public Function lagreNySykkeldataSQL(inndata As Sykkel)
     ' Dim sql As String = "INSERT IGNORE INTO pdk_sykkelmerke SET merke = '" _
     '                     & inndata.getSykkelMerke() & "'; INSERT IGNORE INTO pdk_sykkelmodell SET merke = '" _

@@ -7,7 +7,7 @@ Public Class Form1
     Private personDAO As New PersonDAO
     Private sykkelDAO As New SykkelDAO
 
-    'funksjon som tømmer groupbox
+    'tøm alle textboxer i groupbox
     Private Sub clearGroupbox(ByVal Gruppeboksnavn As GroupBox)
         Dim a As Control
         For Each a In Gruppeboksnavn.Controls
@@ -17,26 +17,77 @@ Public Class Form1
         Next
     End Sub
 
-    ' DERSOM DETTE FUNKER BLIR VI GLAD
+    'vis alle knapper/bokser i GroupBox
+    Private Sub visAltIGroupBox(ByVal Gruppeboksnavn As GroupBox)
+        Dim a As Control
+        For Each a In Gruppeboksnavn.Controls 'vis alle comboboxer
+            If TypeOf a Is ComboBox Then
+                a.Visible = True
+            End If
+        Next
+
+        For Each a In Gruppeboksnavn.Controls
+            If TypeOf a Is TextBox Then 'vis alle textboxer
+                a.Visible = True
+            End If
+        Next
+
+        For Each a In Gruppeboksnavn.Controls
+            If TypeOf a Is Label Then 'vis alle labels
+                a.Visible = True
+            End If
+        Next
+
+        For Each a In Gruppeboksnavn.Controls
+            If TypeOf a Is Button Then 'vis alle buttons
+                a.Visible = True
+            End If
+        Next
+    End Sub
+
+    'skjul alle knapper/bokser i GroupBox
+    Private Sub skjulAltIGroupBox(ByVal Gruppeboksnavn As GroupBox)
+        Dim a As Control
+        For Each a In Gruppeboksnavn.Controls 'skjul alle comboboxer
+            If TypeOf a Is ComboBox Then
+                a.Visible = False
+            End If
+        Next
+
+        For Each a In Gruppeboksnavn.Controls
+            If TypeOf a Is TextBox Then 'skjul alle textboxer
+                a.Visible = False
+            End If
+        Next
+
+        For Each a In Gruppeboksnavn.Controls
+            If TypeOf a Is Label Then 'skjul alle labels
+                a.Visible = False
+            End If
+        Next
+
+        For Each a In Gruppeboksnavn.Controls
+            If TypeOf a Is Button Then 'skjul alle buttons
+                a.Visible = False
+            End If
+        Next
+    End Sub
+
+
 
     'Brukernavn og passord
     Private brukernavn As String = "bruker"
     Private passord As String = "passord"
 
-    'Array som lagrer kundeID til bruk under "redigering av kunde"
-    Private kundeIDinformasjon() As Double
+    'Arrays til bruk i sammenheng med "redigering av kunde"
+    Private kundeIDinformasjon() As Double 'Array som lagrer kundeID
+    Private kundeIDtilRedigering As Integer 'Lagrer ID til kunde som skal redigeres
 
-    'Array som lagrer sykkelID til bruk under "registrere sykkel"
-    Private sykkelIDinformasjon() As Double
-
-    'Lagrer ID til kunde som skal redigeres
-    Private kundeIDtilRedigering As Integer
-
-    'Array som lagrer transportørID til bruk under "registrere sykkel"
-    Private transportorIDinformasjon() As Double
-
-    'Array som lagrer statusID til bruk under "registrere sykkel"
-    Private statusIDinformasjon() As Double
+    'Arrays til bruk i sammenheng med "registrere sykkel"
+    Private sykkelIDinformasjon() As Double 'Lagrer sykkelID
+    Private transportorIDinformasjon() As Double 'Lagrer transportørID
+    Private statusIDinformasjon() As Double 'Lagrer statusID
+    Private sykkelIDtilRedigering As Integer 'lagrer sykkelID
 
 
     'Funksjon for kobling til database
@@ -394,7 +445,7 @@ Public Class Form1
         & "CONCAT( s.fornavn,  ' ', s.etternavn) AS selger FROM pdk_booking b," _
         & "pdk_kunde k, pdk_ansatt s WHERE b.kundeID = k.kundeID and b.selgerID = s.selgerID;"
 
-        bestillinger = query(Sql)
+        bestillinger = query(sql)
         dgvStatistikk.DataSource = bestillinger
 
         lstAvanse.Visible = False
@@ -432,29 +483,7 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub btnUtvideMedNyModell_Click(sender As Object, e As EventArgs) Handles btnUtvideMedNyModell.Click
-        ComboEksisterendeMerker.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        ComboEksisterendeMerker.Visible = True
-        Dim data As New DataTable
-        Dim sql As String = "SELECT DISTINCT merke FROM pdk_sykkel"
-        data = query(sql)
 
-
-        If data.Rows.Count >= 1 Then 'Fyller combobox med sykkelinformasjon
-            Dim teller As Integer
-            teller = data.Rows.Count
-
-            For teller = 0 To (teller - 1)
-                Dim ComboboxTekst As String
-                Dim row As DataRow = data.Rows(teller)
-                ComboboxTekst = row("merke")
-                ComboEksisterendeMerker.Items.Add(ComboboxTekst)
-            Next
-        Else
-            MsgBox("Ingen informasjon funnet.")
-        End If
-
-    End Sub
 
     Private Sub btnOppdatereEksisterendeSykkel_Click(sender As Object, e As EventArgs) Handles btnOppdatereEksisterendeSykkel.Click
         ComboEksisterendeSykler.Items.Clear() 'Fjerner gammel informasjon fra combobox
@@ -472,7 +501,7 @@ Public Class Form1
             For teller = 0 To (teller - 1)
                 Dim ComboboxTekst As String
                 Dim row As DataRow = data.Rows(teller)
-                ComboboxTekst = row("merke")
+                ComboboxTekst = row("sykkelID") & " " & row("merke") & " " & row("modell")
                 ComboEksisterendeSykler.Items.Add(ComboboxTekst)
                 sykkelIDinformasjon(teller) = row("sykkelID") 'lagrer sykkelID i array
             Next
@@ -485,7 +514,9 @@ Public Class Form1
     Private Sub btnRegistrereNySykkel_Click(sender As Object, e As EventArgs) Handles btnRegistrereNySykkel.Click
         GroupBoxHvaVilDuGjore.Visible = False
         btnSklLagreOppdatering.Visible = False
-        btnSklRegistrerEndringer.Visible = True
+        visAltIGroupBox(GroupBoxSykkelinformasjon)
+        btnSklLagreOppdatering.Visible = False
+        LabelSklSykkelIDSomRedigeres.Visible = False
         GroupBoxSykkelinformasjon.Visible = True
 
         'START: fyll "status"-combobox
@@ -630,7 +661,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub ComboEksisterendeMerker_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeMerker.SelectedIndexChanged
+    Private Sub ComboEksisterendeMerker_SelectedIndexChanged(sender As Object, e As EventArgs)
         GroupBoxHvaVilDuGjore.Visible = False
         btnSklLagreOppdatering.Visible = False
         btnSklRegistrerEndringer.Visible = False
@@ -639,9 +670,13 @@ Public Class Form1
 
     Private Sub ComboEksisterendeSykler_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeSykler.SelectedIndexChanged
         GroupBoxHvaVilDuGjore.Visible = False
-        btnSklLagreOppdatering.Visible = True
+        'btnSklLagreOppdatering.Visible = True
+        'btnSklRegistrerEndringer.Visible = False
+        visAltIGroupBox(GroupBoxSykkelinformasjon)
         btnSklRegistrerEndringer.Visible = False
         GroupBoxSykkelinformasjon.Visible = True
+        LabelSklSykkelIDSomRedigeres.Visible = True
+
 
         'Ny kode
         'Fyller kundeinformasjonsfelt med informasjonen som finnes i databasen
@@ -656,6 +691,9 @@ Public Class Form1
             'Label3.Text = kundeIDtilRedigering
             TextBoxSkl1.Text = row("merke")
             TextBoxSkl2.Text = row("modell")
+            sykkelIDtilRedigering = row("sykkelID")
+            LabelSklSykkelIDSomRedigeres.Text = sykkelIDtilRedigering
+
         End If
 
 
@@ -698,6 +736,20 @@ Public Class Form1
                 MessageBox.Show("Feil: " & ex.Message)
             End Try
 
+        ElseIf TextBoxSkl2.Text <> "" Then
+            'Lag sykkel vha modelltekst og rullegardinmeny
+            Try
+                Dim sykkel As New Sykkel(ComboSklVelgMerke.Text, TextBoxSkl2.Text, _
+                       ComboSklVelgType.Text, transportorIDinformasjon(ComboVelgTransportor.SelectedIndex), _
+                               ComboVelgHjemsted.Text, statusIDinformasjon(ComboVelgStatus.SelectedIndex))
+                'bruker data fra opprettet sykkel for å lage SQL-spørring
+                sykkelDAO.query(sykkelDAO.lagreNySykkeldataSQL(sykkel))
+                MsgBox(sykkelDAO.lagreNySykkeldataSQL(sykkel))
+                MsgBox("Ny sykkel er opprettet")
+            Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+                MessageBox.Show("Feil: " & ex.Message)
+            End Try
+
         End If
 
         'SLUTT: TESTKODE
@@ -708,6 +760,14 @@ Public Class Form1
         GroupBoxSykkelinformasjon.Visible = False
         GroupBoxHvaVilDuGjore.Visible = True
 
+        Dim sykkel As New Sykkel(sykkelIDtilRedigering)
+        Try
+            sykkelDAO.query(sykkelDAO.slettSykkeldataSQL(sykkelIDtilRedigering))
+            MsgBox("Sykkelen er slettet fra databasen.")
+        Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+            MessageBox.Show("Feil: " & ex.Message)
+        End Try
+
     End Sub
 
     Private Sub btnSklLagreNyModell_Click(sender As Object, e As EventArgs)
@@ -717,18 +777,17 @@ Public Class Form1
     Private Sub btnSklVisSykkelmeny_Click(sender As Object, e As EventArgs) Handles btnSklVisSykkelmeny.Click
         GroupBoxHvaVilDuGjore.Visible = True
         GroupBoxSykkelinformasjon.Visible = False
-        ComboEksisterendeMerker.Visible = False
         ComboEksisterendeSykler.Visible = False
     End Sub
 
 
 
     Private Sub ComboSykkelSomSkalTransporteres_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSykkelSomSkalTransporteres.SelectedIndexChanged
-        Dim data As New DataTable
-        Dim sql As String = "SELECT sykkelID, merke, modell FROM pdk_sykkel INNER JOIN pdk_sted WHERE pdk_sykkel.postnr = pdk_sted.postnr AND stedsnavn = '" & ComboSykkelSomSkalTransporteres.SelectedValue & "';"
-        data = query(sql)
-
-        DataGridViewSykkeltransport.DataSource = data
+        'Dim data As New DataTable
+        'Dim sql As String = "SELECT sykkelID, merke, modell FROM pdk_sykkel INNER JOIN pdk_sted WHERE pdk_sykkel.postnr = pdk_sted.postnr AND stedsnavn = '" & ComboSykkelSomSkalTransporteres.SelectedValue & "';"
+        'data = query(sql)
+        '
+        'DataGridViewSykkeltransport.DataSource = data
 
     End Sub
 
@@ -773,5 +832,21 @@ Public Class Form1
     Private Sub TextBoxSkl1_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSkl1.TextChanged
         ComboSklVelgMerke.Visible = False
         ComboSklVelgModell.Visible = False
+    End Sub
+
+    Private Sub TextBoxSkl2_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSkl2.TextChanged
+        ComboSklVelgModell.Visible = False
+    End Sub
+
+    Private Sub btnVisAltTest_Click(sender As Object, e As EventArgs)
+        skjulAltIGroupBox(GroupBoxSykkelinformasjon)
+    End Sub
+
+    Private Sub btnSklLagreOppdatering_Click(sender As Object, e As EventArgs) Handles btnSklLagreOppdatering.Click
+
+    End Sub
+
+    Private Sub Button12asdgsdfbsdgbdfb_Click(sender As Object, e As EventArgs) Handles Button12asdgsdfbsdgbdfb.Click
+        ComboSklVelgMerke.SelectedIndex = -1
     End Sub
 End Class

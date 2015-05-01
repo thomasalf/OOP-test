@@ -5,12 +5,13 @@
     Private sykkeltransportor As String = ""
     Private sykkelhjemsted As String = ""
     Private sykkelstatus As String = ""
+    Private sykkelid As String = ""
 
 
 
         'Konstruktører/Constructors
 
-        'Setter alle verdier
+    'Setter alle verdier bortsett fra ID
     Public Sub New(ByVal mer As String, _
                        mdl As String, _
                        typ As String, _
@@ -23,6 +24,11 @@
         setSykkelTransportor(tran)
         setSykkelHjemsted(hjem)
         setSykkelStatus(stat)
+    End Sub
+
+    'setter kun sykkelID
+    Public Sub New(ByVal id As String)
+        setSykkelID(id)
     End Sub
 
     'Setter alle verdier bortsett fra hjemsted og transportør
@@ -53,6 +59,18 @@
 
 
     'Get- og set-funksjoner
+    Public Function getSykkelID() As String
+        Return sykkelid
+    End Function
+
+    Public Sub setSykkelID(ByVal id As String)
+        If id.Length > 0 Then 'sjekker at sykkelmodell er skrevet inn
+            sykkelid = id
+        Else
+            Throw New Exception("Ugyldig sykkelID")
+        End If
+    End Sub
+
     Public Function getSykkelModell() As String
         Return sykkelmodell
     End Function
