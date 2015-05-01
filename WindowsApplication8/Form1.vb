@@ -617,25 +617,27 @@ Public Class Form1
         'SLUTT: fyll "merke"-combobox
 
         'START: fyll "modell"-combobox
-        ComboSklVelgModell.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        Dim data5 As New DataTable
-        Dim sql5 As String = "SELECT * FROM pdk_sykkelmodell"
-        data = query(sql5)
-
-
-        If data.Rows.Count >= 1 Then 'Fyller combobox med modellinformasjon
-            Dim teller As Integer
-            teller = data.Rows.Count
-
-            For teller = 0 To (teller - 1)
-                Dim ComboboxTekst As String
-                Dim row As DataRow = data.Rows(teller)
-                ComboboxTekst = row("modell")
-                ComboSklVelgModell.Items.Add(ComboboxTekst)
-            Next
-        Else
-            MsgBox("Ingen informasjon funnet.")
-        End If
+        comboBoxUtil.fyllComboboxMedSykkelmodell(ComboSklVelgModell)
+        'GAMMEL KODE:
+        '  ComboSklVelgModell.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        '  Dim data5 As New DataTable
+        '  Dim sql5 As String = "SELECT * FROM pdk_sykkelmodell"
+        '  data = query(sql5)
+        '
+        '
+        '        If data.Rows.Count >= 1 Then 'Fyller combobox med modellinformasjon
+        ' Dim teller As Integer
+        ' teller = data.Rows.Count
+        '
+        '        For teller = 0 To (teller - 1)
+        ' Dim ComboboxTekst As String
+        ' Dim row As DataRow = data.Rows(teller)
+        ' ComboboxTekst = row("modell")
+        ' ComboSklVelgModell.Items.Add(ComboboxTekst)
+        ' Next
+        ' Else
+        ' MsgBox("Ingen informasjon funnet.")
+        ' End If
         'SLUTT: fyll "modell"-combobox
 
         'START: fyll "type"-combobox
