@@ -384,7 +384,7 @@ Public Class Form1
 
 
         Dim data As New DataTable
-        Dim sql As String = "SELECT merke, prisprosent, bstatus, statusnavn, inntid FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.bookingID JOIN pdk_booking a ON b.bookingID=a.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON a.prisID=p.prisID WHERE bstatus='tilgjengelig' OR (bstatus='utleid' AND " & fra & " < uttid AND " & til & " < uttid) OR (bstatus='utleid' AND " & fra & " > inntid AND " & til & " < inntid)"
+        Dim sql As String = "SELECT merke,sykkeltype, prisprosent, a.bstatus, statusnavn, a.inntid FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.sykkelID JOIN pdk_booking a ON b.bookingID=a.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON a.prisID=p.prisID WHERE a.bstatus='tilgjengelig' OR (a.bstatus='utleid' AND " & fra & " < a.uttid AND " & til & " < a.uttid) OR (a.bstatus='utleid' AND " & fra & " > a.inntid AND " & til & " < a.inntid) OR (e.sykkelID NOT IN (SELECT b.sykkelID FROM pdk_syklerbooket))"
 
         data = query(sql)
         DataGridView3.DataSource = data
@@ -416,11 +416,13 @@ Public Class Form1
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
         Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
-        Dim utpost As String = ComboBox7.SelectedText ' usikker på om det skal være text eller value eller noe annet. 
-        Dim innpost As String = ComboBox10.SelectedText
+
+        Dim utpost As String = ComboBox7.SelectedItem.ToString ' usikker på om det skal være text eller value eller noe annet. 
+        Dim innpost As String = ComboBox10.SelectedItem.ToString
+
         Dim selgerID As Integer ' må hente selgerID fra en plass?
-        Dim PrisID As Integer ' PrisID må også hentes, kanskje i forbindelse med henting av tilgjengelige sykler.
-        Dim kundeID As String = ComboBox8.SelectedText
+        Dim PrisID As Integer
+        Dim kundeID As String = ComboBox8.SelectedItem.ToString
         Dim SykkelID As Integer ' Må være String for spørringen sin del? 
 
         Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
