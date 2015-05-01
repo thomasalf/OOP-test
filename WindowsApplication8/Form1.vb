@@ -415,22 +415,21 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         DateTimePicker1.Format = DateTimePickerFormat.Custom
-        DateTimePicker1.CustomFormat = "yyyy-MM-dd"
+        DateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss"
         DateTimePicker2.Format = DateTimePickerFormat.Custom
-        DateTimePicker2.CustomFormat = "yyyy-MM-dd"
+        DateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm:ss"
 
 
     End Sub
 
 
-
     'Registrer Booking
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
 
-        Dim fra As Date = DateTimePicker1.Value.ToString("yyyy-MM-dd")
-        Dim til As Date = DateTimePicker2.Value.ToString("yyyy-MM-dd")
 
-        MsgBox(fra)
+        Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
+        Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
+
 
         Dim utpost As String = 4011 ' usikker på om det skal være text eller value eller noe annet. 
         Dim innpost As String = 4011
