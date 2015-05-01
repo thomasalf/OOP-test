@@ -32,6 +32,9 @@ Public Class Form1
     'Lagrer ID til kunde som skal redigeres
     Private kundeIDtilRedigering As Integer
 
+    'Array som lagrer transportørID til bruk under "registrere sykkel"
+    Private transportorIDinformasjon() As Double
+
 
     'Funksjon for kobling til database
     Private Function query(sql As String) As DataTable
@@ -530,7 +533,8 @@ Public Class Form1
         data = query(sql3)
 
 
-        If data.Rows.Count >= 1 Then 'Fyller combobox med statusinformasjon
+        If data.Rows.Count >= 1 Then 'Fyller combobox med transportørinformasjon
+            ReDim transportorIDinformasjon(data.Rows.Count - 1) 'justerer lengde på array
             Dim teller As Integer
             teller = data.Rows.Count
 
@@ -539,11 +543,14 @@ Public Class Form1
                 Dim row As DataRow = data.Rows(teller)
                 ComboboxTekst = row("transportornavn")
                 ComboVelgTransportor.Items.Add(ComboboxTekst)
+                transportorIDinformasjon(teller) = row("transportorID")
             Next
         Else
             MsgBox("Ingen informasjon funnet.")
         End If
         'Slutt: fyll "transportør"-combobox
+
+
 
         'START: fyll "merke"-combobox
         ComboSklVelgMerke.Items.Clear() 'Fjerner gammel informasjon fra combobox
@@ -639,7 +646,6 @@ Public Class Form1
             'Label3.Text = kundeIDtilRedigering
             TextBoxSkl1.Text = row("merke")
             TextBoxSkl2.Text = row("modell")
-            TextBoxSkl3.Text = row("sykkeltype")
         End If
 
 
@@ -654,17 +660,25 @@ Public Class Form1
 
 
         'START: TESTKODE
-        Try
-            'Bruker tekstboksdata for å opprette ny sykkel (bruker klassen "Sykkel")
-            Dim sykkel As New Sykkel(TextBoxSkl1.Text, TextBoxSkl2.Text, _
-                                   TextBoxSkl3.Text, ComboVelgStatus.SelectedValue, _
-                                           ComboVelgHjemsted.SelectedValue, ComboVelgTransportor.SelectedValue)
-            'bruker data fra opprettet sykkel for å lage SQL-spørring
-            sykkelDAO.query(sykkelDAO.lagreNySykkeldataSQL(sykkel))
-            MsgBox("Ny sykkel er opprettet")
-        Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
-            MessageBox.Show("Feil: " & ex.Message)
-        End Try
+
+        If TextBoxSkl1.Text = "" And TextBoxSkl2.Text = "" Then
+            'Lag sykkel vha rullegardinmenyer
+            Try
+                Dim sykkel As New Sykkel(ComboSklVelgMerke.Text, ComboSklVelgModell.Text, _
+                       ComboSklVelgType.Text, ComboVelgStatus.Text, _
+                               ComboVelgHjemsted.Text, transportorIDinformasjon(ComboVelgTransportor.SelectedIndex))
+                'bruker data fra opprettet sykkel for å lage SQL-spørring
+                'sykkelDAO.query(sykkelDAO.lagreNySykkeldataSQL(sykkel))
+                MsgBox(sykkel.ToString)
+                MsgBox("Ny sykkel er opprettet")
+            Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+                MessageBox.Show("Feil: " & ex.Message)
+            End Try
+        ElseIf TextBoxSkl1.Text <> "" Then
+            'Lag sykkel vha merketekst, modelltekst og rullegardinmeny
+
+        End If
+
         'SLUTT: TESTKODE
 
     End Sub
@@ -725,9 +739,10 @@ Public Class Form1
         TextBoxSkl2.Clear()
     End Sub
 
-    Private Sub ComboSklVelgType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSklVelgType.SelectedIndexChanged
-        TextBoxSkl3.Clear()
+
+
+    Private Sub TextBoxSkl1_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSkl1.TextChanged
+        ComboSklVelgMerke.Visible = False
+        ComboSklVelgModell.Visible = False
     End Sub
-
-
 End Class
