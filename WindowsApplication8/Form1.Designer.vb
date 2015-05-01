@@ -209,6 +209,7 @@ Partial Class Form1
         Me.ComboSklVelgModell = New System.Windows.Forms.ComboBox()
         Me.ComboSklVelgType = New System.Windows.Forms.ComboBox()
         Me.LabelSklSykkelIDSomRedigeres = New System.Windows.Forms.Label()
+        Me.LabelSklOpprettNy = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1665,6 +1666,7 @@ Partial Class Form1
         '
         'GroupBoxSykkelinformasjon
         '
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklOpprettNy)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklSykkelIDSomRedigeres)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboSklVelgType)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklLagreOppdatering)
@@ -1951,6 +1953,15 @@ Partial Class Form1
         Me.LabelSklSykkelIDSomRedigeres.TabIndex = 59
         Me.LabelSklSykkelIDSomRedigeres.Text = "ID"
         '
+        'LabelSklOpprettNy
+        '
+        Me.LabelSklOpprettNy.AutoSize = True
+        Me.LabelSklOpprettNy.Location = New System.Drawing.Point(264, 32)
+        Me.LabelSklOpprettNy.Name = "LabelSklOpprettNy"
+        Me.LabelSklOpprettNy.Size = New System.Drawing.Size(56, 13)
+        Me.LabelSklOpprettNy.TabIndex = 60
+        Me.LabelSklOpprettNy.Text = "Opprett ny"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2193,5 +2204,6 @@ Partial Class Form1
     Friend WithEvents ComboSklVelgModell As System.Windows.Forms.ComboBox
     Friend WithEvents ComboSklVelgMerke As System.Windows.Forms.ComboBox
     Friend WithEvents LabelSklSykkelIDSomRedigeres As System.Windows.Forms.Label
+    Friend WithEvents LabelSklOpprettNy As System.Windows.Forms.Label
 
 End Class
