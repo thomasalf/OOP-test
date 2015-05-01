@@ -593,25 +593,27 @@ Public Class Form1
 
 
         'START: fyll "merke"-combobox
-        ComboSklVelgMerke.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        Dim data4 As New DataTable
-        Dim sql4 As String = "SELECT * FROM pdk_sykkelmerke"
-        data = query(sql4)
-
-
-        If data.Rows.Count >= 1 Then 'Fyller combobox med merkeinformasjon
-            Dim teller As Integer
-            teller = data.Rows.Count
-
-            For teller = 0 To (teller - 1)
-                Dim ComboboxTekst As String
-                Dim row As DataRow = data.Rows(teller)
-                ComboboxTekst = row("merke")
-                ComboSklVelgMerke.Items.Add(ComboboxTekst)
-            Next
-        Else
-            MsgBox("Ingen informasjon funnet.")
-        End If
+        comboBoxUtil.fyllComboBoxMedSykkelmerke(ComboSklVelgMerke)
+        'GAMMEL KODE:
+        '  ComboSklVelgMerke.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        '  Dim data4 As New DataTable
+        '  Dim sql4 As String = "SELECT * FROM pdk_sykkelmerke"
+        '  data = query(sql4)
+        '
+        '
+        '        If data.Rows.Count >= 1 Then 'Fyller combobox med merkeinformasjon
+        ' Dim teller As Integer
+        ' teller = data.Rows.Count
+        '
+        '        For teller = 0 To (teller - 1)
+        ' Dim ComboboxTekst As String
+        ' Dim row As DataRow = data.Rows(teller)
+        ' ComboboxTekst = row("merke")
+        ' ComboSklVelgMerke.Items.Add(ComboboxTekst)
+        ' Next
+        ' Else
+        ' MsgBox("Ingen informasjon funnet.")
+        ' End If
         'SLUTT: fyll "merke"-combobox
 
         'START: fyll "modell"-combobox
