@@ -209,6 +209,7 @@ Partial Class Form1
         Me.ComboSklVelgMerke = New System.Windows.Forms.ComboBox()
         Me.ComboSklVelgModell = New System.Windows.Forms.ComboBox()
         Me.ComboSklVelgType = New System.Windows.Forms.ComboBox()
+        Me.LabelSklSykkelIDSomRedigeres = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1628,9 +1629,9 @@ Partial Class Form1
         'ComboEksisterendeMerker
         '
         Me.ComboEksisterendeMerker.FormattingEnabled = True
-        Me.ComboEksisterendeMerker.Location = New System.Drawing.Point(160, 80)
+        Me.ComboEksisterendeMerker.Location = New System.Drawing.Point(384, 80)
         Me.ComboEksisterendeMerker.Name = "ComboEksisterendeMerker"
-        Me.ComboEksisterendeMerker.Size = New System.Drawing.Size(240, 21)
+        Me.ComboEksisterendeMerker.Size = New System.Drawing.Size(24, 21)
         Me.ComboEksisterendeMerker.TabIndex = 1
         Me.ComboEksisterendeMerker.Text = "Velg merke som skal utvides med ny modell"
         Me.ComboEksisterendeMerker.Visible = False
@@ -1646,9 +1647,9 @@ Partial Class Form1
         '
         'btnUtvideMedNyModell
         '
-        Me.btnUtvideMedNyModell.Location = New System.Drawing.Point(8, 72)
+        Me.btnUtvideMedNyModell.Location = New System.Drawing.Point(360, 80)
         Me.btnUtvideMedNyModell.Name = "btnUtvideMedNyModell"
-        Me.btnUtvideMedNyModell.Size = New System.Drawing.Size(144, 40)
+        Me.btnUtvideMedNyModell.Size = New System.Drawing.Size(8, 16)
         Me.btnUtvideMedNyModell.TabIndex = 3
         Me.btnUtvideMedNyModell.Text = "Legge ny modell til eksisterende merke"
         Me.btnUtvideMedNyModell.UseVisualStyleBackColor = True
@@ -1665,6 +1666,7 @@ Partial Class Form1
         '
         'GroupBoxSykkelinformasjon
         '
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklSykkelIDSomRedigeres)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboSklVelgType)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklLagreOppdatering)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboSklVelgModell)
@@ -1687,7 +1689,7 @@ Partial Class Form1
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklRegistrerEndringer)
         Me.GroupBoxSykkelinformasjon.Location = New System.Drawing.Point(160, 224)
         Me.GroupBoxSykkelinformasjon.Name = "GroupBoxSykkelinformasjon"
-        Me.GroupBoxSykkelinformasjon.Size = New System.Drawing.Size(432, 248)
+        Me.GroupBoxSykkelinformasjon.Size = New System.Drawing.Size(432, 288)
         Me.GroupBoxSykkelinformasjon.TabIndex = 6
         Me.GroupBoxSykkelinformasjon.TabStop = False
         Me.GroupBoxSykkelinformasjon.Text = "Sykkelinformasjon"
@@ -1695,7 +1697,7 @@ Partial Class Form1
         '
         'btnSklLagreOppdatering
         '
-        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(192, 224)
+        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(176, 256)
         Me.btnSklLagreOppdatering.Name = "btnSklLagreOppdatering"
         Me.btnSklLagreOppdatering.Size = New System.Drawing.Size(104, 23)
         Me.btnSklLagreOppdatering.TabIndex = 54
@@ -1704,7 +1706,7 @@ Partial Class Form1
         '
         'btnSklLagreNyModell
         '
-        Me.btnSklLagreNyModell.Location = New System.Drawing.Point(184, 176)
+        Me.btnSklLagreNyModell.Location = New System.Drawing.Point(168, 208)
         Me.btnSklLagreNyModell.Name = "btnSklLagreNyModell"
         Me.btnSklLagreNyModell.Size = New System.Drawing.Size(96, 23)
         Me.btnSklLagreNyModell.TabIndex = 53
@@ -1713,7 +1715,7 @@ Partial Class Form1
         '
         'btnSklSlettSykkel
         '
-        Me.btnSklSlettSykkel.Location = New System.Drawing.Point(312, 208)
+        Me.btnSklSlettSykkel.Location = New System.Drawing.Point(296, 240)
         Me.btnSklSlettSykkel.Name = "btnSklSlettSykkel"
         Me.btnSklSlettSykkel.Size = New System.Drawing.Size(92, 23)
         Me.btnSklSlettSykkel.TabIndex = 52
@@ -1723,7 +1725,7 @@ Partial Class Form1
         'ComboVelgTransportor
         '
         Me.ComboVelgTransportor.FormattingEnabled = True
-        Me.ComboVelgTransportor.Location = New System.Drawing.Point(80, 144)
+        Me.ComboVelgTransportor.Location = New System.Drawing.Point(80, 176)
         Me.ComboVelgTransportor.Name = "ComboVelgTransportor"
         Me.ComboVelgTransportor.Size = New System.Drawing.Size(136, 21)
         Me.ComboVelgTransportor.TabIndex = 51
@@ -1732,7 +1734,7 @@ Partial Class Form1
         'ComboVelgHjemsted
         '
         Me.ComboVelgHjemsted.FormattingEnabled = True
-        Me.ComboVelgHjemsted.Location = New System.Drawing.Point(80, 120)
+        Me.ComboVelgHjemsted.Location = New System.Drawing.Point(80, 152)
         Me.ComboVelgHjemsted.Name = "ComboVelgHjemsted"
         Me.ComboVelgHjemsted.Size = New System.Drawing.Size(136, 21)
         Me.ComboVelgHjemsted.TabIndex = 50
@@ -1741,7 +1743,7 @@ Partial Class Form1
         'ComboVelgStatus
         '
         Me.ComboVelgStatus.FormattingEnabled = True
-        Me.ComboVelgStatus.Location = New System.Drawing.Point(80, 96)
+        Me.ComboVelgStatus.Location = New System.Drawing.Point(80, 128)
         Me.ComboVelgStatus.Name = "ComboVelgStatus"
         Me.ComboVelgStatus.Size = New System.Drawing.Size(136, 21)
         Me.ComboVelgStatus.TabIndex = 7
@@ -1750,7 +1752,7 @@ Partial Class Form1
         'labelSykkel2
         '
         Me.labelSykkel2.AutoSize = True
-        Me.labelSykkel2.Location = New System.Drawing.Point(8, 16)
+        Me.labelSykkel2.Location = New System.Drawing.Point(8, 48)
         Me.labelSykkel2.Name = "labelSykkel2"
         Me.labelSykkel2.Size = New System.Drawing.Size(37, 13)
         Me.labelSykkel2.TabIndex = 37
@@ -1759,7 +1761,7 @@ Partial Class Form1
         'labelSykkel3
         '
         Me.labelSykkel3.AutoSize = True
-        Me.labelSykkel3.Location = New System.Drawing.Point(8, 40)
+        Me.labelSykkel3.Location = New System.Drawing.Point(8, 72)
         Me.labelSykkel3.Name = "labelSykkel3"
         Me.labelSykkel3.Size = New System.Drawing.Size(38, 13)
         Me.labelSykkel3.TabIndex = 38
@@ -1768,7 +1770,7 @@ Partial Class Form1
         'labelSykkel4
         '
         Me.labelSykkel4.AutoSize = True
-        Me.labelSykkel4.Location = New System.Drawing.Point(8, 64)
+        Me.labelSykkel4.Location = New System.Drawing.Point(8, 96)
         Me.labelSykkel4.Name = "labelSykkel4"
         Me.labelSykkel4.Size = New System.Drawing.Size(31, 13)
         Me.labelSykkel4.TabIndex = 39
@@ -1777,7 +1779,7 @@ Partial Class Form1
         'labelSykkel5
         '
         Me.labelSykkel5.AutoSize = True
-        Me.labelSykkel5.Location = New System.Drawing.Point(8, 96)
+        Me.labelSykkel5.Location = New System.Drawing.Point(8, 128)
         Me.labelSykkel5.Name = "labelSykkel5"
         Me.labelSykkel5.Size = New System.Drawing.Size(37, 13)
         Me.labelSykkel5.TabIndex = 40
@@ -1786,7 +1788,7 @@ Partial Class Form1
         'labelSykkel6
         '
         Me.labelSykkel6.AutoSize = True
-        Me.labelSykkel6.Location = New System.Drawing.Point(8, 120)
+        Me.labelSykkel6.Location = New System.Drawing.Point(8, 152)
         Me.labelSykkel6.Name = "labelSykkel6"
         Me.labelSykkel6.Size = New System.Drawing.Size(56, 13)
         Me.labelSykkel6.TabIndex = 41
@@ -1795,7 +1797,7 @@ Partial Class Form1
         'labelSykkel7
         '
         Me.labelSykkel7.AutoSize = True
-        Me.labelSykkel7.Location = New System.Drawing.Point(8, 144)
+        Me.labelSykkel7.Location = New System.Drawing.Point(8, 176)
         Me.labelSykkel7.Name = "labelSykkel7"
         Me.labelSykkel7.Size = New System.Drawing.Size(61, 13)
         Me.labelSykkel7.TabIndex = 42
@@ -1803,21 +1805,21 @@ Partial Class Form1
         '
         'TextBoxSkl1
         '
-        Me.TextBoxSkl1.Location = New System.Drawing.Point(264, 16)
+        Me.TextBoxSkl1.Location = New System.Drawing.Point(264, 48)
         Me.TextBoxSkl1.Name = "TextBoxSkl1"
         Me.TextBoxSkl1.Size = New System.Drawing.Size(136, 20)
         Me.TextBoxSkl1.TabIndex = 43
         '
         'TextBoxSkl2
         '
-        Me.TextBoxSkl2.Location = New System.Drawing.Point(264, 40)
+        Me.TextBoxSkl2.Location = New System.Drawing.Point(264, 72)
         Me.TextBoxSkl2.Name = "TextBoxSkl2"
         Me.TextBoxSkl2.Size = New System.Drawing.Size(136, 20)
         Me.TextBoxSkl2.TabIndex = 44
         '
         'btnSklNullUtSkjema
         '
-        Me.btnSklNullUtSkjema.Location = New System.Drawing.Point(88, 207)
+        Me.btnSklNullUtSkjema.Location = New System.Drawing.Point(72, 239)
         Me.btnSklNullUtSkjema.Name = "btnSklNullUtSkjema"
         Me.btnSklNullUtSkjema.Size = New System.Drawing.Size(92, 23)
         Me.btnSklNullUtSkjema.TabIndex = 49
@@ -1826,14 +1828,14 @@ Partial Class Form1
         '
         'TextBoxSkl3
         '
-        Me.TextBoxSkl3.Location = New System.Drawing.Point(264, 64)
+        Me.TextBoxSkl3.Location = New System.Drawing.Point(264, 96)
         Me.TextBoxSkl3.Name = "TextBoxSkl3"
         Me.TextBoxSkl3.Size = New System.Drawing.Size(136, 20)
         Me.TextBoxSkl3.TabIndex = 45
         '
         'btnSklRegistrerEndringer
         '
-        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(200, 200)
+        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(184, 232)
         Me.btnSklRegistrerEndringer.Name = "btnSklRegistrerEndringer"
         Me.btnSklRegistrerEndringer.Size = New System.Drawing.Size(92, 23)
         Me.btnSklRegistrerEndringer.TabIndex = 48
@@ -1927,7 +1929,7 @@ Partial Class Form1
         'ComboSklVelgMerke
         '
         Me.ComboSklVelgMerke.FormattingEnabled = True
-        Me.ComboSklVelgMerke.Location = New System.Drawing.Point(80, 16)
+        Me.ComboSklVelgMerke.Location = New System.Drawing.Point(80, 48)
         Me.ComboSklVelgMerke.Name = "ComboSklVelgMerke"
         Me.ComboSklVelgMerke.Size = New System.Drawing.Size(136, 21)
         Me.ComboSklVelgMerke.TabIndex = 58
@@ -1936,7 +1938,7 @@ Partial Class Form1
         'ComboSklVelgModell
         '
         Me.ComboSklVelgModell.FormattingEnabled = True
-        Me.ComboSklVelgModell.Location = New System.Drawing.Point(80, 40)
+        Me.ComboSklVelgModell.Location = New System.Drawing.Point(80, 72)
         Me.ComboSklVelgModell.Name = "ComboSklVelgModell"
         Me.ComboSklVelgModell.Size = New System.Drawing.Size(136, 21)
         Me.ComboSklVelgModell.TabIndex = 58
@@ -1945,11 +1947,20 @@ Partial Class Form1
         'ComboSklVelgType
         '
         Me.ComboSklVelgType.FormattingEnabled = True
-        Me.ComboSklVelgType.Location = New System.Drawing.Point(80, 64)
+        Me.ComboSklVelgType.Location = New System.Drawing.Point(80, 96)
         Me.ComboSklVelgType.Name = "ComboSklVelgType"
         Me.ComboSklVelgType.Size = New System.Drawing.Size(136, 21)
         Me.ComboSklVelgType.TabIndex = 58
         Me.ComboSklVelgType.Text = "Velg eksisterende type"
+        '
+        'LabelSklSykkelIDSomRedigeres
+        '
+        Me.LabelSklSykkelIDSomRedigeres.AutoSize = True
+        Me.LabelSklSykkelIDSomRedigeres.Location = New System.Drawing.Point(16, 24)
+        Me.LabelSklSykkelIDSomRedigeres.Name = "LabelSklSykkelIDSomRedigeres"
+        Me.LabelSklSykkelIDSomRedigeres.Size = New System.Drawing.Size(18, 13)
+        Me.LabelSklSykkelIDSomRedigeres.TabIndex = 59
+        Me.LabelSklSykkelIDSomRedigeres.Text = "ID"
         '
         'Form1
         '
@@ -2193,5 +2204,6 @@ Partial Class Form1
     Friend WithEvents ComboSklVelgType As System.Windows.Forms.ComboBox
     Friend WithEvents ComboSklVelgModell As System.Windows.Forms.ComboBox
     Friend WithEvents ComboSklVelgMerke As System.Windows.Forms.ComboBox
+    Friend WithEvents LabelSklSykkelIDSomRedigeres As System.Windows.Forms.Label
 
 End Class
