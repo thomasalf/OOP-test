@@ -18,6 +18,7 @@ Public Class Form1
         Next
     End Sub
 
+
     'vis alle knapper/bokser i GroupBox
     Private Sub visAltIGroupBox(ByVal Gruppeboksnavn As GroupBox)
         Dim a As Control
