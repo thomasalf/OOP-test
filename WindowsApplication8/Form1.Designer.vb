@@ -72,6 +72,13 @@ Partial Class Form1
         Me.Button20 = New System.Windows.Forms.Button()
         Me.TabPage4UtstyrStatus = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.btnLagreUtstyr = New System.Windows.Forms.Button()
+        Me.lblAntallInnkjopt = New System.Windows.Forms.Label()
+        Me.lblUtstLeiepris = New System.Windows.Forms.Label()
+        Me.lblUtstyrsType = New System.Windows.Forms.Label()
+        Me.txtAntallInnkjopt = New System.Windows.Forms.TextBox()
+        Me.txtUtstyrLeiepris = New System.Windows.Forms.TextBox()
+        Me.txtUtstyrstype = New System.Windows.Forms.TextBox()
         Me.btnLastInnUtstyr = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.cmbUtstyrskategorier = New System.Windows.Forms.ComboBox()
@@ -197,13 +204,11 @@ Partial Class Form1
         Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
         Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
         Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
-        Me.txtUtstyrstype = New System.Windows.Forms.TextBox()
-        Me.txtUtstyrLeiepris = New System.Windows.Forms.TextBox()
-        Me.txtAntallInnkjopt = New System.Windows.Forms.TextBox()
-        Me.lblUtstyrsType = New System.Windows.Forms.Label()
-        Me.lblUtstLeiepris = New System.Windows.Forms.Label()
-        Me.lblAntallInnkjopt = New System.Windows.Forms.Label()
-        Me.btnLagreUtstyr = New System.Windows.Forms.Button()
+        Me.btnTransport = New System.Windows.Forms.Button()
+        Me.btnAdministrasjon = New System.Windows.Forms.Button()
+        Me.btnTilbaketab9 = New System.Windows.Forms.Button()
+        Me.btnTibaketab10 = New System.Windows.Forms.Button()
+        Me.btnTilbakeTab11 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -453,7 +458,7 @@ Partial Class Form1
         Me.GroupBox7.Size = New System.Drawing.Size(927, 255)
         Me.GroupBox7.TabIndex = 37
         Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "Medlemsinformasjon"
+        Me.GroupBox7.Text = "Kundeinformasjon"
         '
         'DataGridView2
         '
@@ -635,7 +640,7 @@ Partial Class Form1
         '
         'Button20
         '
-        Me.Button20.Location = New System.Drawing.Point(6, 6)
+        Me.Button20.Location = New System.Drawing.Point(6, 16)
         Me.Button20.Name = "Button20"
         Me.Button20.Size = New System.Drawing.Size(92, 23)
         Me.Button20.TabIndex = 36
@@ -676,6 +681,66 @@ Partial Class Form1
         Me.GroupBox5.TabIndex = 44
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Utstyr/Status"
+        '
+        'btnLagreUtstyr
+        '
+        Me.btnLagreUtstyr.Location = New System.Drawing.Point(462, 330)
+        Me.btnLagreUtstyr.Name = "btnLagreUtstyr"
+        Me.btnLagreUtstyr.Size = New System.Drawing.Size(74, 32)
+        Me.btnLagreUtstyr.TabIndex = 51
+        Me.btnLagreUtstyr.Text = "Lagre"
+        Me.btnLagreUtstyr.UseVisualStyleBackColor = True
+        '
+        'lblAntallInnkjopt
+        '
+        Me.lblAntallInnkjopt.AutoSize = True
+        Me.lblAntallInnkjopt.Location = New System.Drawing.Point(171, 350)
+        Me.lblAntallInnkjopt.Name = "lblAntallInnkjopt"
+        Me.lblAntallInnkjopt.Size = New System.Drawing.Size(74, 13)
+        Me.lblAntallInnkjopt.TabIndex = 50
+        Me.lblAntallInnkjopt.Text = "Antall på lager"
+        '
+        'lblUtstLeiepris
+        '
+        Me.lblUtstLeiepris.AutoSize = True
+        Me.lblUtstLeiepris.Location = New System.Drawing.Point(171, 323)
+        Me.lblUtstLeiepris.Name = "lblUtstLeiepris"
+        Me.lblUtstLeiepris.Size = New System.Drawing.Size(43, 13)
+        Me.lblUtstLeiepris.TabIndex = 49
+        Me.lblUtstLeiepris.Text = "Leiepris"
+        '
+        'lblUtstyrsType
+        '
+        Me.lblUtstyrsType.AutoSize = True
+        Me.lblUtstyrsType.Location = New System.Drawing.Point(171, 296)
+        Me.lblUtstyrsType.Name = "lblUtstyrsType"
+        Me.lblUtstyrsType.Size = New System.Drawing.Size(59, 13)
+        Me.lblUtstyrsType.TabIndex = 48
+        Me.lblUtstyrsType.Text = "Utstyrstype"
+        '
+        'txtAntallInnkjopt
+        '
+        Me.txtAntallInnkjopt.Location = New System.Drawing.Point(254, 343)
+        Me.txtAntallInnkjopt.Name = "txtAntallInnkjopt"
+        Me.txtAntallInnkjopt.Size = New System.Drawing.Size(100, 20)
+        Me.txtAntallInnkjopt.TabIndex = 47
+        Me.txtAntallInnkjopt.Visible = False
+        '
+        'txtUtstyrLeiepris
+        '
+        Me.txtUtstyrLeiepris.Location = New System.Drawing.Point(254, 316)
+        Me.txtUtstyrLeiepris.Name = "txtUtstyrLeiepris"
+        Me.txtUtstyrLeiepris.Size = New System.Drawing.Size(100, 20)
+        Me.txtUtstyrLeiepris.TabIndex = 46
+        Me.txtUtstyrLeiepris.Visible = False
+        '
+        'txtUtstyrstype
+        '
+        Me.txtUtstyrstype.Location = New System.Drawing.Point(254, 290)
+        Me.txtUtstyrstype.Name = "txtUtstyrstype"
+        Me.txtUtstyrstype.Size = New System.Drawing.Size(178, 20)
+        Me.txtUtstyrstype.TabIndex = 45
+        Me.txtUtstyrstype.Visible = False
         '
         'btnLastInnUtstyr
         '
@@ -1377,7 +1442,7 @@ Partial Class Form1
         '
         'Button23
         '
-        Me.Button23.Location = New System.Drawing.Point(3, 32)
+        Me.Button23.Location = New System.Drawing.Point(18, 16)
         Me.Button23.Name = "Button23"
         Me.Button23.Size = New System.Drawing.Size(92, 23)
         Me.Button23.TabIndex = 35
@@ -1397,21 +1462,23 @@ Partial Class Form1
         '
         'GroupBox9
         '
+        Me.GroupBox9.Controls.Add(Me.btnAdministrasjon)
+        Me.GroupBox9.Controls.Add(Me.btnTransport)
         Me.GroupBox9.Controls.Add(Me.Button31)
         Me.GroupBox9.Controls.Add(Me.Button30)
         Me.GroupBox9.Controls.Add(Me.Button29)
         Me.GroupBox9.Controls.Add(Me.Button5)
         Me.GroupBox9.Controls.Add(Me.Button4)
-        Me.GroupBox9.Location = New System.Drawing.Point(433, 187)
+        Me.GroupBox9.Location = New System.Drawing.Point(433, 162)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(226, 195)
+        Me.GroupBox9.Size = New System.Drawing.Size(226, 306)
         Me.GroupBox9.TabIndex = 0
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Hovedmeny"
         '
         'Button31
         '
-        Me.Button31.Location = New System.Drawing.Point(56, 144)
+        Me.Button31.Location = New System.Drawing.Point(56, 204)
         Me.Button31.Name = "Button31"
         Me.Button31.Size = New System.Drawing.Size(115, 23)
         Me.Button31.TabIndex = 6
@@ -1420,38 +1487,39 @@ Partial Class Form1
         '
         'Button30
         '
-        Me.Button30.Location = New System.Drawing.Point(56, 115)
+        Me.Button30.Location = New System.Drawing.Point(56, 129)
         Me.Button30.Name = "Button30"
         Me.Button30.Size = New System.Drawing.Size(115, 23)
         Me.Button30.TabIndex = 5
-        Me.Button30.Text = "Registrer Kunde"
+        Me.Button30.Text = "Sykler"
         Me.Button30.UseVisualStyleBackColor = True
         '
         'Button29
         '
-        Me.Button29.Location = New System.Drawing.Point(56, 86)
+        Me.Button29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button29.Location = New System.Drawing.Point(56, 19)
         Me.Button29.Name = "Button29"
         Me.Button29.Size = New System.Drawing.Size(115, 23)
         Me.Button29.TabIndex = 4
-        Me.Button29.Text = "Registrer Utleie"
+        Me.Button29.Text = "Utleie"
         Me.Button29.UseVisualStyleBackColor = True
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(56, 57)
+        Me.Button5.Location = New System.Drawing.Point(56, 100)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(115, 23)
         Me.Button5.TabIndex = 3
-        Me.Button5.Text = "Utstyr og Status"
+        Me.Button5.Text = "Utstyr"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(56, 28)
+        Me.Button4.Location = New System.Drawing.Point(56, 71)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(115, 23)
         Me.Button4.TabIndex = 2
-        Me.Button4.Text = "Medlemmer"
+        Me.Button4.Text = "Kunder"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'TabPage1
@@ -1484,6 +1552,7 @@ Partial Class Form1
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage2.Controls.Add(Me.btnTilbaketab9)
         Me.TabPage2.Controls.Add(Me.lstAvanse)
         Me.TabPage2.Controls.Add(Me.btnAvanse)
         Me.TabPage2.Controls.Add(Me.btnBestillinger)
@@ -1506,7 +1575,7 @@ Partial Class Form1
         '
         'btnAvanse
         '
-        Me.btnAvanse.Location = New System.Drawing.Point(46, 103)
+        Me.btnAvanse.Location = New System.Drawing.Point(46, 113)
         Me.btnAvanse.Name = "btnAvanse"
         Me.btnAvanse.Size = New System.Drawing.Size(107, 23)
         Me.btnAvanse.TabIndex = 2
@@ -1515,7 +1584,7 @@ Partial Class Form1
         '
         'btnBestillinger
         '
-        Me.btnBestillinger.Location = New System.Drawing.Point(46, 56)
+        Me.btnBestillinger.Location = New System.Drawing.Point(46, 84)
         Me.btnBestillinger.Name = "btnBestillinger"
         Me.btnBestillinger.Size = New System.Drawing.Size(107, 23)
         Me.btnBestillinger.TabIndex = 1
@@ -1535,6 +1604,7 @@ Partial Class Form1
         'TabPageSykkelregistrering
         '
         Me.TabPageSykkelregistrering.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPageSykkelregistrering.Controls.Add(Me.btnTibaketab10)
         Me.TabPageSykkelregistrering.Controls.Add(Me.Button12asdgsdfbsdgbdfb)
         Me.TabPageSykkelregistrering.Controls.Add(Me.btnSklVisSykkelmeny)
         Me.TabPageSykkelregistrering.Controls.Add(Me.GroupBoxHvaVilDuGjore)
@@ -1556,7 +1626,7 @@ Partial Class Form1
         '
         'btnSklVisSykkelmeny
         '
-        Me.btnSklVisSykkelmeny.Location = New System.Drawing.Point(24, 40)
+        Me.btnSklVisSykkelmeny.Location = New System.Drawing.Point(40, 63)
         Me.btnSklVisSykkelmeny.Name = "btnSklVisSykkelmeny"
         Me.btnSklVisSykkelmeny.Size = New System.Drawing.Size(75, 40)
         Me.btnSklVisSykkelmeny.TabIndex = 8
@@ -1812,6 +1882,7 @@ Partial Class Form1
         'TabPageSykkeltransport
         '
         Me.TabPageSykkeltransport.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPageSykkeltransport.Controls.Add(Me.btnTilbakeTab11)
         Me.TabPageSykkeltransport.Controls.Add(Me.btnLastInnTransportinfo)
         Me.TabPageSykkeltransport.Controls.Add(Me.LabelTransportTilSted)
         Me.TabPageSykkeltransport.Controls.Add(Me.LabelTransportFraSted)
@@ -1875,65 +1946,50 @@ Partial Class Form1
         Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
         Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
         '
-        'txtUtstyrstype
+        'btnTransport
         '
-        Me.txtUtstyrstype.Location = New System.Drawing.Point(254, 290)
-        Me.txtUtstyrstype.Name = "txtUtstyrstype"
-        Me.txtUtstyrstype.Size = New System.Drawing.Size(178, 20)
-        Me.txtUtstyrstype.TabIndex = 45
-        Me.txtUtstyrstype.Visible = False
+        Me.btnTransport.Location = New System.Drawing.Point(56, 159)
+        Me.btnTransport.Name = "btnTransport"
+        Me.btnTransport.Size = New System.Drawing.Size(115, 23)
+        Me.btnTransport.TabIndex = 7
+        Me.btnTransport.Text = "Transport"
+        Me.btnTransport.UseVisualStyleBackColor = True
         '
-        'txtUtstyrLeiepris
+        'btnAdministrasjon
         '
-        Me.txtUtstyrLeiepris.Location = New System.Drawing.Point(254, 316)
-        Me.txtUtstyrLeiepris.Name = "txtUtstyrLeiepris"
-        Me.txtUtstyrLeiepris.Size = New System.Drawing.Size(100, 20)
-        Me.txtUtstyrLeiepris.TabIndex = 46
-        Me.txtUtstyrLeiepris.Visible = False
+        Me.btnAdministrasjon.Location = New System.Drawing.Point(56, 266)
+        Me.btnAdministrasjon.Name = "btnAdministrasjon"
+        Me.btnAdministrasjon.Size = New System.Drawing.Size(115, 23)
+        Me.btnAdministrasjon.TabIndex = 8
+        Me.btnAdministrasjon.Text = "Administrasjon"
+        Me.btnAdministrasjon.UseVisualStyleBackColor = True
         '
-        'txtAntallInnkjopt
+        'btnTilbaketab9
         '
-        Me.txtAntallInnkjopt.Location = New System.Drawing.Point(254, 343)
-        Me.txtAntallInnkjopt.Name = "txtAntallInnkjopt"
-        Me.txtAntallInnkjopt.Size = New System.Drawing.Size(100, 20)
-        Me.txtAntallInnkjopt.TabIndex = 47
-        Me.txtAntallInnkjopt.Visible = False
+        Me.btnTilbaketab9.Location = New System.Drawing.Point(46, 23)
+        Me.btnTilbaketab9.Name = "btnTilbaketab9"
+        Me.btnTilbaketab9.Size = New System.Drawing.Size(106, 23)
+        Me.btnTilbaketab9.TabIndex = 4
+        Me.btnTilbaketab9.Text = "Tilbake"
+        Me.btnTilbaketab9.UseVisualStyleBackColor = True
         '
-        'lblUtstyrsType
+        'btnTibaketab10
         '
-        Me.lblUtstyrsType.AutoSize = True
-        Me.lblUtstyrsType.Location = New System.Drawing.Point(171, 296)
-        Me.lblUtstyrsType.Name = "lblUtstyrsType"
-        Me.lblUtstyrsType.Size = New System.Drawing.Size(59, 13)
-        Me.lblUtstyrsType.TabIndex = 48
-        Me.lblUtstyrsType.Text = "Utstyrstype"
+        Me.btnTibaketab10.Location = New System.Drawing.Point(38, 20)
+        Me.btnTibaketab10.Name = "btnTibaketab10"
+        Me.btnTibaketab10.Size = New System.Drawing.Size(76, 23)
+        Me.btnTibaketab10.TabIndex = 10
+        Me.btnTibaketab10.Text = "Tilbake"
+        Me.btnTibaketab10.UseVisualStyleBackColor = True
         '
-        'lblUtstLeiepris
+        'btnTilbakeTab11
         '
-        Me.lblUtstLeiepris.AutoSize = True
-        Me.lblUtstLeiepris.Location = New System.Drawing.Point(171, 323)
-        Me.lblUtstLeiepris.Name = "lblUtstLeiepris"
-        Me.lblUtstLeiepris.Size = New System.Drawing.Size(43, 13)
-        Me.lblUtstLeiepris.TabIndex = 49
-        Me.lblUtstLeiepris.Text = "Leiepris"
-        '
-        'lblAntallInnkjopt
-        '
-        Me.lblAntallInnkjopt.AutoSize = True
-        Me.lblAntallInnkjopt.Location = New System.Drawing.Point(171, 350)
-        Me.lblAntallInnkjopt.Name = "lblAntallInnkjopt"
-        Me.lblAntallInnkjopt.Size = New System.Drawing.Size(74, 13)
-        Me.lblAntallInnkjopt.TabIndex = 50
-        Me.lblAntallInnkjopt.Text = "Antall på lager"
-        '
-        'btnLagreUtstyr
-        '
-        Me.btnLagreUtstyr.Location = New System.Drawing.Point(462, 330)
-        Me.btnLagreUtstyr.Name = "btnLagreUtstyr"
-        Me.btnLagreUtstyr.Size = New System.Drawing.Size(74, 32)
-        Me.btnLagreUtstyr.TabIndex = 51
-        Me.btnLagreUtstyr.Text = "Lagre"
-        Me.btnLagreUtstyr.UseVisualStyleBackColor = True
+        Me.btnTilbakeTab11.Location = New System.Drawing.Point(33, 8)
+        Me.btnTilbakeTab11.Name = "btnTilbakeTab11"
+        Me.btnTilbakeTab11.Size = New System.Drawing.Size(85, 23)
+        Me.btnTilbakeTab11.TabIndex = 7
+        Me.btnTilbakeTab11.Text = "Tilbake"
+        Me.btnTilbakeTab11.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2172,5 +2228,10 @@ Partial Class Form1
     Friend WithEvents txtUtstyrLeiepris As System.Windows.Forms.TextBox
     Friend WithEvents txtUtstyrstype As System.Windows.Forms.TextBox
     Friend WithEvents btnLagreUtstyr As System.Windows.Forms.Button
+    Friend WithEvents btnAdministrasjon As System.Windows.Forms.Button
+    Friend WithEvents btnTransport As System.Windows.Forms.Button
+    Friend WithEvents btnTilbaketab9 As System.Windows.Forms.Button
+    Friend WithEvents btnTibaketab10 As System.Windows.Forms.Button
+    Friend WithEvents btnTilbakeTab11 As System.Windows.Forms.Button
 
 End Class

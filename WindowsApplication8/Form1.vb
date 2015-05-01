@@ -898,4 +898,65 @@ Public Class Form1
         End Try
         'MsgBox(utstyr.utstyrType)
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        TabControl1.SelectTab(1)
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        TabControl1.SelectTab(7)
+    End Sub
+
+
+    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
+        TabControl1.SelectTab(10)
+    End Sub
+
+    Private Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
+        TabControl1.SelectTab(9)
+    End Sub
+
+    Private Sub btnTransport_Click(sender As Object, e As EventArgs) Handles btnTransport.Click
+        TabControl1.SelectTab(11)
+    End Sub
+
+    Private Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
+        TabControl1.SelectTab(6)
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        TabControl1.SelectTab(3)
+    End Sub
+
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+        TabControl1.SelectTab(7)
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        TabControl1.SelectTab(7)
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        TabControl1.SelectTab(1)
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        TabControl1.SelectTab(1)
+    End Sub
+
+    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+        TabControl1.SelectTab(7)
+    End Sub
+
+    Private Sub btnTilbaketab9_Click(sender As Object, e As EventArgs) Handles btnTilbaketab9.Click
+        TabControl1.SelectTab(7)
+    End Sub
+
+    Private Sub btnTibaketab10_Click(sender As Object, e As EventArgs) Handles btnTibaketab10.Click
+        TabControl1.SelectTab(7)
+    End Sub
+
+    Private Sub btnTilbakeTab11_Click(sender As Object, e As EventArgs) Handles btnTilbakeTab11.Click
+        TabControl1.SelectTab(7)
+    End Sub
 End Class
