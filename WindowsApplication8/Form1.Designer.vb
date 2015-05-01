@@ -204,9 +204,6 @@ Partial Class Form1
         Me.LabelTransportTilSted = New System.Windows.Forms.Label()
         Me.LabelTransportFraSted = New System.Windows.Forms.Label()
         Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
-        Me.TransportSykkelID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TransportSykkelMerkeOgModell = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TransportSykkelFraSted = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
         Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
@@ -1914,28 +1911,10 @@ Partial Class Form1
         'DataGridViewSykkeltransport
         '
         Me.DataGridViewSykkeltransport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewSykkeltransport.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TransportSykkelID, Me.TransportSykkelMerkeOgModell, Me.TransportSykkelFraSted})
         Me.DataGridViewSykkeltransport.Location = New System.Drawing.Point(144, 104)
         Me.DataGridViewSykkeltransport.Name = "DataGridViewSykkeltransport"
         Me.DataGridViewSykkeltransport.Size = New System.Drawing.Size(384, 296)
         Me.DataGridViewSykkeltransport.TabIndex = 3
-        '
-        'TransportSykkelID
-        '
-        Me.TransportSykkelID.HeaderText = "ID"
-        Me.TransportSykkelID.Name = "TransportSykkelID"
-        Me.TransportSykkelID.Width = 40
-        '
-        'TransportSykkelMerkeOgModell
-        '
-        Me.TransportSykkelMerkeOgModell.HeaderText = "Sykkel"
-        Me.TransportSykkelMerkeOgModell.Name = "TransportSykkelMerkeOgModell"
-        Me.TransportSykkelMerkeOgModell.Width = 200
-        '
-        'TransportSykkelFraSted
-        '
-        Me.TransportSykkelFraSted.HeaderText = "Fra"
-        Me.TransportSykkelFraSted.Name = "TransportSykkelFraSted"
         '
         'ComboStedSykkelSkalTil
         '
@@ -2182,9 +2161,6 @@ Partial Class Form1
     Friend WithEvents btnSklVisSykkelmeny As System.Windows.Forms.Button
     Friend WithEvents TabPageSykkeltransport As System.Windows.Forms.TabPage
     Friend WithEvents DataGridViewSykkeltransport As System.Windows.Forms.DataGridView
-    Friend WithEvents TransportSykkelID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TransportSykkelMerkeOgModell As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TransportSykkelFraSted As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ComboStedSykkelSkalTil As System.Windows.Forms.ComboBox
     Friend WithEvents LabelTransportTilSted As System.Windows.Forms.Label
     Friend WithEvents LabelTransportFraSted As System.Windows.Forms.Label

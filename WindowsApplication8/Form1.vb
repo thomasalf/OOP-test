@@ -724,13 +724,18 @@ Public Class Form1
 
 
     Private Sub ComboSykkelSomSkalTransporteres_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSykkelSomSkalTransporteres.SelectedIndexChanged
+        Dim data As New DataTable
+        Dim sql As String = "SELECT sykkelID, merke, modell FROM pdk_sykkel INNER JOIN pdk_sted WHERE pdk_sykkel.postnr = pdk_sted.postnr AND stedsnavn = '" & ComboSykkelSomSkalTransporteres.SelectedValue & "';"
+        data = query(sql)
 
+        DataGridViewSykkeltransport.DataSource = data
 
     End Sub
 
     Private Sub btnLastInnTransportinfo_Click(sender As Object, e As EventArgs) Handles btnLastInnTransportinfo.Click
-        'fyller combobox
+        'fyller comboboxer
         ComboSykkelSomSkalTransporteres.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        ComboStedSykkelSkalTil.Items.Clear()
         Dim data As New DataTable
         Dim sql As String = "SELECT DISTINCT stedsnavn FROM pdk_sted"
         data = query(sql)
@@ -745,10 +750,13 @@ Public Class Form1
                 Dim row As DataRow = data.Rows(teller)
                 ComboboxTekst = row("stedsnavn")
                 ComboSykkelSomSkalTransporteres.Items.Add(ComboboxTekst)
+                ComboStedSykkelSkalTil.Items.Add(ComboboxTekst)
             Next
         Else
             MsgBox("Ingen informasjon funnet.")
         End If
+
+
 
     End Sub
 
