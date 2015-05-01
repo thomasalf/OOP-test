@@ -156,6 +156,8 @@ Partial Class Form1
         Me.Button23 = New System.Windows.Forms.Button()
         Me.TabPage8Hovedmeny = New System.Windows.Forms.TabPage()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.btnAdministrasjon = New System.Windows.Forms.Button()
+        Me.btnTransport = New System.Windows.Forms.Button()
         Me.Button31 = New System.Windows.Forms.Button()
         Me.Button30 = New System.Windows.Forms.Button()
         Me.Button29 = New System.Windows.Forms.Button()
@@ -165,11 +167,13 @@ Partial Class Form1
         Me.lstSokResult = New System.Windows.Forms.ListBox()
         Me.txtUniversalSok = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnTilbaketab9 = New System.Windows.Forms.Button()
         Me.lstAvanse = New System.Windows.Forms.ListBox()
         Me.btnAvanse = New System.Windows.Forms.Button()
         Me.btnBestillinger = New System.Windows.Forms.Button()
         Me.dgvStatistikk = New System.Windows.Forms.DataGridView()
         Me.TabPageSykkelregistrering = New System.Windows.Forms.TabPage()
+        Me.btnTibaketab10 = New System.Windows.Forms.Button()
         Me.Button12asdgsdfbsdgbdfb = New System.Windows.Forms.Button()
         Me.btnSklVisSykkelmeny = New System.Windows.Forms.Button()
         Me.GroupBoxHvaVilDuGjore = New System.Windows.Forms.GroupBox()
@@ -198,17 +202,13 @@ Partial Class Form1
         Me.btnSklNullUtSkjema = New System.Windows.Forms.Button()
         Me.btnSklRegistrerEndringer = New System.Windows.Forms.Button()
         Me.TabPageSykkeltransport = New System.Windows.Forms.TabPage()
+        Me.btnTilbakeTab11 = New System.Windows.Forms.Button()
         Me.btnLastInnTransportinfo = New System.Windows.Forms.Button()
         Me.LabelTransportTilSted = New System.Windows.Forms.Label()
         Me.LabelTransportFraSted = New System.Windows.Forms.Label()
         Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
         Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
         Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
-        Me.btnTransport = New System.Windows.Forms.Button()
-        Me.btnAdministrasjon = New System.Windows.Forms.Button()
-        Me.btnTilbaketab9 = New System.Windows.Forms.Button()
-        Me.btnTibaketab10 = New System.Windows.Forms.Button()
-        Me.btnTilbakeTab11 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1409,6 +1409,7 @@ Partial Class Form1
         '
         'DateTimePicker2
         '
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker2.Location = New System.Drawing.Point(37, 45)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
@@ -1417,6 +1418,7 @@ Partial Class Form1
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(37, 19)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
@@ -1475,6 +1477,24 @@ Partial Class Form1
         Me.GroupBox9.TabIndex = 0
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Hovedmeny"
+        '
+        'btnAdministrasjon
+        '
+        Me.btnAdministrasjon.Location = New System.Drawing.Point(56, 266)
+        Me.btnAdministrasjon.Name = "btnAdministrasjon"
+        Me.btnAdministrasjon.Size = New System.Drawing.Size(115, 23)
+        Me.btnAdministrasjon.TabIndex = 8
+        Me.btnAdministrasjon.Text = "Administrasjon"
+        Me.btnAdministrasjon.UseVisualStyleBackColor = True
+        '
+        'btnTransport
+        '
+        Me.btnTransport.Location = New System.Drawing.Point(56, 159)
+        Me.btnTransport.Name = "btnTransport"
+        Me.btnTransport.Size = New System.Drawing.Size(115, 23)
+        Me.btnTransport.TabIndex = 7
+        Me.btnTransport.Text = "Transport"
+        Me.btnTransport.UseVisualStyleBackColor = True
         '
         'Button31
         '
@@ -1564,6 +1584,15 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 9
         Me.TabPage2.Text = "TabPage10Statistikk"
         '
+        'btnTilbaketab9
+        '
+        Me.btnTilbaketab9.Location = New System.Drawing.Point(46, 23)
+        Me.btnTilbaketab9.Name = "btnTilbaketab9"
+        Me.btnTilbaketab9.Size = New System.Drawing.Size(106, 23)
+        Me.btnTilbaketab9.TabIndex = 4
+        Me.btnTilbaketab9.Text = "Tilbake"
+        Me.btnTilbaketab9.UseVisualStyleBackColor = True
+        '
         'lstAvanse
         '
         Me.lstAvanse.FormattingEnabled = True
@@ -1614,6 +1643,15 @@ Partial Class Form1
         Me.TabPageSykkelregistrering.Size = New System.Drawing.Size(1195, 552)
         Me.TabPageSykkelregistrering.TabIndex = 10
         Me.TabPageSykkelregistrering.Text = "Sykkelregistrering"
+        '
+        'btnTibaketab10
+        '
+        Me.btnTibaketab10.Location = New System.Drawing.Point(38, 20)
+        Me.btnTibaketab10.Name = "btnTibaketab10"
+        Me.btnTibaketab10.Size = New System.Drawing.Size(76, 23)
+        Me.btnTibaketab10.TabIndex = 10
+        Me.btnTibaketab10.Text = "Tilbake"
+        Me.btnTibaketab10.UseVisualStyleBackColor = True
         '
         'Button12asdgsdfbsdgbdfb
         '
@@ -1895,6 +1933,15 @@ Partial Class Form1
         Me.TabPageSykkeltransport.TabIndex = 11
         Me.TabPageSykkeltransport.Text = "Sykkeltransport"
         '
+        'btnTilbakeTab11
+        '
+        Me.btnTilbakeTab11.Location = New System.Drawing.Point(33, 8)
+        Me.btnTilbakeTab11.Name = "btnTilbakeTab11"
+        Me.btnTilbakeTab11.Size = New System.Drawing.Size(85, 23)
+        Me.btnTilbakeTab11.TabIndex = 7
+        Me.btnTilbakeTab11.Text = "Tilbake"
+        Me.btnTilbakeTab11.UseVisualStyleBackColor = True
+        '
         'btnLastInnTransportinfo
         '
         Me.btnLastInnTransportinfo.Location = New System.Drawing.Point(144, 8)
@@ -1945,51 +1992,6 @@ Partial Class Form1
         Me.ComboSykkelSomSkalTransporteres.Name = "ComboSykkelSomSkalTransporteres"
         Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
         Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
-        '
-        'btnTransport
-        '
-        Me.btnTransport.Location = New System.Drawing.Point(56, 159)
-        Me.btnTransport.Name = "btnTransport"
-        Me.btnTransport.Size = New System.Drawing.Size(115, 23)
-        Me.btnTransport.TabIndex = 7
-        Me.btnTransport.Text = "Transport"
-        Me.btnTransport.UseVisualStyleBackColor = True
-        '
-        'btnAdministrasjon
-        '
-        Me.btnAdministrasjon.Location = New System.Drawing.Point(56, 266)
-        Me.btnAdministrasjon.Name = "btnAdministrasjon"
-        Me.btnAdministrasjon.Size = New System.Drawing.Size(115, 23)
-        Me.btnAdministrasjon.TabIndex = 8
-        Me.btnAdministrasjon.Text = "Administrasjon"
-        Me.btnAdministrasjon.UseVisualStyleBackColor = True
-        '
-        'btnTilbaketab9
-        '
-        Me.btnTilbaketab9.Location = New System.Drawing.Point(46, 23)
-        Me.btnTilbaketab9.Name = "btnTilbaketab9"
-        Me.btnTilbaketab9.Size = New System.Drawing.Size(106, 23)
-        Me.btnTilbaketab9.TabIndex = 4
-        Me.btnTilbaketab9.Text = "Tilbake"
-        Me.btnTilbaketab9.UseVisualStyleBackColor = True
-        '
-        'btnTibaketab10
-        '
-        Me.btnTibaketab10.Location = New System.Drawing.Point(38, 20)
-        Me.btnTibaketab10.Name = "btnTibaketab10"
-        Me.btnTibaketab10.Size = New System.Drawing.Size(76, 23)
-        Me.btnTibaketab10.TabIndex = 10
-        Me.btnTibaketab10.Text = "Tilbake"
-        Me.btnTibaketab10.UseVisualStyleBackColor = True
-        '
-        'btnTilbakeTab11
-        '
-        Me.btnTilbakeTab11.Location = New System.Drawing.Point(33, 8)
-        Me.btnTilbakeTab11.Name = "btnTilbakeTab11"
-        Me.btnTilbakeTab11.Size = New System.Drawing.Size(85, 23)
-        Me.btnTilbakeTab11.TabIndex = 7
-        Me.btnTilbakeTab11.Text = "Tilbake"
-        Me.btnTilbakeTab11.UseVisualStyleBackColor = True
         '
         'Form1
         '

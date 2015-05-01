@@ -413,10 +413,22 @@ Public Class Form1
 
     End Sub
 
+    Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        DateTimePicker1.Format = DateTimePickerFormat.Custom
+        DateTimePicker1.CustomFormat = "yyyy-MM-dd"
+        DateTimePicker2.Format = DateTimePickerFormat.Custom
+        DateTimePicker2.CustomFormat = "yyyy-MM-dd"
+    End Sub
+
+
+
     'Registrer Booking
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+
         Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
         Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
+
+        MsgBox(fra)
 
         Dim utpost As String = 4011 ' usikker på om det skal være text eller value eller noe annet. 
         Dim innpost As String = 4011
@@ -427,11 +439,14 @@ Public Class Form1
         Dim PrisID As String = 2
         Dim kundeID As String = 1
         Dim SykkelID As String = 1 ' Må være String for spørringen sin del? 
-        Dim Antalldager = DateTimePicker2.Value.Subtract(DateTimePicker1.Value).Days
+        Dim Antalldager = DateTimePicker2.Value.Subtract(DateTimePicker1.Value).Days + 1
 
         Dim salgspris As String = Antalldager * pris
 
         Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
+
+        query(sql)
+
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles btnBestillinger.Click
@@ -967,4 +982,6 @@ Public Class Form1
     Private Sub btnTilbakeTab11_Click(sender As Object, e As EventArgs) Handles btnTilbakeTab11.Click
         TabControl1.SelectTab(7)
     End Sub
+
+
 End Class
