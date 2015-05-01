@@ -678,7 +678,7 @@ Public Class Form1
                        ComboSklVelgType.Text, transportorIDinformasjon(ComboVelgTransportor.SelectedIndex), _
                                ComboVelgHjemsted.Text, statusIDinformasjon(ComboVelgStatus.SelectedIndex))
                 'bruker data fra opprettet sykkel for å lage SQL-spørring
-                'sykkelDAO.query(sykkelDAO.lagreNySykkeldataSQL(sykkel))
+                sykkelDAO.query(sykkelDAO.lagreNySykkeldataSQL(sykkel))
                 MsgBox(sykkelDAO.lagreNySykkeldataSQL(sykkel))
                 MsgBox("Ny sykkel er opprettet")
             Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
@@ -692,7 +692,7 @@ Public Class Form1
                                ComboVelgHjemsted.Text, statusIDinformasjon(ComboVelgStatus.SelectedIndex))
                 'bruker data fra opprettet sykkel for å lage SQL-spørring
                 sykkelDAO.query(sykkelDAO.lagreNySykkeldataSQL(sykkel))
-
+                MsgBox(sykkelDAO.lagreNySykkeldataSQL(sykkel))
                 MsgBox("Ny sykkel er opprettet")
             Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
                 MessageBox.Show("Feil: " & ex.Message)
