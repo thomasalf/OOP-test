@@ -53,6 +53,11 @@ Public Class PersonDAO
         Return sql
     End Function
 
+    Public Function velgAlleKunder()
+        Dim sql As String = "SELECT * FROM pdk_kunde;"
+        Return sql
+    End Function
+
 
 End Class
 

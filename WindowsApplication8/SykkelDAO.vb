@@ -47,6 +47,11 @@ Public Class SykkelDAO
         Return sql
     End Function
 
+    Public Function velgAlleSykler()
+        Dim sql As String = "SELECT * FROM pdk_sykkel;"
+        Return sql
+    End Function
+
     '    Public Function lagreNySykkeldataSQL(inndata As Sykkel)
     ' Dim sql As String = "INSERT IGNORE INTO pdk_sykkelmerke SET merke = '" _
     '                     & inndata.getSykkelMerke() & "'; INSERT IGNORE INTO pdk_sykkelmodell SET merke = '" _
