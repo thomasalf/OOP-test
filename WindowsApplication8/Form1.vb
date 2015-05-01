@@ -406,7 +406,7 @@ Public Class Form1
             For teller = 0 To (teller - 1)
                 Dim ComboboxTekst As String
                 Dim row As DataRow = databox.Rows(teller)
-                ComboboxTekst = "Kunde-ID: " & row("kundeID") & " " & row("kfornavn") & " " & row("ketternavn") & " " & row("kadresse")
+                ComboboxTekst = row("kundeID") & " " & row("kfornavn") & " " & row("ketternavn") & " " & row("kadresse")
                 ComboBox8.Items.Add(ComboboxTekst)
                 kundeIDinformasjon(teller) = row("kundeID") 'lagrer kundeID i array
             Next
@@ -1008,4 +1008,9 @@ Public Class Form1
     End Sub
 
 
+    Private Sub ComboBox8_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox8.SelectedIndexChanged
+        Dim ID As String = ComboBox8.SelectedItem.ToString
+        Dim IDs As String = ID.Substring(0, 2)
+        Label5.Text = IDs
+    End Sub
 End Class
