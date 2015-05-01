@@ -114,7 +114,7 @@
     End Function
 
     Public Sub setSykkelTransportor(ByVal tran As String)
-        If tran.Length <= 0 Or IsNumeric(tran) = False Then 'sjekker at transportørID består av tall og har riktig lengde
+        If tran.Length <= 0 Then 'Or IsNumeric(tran) = False Then 'sjekker at transportørID består av tall og har riktig lengde
             Throw New Exception("Ugyldig transportørID")
         Else
             sykkeltransportor = tran
