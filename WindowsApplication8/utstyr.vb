@@ -1,8 +1,8 @@
 ﻿Public Class utstyr
     Private utId As String = "" 'Idnr til utstyret
     Private utType As String = "" 'Beskrivelse av type utstyr
-    Private pris As String = "" 'Dagspris utleie av utstyret
-    Private antall As String = "" 'Antall innkjøpte
+    Private utPris As String = "" 'Dagspris utleie av utstyret
+    Private utAntall As String = "" 'Antall innkjøpte
 
     'tester property
     Public Property utstyrId() As String
@@ -23,7 +23,23 @@
         End Set
     End Property
 
- 
+    Public Property utstyrPris() As String
+        Get
+            Return utPris
+        End Get
+        Set(ByVal value As String)
+            utPris = value
+        End Set
+    End Property
+
+    Public Property utstyrAntall() As String
+        Get
+            Return utAntall
+        End Get
+        Set(ByVal value As String)
+            utAntall = value
+        End Set
+    End Property
 
 
 

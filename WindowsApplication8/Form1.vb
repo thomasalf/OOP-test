@@ -396,19 +396,11 @@ Public Class Form1
 
 
     Private Sub btnRegUtstyr_Click(sender As Object, e As EventArgs) Handles btnRegUtstyr.Click
-        Try 'sjekker for feil
-            Dim utstyr As New utstyr
-            utstyr.utstyrType = _
-            InputBox("Skriv inn utstyrstype her", "Registrer nytt utstyr")
 
-            Dim data As New DataTable
-            Dim sql As String = "INSERT INTO pdk_ekstrautstyr SET utstyrstype = '" & utstyr.utstyrType & "'"
-
-            data = query(sql)
-        Catch ex As Exception 'Viser feilmelding hvis noe går galt
-            MessageBox.Show("Feil: " & ex.Message)
-        End Try
-        'MsgBox(utstyr.utstyrType)
+        txtUtstyrstype.Visible = True
+        txtUtstyrLeiepris.Visible = True
+        txtAntallInnkjopt.Visible = True
+       
     End Sub
 
 
@@ -881,4 +873,25 @@ Public Class Form1
     End Sub
 
 
+    Private Sub btnLagreUtstyr_Click(sender As Object, e As EventArgs) Handles btnLagreUtstyr.Click
+        Try 'sjekker for feil
+            Dim utstyr As New utstyr
+
+            utstyr.utstyrType = txtUtstyrstype.Text
+            'InputBox("Skriv inn utstyrstype her", "Registrer nytt utstyr")
+            utstyr.utstyrPris = txtUtstyrLeiepris.Text
+            utstyr.utstyrAntall = txtAntallInnkjopt.Text
+
+
+            Dim data As New DataTable
+            Dim sql As String = "INSERT INTO pdk_ekstrautstyr SET utstyrstype = '" & utstyr.utstyrType & "', " _
+                                & "dagpris = '" & utstyr.utstyrPris & "', " _
+                                & "antalltotal = '" & utstyr.utstyrAntall & "'; "
+
+            data = query(sql)
+        Catch ex As Exception 'Viser feilmelding hvis noe går galt
+            MessageBox.Show("Feil: " & ex.Message)
+        End Try
+        'MsgBox(utstyr.utstyrType)
+    End Sub
 End Class

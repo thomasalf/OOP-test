@@ -74,12 +74,6 @@ Partial Class Form1
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.btnLastInnUtstyr = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Utstyr = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Pris = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tilgjengelighet = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Utleidtil = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Lokale = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmbUtstyrskategorier = New System.Windows.Forms.ComboBox()
         Me.btnRegUtstyr = New System.Windows.Forms.Button()
         Me.btnRegUtleie = New System.Windows.Forms.Button()
@@ -209,6 +203,7 @@ Partial Class Form1
         Me.lblUtstyrsType = New System.Windows.Forms.Label()
         Me.lblUtstLeiepris = New System.Windows.Forms.Label()
         Me.lblAntallInnkjopt = New System.Windows.Forms.Label()
+        Me.btnLagreUtstyr = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -661,6 +656,7 @@ Partial Class Form1
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.btnLagreUtstyr)
         Me.GroupBox5.Controls.Add(Me.lblAntallInnkjopt)
         Me.GroupBox5.Controls.Add(Me.lblUtstLeiepris)
         Me.GroupBox5.Controls.Add(Me.lblUtstyrsType)
@@ -693,41 +689,10 @@ Partial Class Form1
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Utstyr, Me.Pris, Me.Tilgjengelighet, Me.Status, Me.Utleidtil, Me.Lokale})
         Me.DataGridView1.Location = New System.Drawing.Point(171, 33)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(643, 231)
         Me.DataGridView1.TabIndex = 0
-        '
-        'Utstyr
-        '
-        Me.Utstyr.HeaderText = "Utstyr"
-        Me.Utstyr.Name = "Utstyr"
-        '
-        'Pris
-        '
-        Me.Pris.HeaderText = "Pris"
-        Me.Pris.Name = "Pris"
-        '
-        'Tilgjengelighet
-        '
-        Me.Tilgjengelighet.HeaderText = "Tilgjengelighet"
-        Me.Tilgjengelighet.Name = "Tilgjengelighet"
-        '
-        'Status
-        '
-        Me.Status.HeaderText = "Status"
-        Me.Status.Name = "Status"
-        '
-        'Utleidtil
-        '
-        Me.Utleidtil.HeaderText = "Utleid til"
-        Me.Utleidtil.Name = "Utleidtil"
-        '
-        'Lokale
-        '
-        Me.Lokale.HeaderText = "Leveringssted"
-        Me.Lokale.Name = "Lokale"
         '
         'cmbUtstyrskategorier
         '
@@ -1916,6 +1881,7 @@ Partial Class Form1
         Me.txtUtstyrstype.Name = "txtUtstyrstype"
         Me.txtUtstyrstype.Size = New System.Drawing.Size(178, 20)
         Me.txtUtstyrstype.TabIndex = 45
+        Me.txtUtstyrstype.Visible = False
         '
         'txtUtstyrLeiepris
         '
@@ -1923,6 +1889,7 @@ Partial Class Form1
         Me.txtUtstyrLeiepris.Name = "txtUtstyrLeiepris"
         Me.txtUtstyrLeiepris.Size = New System.Drawing.Size(100, 20)
         Me.txtUtstyrLeiepris.TabIndex = 46
+        Me.txtUtstyrLeiepris.Visible = False
         '
         'txtAntallInnkjopt
         '
@@ -1930,6 +1897,7 @@ Partial Class Form1
         Me.txtAntallInnkjopt.Name = "txtAntallInnkjopt"
         Me.txtAntallInnkjopt.Size = New System.Drawing.Size(100, 20)
         Me.txtAntallInnkjopt.TabIndex = 47
+        Me.txtAntallInnkjopt.Visible = False
         '
         'lblUtstyrsType
         '
@@ -1957,6 +1925,15 @@ Partial Class Form1
         Me.lblAntallInnkjopt.Size = New System.Drawing.Size(74, 13)
         Me.lblAntallInnkjopt.TabIndex = 50
         Me.lblAntallInnkjopt.Text = "Antall på lager"
+        '
+        'btnLagreUtstyr
+        '
+        Me.btnLagreUtstyr.Location = New System.Drawing.Point(462, 330)
+        Me.btnLagreUtstyr.Name = "btnLagreUtstyr"
+        Me.btnLagreUtstyr.Size = New System.Drawing.Size(74, 32)
+        Me.btnLagreUtstyr.TabIndex = 51
+        Me.btnLagreUtstyr.Text = "Lagre"
+        Me.btnLagreUtstyr.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2076,12 +2053,6 @@ Partial Class Form1
     Friend WithEvents Button10 As System.Windows.Forms.Button
     Friend WithEvents Button9 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
-    Friend WithEvents Utstyr As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Pris As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Tilgjengelighet As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Status As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Utleidtil As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Lokale As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button22 As System.Windows.Forms.Button
     Friend WithEvents Button21 As System.Windows.Forms.Button
     Friend WithEvents Button20 As System.Windows.Forms.Button
@@ -2200,5 +2171,6 @@ Partial Class Form1
     Friend WithEvents txtAntallInnkjopt As System.Windows.Forms.TextBox
     Friend WithEvents txtUtstyrLeiepris As System.Windows.Forms.TextBox
     Friend WithEvents txtUtstyrstype As System.Windows.Forms.TextBox
+    Friend WithEvents btnLagreUtstyr As System.Windows.Forms.Button
 
 End Class
