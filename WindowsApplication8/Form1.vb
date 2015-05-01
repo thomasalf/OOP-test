@@ -418,6 +418,8 @@ Public Class Form1
         DateTimePicker1.CustomFormat = "yyyy-MM-dd"
         DateTimePicker2.Format = DateTimePickerFormat.Custom
         DateTimePicker2.CustomFormat = "yyyy-MM-dd"
+
+
     End Sub
 
 
@@ -425,8 +427,8 @@ Public Class Form1
     'Registrer Booking
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
 
-        Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
-        Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
+        Dim fra As Date = DateTimePicker1.Value.ToString("yyyy-MM-dd")
+        Dim til As Date = DateTimePicker2.Value.ToString("yyyy-MM-dd")
 
         MsgBox(fra)
 
