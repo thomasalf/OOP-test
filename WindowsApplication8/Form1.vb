@@ -35,6 +35,9 @@ Public Class Form1
     'Array som lagrer transportørID til bruk under "registrere sykkel"
     Private transportorIDinformasjon() As Double
 
+    'Array som lagrer statusID til bruk under "registrere sykkel"
+    Private statusIDinformasjon() As Double
+
 
     'Funksjon for kobling til database
     Private Function query(sql As String) As DataTable
@@ -493,6 +496,7 @@ Public Class Form1
 
 
         If data.Rows.Count >= 1 Then 'Fyller combobox med statusinformasjon
+            ReDim statusIDinformasjon(data.Rows.Count - 1) 'justerer lengde på array
             Dim teller As Integer
             teller = data.Rows.Count
 
@@ -501,6 +505,7 @@ Public Class Form1
                 Dim row As DataRow = data.Rows(teller)
                 ComboboxTekst = row("statusnavn")
                 ComboVelgStatus.Items.Add(ComboboxTekst)
+                statusIDinformasjon(teller) = row("statusID")
             Next
         Else
             MsgBox("Ingen informasjon funnet.")
@@ -515,14 +520,14 @@ Public Class Form1
         data = query(sql2)
 
 
-        If data.Rows.Count >= 1 Then 'Fyller combobox med statusinformasjon
+        If data.Rows.Count >= 1 Then 'Fyller combobox med tilhørighetsinformasjon
             Dim teller As Integer
             teller = data.Rows.Count
 
             For teller = 0 To (teller - 1)
                 Dim ComboboxTekst As String
                 Dim row As DataRow = data.Rows(teller)
-                ComboboxTekst = row("postnr") & " " & row("stedsnavn")
+                ComboboxTekst = row("postnr") '& " " & row("stedsnavn")
                 ComboVelgHjemsted.Items.Add(ComboboxTekst)
             Next
         Else
@@ -670,17 +675,28 @@ Public Class Form1
             'Lag sykkel vha rullegardinmenyer
             Try
                 Dim sykkel As New Sykkel(ComboSklVelgMerke.Text, ComboSklVelgModell.Text, _
-                       ComboSklVelgType.Text, ComboVelgStatus.Text, _
-                               ComboVelgHjemsted.Text, transportorIDinformasjon(ComboVelgTransportor.SelectedIndex))
+                       ComboSklVelgType.Text, transportorIDinformasjon(ComboVelgTransportor.SelectedIndex), _
+                               ComboVelgHjemsted.Text, statusIDinformasjon(ComboVelgStatus.SelectedIndex))
                 'bruker data fra opprettet sykkel for å lage SQL-spørring
                 'sykkelDAO.query(sykkelDAO.lagreNySykkeldataSQL(sykkel))
-                MsgBox(sykkel.ToString)
+                MsgBox(sykkelDAO.lagreNySykkeldataSQL(sykkel))
                 MsgBox("Ny sykkel er opprettet")
             Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
                 MessageBox.Show("Feil: " & ex.Message)
             End Try
         ElseIf TextBoxSkl1.Text <> "" Then
             'Lag sykkel vha merketekst, modelltekst og rullegardinmeny
+            Try
+                Dim sykkel As New Sykkel(TextBoxSkl1.Text, TextBoxSkl2.Text, _
+                       ComboSklVelgType.Text, transportorIDinformasjon(ComboVelgTransportor.SelectedIndex), _
+                               ComboVelgHjemsted.Text, statusIDinformasjon(ComboVelgStatus.SelectedIndex))
+                'bruker data fra opprettet sykkel for å lage SQL-spørring
+                sykkelDAO.query(sykkelDAO.lagreNySykkeldataSQL(sykkel))
+
+                MsgBox("Ny sykkel er opprettet")
+            Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+                MessageBox.Show("Feil: " & ex.Message)
+            End Try
 
         End If
 
