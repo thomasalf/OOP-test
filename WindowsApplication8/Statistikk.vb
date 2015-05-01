@@ -1,5 +1,10 @@
 ﻿Public Class Statistikk
 
+    'Kan brukes for å få ut avanse, men legger foreløpig inn fjorårets tall
+    Private omsetning As Integer = 12200000
+    Private resultat As Integer = 1300000
+
+
     'Jeg ønsker her å hente data fra sql'er i StatistikkDAO 
     '(Her må også de riktige verdiene plukkes ut, 
     'putte inn her og få ut riktig pris og utstpris, som igjen kan hentes ut i statistikk

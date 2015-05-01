@@ -400,11 +400,16 @@ Public Class Form1
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles btnAvanse.Click
-        Dim avanse As New DataTable
+        'Dim avanse As New DataTable
         'Dim rad As DataRow
 
-        Dim sql As String = "SELECT * from pdk_ansatt where ansattype = 'Selger'"
-
+        With lstAvanse.Items
+            .Add("Foreløpig avanse")
+            .Add(vbCrLf)
+            .Add("Totalt salg utleie:" & vbTab)
+            .Add("Totalt utgifter:" & vbTab)
+            .Add("Avanse:" & vbTab)
+        End With
 
 
         dgvStatistikk.Visible = False
