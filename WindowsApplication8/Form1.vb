@@ -6,6 +6,7 @@ Imports System.Data.SqlClient
 Public Class Form1
     Private personDAO As New PersonDAO
     Private sykkelDAO As New SykkelDAO
+    Private comboBoxUtil As New ComboBoxUtil
 
     'tøm alle textboxer i groupbox
     Private Sub clearGroupbox(ByVal Gruppeboksnavn As GroupBox)
