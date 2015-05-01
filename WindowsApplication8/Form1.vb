@@ -695,7 +695,7 @@ Public Class Form1
 
     Private Sub ComboSykkelSomSkalTransporteres_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSykkelSomSkalTransporteres.SelectedIndexChanged
 
-       
+
     End Sub
 
     Private Sub btnLastInnTransportinfo_Click(sender As Object, e As EventArgs) Handles btnLastInnTransportinfo.Click
