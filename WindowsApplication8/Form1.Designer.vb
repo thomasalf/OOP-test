@@ -80,7 +80,7 @@ Partial Class Form1
         Me.Utleidtil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Lokale = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnRegInnlevering = New System.Windows.Forms.Button()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.cmbUtstyrskategorier = New System.Windows.Forms.ComboBox()
         Me.btnUtvidetInfo = New System.Windows.Forms.Button()
         Me.btnRegUtstyr = New System.Windows.Forms.Button()
         Me.btnRegUtleie = New System.Windows.Forms.Button()
@@ -661,7 +661,7 @@ Partial Class Form1
         Me.GroupBox5.Controls.Add(Me.btnLastInnUtstyr)
         Me.GroupBox5.Controls.Add(Me.DataGridView1)
         Me.GroupBox5.Controls.Add(Me.btnRegInnlevering)
-        Me.GroupBox5.Controls.Add(Me.ComboBox3)
+        Me.GroupBox5.Controls.Add(Me.cmbUtstyrskategorier)
         Me.GroupBox5.Controls.Add(Me.btnUtvidetInfo)
         Me.GroupBox5.Controls.Add(Me.btnRegUtstyr)
         Me.GroupBox5.Controls.Add(Me.btnRegUtleie)
@@ -723,13 +723,13 @@ Partial Class Form1
         Me.btnRegInnlevering.Text = "Registrer Innlevering"
         Me.btnRegInnlevering.UseVisualStyleBackColor = True
         '
-        'ComboBox3
+        'cmbUtstyrskategorier
         '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(37, 93)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(115, 21)
-        Me.ComboBox3.TabIndex = 38
+        Me.cmbUtstyrskategorier.FormattingEnabled = True
+        Me.cmbUtstyrskategorier.Location = New System.Drawing.Point(37, 93)
+        Me.cmbUtstyrskategorier.Name = "cmbUtstyrskategorier"
+        Me.cmbUtstyrskategorier.Size = New System.Drawing.Size(115, 21)
+        Me.cmbUtstyrskategorier.TabIndex = 38
         '
         'btnUtvidetInfo
         '
@@ -2044,7 +2044,7 @@ Partial Class Form1
     Friend WithEvents btnRegUtleie As System.Windows.Forms.Button
     Friend WithEvents btnVisBegr As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbUtstyrskategorier As System.Windows.Forms.ComboBox
     Friend WithEvents btnEndreUtstyr As System.Windows.Forms.Button
     Friend WithEvents btnRegUtstyr As System.Windows.Forms.Button
     Friend WithEvents Button10 As System.Windows.Forms.Button
