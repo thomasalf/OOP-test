@@ -401,7 +401,7 @@ Public Class Form1
         txtUtstyrstype.Visible = True
         txtUtstyrLeiepris.Visible = True
         txtAntallInnkjopt.Visible = True
-       
+
     End Sub
 
 
