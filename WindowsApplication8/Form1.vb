@@ -577,7 +577,7 @@ Public Class Form1
                                    TextBoxSkl3.Text, ComboVelgStatus.SelectedValue, _
                                            ComboVelgHjemsted.SelectedValue, ComboVelgTransportor.SelectedValue)
             'bruker data fra opprettet sykkel for å lage SQL-spørring
-            sykkelDAO.query(sykkelDAO.lagreSykkeldataSQL(sykkel))
+            sykkelDAO.query(sykkelDAO.lagreNySykkeldataSQL(sykkel))
             MsgBox("Ny sykkel er opprettet")
         Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
             MessageBox.Show("Feil: " & ex.Message)

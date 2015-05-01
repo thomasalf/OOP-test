@@ -26,7 +26,7 @@ Public Class SykkelDAO
 
 
 
-    Public Function lagreSykkeldataSQL(inndata As Sykkel)
+    Public Function lagreNySykkeldataSQL(inndata As Sykkel)
         Dim sql As String = "INSERT INTO pdk_sykkel SET merke = '" _
                              & inndata.getSykkelMerke() & "', modell = '" _
                              & inndata.getSykkelModell() & "', sykkeltype = '" _
