@@ -7,6 +7,7 @@ Public Class Form1
     Private personDAO As New PersonDAO
     Private sykkelDAO As New SykkelDAO
     Private comboBoxUtil As New ComboBoxUtil
+    Private kundeInfoUtil As New KundeinfoUtil
 
     'tøm alle textboxer i groupbox
     Private Sub clearGroupbox(ByVal Gruppeboksnavn As GroupBox)
@@ -171,25 +172,28 @@ Public Class Form1
     End Sub
 
     Private Sub ComboBoxRegistrerteKunder_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxRegistrerteKunder.SelectedIndexChanged
-        'MsgBox("Kunde-ID = " & kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex))
 
         'Fyller kundeinformasjonsfelt med informasjonen som finnes i databasen
-        Dim data As New DataTable
-        Dim sql As String = "SELECT * FROM pdk_kunde " _
-                                   & "WHERE kundeID = '" & kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex) & "'"
-        data = query(sql)
-        If data.Rows.Count = 1 Then
-            clearGroupbox(GroupBox3)
-            Dim row As DataRow = data.Rows(0)
-            kundeIDtilRedigering = row("kundeID")
-            Label3.Text = kundeIDtilRedigering
-            TextBox12.Text = row("kfornavn")
-            TextBox11.Text = row("ketternavn")
-            TextBox10.Text = row("kadresse")
-            TextBox9.Text = row("kepost")
-            TextBox8.Text = row("ktelefon")
-        End If
-
+        kundeInfoUtil.fyllInnKundeinfo(kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex), Label3, _
+                                       TextBox12, TextBox11, TextBox10, TextBox9, TextBox8)
+        'START: gammel kode
+        'Dim data As New DataTable
+        'Dim sql As String = "SELECT * FROM pdk_kunde " _
+        '                           & "WHERE kundeID = '" & kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex) & "'"
+        'data = query(sql)
+        'If data.Rows.Count = 1 Then
+        ' clearGroupbox(GroupBox3)
+        ' Dim row As DataRow = Data.Rows(0)
+        ' kundeIDtilRedigering = row("kundeID")
+        ' Label3.Text = kundeIDtilRedigering
+        ' TextBox12.Text = row("kfornavn")
+        ' TextBox11.Text = row("ketternavn")
+        ' TextBox10.Text = row("kadresse")
+        ' TextBox9.Text = row("kepost")
+        ' TextBox8.Text = row("ktelefon")
+        ' End If
+        'SLUTT: GAMMEL KODE
+        Label3.Text = kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex)
 
         'Viser kundeinformasjonsfelter
         GroupBox3.Visible = True
