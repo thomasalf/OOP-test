@@ -385,7 +385,35 @@ Public Class Form1
 
 
         Dim data As New DataTable
-        Dim sql As String = "SELECT merke,sykkeltype, prisprosent, a.bstatus, statusnavn, a.inntid FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.sykkelID JOIN pdk_booking a ON b.bookingID=a.bookingID JOIN pdk_status s ON e.statusID=s.statusID JOIN pdk_prisnokkel p ON a.prisID=p.prisID WHERE a.bstatus='tilgjengelig' OR (a.bstatus='utleid' AND " & fra & " < a.uttid AND " & til & " < a.uttid) OR (a.bstatus='utleid' AND " & fra & " > a.inntid AND " & til & " < a.inntid) OR (e.sykkelID NOT IN (SELECT b.sykkelID FROM pdk_syklerbooket))"
+        'Dim sql As String = "SELECT merke,sykkeltype, prisprosent, a.bstatus, statusnavn, a.inntid" _
+        '& "FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.sykkelID" _
+        '& "JOIN pdk_booking a ON b.bookingID=a.bookingID" _
+        '& "JOIN pdk_status s ON e.statusID=s.statusID" _
+        '& "JOIN pdk_prisnokkel p ON a.prisID=p.prisID" _
+        '& "WHERE a.bstatus='tilgjengelig'" _
+        '& "OR (a.bstatus='utleid' AND " & fra & " < a.uttid AND " & til & " < a.uttid)" _
+        '& "OR (a.bstatus='utleid' AND " & fra & " > a.inntid AND " & til & " < a.inntid)" _
+        '& "OR (e.sykkelID NOT IN (SELECT b.sykkelID FROM pdk_syklerbooket))"
+
+        'Ny select
+        Dim sql As String = "SELECT distinct e.sykkelID as UtstyrsID, e.merke as Merke, e.sykkeltype as Type, " _
+                            & "500 as Dagspris, a.bstatus as Status, s.statusnavn as Statusnavn, a.inntid as Inntid " _
+                            & "FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.sykkelID " _
+                            & "JOIN pdk_booking a ON b.bookingID=a.bookingID " _
+                            & "JOIN pdk_status s ON e.statusID=s.statusID " _
+                            & "JOIN pdk_prisnokkel p ON a.prisID=p.prisID " _
+                            & "WHERE a.bstatus='tilgjengelig' " _
+                            & "OR (a.bstatus='utleid' AND " & fra & " < a.uttid AND " & til & " < a.uttid) " _
+                            & "OR (a.bstatus='utleid' AND " & fra & " > a.inntid AND " & til & " < a.inntid) " _
+                            & "UNION ALL " _
+                            & "select e.sykkelID, merke,sykkeltype, null as prisprosent, null as bstatus, statusnavn, " _
+                            & "NULL as inntid FROM pdk_sykkel e " _
+                            & "JOIN pdk_status s ON e.statusID=s.statusID " _
+                            & "where e.sykkelID NOT IN (SELECT sykkelID FROM pdk_syklerbooket) " _
+                            & "UNION ALL " _
+                            & "SELECT utstyrID as UtstyrsID, NULL as Merke, utstyrstype as Type, " _
+                            & "dagpris as Dagspris, NULL as Status, NULL as Statusnavn, NULL as inntid " _
+                            & "FROM pdk_ekstrautstyr where antallutleid < antalltotal;"
 
         data = query(sql)
         DataGridView3.DataSource = data
@@ -393,8 +421,8 @@ Public Class Form1
 
         ComboBox8.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim databox As New DataTable
-        'Dim sql As String = "SELECT * FROM pdk_kunde"
-        'data = query(sql)
+            'Dim sql As String = "SELECT * FROM pdk_kunde"
+            'data = query(sql)
 
         databox = personDAO.query(personDAO.velgAlleKunder())
 
@@ -412,7 +440,7 @@ Public Class Form1
             Next
         Else
             MsgBox("Ingen informasjon funnet.")
-        End If
+            End If
 
 
 
