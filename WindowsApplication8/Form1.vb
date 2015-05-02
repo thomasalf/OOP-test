@@ -499,13 +499,13 @@ Public Class Form1
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles btnBestillinger.Click
         Dim bestillinger As New DataTable
 
-        'Ønsker her å hente inn data fra funksjon visBestillingerSQL i StatistikkDAO
-        'I tillegg skal bookingprisen inn bakerst
-        'flytte oppkobling til db over til StatistikkDAO
         Dim sql As String = "SELECT b.bookingID, b.uttid, b.inntid, b.kundeID, " _
         & "CONCAT( k.kfornavn,  ' ', k.ketternavn) AS kunde, b.betalt," _
         & "CONCAT( s.fornavn,  ' ', s.etternavn) AS selger, b.pris FROM pdk_booking b," _
         & "pdk_kunde k, pdk_ansatt s WHERE b.kundeID = k.kundeID and b.selgerID = s.selgerID;"
+
+        ' Hvordan få tak i denne funksjonen her? visBestillingerSQL(sql)
+
 
         bestillinger = query(sql)
         dgvStatistikk.DataSource = bestillinger
@@ -516,13 +516,19 @@ Public Class Form1
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles btnAvanse.Click
-        'Dim avanse As New DataTable
-        'Dim rad As DataRow
+        Dim data As New DataTable
+        Dim rad As DataRow
+        Dim avanse As Integer
 
+        Dim sql As String = "SELECT SUM(pris) as totalpris from pdk_booking;"
+        data = query(sql)
+        rad = data.Rows(0)
+
+        avanse = rad("totalpris")
         With lstAvanse.Items
             .Add("Foreløpig avanse")
             .Add(vbCrLf)
-            .Add("Totalt salg utleie:" & vbTab)
+            .Add("Totalt salg utleie:" & vbTab & avanse)
             .Add("Totalt utgifter:" & vbTab)
             .Add("Avanse:" & vbTab)
         End With
