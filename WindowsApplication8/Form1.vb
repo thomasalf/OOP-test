@@ -389,17 +389,8 @@ Public Class Form1
 
 
         Dim data As New DataTable
-        'Dim sql As String = "SELECT merke,sykkeltype, prisprosent, a.bstatus, statusnavn, a.inntid" _
-        '& "FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.sykkelID" _
-        '& "JOIN pdk_booking a ON b.bookingID=a.bookingID" _
-        '& "JOIN pdk_status s ON e.statusID=s.statusID" _
-        '& "JOIN pdk_prisnokkel p ON a.prisID=p.prisID" _
-        '& "WHERE a.bstatus='tilgjengelig'" _
-        '& "OR (a.bstatus='utleid' AND " & fra & " < a.uttid AND " & til & " < a.uttid)" _
-        '& "OR (a.bstatus='utleid' AND " & fra & " > a.inntid AND " & til & " < a.inntid)" _
-        '& "OR (e.sykkelID NOT IN (SELECT b.sykkelID FROM pdk_syklerbooket))"
 
-        'Ny select
+        'Hente sykler som ikke er boooket i valgt tidsperiode og utstyr det finnes mer av på lager
         Dim sql As String = "SELECT distinct e.sykkelID as UtstyrsID, e.merke as Merke, e.sykkeltype as Type, " _
                             & "500 as Dagspris, a.bstatus as Status, s.statusnavn as Statusnavn, a.inntid as Inntid " _
                             & "FROM pdk_sykkel e JOIN pdk_syklerbooket b ON e.sykkelID=b.sykkelID " _
