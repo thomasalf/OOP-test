@@ -483,14 +483,14 @@ Public Class Form1
         Const pris As Integer = 500
 
         Dim selgerID As String = 1 ' må hente selgerID fra en plass?
-        Dim PrisID As String = 2
+        Dim PrisID As String = 2 ' denne vil på et senere tidspunkt brukes for å variere pris avhengig av produkt. 
         Dim kundeID As String = Label5.Text
-        Dim SykkelID As String = 1 ' Må være String for spørringen sin del? 
+        Dim SykkelID As String = DataGridView3.SelectedRows(0).Cells(0).Value.ToString
         Dim Antalldager = DateTimePicker2.Value.Subtract(DateTimePicker1.Value).Days + 1
 
         Dim salgspris As String = Antalldager * pris
 
-        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
+        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",Ja," & selgerID & "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
 
         query(sql)
 
@@ -1050,4 +1050,6 @@ Public Class Form1
         Dim IDs As String = ID.Substring(0, 2)
         Label5.Text = IDs
     End Sub
+
+
 End Class

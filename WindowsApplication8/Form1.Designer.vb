@@ -136,6 +136,8 @@ Partial Class Form1
         Me.Button8 = New System.Windows.Forms.Button()
         Me.TabPage7TilgjengeligUtstyr = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Button26 = New System.Windows.Forms.Button()
         Me.Button25 = New System.Windows.Forms.Button()
         Me.ComboBox10 = New System.Windows.Forms.ComboBox()
@@ -145,6 +147,7 @@ Partial Class Form1
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button24 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ComboBox7 = New System.Windows.Forms.ComboBox()
@@ -209,9 +212,7 @@ Partial Class Form1
         Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
         Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
         Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button12 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -232,6 +233,7 @@ Partial Class Form1
         Me.TabPage7TilgjengeligUtstyr.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage8Hovedmeny.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
@@ -243,7 +245,6 @@ Partial Class Form1
         Me.GroupBoxSykkelinformasjon.SuspendLayout()
         Me.TabPageSykkeltransport.SuspendLayout()
         CType(Me.DataGridViewSykkeltransport, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -1264,6 +1265,7 @@ Partial Class Form1
         'TabPage7TilgjengeligUtstyr
         '
         Me.TabPage7TilgjengeligUtstyr.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.Button12)
         Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.GroupBox2)
         Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.Button24)
         Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.GroupBox1)
@@ -1295,6 +1297,24 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 38
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Tilgjengelig utstyr"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(85, 288)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(18, 13)
+        Me.Label5.TabIndex = 42
+        Me.Label5.Text = "ID"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(26, 288)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(52, 13)
+        Me.Label4.TabIndex = 41
+        Me.Label4.Text = "KundeID:"
         '
         'Button26
         '
@@ -1374,6 +1394,15 @@ Partial Class Form1
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.Size = New System.Drawing.Size(643, 231)
         Me.DataGridView3.TabIndex = 1
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Location = New System.Drawing.Point(23, 283)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(101, 23)
+        Me.PictureBox1.TabIndex = 43
+        Me.PictureBox1.TabStop = False
         '
         'Button24
         '
@@ -2003,32 +2032,14 @@ Partial Class Form1
         Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
         Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
         '
-        'Label4
+        'Button12
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(26, 288)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(52, 13)
-        Me.Label4.TabIndex = 41
-        Me.Label4.Text = "KundeID:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(85, 288)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(18, 13)
-        Me.Label5.TabIndex = 42
-        Me.Label5.Text = "ID"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(23, 283)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(101, 23)
-        Me.PictureBox1.TabIndex = 43
-        Me.PictureBox1.TabStop = False
+        Me.Button12.Location = New System.Drawing.Point(664, 165)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(75, 23)
+        Me.Button12.TabIndex = 39
+        Me.Button12.Text = "Button12"
+        Me.Button12.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2067,6 +2078,7 @@ Partial Class Form1
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabPage8Hovedmeny.ResumeLayout(False)
@@ -2082,7 +2094,6 @@ Partial Class Form1
         Me.TabPageSykkeltransport.ResumeLayout(False)
         Me.TabPageSykkeltransport.PerformLayout()
         CType(Me.DataGridViewSykkeltransport, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2276,5 +2287,6 @@ Partial Class Form1
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Button12 As System.Windows.Forms.Button
 
 End Class
