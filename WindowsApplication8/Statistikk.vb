@@ -1,8 +1,17 @@
 ﻿Public Class Statistikk
 
     'Kan brukes for å få ut avanse, men legger foreløpig inn fjorårets tall
-    Private omsetning As Integer = 12200000
+    Private omsetning As Integer
     Private resultat As Integer = 1300000
+
+
+    Public Function visUtgifter(ByVal omsetning As Integer, ByVal resultat As Integer)
+        Dim utgifter As Integer
+        utgifter = omsetning - resultat
+        Return utgifter
+    End Function
+
+    'Konstruktører
 
 
     'Jeg ønsker her å hente data fra sql'er i StatistikkDAO 
@@ -23,8 +32,8 @@
 
 
 
-    'Konstant dagspris for sykkelleie
-    Const dagspris As Integer = 500
+    'Dagspris for sykkelleie
+    Private dagspris As Integer = 500
     Private inntid, uttid As Date
 
     'Funksjon for å finne prisen for en sykkelbestilling

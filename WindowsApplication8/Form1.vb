@@ -519,20 +519,28 @@ Public Class Form1
         Dim data As New DataTable
         Dim rad As DataRow
         Dim avanse As Integer
+        Dim totalpris As Integer
 
         Dim sql As String = "SELECT SUM(pris) as totalpris from pdk_booking;"
         data = query(sql)
-        rad = data.Rows(0)
 
-        avanse = rad("totalpris")
+        'Legger sammen sum av priser
+        For Each rad In data.Rows
+            totalpris += rad("totalpris")
+        Next rad
+
+        'Må ha konstruktører for å hente ut dette fra Statistikk?
+        'avanse = visUtgifter(totalpris, omsetning)
+
+
+
         With lstAvanse.Items
             .Add("Foreløpig avanse")
             .Add(vbCrLf)
-            .Add("Totalt salg utleie:" & vbTab & avanse)
+            .Add("Totalt salg utleie:" & vbTab & totalpris)
             .Add("Totalt utgifter:" & vbTab)
             .Add("Avanse:" & vbTab)
         End With
-
 
         dgvStatistikk.Visible = False
         lstAvanse.Visible = True
