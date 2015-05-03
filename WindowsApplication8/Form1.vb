@@ -461,9 +461,9 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         DateTimePicker1.Format = DateTimePickerFormat.Custom
-        DateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss"
+        DateTimePicker1.CustomFormat = "yyyy-MM-dd"
         DateTimePicker2.Format = DateTimePickerFormat.Custom
-        DateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm:ss"
+        DateTimePicker2.CustomFormat = "yyyy-MM-dd"
 
 
     End Sub
@@ -473,12 +473,12 @@ Public Class Form1
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
 
 
-        Dim fra As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
-        Dim til As String = DateTimePicker2.Value.ToString("yyyy-MM-dd")
+        Dim fra As String = DateTimePicker1.Value.Date.ToString("yyyy-MM-dd")
+        Dim til As String = DateTimePicker2.Value.Date.ToString("yyyy-MM-dd")
 
 
-        Dim utpost As String = 4011 ' usikker på om det skal være text eller value eller noe annet. 
-        Dim innpost As String = 4011
+        Dim utpost As String = ComboBox7.SelectedItem.ToString
+        Dim innpost As String = ComboBox10.SelectedItem.ToString
 
         Const pris As Integer = 500
 
@@ -490,7 +490,7 @@ Public Class Form1
 
         Dim salgspris As String = Antalldager * pris
 
-        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",Ja," & selgerID & "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
+        Dim sql As String = "INSERT INTO pdk_booking (uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID & "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
 
         query(sql)
 
