@@ -1373,17 +1373,23 @@ Partial Class Form1
         '
         'DateTimePicker2
         '
+        Me.DateTimePicker2.CustomFormat = "yyyy-MM-dd"
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker2.Location = New System.Drawing.Point(37, 45)
+        Me.DateTimePicker2.MaxDate = New Date(3000, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker2.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker2.TabIndex = 3
-        Me.DateTimePicker2.Value = New Date(2015, 3, 24, 0, 0, 0, 0)
+        Me.DateTimePicker2.Value = New Date(2015, 5, 4, 0, 0, 0, 0)
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.CustomFormat = "yyyy-MM-dd"
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(37, 19)
+        Me.DateTimePicker1.MaxDate = New Date(3000, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker1.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 2
