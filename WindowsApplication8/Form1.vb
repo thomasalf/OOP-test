@@ -96,7 +96,8 @@ Public Class Form1
     Private tempStatus As String 'lagrer sykkelstatus
     Private tempTilhorighet As String 'lagrer tilhørighet
     Private tempTransportor As String 'lagrer transportør
-    Private tempMerke As String 'lagrer sykkelmerke
+    Private tempSykkelmerke As String 'lagrer sykkelmerke
+    Private tempType As String 'lagrer sykkeltype
 
 
     'Funksjon for kobling til database
@@ -788,6 +789,30 @@ Public Class Form1
         tempdata = query(tempsql)
         Dim temprow As DataRow = tempdata.Rows(ComboEksisterendeSykler.SelectedIndex)
         tempModell = temprow("modell")
+        tempType = temprow("sykkeltype")
+        tempSykkelmerke = temprow("merke")
+
+        'velger riktig sykkelmerke i combobox
+        Dim valgtTekst As String = ComboEksisterendeSykler.SelectedText
+        Dim riktigTekstFunnet As Boolean = False
+        Dim tempteller As Integer = 1
+        Do While riktigTekstFunnet = False
+            ComboSklVelgMerke.SelectedIndex = tempteller
+            If valgtTekst = ComboSklVelgMerke.SelectedText Then
+                riktigTekstFunnet = True
+            Else
+                tempteller = tempteller + 1
+            End If
+
+        Loop
+
+
+
+
+
+
+
+
 
 
 
