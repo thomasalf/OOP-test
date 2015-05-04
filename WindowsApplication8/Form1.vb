@@ -77,7 +77,6 @@ Public Class Form1
     End Sub
 
 
-
     'Brukernavn og passord
     Private brukernavn As String = "bruker"
     Private passord As String = "passord"
