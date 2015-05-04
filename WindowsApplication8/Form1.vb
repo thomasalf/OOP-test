@@ -92,11 +92,11 @@ Public Class Form1
     Private sykkelIDtilRedigering As Integer 'lagrer sykkelID
 
     'Arrays/variabler til bruk i sammenheng med "redigere sykkel"
-    Private tempMerke As String 'lagrer sykkelmerke
     Private tempModell As String 'lagrer sykkelmodell
     Private tempStatus As String 'lagrer sykkelstatus
     Private tempTilhorighet As String 'lagrer tilhørighet
     Private tempTransportor As String 'lagrer transportør
+    Private tempMerke As String 'lagrer sykkelmerke
 
 
     'Funksjon for kobling til database
@@ -781,6 +781,19 @@ Public Class Form1
 
 
         'Ny kode
+        'Lagrer sykkelinformasjon i variabler
+        Dim tempdata As New DataTable
+        Dim tempsql As String = "SELECT * FROM pdk_sykkel"
+
+        tempdata = query(tempsql)
+        Dim temprow As DataRow = tempdata.Rows(ComboEksisterendeSykler.SelectedIndex)
+        tempModell = temprow("modell")
+
+
+
+
+
+
         'START: fyll "status"-combobox
         ComboVelgStatus.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data As New DataTable
