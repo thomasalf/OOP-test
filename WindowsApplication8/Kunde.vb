@@ -8,25 +8,23 @@
 
     'Konstruktører
 
-    'Setter alle verdier + rabatt
+    'Setter alle verdier
     Public Sub New(ByVal fn As String, _
                    en As String, _
                    tlf As String, _
                    pnr As String, _
                    adr As String, _
-                   ep As String, _
-                   rab As Integer)
+                   ep As String)
         MyBase.New(fn, en, tlf, pnr, adr, ep)
-        setRabatt(rab)
+
     End Sub
 
-    'Setter navn og telefonnummer + rabatt
+    'Setter navn og telefonnummer
     Public Sub New(ByVal fn As String, _
                en As String, _
-               tlf As String, _
-               rab As Integer)
+               tlf As String)
         MyBase.New(fn, en, tlf)
-        setRabatt(rab)
+
     End Sub
 
     'Setter navn og e-post + rabatt
@@ -49,19 +47,19 @@
 
 
     'Get- og Set-funksjoner
-    Public Function getRabatt() As Integer
-        Return rabatt
-    End Function
+    'Public Function getRabatt() As Integer
+    '    Return rabatt
+    ' End Function
 
-    Public Sub setRabatt(ByVal rab As Integer)
-        If rab < MIN Then
-            rabatt = MIN
-        ElseIf rab > MAX Then
-            rabatt = MAX
-        Else
-            rabatt = rab
-        End If
-    End Sub
+    'Public Sub setRabatt(ByVal rab As Integer)
+    '    If rab < MIN Then
+    '        rabatt = MIN
+    '    ElseIf rab > MAX Then
+    '        rabatt = MAX
+    '    Else
+    '        rabatt = rab
+    '    End If
+    'End Sub
 
 
     'ToString()-funksjon

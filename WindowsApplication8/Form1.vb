@@ -160,8 +160,7 @@ Public Class Form1
             'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
             Dim kunde As New Kunde(TextBox17.Text, TextBox18.Text, _
                                    TextBox21.Text, TextBox16.Text, _
-                                   TextBox19.Text, TextBox20.Text, _
-                                   ComboBox11.SelectedValue)
+                                   TextBox19.Text, TextBox20.Text)
             'bruker data fra opprettet kunde for å lage SQL-spørring
             personDAO.query(personDAO.lagreKundedataSQL(kunde))
             MsgBox("Ny kunde er opprettet")
@@ -193,6 +192,7 @@ Public Class Form1
         ' End If
         'SLUTT: GAMMEL KODE
         Label3.Text = kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex)
+        kundeIDtilRedigering = Label3.Text
 
         'Viser kundeinformasjonsfelter
         GroupBox3.Visible = True
@@ -330,10 +330,10 @@ Public Class Form1
 
         Try
             'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
+            'Har satt postnrverdi til "0000" her siden vi har gått bort fra postnr i kunderegistrering.
             Dim kunde As New Kunde(TextBox12.Text, TextBox11.Text, _
-                                   TextBox8.Text, TextBox7.Text, _
-                                   TextBox10.Text, TextBox9.Text, _
-                                   ComboBox6.SelectedValue)
+                                   TextBox8.Text, "0000", _
+                                   TextBox10.Text, TextBox9.Text)
             'bruker data fra opprettet kunde for å lage SQL-spørring
             personDAO.query(personDAO.endreKundedataSQL(kunde, kundeIDtilRedigering))
             MsgBox("Kundeinformasjon er oppdatert")
@@ -415,8 +415,8 @@ Public Class Form1
 
         ComboBox8.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim databox As New DataTable
-            'Dim sql As String = "SELECT * FROM pdk_kunde"
-            'data = query(sql)
+        'Dim sql As String = "SELECT * FROM pdk_kunde"
+        'data = query(sql)
 
         databox = personDAO.query(personDAO.velgAlleKunder())
 
@@ -434,7 +434,7 @@ Public Class Form1
             Next
         Else
             MsgBox("Ingen informasjon funnet.")
-            End If
+        End If
 
 
 

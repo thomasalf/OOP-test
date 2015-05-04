@@ -3,7 +3,7 @@
 
     Public Sub fyllInnKundeinfo(ByVal kundeid As String, kundeIDlabel As Label, fornavntextbox As TextBox, _
                                 etternavntextbox As TextBox, adressetextbox As TextBox, _
-                                postnrtextbox As TextBox, telefontextbox As TextBox)
+                                eposttextbox As TextBox, telefontextbox As TextBox)
         Dim persondao As New PersonDAO
         Dim data As New DataTable
         Dim sql As String = "SELECT * FROM pdk_kunde " _
@@ -16,7 +16,7 @@
             fornavntextbox.Text = row("kfornavn")
             etternavntextbox.Text = row("ketternavn")
             adressetextbox.Text = row("kadresse")
-            postnrtextbox.Text = row("kepost")
+            eposttextbox.Text = row("kepost")
             telefontextbox.Text = row("ktelefon")
         End If
     End Sub
