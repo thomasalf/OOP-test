@@ -135,6 +135,7 @@ Partial Class Form1
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.TabPage7TilgjengeligUtstyr = New System.Windows.Forms.TabPage()
+        Me.Button12 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -212,7 +213,6 @@ Partial Class Form1
         Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
         Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
         Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1277,6 +1277,15 @@ Partial Class Form1
         Me.TabPage7TilgjengeligUtstyr.TabIndex = 6
         Me.TabPage7TilgjengeligUtstyr.Text = "TabPage7"
         '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(664, 165)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(75, 23)
+        Me.Button12.TabIndex = 39
+        Me.Button12.Text = "Button12"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -1448,20 +1457,27 @@ Partial Class Form1
         '
         'DateTimePicker2
         '
+        Me.DateTimePicker2.CustomFormat = "yyyy-MM-dd"
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker2.Location = New System.Drawing.Point(37, 45)
+        Me.DateTimePicker2.MaxDate = New Date(3000, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker2.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker2.TabIndex = 3
-        Me.DateTimePicker2.Value = New Date(2015, 3, 24, 0, 0, 0, 0)
+        Me.DateTimePicker2.Value = New Date(2015, 5, 4, 0, 0, 0, 0)
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.CustomFormat = "yyyy-MM-dd"
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(37, 19)
+        Me.DateTimePicker1.MaxDate = New Date(3000, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker1.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 2
+        Me.DateTimePicker1.Value = New Date(2015, 5, 4, 17, 52, 42, 0)
         '
         'Label27
         '
@@ -2031,15 +2047,6 @@ Partial Class Form1
         Me.ComboSykkelSomSkalTransporteres.Name = "ComboSykkelSomSkalTransporteres"
         Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
         Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
-        '
-        'Button12
-        '
-        Me.Button12.Location = New System.Drawing.Point(664, 165)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(75, 23)
-        Me.Button12.TabIndex = 39
-        Me.Button12.Text = "Button12"
-        Me.Button12.UseVisualStyleBackColor = True
         '
         'Form1
         '
