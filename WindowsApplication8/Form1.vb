@@ -83,6 +83,7 @@ Public Class Form1
 
     'Arrays/variabler til bruk i sammenheng med "redigering av kunde"
     Private kundeIDinformasjon() As Double 'Array som lagrer kundeID
+    Private selgerIDinformasjon() As Double
     Private kundeIDtilRedigering As Integer 'Lagrer ID til kunde som skal redigeres
 
     'Arrays/variabler til bruk i sammenheng med "registrere sykkel"
@@ -443,6 +444,29 @@ Public Class Form1
         Else
             MsgBox("Ingen informasjon funnet.")
         End If
+
+
+        ComboBox2.Items.Clear()
+        Dim ansattbox As New DataTable
+        ansattbox = personDAO.query(personDAO.velgAlleAnsatte())
+
+
+        If ansattbox.Rows.Count >= 1 Then 'Fyller combobox med kundeinformasjon
+            ReDim selgerIDinformasjon(ansattbox.Rows.Count - 1) 'justerer lengde på array 
+            Dim teller As Integer
+            teller = ansattbox.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ansattboxTekst As String
+                Dim row As DataRow = ansattbox.Rows(teller)
+                ansattboxTekst = row("selgerID") & " " & row("ansattype") & " " & row("fornavn") & " " & row("etternavn") & " " & row("epost") & " " & row("telefon")
+                ComboBox2.Items.Add(ansattboxTekst)
+                selgerIDinformasjon(teller) = row("selgerID") 'lagrer kundeID i array
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+
 
 
 
