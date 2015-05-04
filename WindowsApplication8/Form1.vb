@@ -514,7 +514,7 @@ Public Class Form1
 
         Const pris As Integer = 500
 
-        Dim selgerID As String = 1 ' må hente selgerID fra en plass?
+        Dim selgerID As String = Label8.Text ' må hente selgerID fra en plass?
         Dim PrisID As String = 2 ' denne vil på et senere tidspunkt brukes for å variere pris avhengig av produkt. 
         Dim kundeID As String = Label5.Text
         Dim SykkelID As String = DataGridView3.SelectedRows(0).Cells(0).Value.ToString
@@ -1190,4 +1190,9 @@ Public Class Form1
     End Sub
 
 
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        Dim ID As String = ComboBox2.SelectedItem.ToString
+        Dim IDs As String = ID.Substring(0, 2)
+        Label8.Text = IDs
+    End Sub
 End Class
