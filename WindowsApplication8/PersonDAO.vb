@@ -30,7 +30,7 @@ Public Class PersonDAO
         Dim sql As String = "INSERT INTO pdk_kunde SET kfornavn = '" _
                              & inndata.getFornavn() & "', ketternavn = '" _
                              & inndata.getEtternavn() & "', kadresse = '" _
-                             & inndata.getGateadresse() & ", " & inndata.getPostnummer() & "', kepost = '" _
+                             & inndata.getGateadresse() & "', kepost = '" _
                              & inndata.getEpost() & "', ktelefon = '" _
                              & inndata.getTelefon() & "';"
         Return sql
@@ -40,7 +40,7 @@ Public Class PersonDAO
         Dim sql As String = "UPDATE pdk_kunde " _
                                 & "SET kfornavn = '" & inndata.getFornavn() _
                                 & "', ketternavn = '" & inndata.getEtternavn() _
-                                & "', kadresse = '" & inndata.getGateadresse() & ", " & inndata.getPostnummer() _
+                                & "', kadresse = '" & inndata.getGateadresse() _
                                 & "', kepost = '" & inndata.getEpost() _
                                 & "', ktelefon = '" & inndata.getTelefon() _
                                 & "' WHERE kundeID = '" & kundeIDlabel & "';"

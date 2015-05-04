@@ -135,6 +135,7 @@ Partial Class Form1
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.TabPage7TilgjengeligUtstyr = New System.Windows.Forms.TabPage()
+        Me.Button12 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -212,7 +213,6 @@ Partial Class Form1
         Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
         Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
         Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1190,6 +1190,7 @@ Partial Class Form1
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(51, 20)
         Me.TextBox7.TabIndex = 31
+        Me.TextBox7.Text = "0000"
         '
         'TextBox12
         '
@@ -1276,6 +1277,15 @@ Partial Class Form1
         Me.TabPage7TilgjengeligUtstyr.Size = New System.Drawing.Size(1195, 552)
         Me.TabPage7TilgjengeligUtstyr.TabIndex = 6
         Me.TabPage7TilgjengeligUtstyr.Text = "TabPage7"
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(664, 165)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(75, 23)
+        Me.Button12.TabIndex = 39
+        Me.Button12.Text = "Button12"
+        Me.Button12.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -2031,15 +2041,6 @@ Partial Class Form1
         Me.ComboSykkelSomSkalTransporteres.Name = "ComboSykkelSomSkalTransporteres"
         Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
         Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
-        '
-        'Button12
-        '
-        Me.Button12.Location = New System.Drawing.Point(664, 165)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(75, 23)
-        Me.Button12.TabIndex = 39
-        Me.Button12.Text = "Button12"
-        Me.Button12.UseVisualStyleBackColor = True
         '
         'Form1
         '
