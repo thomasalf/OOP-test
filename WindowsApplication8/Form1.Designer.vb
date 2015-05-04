@@ -1566,9 +1566,9 @@ Partial Class Form1
         'lstAvanse
         '
         Me.lstAvanse.FormattingEnabled = True
-        Me.lstAvanse.Location = New System.Drawing.Point(57, 173)
+        Me.lstAvanse.Location = New System.Drawing.Point(192, 23)
         Me.lstAvanse.Name = "lstAvanse"
-        Me.lstAvanse.Size = New System.Drawing.Size(844, 342)
+        Me.lstAvanse.Size = New System.Drawing.Size(371, 173)
         Me.lstAvanse.TabIndex = 3
         Me.lstAvanse.Visible = False
         '
