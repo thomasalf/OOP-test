@@ -160,8 +160,7 @@ Public Class Form1
             'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
             Dim kunde As New Kunde(TextBox17.Text, TextBox18.Text, _
                                    TextBox21.Text, TextBox16.Text, _
-                                   TextBox19.Text, TextBox20.Text, _
-                                   ComboBox11.SelectedValue)
+                                   TextBox19.Text, TextBox20.Text)
             'bruker data fra opprettet kunde for å lage SQL-spørring
             personDAO.query(personDAO.lagreKundedataSQL(kunde))
             MsgBox("Ny kunde er opprettet")
@@ -334,8 +333,7 @@ Public Class Form1
             'Har satt postnrverdi til "0000" her siden vi har gått bort fra postnr i kunderegistrering.
             Dim kunde As New Kunde(TextBox12.Text, TextBox11.Text, _
                                    TextBox8.Text, "0000", _
-                                   TextBox10.Text, TextBox9.Text, _
-                                   ComboBox6.SelectedValue)
+                                   TextBox10.Text, TextBox9.Text)
             'bruker data fra opprettet kunde for å lage SQL-spørring
             personDAO.query(personDAO.endreKundedataSQL(kunde, kundeIDtilRedigering))
             MsgBox("Kundeinformasjon er oppdatert")

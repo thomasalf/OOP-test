@@ -90,14 +90,10 @@ Partial Class Form1
         Me.TabPage5RegistrerKunde = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.ComboBox11 = New System.Windows.Forms.ComboBox()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
-        Me.Label37 = New System.Windows.Forms.Label()
         Me.TextBox16 = New System.Windows.Forms.TextBox()
         Me.TextBox17 = New System.Windows.Forms.TextBox()
         Me.Label38 = New System.Windows.Forms.Label()
@@ -116,14 +112,10 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -832,14 +824,10 @@ Partial Class Form1
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.Label10)
-        Me.GroupBox4.Controls.Add(Me.ComboBox11)
         Me.GroupBox4.Controls.Add(Me.Label32)
-        Me.GroupBox4.Controls.Add(Me.Label33)
         Me.GroupBox4.Controls.Add(Me.Label34)
         Me.GroupBox4.Controls.Add(Me.Label35)
         Me.GroupBox4.Controls.Add(Me.Label36)
-        Me.GroupBox4.Controls.Add(Me.ComboBox12)
-        Me.GroupBox4.Controls.Add(Me.Label37)
         Me.GroupBox4.Controls.Add(Me.TextBox16)
         Me.GroupBox4.Controls.Add(Me.TextBox17)
         Me.GroupBox4.Controls.Add(Me.Label38)
@@ -865,15 +853,6 @@ Partial Class Form1
         Me.Label10.TabIndex = 17
         Me.Label10.Text = "Fornavn"
         '
-        'ComboBox11
-        '
-        Me.ComboBox11.FormattingEnabled = True
-        Me.ComboBox11.Location = New System.Drawing.Point(135, 188)
-        Me.ComboBox11.Name = "ComboBox11"
-        Me.ComboBox11.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox11.TabIndex = 36
-        Me.ComboBox11.Text = "0%"
-        '
         'Label32
         '
         Me.Label32.AutoSize = True
@@ -882,15 +861,6 @@ Partial Class Form1
         Me.Label32.Size = New System.Drawing.Size(53, 13)
         Me.Label32.TabIndex = 18
         Me.Label32.Text = "Etternavn"
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(90, 192)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(39, 13)
-        Me.Label33.TabIndex = 35
-        Me.Label33.Text = "Rabatt"
         '
         'Label34
         '
@@ -919,29 +889,13 @@ Partial Class Form1
         Me.Label36.TabIndex = 21
         Me.Label36.Text = "Telefon"
         '
-        'ComboBox12
-        '
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Location = New System.Drawing.Point(135, 161)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox12.TabIndex = 32
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(73, 163)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(56, 13)
-        Me.Label37.TabIndex = 22
-        Me.Label37.Text = "Tilhørighet"
-        '
         'TextBox16
         '
         Me.TextBox16.Location = New System.Drawing.Point(309, 83)
         Me.TextBox16.Name = "TextBox16"
         Me.TextBox16.Size = New System.Drawing.Size(51, 20)
         Me.TextBox16.TabIndex = 31
+        Me.TextBox16.Text = "0000"
         '
         'TextBox17
         '
@@ -1052,14 +1006,10 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.Label17)
-        Me.GroupBox3.Controls.Add(Me.ComboBox6)
         Me.GroupBox3.Controls.Add(Me.Label16)
-        Me.GroupBox3.Controls.Add(Me.Label25)
         Me.GroupBox3.Controls.Add(Me.Label15)
         Me.GroupBox3.Controls.Add(Me.Label14)
         Me.GroupBox3.Controls.Add(Me.Label13)
-        Me.GroupBox3.Controls.Add(Me.ComboBox2)
-        Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.TextBox7)
         Me.GroupBox3.Controls.Add(Me.TextBox12)
         Me.GroupBox3.Controls.Add(Me.Label11)
@@ -1113,15 +1063,6 @@ Partial Class Form1
         Me.Label17.TabIndex = 17
         Me.Label17.Text = "Fornavn"
         '
-        'ComboBox6
-        '
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(135, 188)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox6.TabIndex = 36
-        Me.ComboBox6.Text = "0%"
-        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -1130,15 +1071,6 @@ Partial Class Form1
         Me.Label16.Size = New System.Drawing.Size(53, 13)
         Me.Label16.TabIndex = 18
         Me.Label16.Text = "Etternavn"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(90, 192)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(39, 13)
-        Me.Label25.TabIndex = 35
-        Me.Label25.Text = "Rabatt"
         '
         'Label15
         '
@@ -1166,23 +1098,6 @@ Partial Class Form1
         Me.Label13.Size = New System.Drawing.Size(43, 13)
         Me.Label13.TabIndex = 21
         Me.Label13.Text = "Telefon"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(135, 161)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 32
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(73, 163)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(56, 13)
-        Me.Label12.TabIndex = 22
-        Me.Label12.Text = "Tilhørighet"
         '
         'TextBox7
         '
@@ -2130,7 +2045,6 @@ Partial Class Form1
     Friend WithEvents TabPage5RegistrerKunde As System.Windows.Forms.TabPage
     Friend WithEvents UtstyrToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TabPage6RedigerKunde As System.Windows.Forms.TabPage
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Button6 As System.Windows.Forms.Button
@@ -2140,7 +2054,6 @@ Partial Class Form1
     Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
@@ -2169,8 +2082,6 @@ Partial Class Form1
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents rtbSykkelstatus As System.Windows.Forms.RichTextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox6 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents TabPage7TilgjengeligUtstyr As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Button26 As System.Windows.Forms.Button
@@ -2197,14 +2108,10 @@ Partial Class Form1
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox11 As System.Windows.Forms.ComboBox
     Friend WithEvents Label32 As System.Windows.Forms.Label
-    Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label36 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label37 As System.Windows.Forms.Label
     Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
     Friend WithEvents Label38 As System.Windows.Forms.Label
