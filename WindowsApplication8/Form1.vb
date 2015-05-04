@@ -533,7 +533,6 @@ Public Class Form1
         'avanse = visUtgifter(totalpris, omsetning)
 
 
-
         With lstAvanse.Items
             .Add("Foreløpig avanse")
             .Add(vbCrLf)
