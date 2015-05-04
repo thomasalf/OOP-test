@@ -837,7 +837,7 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.Button28)
         Me.GroupBox4.Controls.Add(Me.TextBox20)
         Me.GroupBox4.Controls.Add(Me.TextBox21)
-        Me.GroupBox4.Location = New System.Drawing.Point(143, 75)
+        Me.GroupBox4.Location = New System.Drawing.Point(160, 120)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(377, 264)
         Me.GroupBox4.TabIndex = 38
@@ -961,7 +961,7 @@ Partial Class Form1
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(6, 19)
+        Me.Button9.Location = New System.Drawing.Point(6, 16)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(92, 23)
         Me.Button9.TabIndex = 35
@@ -1171,7 +1171,7 @@ Partial Class Form1
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(6, 15)
+        Me.Button8.Location = New System.Drawing.Point(6, 16)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(92, 23)
         Me.Button8.TabIndex = 34
