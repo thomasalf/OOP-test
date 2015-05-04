@@ -207,6 +207,7 @@ Partial Class Form1
         Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
         Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
         Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
+        Me.LabelSykkelID = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1704,6 +1705,7 @@ Partial Class Form1
         '
         'GroupBoxSykkelinformasjon
         '
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSykkelID)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklOpprettNy)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklSykkelIDSomRedigeres)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.ComboSklVelgType)
@@ -1761,7 +1763,7 @@ Partial Class Form1
         '
         'btnSklLagreOppdatering
         '
-        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(176, 256)
+        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(176, 240)
         Me.btnSklLagreOppdatering.Name = "btnSklLagreOppdatering"
         Me.btnSklLagreOppdatering.Size = New System.Drawing.Size(104, 23)
         Me.btnSklLagreOppdatering.TabIndex = 54
@@ -1983,6 +1985,14 @@ Partial Class Form1
         Me.ComboSykkelSomSkalTransporteres.Name = "ComboSykkelSomSkalTransporteres"
         Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
         Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
+        '
+        'LabelSykkelID
+        '
+        Me.LabelSykkelID.AutoSize = True
+        Me.LabelSykkelID.Location = New System.Drawing.Point(72, 24)
+        Me.LabelSykkelID.Name = "LabelSykkelID"
+        Me.LabelSykkelID.Size = New System.Drawing.Size(0, 13)
+        Me.LabelSykkelID.TabIndex = 61
         '
         'Form1
         '
@@ -2225,5 +2235,6 @@ Partial Class Form1
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents LabelSykkelID As System.Windows.Forms.Label
 
 End Class

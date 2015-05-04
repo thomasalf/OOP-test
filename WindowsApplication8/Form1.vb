@@ -805,6 +805,8 @@ Public Class Form1
         LabelSklSykkelIDSomRedigeres.Visible = True
 
 
+
+
         'START: fyll "status"-combobox
         ComboVelgStatus.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data As New DataTable
@@ -1057,6 +1059,16 @@ Public Class Form1
 
     Private Sub btnSklLagreOppdatering_Click(sender As Object, e As EventArgs) Handles btnSklLagreOppdatering.Click
 
+        Try
+            'Bruker comboboksdata for å opprette ny sykkel (bruker klassen "sykkel")
+            Dim sykkel As New Sykkel(ComboSklVelgMerke.Text, ComboSklVelgModell.Text, _
+                                   ComboSklVelgType.Text)
+            'bruker data fra opprettet sykkel for å lage SQL-spørring
+            sykkelDAO.query(sykkelDAO.endreSykkeldataSQL(sykkel, sykkelIDtilRedigering))
+            MsgBox("sykkelinformasjon er oppdatert")
+        Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+            MessageBox.Show("Feil: " & ex.Message)
+        End Try
     End Sub
 
     Private Sub Button12asdgsdfbsdgbdfb_Click(sender As Object, e As EventArgs)

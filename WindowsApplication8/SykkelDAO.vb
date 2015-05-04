@@ -52,6 +52,15 @@ Public Class SykkelDAO
         Return sql
     End Function
 
+    Public Function endreSykkeldataSQL(inndata As Sykkel, sykkelIDlabel As Integer)
+        Dim sql As String = "UPDATE pdk_sykkel " _
+                                & "SET merke = '" & inndata.getSykkelMerke() _
+                                & "', modell = '" & inndata.getSykkelModell() _
+                                & "', sykkeltype = '" & inndata.getSykkelType() _
+                                & "' WHERE sykkelID = '" & sykkelIDlabel & "';"
+        Return sql
+    End Function
+
 
 
 

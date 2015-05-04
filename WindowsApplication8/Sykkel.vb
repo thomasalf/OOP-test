@@ -55,6 +55,15 @@
         setSykkelHjemsted(hjem)
     End Sub
 
+    'Setter merke, modell og type
+    Public Sub New(ByVal mer As String, _
+                       mdl As String, _
+                       typ As String)
+        setSykkelMerke(mer)
+        setSykkelModell(mdl)
+        setSykkelType(typ)
+    End Sub
+
 
 
 
