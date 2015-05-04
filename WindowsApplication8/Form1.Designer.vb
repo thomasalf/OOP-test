@@ -129,6 +129,10 @@ Partial Class Form1
         Me.TabPage7TilgjengeligUtstyr = New System.Windows.Forms.TabPage()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button26 = New System.Windows.Forms.Button()
@@ -170,8 +174,6 @@ Partial Class Form1
         Me.dgvStatistikk = New System.Windows.Forms.DataGridView()
         Me.TabPageSykkelregistrering = New System.Windows.Forms.TabPage()
         Me.btnTibaketab10 = New System.Windows.Forms.Button()
-        Me.Button12asdgsdfbsdgbdfb = New System.Windows.Forms.Button()
-        Me.btnSklVisSykkelmeny = New System.Windows.Forms.Button()
         Me.GroupBoxHvaVilDuGjore = New System.Windows.Forms.GroupBox()
         Me.btnRegistrereNySykkel = New System.Windows.Forms.Button()
         Me.btnOppdatereEksisterendeSykkel = New System.Windows.Forms.Button()
@@ -205,10 +207,6 @@ Partial Class Form1
         Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
         Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
         Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1231,6 +1229,41 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Tilgjengelig utstyr"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(265, 325)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(18, 13)
+        Me.Label8.TabIndex = 47
+        Me.Label8.Text = "ID"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(211, 325)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(48, 13)
+        Me.Label7.TabIndex = 46
+        Me.Label7.Text = "SelgerID"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(211, 293)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(40, 13)
+        Me.Label6.TabIndex = 45
+        Me.Label6.Text = "Selger:"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(256, 288)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(119, 21)
+        Me.ComboBox2.TabIndex = 44
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -1612,8 +1645,6 @@ Partial Class Form1
         '
         Me.TabPageSykkelregistrering.BackColor = System.Drawing.Color.SteelBlue
         Me.TabPageSykkelregistrering.Controls.Add(Me.btnTibaketab10)
-        Me.TabPageSykkelregistrering.Controls.Add(Me.Button12asdgsdfbsdgbdfb)
-        Me.TabPageSykkelregistrering.Controls.Add(Me.btnSklVisSykkelmeny)
         Me.TabPageSykkelregistrering.Controls.Add(Me.GroupBoxHvaVilDuGjore)
         Me.TabPageSykkelregistrering.Controls.Add(Me.GroupBoxSykkelinformasjon)
         Me.TabPageSykkelregistrering.Location = New System.Drawing.Point(4, 22)
@@ -1630,24 +1661,6 @@ Partial Class Form1
         Me.btnTibaketab10.TabIndex = 10
         Me.btnTibaketab10.Text = "Tilbake"
         Me.btnTibaketab10.UseVisualStyleBackColor = True
-        '
-        'Button12asdgsdfbsdgbdfb
-        '
-        Me.Button12asdgsdfbsdgbdfb.Location = New System.Drawing.Point(40, 120)
-        Me.Button12asdgsdfbsdgbdfb.Name = "Button12asdgsdfbsdgbdfb"
-        Me.Button12asdgsdfbsdgbdfb.Size = New System.Drawing.Size(75, 23)
-        Me.Button12asdgsdfbsdgbdfb.TabIndex = 9
-        Me.Button12asdgsdfbsdgbdfb.Text = "test"
-        Me.Button12asdgsdfbsdgbdfb.UseVisualStyleBackColor = True
-        '
-        'btnSklVisSykkelmeny
-        '
-        Me.btnSklVisSykkelmeny.Location = New System.Drawing.Point(40, 63)
-        Me.btnSklVisSykkelmeny.Name = "btnSklVisSykkelmeny"
-        Me.btnSklVisSykkelmeny.Size = New System.Drawing.Size(75, 40)
-        Me.btnSklVisSykkelmeny.TabIndex = 8
-        Me.btnSklVisSykkelmeny.Text = "Vis sykkelmeny"
-        Me.btnSklVisSykkelmeny.UseVisualStyleBackColor = True
         '
         'GroupBoxHvaVilDuGjore
         '
@@ -1971,41 +1984,6 @@ Partial Class Form1
         Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
         Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
         '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(256, 288)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(119, 21)
-        Me.ComboBox2.TabIndex = 44
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(211, 293)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(40, 13)
-        Me.Label6.TabIndex = 45
-        Me.Label6.Text = "Selger:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(211, 325)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(48, 13)
-        Me.Label7.TabIndex = 46
-        Me.Label7.Text = "SelgerID"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(265, 325)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(18, 13)
-        Me.Label8.TabIndex = 47
-        Me.Label8.Text = "ID"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2214,7 +2192,6 @@ Partial Class Form1
     Friend WithEvents GroupBoxHvaVilDuGjore As System.Windows.Forms.GroupBox
     Friend WithEvents btnSklSlettSykkel As System.Windows.Forms.Button
     Friend WithEvents btnSklLagreOppdatering As System.Windows.Forms.Button
-    Friend WithEvents btnSklVisSykkelmeny As System.Windows.Forms.Button
     Friend WithEvents TabPageSykkeltransport As System.Windows.Forms.TabPage
     Friend WithEvents DataGridViewSykkeltransport As System.Windows.Forms.DataGridView
     Friend WithEvents ComboStedSykkelSkalTil As System.Windows.Forms.ComboBox
@@ -2227,7 +2204,6 @@ Partial Class Form1
     Friend WithEvents ComboSklVelgMerke As System.Windows.Forms.ComboBox
     Friend WithEvents LabelSklSykkelIDSomRedigeres As System.Windows.Forms.Label
     Friend WithEvents LabelSklOpprettNy As System.Windows.Forms.Label
-    Friend WithEvents Button12asdgsdfbsdgbdfb As System.Windows.Forms.Button
     Friend WithEvents btnLastInnUtstyr As System.Windows.Forms.Button
     Friend WithEvents lblAntallInnkjopt As System.Windows.Forms.Label
     Friend WithEvents lblUtstLeiepris As System.Windows.Forms.Label

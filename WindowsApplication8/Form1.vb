@@ -987,7 +987,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub btnSklVisSykkelmeny_Click(sender As Object, e As EventArgs) Handles btnSklVisSykkelmeny.Click
+    Private Sub btnSklVisSykkelmeny_Click(sender As Object, e As EventArgs)
         GroupBoxHvaVilDuGjore.Visible = True
         GroupBoxSykkelinformasjon.Visible = False
         ComboEksisterendeSykler.Visible = False
@@ -1059,7 +1059,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button12asdgsdfbsdgbdfb_Click(sender As Object, e As EventArgs) Handles Button12asdgsdfbsdgbdfb.Click
+    Private Sub Button12asdgsdfbsdgbdfb_Click(sender As Object, e As EventArgs)
         ComboSklVelgMerke.SelectedIndex = -1
     End Sub
 
