@@ -805,21 +805,6 @@ Public Class Form1
         LabelSklSykkelIDSomRedigeres.Visible = True
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         'START: fyll "status"-combobox
         ComboVelgStatus.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data As New DataTable
@@ -844,6 +829,10 @@ Public Class Form1
         End If
         'SLUTT: fyll "status"-combobox
 
+        'Velger riktig status i combobox
+        'ComboSklVelgMerke.SelectedIndex = ComboSklVelgMerke.FindStringExact(temprow("merke"))
+        ' Dim rowStatus As DataRow = data.Rows(ComboEksisterendeSykler.SelectedIndex)
+        ' ComboVelgStatus.SelectedIndex = ComboVelgStatus.FindStringExact(rowStatus("statusnavn"))
 
         'Start: fyll "tilhørighet"-combobox
         ComboVelgHjemsted.Items.Clear() 'Fjerner gammel informasjon fra combobox
@@ -915,7 +904,10 @@ Public Class Form1
         ComboSklVelgMerke.SelectedIndex = ComboSklVelgMerke.FindStringExact(temprow("merke"))
         'velger riktig sykkelmodell i combobox
         ComboSklVelgModell.SelectedIndex = ComboSklVelgModell.FindStringExact(temprow("modell"))
-
+        'velger riktig sykkeltype i combobox
+        ComboSklVelgType.SelectedIndex = ComboSklVelgType.FindStringExact(temprow("sykkeltype"))
+        'velger riktig sted/tilhørighet
+        ComboVelgHjemsted.SelectedIndex = ComboVelgHjemsted.FindStringExact(temprow("postnr"))
 
 
         'Viser kundeinformasjonsfelter
