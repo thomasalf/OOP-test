@@ -342,7 +342,6 @@ Partial Class Form1
         'TabPage2Medlemsinfo
         '
         Me.TabPage2Medlemsinfo.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage2Medlemsinfo.Controls.Add(Me.Panel1)
         Me.TabPage2Medlemsinfo.Controls.Add(Me.GroupBox7)
         Me.TabPage2Medlemsinfo.Controls.Add(Me.Button11)
         Me.TabPage2Medlemsinfo.Cursor = System.Windows.Forms.Cursors.Default
@@ -357,7 +356,7 @@ Partial Class Form1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel1.Controls.Add(Me.MenuStrip1)
-        Me.Panel1.Location = New System.Drawing.Point(0, 450)
+        Me.Panel1.Location = New System.Drawing.Point(-1, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1235, 30)
         Me.Panel1.TabIndex = 1
@@ -1999,6 +1998,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1227, 598)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TabControl1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
