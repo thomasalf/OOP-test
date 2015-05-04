@@ -773,30 +773,7 @@ Public Class Form1
         LabelSklSykkelIDSomRedigeres.Visible = True
 
 
-        'Ny kode
-        'Lagrer sykkelinformasjon i variabler
-        Dim tempdata As New DataTable
-        Dim tempsql As String = "SELECT * FROM pdk_sykkel"
 
-        tempdata = query(tempsql)
-        Dim temprow As DataRow = tempdata.Rows(ComboEksisterendeSykler.SelectedIndex)
-        tempModell = temprow("modell")
-        tempType = temprow("sykkeltype")
-        tempSykkelmerke = temprow("merke")
-
-        'velger riktig sykkelmerke i combobox
-        Dim valgtTekst As String = ComboEksisterendeSykler.SelectedText
-        Dim riktigTekstFunnet As Boolean = False
-        Dim tempteller As Integer = 1
-        Do While riktigTekstFunnet = False
-            ComboSklVelgMerke.SelectedIndex = tempteller
-            If valgtTekst = ComboSklVelgMerke.SelectedText Then
-                riktigTekstFunnet = True
-            Else
-                tempteller = tempteller + 1
-            End If
-
-        Loop
 
 
 
@@ -895,13 +872,17 @@ Public Class Form1
         'START: fyll "type"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgType, "pdk_sykkeltype", "sykkeltype")
 
+        'Velger riktig informasjon i comboboxer
+        Dim tempdata As New DataTable
+        Dim tempsql As String = "SELECT * FROM pdk_sykkel"
 
-        'Velger riktig merke i combobox
-        Dim tempmerke As String = "0"
-        Dim indexteller As Integer
-        For indexteller = 0 To 10
+        tempdata = query(tempsql)
+        Dim temprow As DataRow = tempdata.Rows(ComboEksisterendeSykler.SelectedIndex)
 
-        Next
+        'velger riktig sykkelmerke i combobox
+        ComboSklVelgMerke.SelectedIndex = ComboSklVelgMerke.FindStringExact(temprow("merke"))
+        'velger riktig sykkelmodell i combobox
+        ComboSklVelgModell.SelectedIndex = ComboSklVelgModell.FindStringExact(temprow("modell"))
 
 
 
