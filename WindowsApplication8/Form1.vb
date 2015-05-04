@@ -91,6 +91,13 @@ Public Class Form1
     Private statusIDinformasjon() As Double 'Lagrer statusID
     Private sykkelIDtilRedigering As Integer 'lagrer sykkelID
 
+    'Arrays/variabler til bruk i sammenheng med "redigere sykkel"
+    Private tempModell As String 'lagrer sykkelmodell
+    Private tempStatus As String 'lagrer sykkelstatus
+    Private tempTilhorighet As String 'lagrer tilhørighet
+    Private tempTransportor As String 'lagrer transportør
+    Private tempMerke As String 'lagrer sykkelmerke
+
 
     'Funksjon for kobling til database
     Private Function query(sql As String) As DataTable
@@ -766,22 +773,111 @@ Public Class Form1
 
 
         'Ny kode
-        'Fyller kundeinformasjonsfelt med informasjonen som finnes i databasen
-        Dim data As New DataTable
-        Dim sql As String = "SELECT * FROM pdk_sykkel " _
-                                   & "WHERE sykkelID = '" & sykkelIDinformasjon(ComboEksisterendeSykler.SelectedIndex) & "'"
-        data = query(sql)
-        If data.Rows.Count = 1 Then
-            clearGroupbox(GroupBoxSykkelinformasjon)
-            Dim row As DataRow = data.Rows(0)
-            'kundeIDtilRedigering = row("kundeID")
-            'Label3.Text = kundeIDtilRedigering
-            TextBoxSkl1.Text = row("merke")
-            TextBoxSkl2.Text = row("modell")
-            sykkelIDtilRedigering = row("sykkelID")
-            LabelSklSykkelIDSomRedigeres.Text = sykkelIDtilRedigering
+        'Lagrer sykkelinformasjon i variabler
+        Dim tempdata As New DataTable
+        Dim tempsql As String = "SELECT * FROM pdk_sykkel"
 
+        tempdata = query(tempsql)
+        Dim temprow As DataRow = tempdata.Rows(ComboEksisterendeSykler.SelectedIndex)
+        tempModell = temprow("modell")
+
+
+
+
+
+
+        'START: fyll "status"-combobox
+        ComboVelgStatus.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim data As New DataTable
+        Dim sql As String = "SELECT * FROM pdk_status"
+        data = query(sql)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med statusinformasjon
+            ReDim statusIDinformasjon(data.Rows.Count - 1) 'justerer lengde på array
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("statusnavn")
+                ComboVelgStatus.Items.Add(ComboboxTekst)
+                statusIDinformasjon(teller) = row("statusID")
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
         End If
+        'SLUTT: fyll "status"-combobox
+
+
+        'Start: fyll "tilhørighet"-combobox
+        ComboVelgHjemsted.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim data2 As New DataTable
+        Dim sql2 As String = "SELECT DISTINCT stedsnavn, postnr FROM pdk_sted"
+        data = query(sql2)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med tilhørighetsinformasjon
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("postnr") '& " " & row("stedsnavn")
+                ComboVelgHjemsted.Items.Add(ComboboxTekst)
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+        'Slutt: fyll "tilhørighet"-combobox
+
+
+        'Start: fyll "transportør"-combobox
+        ComboVelgTransportor.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim data3 As New DataTable
+        Dim sql3 As String = "SELECT * FROM pdk_transportor"
+        data = query(sql3)
+
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med transportørinformasjon
+            ReDim transportorIDinformasjon(data.Rows.Count - 1) 'justerer lengde på array
+            Dim teller As Integer
+            teller = data.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = data.Rows(teller)
+                ComboboxTekst = row("transportornavn")
+                ComboVelgTransportor.Items.Add(ComboboxTekst)
+                transportorIDinformasjon(teller) = row("transportorID")
+            Next
+        Else
+            MsgBox("Ingen informasjon funnet.")
+        End If
+        'Slutt: fyll "transportør"-combobox
+
+
+
+        'START: fyll "merke"-combobox
+        comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
+
+        'START: fyll "modell"-combobox
+        comboBoxUtil.fyllCombobox1(ComboSklVelgModell, "pdk_sykkelmodell", "modell")
+
+
+        'START: fyll "type"-combobox
+        comboBoxUtil.fyllCombobox1(ComboSklVelgType, "pdk_sykkeltype", "sykkeltype")
+
+
+        'Velger riktig merke i combobox
+        Dim tempmerke As String = "0"
+        Dim indexteller As Integer
+        For indexteller = 0 To 10
+
+        Next
+
 
 
         'Viser kundeinformasjonsfelter
