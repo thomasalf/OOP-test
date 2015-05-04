@@ -1199,4 +1199,8 @@ Public Class Form1
         Dim IDs As String = ID.Substring(0, 2)
         Label8.Text = IDs
     End Sub
+
+    Private Sub RegistrerendreSykkelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrerendreSykkelToolStripMenuItem.Click
+        TabControl1.SelectTab(10)
+    End Sub
 End Class

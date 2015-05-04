@@ -32,20 +32,6 @@ Partial Class Form1
         Me.Button15 = New System.Windows.Forms.Button()
         Me.TextBox13 = New System.Windows.Forms.TextBox()
         Me.TabPage2Medlemsinfo = New System.Windows.Forms.TabPage()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Side3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UtstyrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
-        Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -179,6 +165,7 @@ Partial Class Form1
         Me.btnOppdatereEksisterendeSykkel = New System.Windows.Forms.Button()
         Me.ComboEksisterendeSykler = New System.Windows.Forms.ComboBox()
         Me.GroupBoxSykkelinformasjon = New System.Windows.Forms.GroupBox()
+        Me.LabelSykkelID = New System.Windows.Forms.Label()
         Me.LabelSklOpprettNy = New System.Windows.Forms.Label()
         Me.LabelSklSykkelIDSomRedigeres = New System.Windows.Forms.Label()
         Me.ComboSklVelgType = New System.Windows.Forms.ComboBox()
@@ -207,13 +194,25 @@ Partial Class Form1
         Me.DataGridViewSykkeltransport = New System.Windows.Forms.DataGridView()
         Me.ComboStedSykkelSkalTil = New System.Windows.Forms.ComboBox()
         Me.ComboSykkelSomSkalTransporteres = New System.Windows.Forms.ComboBox()
-        Me.LabelSykkelID = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Side3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UtstyrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrerendreSykkelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         Me.TabPage2Medlemsinfo.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3StatusBegrensning.SuspendLayout()
@@ -240,6 +239,8 @@ Partial Class Form1
         Me.GroupBoxSykkelinformasjon.SuspendLayout()
         Me.TabPageSykkeltransport.SuspendLayout()
         CType(Me.DataGridViewSykkeltransport, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -351,99 +352,6 @@ Partial Class Form1
         Me.TabPage2Medlemsinfo.Size = New System.Drawing.Size(1195, 552)
         Me.TabPage2Medlemsinfo.TabIndex = 1
         Me.TabPage2Medlemsinfo.Text = "TabPage2"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.MenuStrip1)
-        Me.Panel1.Location = New System.Drawing.Point(-1, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1235, 30)
-        Me.Panel1.TabIndex = 1
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem4, Me.ToolStripTextBox1, Me.SøkMedlemToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1235, 27)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem})
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 23)
-        Me.ToolStripMenuItem1.Text = "Meny"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem})
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(146, 22)
-        Me.ToolStripMenuItem2.Text = "Hovedside"
-        '
-        'LoginToolStripMenuItem
-        '
-        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
-        Me.LoginToolStripMenuItem.Text = "Login"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(146, 22)
-        Me.ToolStripMenuItem3.Text = "Medlemmer"
-        '
-        'Side3ToolStripMenuItem
-        '
-        Me.Side3ToolStripMenuItem.Name = "Side3ToolStripMenuItem"
-        Me.Side3ToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.Side3ToolStripMenuItem.Text = "Status"
-        '
-        'UtstyrToolStripMenuItem
-        '
-        Me.UtstyrToolStripMenuItem.Name = "UtstyrToolStripMenuItem"
-        Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.UtstyrToolStripMenuItem.Text = "Utstyr / Utleie"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.LokaleNr3ToolStripMenuItem})
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(125, 23)
-        Me.ToolStripMenuItem4.Text = "Sjekk tilgjengelighet"
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(135, 22)
-        Me.ToolStripMenuItem5.Text = "Utleiested 1"
-        '
-        'ToolStripMenuItem6
-        '
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(135, 22)
-        Me.ToolStripMenuItem6.Text = "Utleiested 2"
-        '
-        'LokaleNr3ToolStripMenuItem
-        '
-        Me.LokaleNr3ToolStripMenuItem.Name = "LokaleNr3ToolStripMenuItem"
-        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
-        Me.LokaleNr3ToolStripMenuItem.Text = "Utleiested 3"
-        '
-        'ToolStripTextBox1
-        '
-        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 23)
-        '
-        'SøkMedlemToolStripMenuItem
-        '
-        Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
-        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
-        Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
         '
         'GroupBox7
         '
@@ -1733,6 +1641,14 @@ Partial Class Form1
         Me.GroupBoxSykkelinformasjon.Text = "Sykkelinformasjon"
         Me.GroupBoxSykkelinformasjon.Visible = False
         '
+        'LabelSykkelID
+        '
+        Me.LabelSykkelID.AutoSize = True
+        Me.LabelSykkelID.Location = New System.Drawing.Point(72, 24)
+        Me.LabelSykkelID.Name = "LabelSykkelID"
+        Me.LabelSykkelID.Size = New System.Drawing.Size(0, 13)
+        Me.LabelSykkelID.TabIndex = 61
+        '
         'LabelSklOpprettNy
         '
         Me.LabelSklOpprettNy.AutoSize = True
@@ -1985,13 +1901,104 @@ Partial Class Form1
         Me.ComboSykkelSomSkalTransporteres.Size = New System.Drawing.Size(192, 21)
         Me.ComboSykkelSomSkalTransporteres.TabIndex = 0
         '
-        'LabelSykkelID
+        'Panel1
         '
-        Me.LabelSykkelID.AutoSize = True
-        Me.LabelSykkelID.Location = New System.Drawing.Point(72, 24)
-        Me.LabelSykkelID.Name = "LabelSykkelID"
-        Me.LabelSykkelID.Size = New System.Drawing.Size(0, 13)
-        Me.LabelSykkelID.TabIndex = 61
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.MenuStrip1)
+        Me.Panel1.Location = New System.Drawing.Point(-1, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1235, 30)
+        Me.Panel1.TabIndex = 1
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem4, Me.ToolStripTextBox1, Me.SøkMedlemToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1235, 27)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem, Me.RegistrerendreSykkelToolStripMenuItem})
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 23)
+        Me.ToolStripMenuItem1.Text = "Meny"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem})
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(190, 22)
+        Me.ToolStripMenuItem2.Text = "Hovedside"
+        '
+        'LoginToolStripMenuItem
+        '
+        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.LoginToolStripMenuItem.Text = "Login"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(190, 22)
+        Me.ToolStripMenuItem3.Text = "Medlemmer"
+        '
+        'Side3ToolStripMenuItem
+        '
+        Me.Side3ToolStripMenuItem.Name = "Side3ToolStripMenuItem"
+        Me.Side3ToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.Side3ToolStripMenuItem.Text = "Status"
+        '
+        'UtstyrToolStripMenuItem
+        '
+        Me.UtstyrToolStripMenuItem.Name = "UtstyrToolStripMenuItem"
+        Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.UtstyrToolStripMenuItem.Text = "Utstyr / Utleie"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.LokaleNr3ToolStripMenuItem})
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(125, 23)
+        Me.ToolStripMenuItem4.Text = "Sjekk tilgjengelighet"
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(135, 22)
+        Me.ToolStripMenuItem5.Text = "Utleiested 1"
+        '
+        'ToolStripMenuItem6
+        '
+        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(135, 22)
+        Me.ToolStripMenuItem6.Text = "Utleiested 2"
+        '
+        'LokaleNr3ToolStripMenuItem
+        '
+        Me.LokaleNr3ToolStripMenuItem.Name = "LokaleNr3ToolStripMenuItem"
+        Me.LokaleNr3ToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.LokaleNr3ToolStripMenuItem.Text = "Utleiested 3"
+        '
+        'ToolStripTextBox1
+        '
+        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 23)
+        '
+        'SøkMedlemToolStripMenuItem
+        '
+        Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
+        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
+        Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
+        '
+        'RegistrerendreSykkelToolStripMenuItem
+        '
+        Me.RegistrerendreSykkelToolStripMenuItem.Name = "RegistrerendreSykkelToolStripMenuItem"
+        Me.RegistrerendreSykkelToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.RegistrerendreSykkelToolStripMenuItem.Text = "Registrer/endre sykkel"
         '
         'Form1
         '
@@ -2008,10 +2015,6 @@ Partial Class Form1
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout()
         Me.TabPage2Medlemsinfo.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3StatusBegrensning.ResumeLayout(False)
@@ -2047,6 +2050,10 @@ Partial Class Form1
         Me.TabPageSykkeltransport.ResumeLayout(False)
         Me.TabPageSykkeltransport.PerformLayout()
         CType(Me.DataGridViewSykkeltransport, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2236,5 +2243,6 @@ Partial Class Form1
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents LabelSykkelID As System.Windows.Forms.Label
+    Friend WithEvents RegistrerendreSykkelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
