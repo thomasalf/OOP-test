@@ -472,12 +472,10 @@ Public Class Form1
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
 
 
-        'Dim fra As String = DateTimePicker1.Value.Date.ToString("yyyy-MM-dd")
-        'Dim til As String = DateTimePicker2.Value.Date.ToString("yyyy-MM-dd")
-        'Dim fra As Date = DateTimePicker1.Text
-        'Dim til As Date = DateTimePicker2.Text
         Dim fra As String = DateTimePicker1.Value.Date.ToString("yyyy-MM-dd")
         Dim til As String = DateTimePicker2.Value.Date.ToString("yyyy-MM-dd")
+        'Dim fra As Date = DateTimePicker1.Text
+        'Dim til As Date = DateTimePicker2.Text
 
         Dim utpost As String = ComboBox7.SelectedItem.ToString
         Dim innpost As String = ComboBox10.SelectedItem.ToString
@@ -492,17 +490,11 @@ Public Class Form1
 
         Dim salgspris As String = Antalldager * pris
 
-        'Dim sql As String = "INSERT INTO pdk_booking " _
-        '& "(uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) " _
-        '& "VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID _
-        '& "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); " _
-        '& "INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
-
         Dim sql As String = "INSERT INTO pdk_booking " _
                     & "(uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) " _
                     & "VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID _
                     & "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); " _
-                    & "INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ")"
+                    & "INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ");"
 
 
         query(sql)
