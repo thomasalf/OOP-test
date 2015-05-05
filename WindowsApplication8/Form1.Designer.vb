@@ -209,6 +209,7 @@ Partial Class Form1
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatistikkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1923,7 +1924,7 @@ Partial Class Form1
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem, Me.RegistrerendreSykkelToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem, Me.RegistrerendreSykkelToolStripMenuItem, Me.StatistikkToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 23)
         Me.ToolStripMenuItem1.Text = "Meny"
@@ -1998,8 +1999,14 @@ Partial Class Form1
         'SøkMedlemToolStripMenuItem
         '
         Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
-        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(75, 23)
-        Me.SøkMedlemToolStripMenuItem.Text = "Søk Kunde"
+        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(38, 23)
+        Me.SøkMedlemToolStripMenuItem.Text = "Søk"
+        '
+        'StatistikkToolStripMenuItem
+        '
+        Me.StatistikkToolStripMenuItem.Name = "StatistikkToolStripMenuItem"
+        Me.StatistikkToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.StatistikkToolStripMenuItem.Text = "Statistikk"
         '
         'Form1
         '
@@ -2010,7 +2017,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TabControl1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Pedalkick"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1Innlogging.ResumeLayout(False)
         Me.GroupBox8.ResumeLayout(False)
@@ -2245,5 +2252,6 @@ Partial Class Form1
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents LabelSykkelID As System.Windows.Forms.Label
     Friend WithEvents RegistrerendreSykkelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StatistikkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -1250,5 +1250,7 @@ Public Class Form1
         TabControl1.SelectTab(10)
     End Sub
 
-
+    Private Sub StatistikkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StatistikkToolStripMenuItem.Click
+        TabControl1.SelectTab(9)
+    End Sub
 End Class
