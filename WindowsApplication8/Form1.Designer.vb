@@ -1944,7 +1944,7 @@ Partial Class Form1
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.Size = New System.Drawing.Size(190, 22)
-        Me.ToolStripMenuItem3.Text = "Medlemmer"
+        Me.ToolStripMenuItem3.Text = "Kunder"
         '
         'Side3ToolStripMenuItem
         '
@@ -1997,8 +1997,8 @@ Partial Class Form1
         'SøkMedlemToolStripMenuItem
         '
         Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
-        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
-        Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
+        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(75, 23)
+        Me.SøkMedlemToolStripMenuItem.Text = "Søk Kunde"
         '
         'Form1
         '
