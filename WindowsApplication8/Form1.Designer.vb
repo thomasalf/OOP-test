@@ -210,6 +210,7 @@ Partial Class Form1
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatistikkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnVisKunder = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -356,6 +357,7 @@ Partial Class Form1
         '
         'GroupBox7
         '
+        Me.GroupBox7.Controls.Add(Me.btnVisKunder)
         Me.GroupBox7.Controls.Add(Me.DataGridView2)
         Me.GroupBox7.Controls.Add(Me.Button22)
         Me.GroupBox7.Controls.Add(Me.Button1)
@@ -414,7 +416,7 @@ Partial Class Form1
         '
         'Button22
         '
-        Me.Button22.Location = New System.Drawing.Point(23, 126)
+        Me.Button22.Location = New System.Drawing.Point(23, 156)
         Me.Button22.Name = "Button22"
         Me.Button22.Size = New System.Drawing.Size(115, 23)
         Me.Button22.TabIndex = 36
@@ -423,7 +425,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(23, 39)
+        Me.Button1.Location = New System.Drawing.Point(23, 69)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(115, 23)
         Me.Button1.TabIndex = 1
@@ -432,7 +434,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(23, 68)
+        Me.Button2.Location = New System.Drawing.Point(23, 98)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(115, 23)
         Me.Button2.TabIndex = 2
@@ -441,7 +443,7 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(23, 97)
+        Me.Button3.Location = New System.Drawing.Point(23, 127)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(115, 23)
         Me.Button3.TabIndex = 3
@@ -1939,7 +1941,7 @@ Partial Class Form1
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LoginToolStripMenuItem.Text = "Login"
         '
         'ToolStripMenuItem3
@@ -2007,6 +2009,15 @@ Partial Class Form1
         Me.StatistikkToolStripMenuItem.Name = "StatistikkToolStripMenuItem"
         Me.StatistikkToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.StatistikkToolStripMenuItem.Text = "Statistikk"
+        '
+        'btnVisKunder
+        '
+        Me.btnVisKunder.Location = New System.Drawing.Point(23, 39)
+        Me.btnVisKunder.Name = "btnVisKunder"
+        Me.btnVisKunder.Size = New System.Drawing.Size(115, 23)
+        Me.btnVisKunder.TabIndex = 37
+        Me.btnVisKunder.Text = "Vis kunder"
+        Me.btnVisKunder.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2253,5 +2264,6 @@ Partial Class Form1
     Friend WithEvents LabelSykkelID As System.Windows.Forms.Label
     Friend WithEvents RegistrerendreSykkelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StatistikkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents btnVisKunder As System.Windows.Forms.Button
 
 End Class
