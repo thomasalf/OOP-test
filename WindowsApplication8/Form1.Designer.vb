@@ -33,6 +33,7 @@ Partial Class Form1
         Me.TextBox13 = New System.Windows.Forms.TextBox()
         Me.TabPage2Medlemsinfo = New System.Windows.Forms.TabPage()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.btnVisKunder = New System.Windows.Forms.Button()
         Me.dgvKunder = New System.Windows.Forms.DataGridView()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -196,14 +197,13 @@ Partial Class Form1
         Me.Side3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UtstyrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrerendreSykkelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatistikkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StatistikkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btnVisKunder = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -362,6 +362,15 @@ Partial Class Form1
         Me.GroupBox7.TabIndex = 37
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Kundeinformasjon"
+        '
+        'btnVisKunder
+        '
+        Me.btnVisKunder.Location = New System.Drawing.Point(23, 39)
+        Me.btnVisKunder.Name = "btnVisKunder"
+        Me.btnVisKunder.Size = New System.Drawing.Size(115, 23)
+        Me.btnVisKunder.TabIndex = 37
+        Me.btnVisKunder.Text = "Vis kunder"
+        Me.btnVisKunder.UseVisualStyleBackColor = True
         '
         'dgvKunder
         '
@@ -1885,7 +1894,7 @@ Partial Class Form1
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem, Me.RegistrerendreSykkelToolStripMenuItem, Me.StatistikkToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 23)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(94, 23)
         Me.ToolStripMenuItem1.Text = "Meny"
         '
         'ToolStripMenuItem2
@@ -1898,7 +1907,7 @@ Partial Class Form1
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
         Me.LoginToolStripMenuItem.Text = "Login"
         '
         'ToolStripMenuItem3
@@ -1924,6 +1933,12 @@ Partial Class Form1
         Me.RegistrerendreSykkelToolStripMenuItem.Name = "RegistrerendreSykkelToolStripMenuItem"
         Me.RegistrerendreSykkelToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.RegistrerendreSykkelToolStripMenuItem.Text = "Registrer/endre sykkel"
+        '
+        'StatistikkToolStripMenuItem
+        '
+        Me.StatistikkToolStripMenuItem.Name = "StatistikkToolStripMenuItem"
+        Me.StatistikkToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.StatistikkToolStripMenuItem.Text = "Statistikk"
         '
         'ToolStripMenuItem4
         '
@@ -1960,21 +1975,6 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(38, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk"
-        '
-        'StatistikkToolStripMenuItem
-        '
-        Me.StatistikkToolStripMenuItem.Name = "StatistikkToolStripMenuItem"
-        Me.StatistikkToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.StatistikkToolStripMenuItem.Text = "Statistikk"
-        '
-        'btnVisKunder
-        '
-        Me.btnVisKunder.Location = New System.Drawing.Point(23, 39)
-        Me.btnVisKunder.Name = "btnVisKunder"
-        Me.btnVisKunder.Size = New System.Drawing.Size(115, 23)
-        Me.btnVisKunder.TabIndex = 37
-        Me.btnVisKunder.Text = "Vis kunder"
-        Me.btnVisKunder.UseVisualStyleBackColor = True
         '
         'Form1
         '
