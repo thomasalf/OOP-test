@@ -524,7 +524,7 @@ Public Class Form1
 
         Dim sql As String = "INSERT INTO pdk_booking " _
                     & "(uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) " _
-                    & "VALUES(" & fra & "," & utpost & "," & til & "," & innpost & ",NULL," & selgerID _
+                    & "VALUES('" & fra & "'," & utpost & ",'" & til & "'," & innpost & ",NULL," & selgerID _
                     & "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); " _
                     & "INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ");"
 
@@ -555,17 +555,15 @@ Public Class Form1
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles btnAvanse.Click
         Dim data As New DataTable
         Dim rad As DataRow
-        Dim utgifter As Integer = 5000
+        Dim utgifter As Integer = 5000 ' 'Muligheter senere for å hente inn kostnader så langt fra regnskapssystem
         Dim avanse As Integer
         Dim totalpris As Integer
         Dim inntid As String = Now.Year + 1
 
 
-
         'Henter alle bestillinger fra i år
-        'Dim sql As String = "SELECT SUM(pris) as totalpris from pdk_booking" _
-        '& "WHERE SUBSTR(inntid,1,4) < '" & inntid & "';"
-        Dim sql As String = "SELECT SUM(pris) as totalpris from pdk_booking;"
+        Dim sql As String = "SELECT SUM(pris) as totalpris from pdk_booking " _
+        & "WHERE SUBSTR(inntid,1,4) < '" & inntid & "';"
 
         data = query(sql)
 
@@ -574,16 +572,18 @@ Public Class Form1
             totalpris += rad("totalpris")
         Next rad
 
-        'Hente fra Statistikk
-        'avanse = getUtgifter(totalpris, omsetning)
+        'Hente avanse
         avanse = totalpris - utgifter
+
+        'Tømmer listeboksen
+        lstAvanse.Items.Clear()
 
         With lstAvanse.Items
             .Add("Foreløpig avanse")
             .Add(vbCrLf)
             .Add("Totalt salg utleie så langt i år:" & vbTab & totalpris)
-            .Add("Totalt kostnader så langt i år:" & vbTab & utgifter) 'Muligheter for å hente inn kostnader så langt fra regnskapstall
-            .Add("Avanse:" & vbTab & avanse)          'Muligheter for å hente avansen så langt i år ved å trekke kostnader fra inntekter
+            .Add("Totalt kostnader så langt i år:" & vbTab & utgifter)
+            .Add("Avanse:" & vbTab & avanse)
         End With
 
         dgvStatistikk.Visible = False
