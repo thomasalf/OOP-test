@@ -202,13 +202,13 @@ Partial Class Form1
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Side3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UtstyrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrerendreSykkelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LokaleNr3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistrerendreSykkelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1678,7 +1678,7 @@ Partial Class Form1
         '
         'btnSklLagreOppdatering
         '
-        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(176, 240)
+        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(176, 256)
         Me.btnSklLagreOppdatering.Name = "btnSklLagreOppdatering"
         Me.btnSklLagreOppdatering.Size = New System.Drawing.Size(104, 23)
         Me.btnSklLagreOppdatering.TabIndex = 54
@@ -1958,6 +1958,12 @@ Partial Class Form1
         Me.UtstyrToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.UtstyrToolStripMenuItem.Text = "Utstyr / Utleie"
         '
+        'RegistrerendreSykkelToolStripMenuItem
+        '
+        Me.RegistrerendreSykkelToolStripMenuItem.Name = "RegistrerendreSykkelToolStripMenuItem"
+        Me.RegistrerendreSykkelToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.RegistrerendreSykkelToolStripMenuItem.Text = "Registrer/endre sykkel"
+        '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.LokaleNr3ToolStripMenuItem})
@@ -1993,12 +1999,6 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(85, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk Medlem"
-        '
-        'RegistrerendreSykkelToolStripMenuItem
-        '
-        Me.RegistrerendreSykkelToolStripMenuItem.Name = "RegistrerendreSykkelToolStripMenuItem"
-        Me.RegistrerendreSykkelToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.RegistrerendreSykkelToolStripMenuItem.Text = "Registrer/endre sykkel"
         '
         'Form1
         '

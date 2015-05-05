@@ -636,6 +636,13 @@ Public Class Form1
         visAltIGroupBox(GroupBoxSykkelinformasjon)
         btnSklLagreOppdatering.Visible = False
         LabelSklSykkelIDSomRedigeres.Visible = False
+        ComboVelgStatus.Visible = True
+        ComboVelgTransportor.Visible = True
+        labelSykkel5.Visible = True
+        labelSykkel7.Visible = True
+        LabelSklOpprettNy.Visible = True
+        TextBoxSkl1.Visible = True
+        TextBoxSkl2.Visible = True
         GroupBoxSykkelinformasjon.Visible = True
 
         'START: fyll "status"-combobox
@@ -801,8 +808,16 @@ Public Class Form1
         'btnSklRegistrerEndringer.Visible = False
         visAltIGroupBox(GroupBoxSykkelinformasjon)
         btnSklRegistrerEndringer.Visible = False
+        ComboVelgStatus.Visible = False
+        ComboVelgTransportor.Visible = False
+        labelSykkel5.Visible = False
+        labelSykkel7.Visible = False
+        LabelSklOpprettNy.Visible = False
+        TextBoxSkl1.Visible = False
+        TextBoxSkl2.Visible = False
         GroupBoxSykkelinformasjon.Visible = True
         LabelSklSykkelIDSomRedigeres.Visible = True
+
 
 
 
@@ -886,7 +901,26 @@ Public Class Form1
 
 
         'START: fyll "merke"-combobox
-        comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
+        'comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
+        Dim sykkeldao As New SykkelDAO
+        ComboSklVelgMerke.Items.Clear() 'Fjerner gammel informasjon fra combobox
+        Dim dataMerke As New DataTable
+        Dim sqlMerke As String = "SELECT * FROM pdk_sykkel ;"
+        dataMerke = sykkeldao.query(sqlMerke)
+
+        If data.Rows.Count >= 1 Then 'Fyller combobox med informasjon
+            ReDim sykkelIDinformasjon(dataMerke.Rows.Count - 1) 'Justerer lengde på array
+            Dim teller As Integer
+            teller = dataMerke.Rows.Count
+
+            For teller = 0 To (teller - 1)
+                Dim ComboboxTekst As String
+                Dim row As DataRow = dataMerke.Rows(teller)
+                ComboboxTekst = row("merke")
+                ComboSklVelgMerke.Items.Add(ComboboxTekst)
+                sykkelIDinformasjon(teller) = row("sykkelID")
+            Next
+        End If
 
         'START: fyll "modell"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgModell, "pdk_sykkelmodell", "modell")
@@ -911,6 +945,8 @@ Public Class Form1
         'velger riktig sted/tilhørighet
         ComboVelgHjemsted.SelectedIndex = ComboVelgHjemsted.FindStringExact(temprow("postnr"))
 
+        LabelSykkelID.Text = sykkelIDinformasjon(ComboEksisterendeSykler.SelectedIndex)
+        sykkelIDtilRedigering = LabelSykkelID.Text
 
         'Viser kundeinformasjonsfelter
         GroupBox3.Visible = True
@@ -1069,6 +1105,9 @@ Public Class Form1
         Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
             MessageBox.Show("Feil: " & ex.Message)
         End Try
+
+        GroupBoxSykkelinformasjon.Visible = False
+        GroupBoxHvaVilDuGjore.Visible = True
     End Sub
 
     Private Sub Button12asdgsdfbsdgbdfb_Click(sender As Object, e As EventArgs)
@@ -1135,6 +1174,9 @@ Public Class Form1
 
 
     Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
+        GroupBoxSykkelinformasjon.Visible = False
+        GroupBoxHvaVilDuGjore.Visible = True
+        ComboEksisterendeSykler.Items.Clear()
         TabControl1.SelectTab(10)
     End Sub
 
@@ -1203,4 +1245,5 @@ Public Class Form1
     Private Sub RegistrerendreSykkelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrerendreSykkelToolStripMenuItem.Click
         TabControl1.SelectTab(10)
     End Sub
+
 End Class
