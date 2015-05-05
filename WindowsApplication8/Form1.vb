@@ -679,9 +679,9 @@ Public Class Form1
         comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
         'fyll "modell"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgModell, "pdk_sykkelmodell", "modell")
-       'fyll "type"-combobox
+        'fyll "type"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgType, "pdk_sykkeltype", "sykkeltype")
-       
+
 
     End Sub
 
@@ -1143,5 +1143,9 @@ Public Class Form1
 
     Private Sub BtnSklRegistrerBegrensning_Click(sender As Object, e As EventArgs) Handles BtnSklRegistrerBegrensning.Click
         MsgBox("Denne funksjonen er foreløpig ikke implementert.")
+    End Sub
+
+    Private Sub btnSykkelstatus_Click(sender As Object, e As EventArgs) Handles btnSykkelstatus.Click
+        TabControl1.SelectTab(2)
     End Sub
 End Class

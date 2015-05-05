@@ -107,7 +107,6 @@ Partial Class Form1
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.TabPage7TilgjengeligUtstyr = New System.Windows.Forms.TabPage()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -156,6 +155,7 @@ Partial Class Form1
         Me.btnOppdatereEksisterendeSykkel = New System.Windows.Forms.Button()
         Me.ComboEksisterendeSykler = New System.Windows.Forms.ComboBox()
         Me.GroupBoxSykkelinformasjon = New System.Windows.Forms.GroupBox()
+        Me.BtnSklRegistrerBegrensning = New System.Windows.Forms.Button()
         Me.LabelSykkelID = New System.Windows.Forms.Label()
         Me.LabelSklOpprettNy = New System.Windows.Forms.Label()
         Me.LabelSklSykkelIDSomRedigeres = New System.Windows.Forms.Label()
@@ -197,7 +197,7 @@ Partial Class Form1
         Me.StatistikkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BtnSklRegistrerBegrensning = New System.Windows.Forms.Button()
+        Me.btnSykkelstatus = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1052,7 +1052,6 @@ Partial Class Form1
         'TabPage7TilgjengeligUtstyr
         '
         Me.TabPage7TilgjengeligUtstyr.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.Button12)
         Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.GroupBox2)
         Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.Button24)
         Me.TabPage7TilgjengeligUtstyr.Controls.Add(Me.GroupBox1)
@@ -1063,15 +1062,6 @@ Partial Class Form1
         Me.TabPage7TilgjengeligUtstyr.Size = New System.Drawing.Size(1195, 552)
         Me.TabPage7TilgjengeligUtstyr.TabIndex = 6
         Me.TabPage7TilgjengeligUtstyr.Text = "TabPage7"
-        '
-        'Button12
-        '
-        Me.Button12.Location = New System.Drawing.Point(664, 165)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(75, 23)
-        Me.Button12.TabIndex = 39
-        Me.Button12.Text = "Button12"
-        Me.Button12.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -1345,6 +1335,7 @@ Partial Class Form1
         '
         'GroupBox9
         '
+        Me.GroupBox9.Controls.Add(Me.btnSykkelstatus)
         Me.GroupBox9.Controls.Add(Me.btnAdministrasjon)
         Me.GroupBox9.Controls.Add(Me.btnTransport)
         Me.GroupBox9.Controls.Add(Me.Button31)
@@ -1379,7 +1370,7 @@ Partial Class Form1
         '
         'Button31
         '
-        Me.Button31.Location = New System.Drawing.Point(56, 204)
+        Me.Button31.Location = New System.Drawing.Point(56, 220)
         Me.Button31.Name = "Button31"
         Me.Button31.Size = New System.Drawing.Size(115, 23)
         Me.Button31.TabIndex = 6
@@ -1576,6 +1567,15 @@ Partial Class Form1
         Me.GroupBoxSykkelinformasjon.TabStop = False
         Me.GroupBoxSykkelinformasjon.Text = "Sykkelinformasjon"
         Me.GroupBoxSykkelinformasjon.Visible = False
+        '
+        'BtnSklRegistrerBegrensning
+        '
+        Me.BtnSklRegistrerBegrensning.Location = New System.Drawing.Point(8, 240)
+        Me.BtnSklRegistrerBegrensning.Name = "BtnSklRegistrerBegrensning"
+        Me.BtnSklRegistrerBegrensning.Size = New System.Drawing.Size(128, 24)
+        Me.BtnSklRegistrerBegrensning.TabIndex = 62
+        Me.BtnSklRegistrerBegrensning.Text = "Registrer begrensning"
+        Me.BtnSklRegistrerBegrensning.UseVisualStyleBackColor = True
         '
         'LabelSykkelID
         '
@@ -1917,14 +1917,14 @@ Partial Class Form1
         Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(38, 23)
         Me.SøkMedlemToolStripMenuItem.Text = "Søk"
         '
-        'BtnSklRegistrerBegrensning
+        'btnSykkelstatus
         '
-        Me.BtnSklRegistrerBegrensning.Location = New System.Drawing.Point(8, 240)
-        Me.BtnSklRegistrerBegrensning.Name = "BtnSklRegistrerBegrensning"
-        Me.BtnSklRegistrerBegrensning.Size = New System.Drawing.Size(128, 24)
-        Me.BtnSklRegistrerBegrensning.TabIndex = 62
-        Me.BtnSklRegistrerBegrensning.Text = "Registrer begrensning"
-        Me.BtnSklRegistrerBegrensning.UseVisualStyleBackColor = True
+        Me.btnSykkelstatus.Location = New System.Drawing.Point(56, 188)
+        Me.btnSykkelstatus.Name = "btnSykkelstatus"
+        Me.btnSykkelstatus.Size = New System.Drawing.Size(115, 26)
+        Me.btnSykkelstatus.TabIndex = 9
+        Me.btnSykkelstatus.Text = "Sykkelstatus"
+        Me.btnSykkelstatus.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2146,7 +2146,6 @@ Partial Class Form1
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Button12 As System.Windows.Forms.Button
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
@@ -2157,5 +2156,6 @@ Partial Class Form1
     Friend WithEvents btnVisKunder As System.Windows.Forms.Button
     Friend WithEvents ToolStripTextBox1 As System.Windows.Forms.ToolStripTextBox
     Friend WithEvents BtnSklRegistrerBegrensning As System.Windows.Forms.Button
+    Friend WithEvents btnSykkelstatus As System.Windows.Forms.Button
 
 End Class
