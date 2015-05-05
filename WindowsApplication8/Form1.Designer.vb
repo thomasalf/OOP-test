@@ -195,8 +195,9 @@ Partial Class Form1
         Me.UtstyrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrerendreSykkelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatistikkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.SøkMedlemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BtnSklRegistrerBegrensning = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1Innlogging.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1546,6 +1547,7 @@ Partial Class Form1
         '
         'GroupBoxSykkelinformasjon
         '
+        Me.GroupBoxSykkelinformasjon.Controls.Add(Me.BtnSklRegistrerBegrensning)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSykkelID)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklOpprettNy)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.LabelSklSykkelIDSomRedigeres)
@@ -1612,7 +1614,7 @@ Partial Class Form1
         '
         'btnSklLagreOppdatering
         '
-        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(176, 240)
+        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(232, 240)
         Me.btnSklLagreOppdatering.Name = "btnSklLagreOppdatering"
         Me.btnSklLagreOppdatering.Size = New System.Drawing.Size(104, 23)
         Me.btnSklLagreOppdatering.TabIndex = 54
@@ -1639,7 +1641,7 @@ Partial Class Form1
         '
         'btnSklSlettSykkel
         '
-        Me.btnSklSlettSykkel.Location = New System.Drawing.Point(296, 240)
+        Me.btnSklSlettSykkel.Location = New System.Drawing.Point(336, 240)
         Me.btnSklSlettSykkel.Name = "btnSklSlettSykkel"
         Me.btnSklSlettSykkel.Size = New System.Drawing.Size(92, 23)
         Me.btnSklSlettSykkel.TabIndex = 52
@@ -1743,7 +1745,7 @@ Partial Class Form1
         '
         'btnSklNullUtSkjema
         '
-        Me.btnSklNullUtSkjema.Location = New System.Drawing.Point(72, 239)
+        Me.btnSklNullUtSkjema.Location = New System.Drawing.Point(136, 240)
         Me.btnSklNullUtSkjema.Name = "btnSklNullUtSkjema"
         Me.btnSklNullUtSkjema.Size = New System.Drawing.Size(92, 23)
         Me.btnSklNullUtSkjema.TabIndex = 49
@@ -1752,7 +1754,7 @@ Partial Class Form1
         '
         'btnSklRegistrerEndringer
         '
-        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(176, 240)
+        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(232, 240)
         Me.btnSklRegistrerEndringer.Name = "btnSklRegistrerEndringer"
         Me.btnSklRegistrerEndringer.Size = New System.Drawing.Size(104, 23)
         Me.btnSklRegistrerEndringer.TabIndex = 48
@@ -1858,7 +1860,7 @@ Partial Class Form1
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.Side3ToolStripMenuItem, Me.UtstyrToolStripMenuItem, Me.RegistrerendreSykkelToolStripMenuItem, Me.StatistikkToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 20)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(49, 23)
         Me.ToolStripMenuItem1.Text = "Meny"
         '
         'ToolStripMenuItem2
@@ -1904,16 +1906,25 @@ Partial Class Form1
         Me.StatistikkToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.StatistikkToolStripMenuItem.Text = "Statistikk"
         '
-        'SøkMedlemToolStripMenuItem
-        '
-        Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
-        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(38, 20)
-        Me.SøkMedlemToolStripMenuItem.Text = "Søk"
-        '
         'ToolStripTextBox1
         '
         Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
         Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 23)
+        '
+        'SøkMedlemToolStripMenuItem
+        '
+        Me.SøkMedlemToolStripMenuItem.Name = "SøkMedlemToolStripMenuItem"
+        Me.SøkMedlemToolStripMenuItem.Size = New System.Drawing.Size(38, 23)
+        Me.SøkMedlemToolStripMenuItem.Text = "Søk"
+        '
+        'BtnSklRegistrerBegrensning
+        '
+        Me.BtnSklRegistrerBegrensning.Location = New System.Drawing.Point(8, 240)
+        Me.BtnSklRegistrerBegrensning.Name = "BtnSklRegistrerBegrensning"
+        Me.BtnSklRegistrerBegrensning.Size = New System.Drawing.Size(128, 24)
+        Me.BtnSklRegistrerBegrensning.TabIndex = 62
+        Me.BtnSklRegistrerBegrensning.Text = "Registrer begrensning"
+        Me.BtnSklRegistrerBegrensning.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2145,5 +2156,6 @@ Partial Class Form1
     Friend WithEvents StatistikkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btnVisKunder As System.Windows.Forms.Button
     Friend WithEvents ToolStripTextBox1 As System.Windows.Forms.ToolStripTextBox
+    Friend WithEvents BtnSklRegistrerBegrensning As System.Windows.Forms.Button
 
 End Class

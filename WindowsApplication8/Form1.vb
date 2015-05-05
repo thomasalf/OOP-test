@@ -1135,9 +1135,13 @@ Public Class Form1
 
         Dim sql As String = "SELECT * from pdk_kunde;"
 
-        ' Hvordan få tak i denne funksjonen her? visBestillingerSQL(sql)
+
 
         kunder = query(sql)
         dgvKunder.DataSource = kunder
+    End Sub
+
+    Private Sub BtnSklRegistrerBegrensning_Click(sender As Object, e As EventArgs) Handles BtnSklRegistrerBegrensning.Click
+        MsgBox("Denne funksjonen er foreløpig ikke implementert.")
     End Sub
 End Class
