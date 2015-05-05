@@ -184,6 +184,7 @@ Public Class Form1
         kundeInfoUtil.fyllInnKundeinfo(kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex), Label3, _
                                        TextBox12, TextBox11, TextBox10, TextBox9, TextBox8)
 
+        'oppdaterer kundeID-variabel og kundeID-label
         Label3.Text = kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex)
         kundeIDtilRedigering = Label3.Text
 
@@ -333,38 +334,6 @@ Public Class Form1
             MessageBox.Show("Feil: " & ex.Message)
         End Try
 
-
-
-
-
-
-        'START: GAMMEL KODE
-        'Sjekker inndata
-        ' Try
-        'Bruker tekstboksdata for å opprette ny kunde (bruker klassen "Kunde")
-        '  Dim kunde As New Kunde(TextBox12.Text, TextBox11.Text, _
-        '                         TextBox8.Text, TextBox7.Text, _
-        '                         TextBox10.Text, TextBox9.Text, _
-        '                         ComboBox6.SelectedValue)
-        'bruker data fra opprettet kunde for å lage SQL-kommando
-        '  Dim data As New DataTable
-        '  Dim sql As String = "UPDATE pdk_kunde " _
-        '                      & "SET kfornavn = '" & kunde.getFornavn() _
-        '                      & "', ketternavn = '" & kunde.getEtternavn() _
-        '                      & "', kadresse = '" & kunde.getGateadresse() & ", " & kunde.getPostnummer() _
-        '                      & "', kepost = '" & kunde.getEpost() _
-        '                      & "', ktelefon = '" & kunde.getTelefon() _
-        '                      & "' WHERE kundeID = '" & Label3.Text & "'"
-        '
-        '       data = query(sql)
-        '      Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
-        'MessageBox.Show("Feil: " & ex.Message)
-        'End Try
-        'SLUTT: GAMMEL KODE
-
-
-
-
     End Sub
 
 
@@ -434,7 +403,7 @@ Public Class Form1
         ansattbox = personDAO.query(personDAO.velgAlleAnsatte())
 
 
-        If ansattbox.Rows.Count >= 1 Then 'Fyller combobox med kundeinformasjon
+        If ansattbox.Rows.Count >= 1 Then 'Fyller combobox med ansattinformasjon
             ReDim selgerIDinformasjon(ansattbox.Rows.Count - 1) 'justerer lengde på array 
             Dim teller As Integer
             teller = ansattbox.Rows.Count
@@ -444,7 +413,7 @@ Public Class Form1
                 Dim row As DataRow = ansattbox.Rows(teller)
                 ansattboxTekst = row("selgerID") & " " & row("ansattype") & " " & row("fornavn") & " " & row("etternavn") & " " & row("epost") & " " & row("telefon")
                 ComboBox2.Items.Add(ansattboxTekst)
-                selgerIDinformasjon(teller) = row("selgerID") 'lagrer kundeID i array
+                selgerIDinformasjon(teller) = row("selgerID") 'lagrer selgerID i array
             Next
         Else
             MsgBox("Ingen informasjon funnet.")
@@ -632,7 +601,7 @@ Public Class Form1
         TextBoxSkl2.Visible = True
         GroupBoxSykkelinformasjon.Visible = True
 
-        'START: fyll "status"-combobox
+        'fyll "status"-combobox
         ComboVelgStatus.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data As New DataTable
         Dim sql As String = "SELECT * FROM pdk_status"
@@ -654,10 +623,10 @@ Public Class Form1
         Else
             MsgBox("Ingen informasjon funnet.")
         End If
-        'SLUTT: fyll "status"-combobox
 
 
-        'Start: fyll "tilhørighet"-combobox
+
+        'fyll "tilhørighet"-combobox
         ComboVelgHjemsted.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data2 As New DataTable
         Dim sql2 As String = "SELECT DISTINCT stedsnavn, postnr FROM pdk_sted"
@@ -677,10 +646,10 @@ Public Class Form1
         Else
             MsgBox("Ingen informasjon funnet.")
         End If
-        'Slutt: fyll "tilhørighet"-combobox
 
 
-        'Start: fyll "transportør"-combobox
+
+        'fyll "transportør"-combobox
         ComboVelgTransportor.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data3 As New DataTable
         Dim sql3 As String = "SELECT * FROM pdk_transportor"
@@ -702,83 +671,17 @@ Public Class Form1
         Else
             MsgBox("Ingen informasjon funnet.")
         End If
-        'Slutt: fyll "transportør"-combobox
 
 
 
-        'START: fyll "merke"-combobox
+
+        'fyll "merke"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
-        'comboBoxUtil.fyllComboBoxMedSykkelmerke(ComboSklVelgMerke)
-        'GAMMEL KODE:
-        '  ComboSklVelgMerke.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        '  Dim data4 As New DataTable
-        '  Dim sql4 As String = "SELECT * FROM pdk_sykkelmerke"
-        '  data = query(sql4)
-        '
-        '
-        '        If data.Rows.Count >= 1 Then 'Fyller combobox med merkeinformasjon
-        ' Dim teller As Integer
-        ' teller = data.Rows.Count
-        '
-        '        For teller = 0 To (teller - 1)
-        ' Dim ComboboxTekst As String
-        ' Dim row As DataRow = data.Rows(teller)
-        ' ComboboxTekst = row("merke")
-        ' ComboSklVelgMerke.Items.Add(ComboboxTekst)
-        ' Next
-        ' Else
-        ' MsgBox("Ingen informasjon funnet.")
-        ' End If
-        'SLUTT: fyll "merke"-combobox
-
-        'START: fyll "modell"-combobox
-        'comboBoxUtil.fyllComboboxMedSykkelmodell(ComboSklVelgModell)
+        'fyll "modell"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgModell, "pdk_sykkelmodell", "modell")
-        'GAMMEL KODE:
-        '  ComboSklVelgModell.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        '  Dim data5 As New DataTable
-        '  Dim sql5 As String = "SELECT * FROM pdk_sykkelmodell"
-        '  data = query(sql5)
-        '
-        '
-        '        If data.Rows.Count >= 1 Then 'Fyller combobox med modellinformasjon
-        ' Dim teller As Integer
-        ' teller = data.Rows.Count
-        '
-        '        For teller = 0 To (teller - 1)
-        ' Dim ComboboxTekst As String
-        ' Dim row As DataRow = data.Rows(teller)
-        ' ComboboxTekst = row("modell")
-        ' ComboSklVelgModell.Items.Add(ComboboxTekst)
-        ' Next
-        ' Else
-        ' MsgBox("Ingen informasjon funnet.")
-        ' End If
-        'SLUTT: fyll "modell"-combobox
-
-        'START: fyll "type"-combobox
+       'fyll "type"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgType, "pdk_sykkeltype", "sykkeltype")
-        'GAMMEL KODE:
-        '   ComboSklVelgType.Items.Clear() 'Fjerner gammel informasjon fra combobox
-        '   Dim data6 As New DataTable
-        '   Dim sql6 As String = "SELECT * FROM pdk_sykkeltype"
-        '   data = query(sql6)
-        '
-        '
-        '        If data.Rows.Count >= 1 Then 'Fyller combobox med typeinformasjon
-        ' Dim teller As Integer
-        ' teller = data.Rows.Count
-        '
-        '        For teller = 0 To (teller - 1)
-        ' Dim ComboboxTekst As String
-        ' Dim row As DataRow = data.Rows(teller)
-        ' ComboboxTekst = row("sykkeltype")
-        ' ComboSklVelgType.Items.Add(ComboboxTekst)
-        ' Next
-        ' Else
-        ' MsgBox("Ingen informasjon funnet.")
-        ' End If
-        'SLUTT: fyll "type"-combobox
+       
 
     End Sub
 
