@@ -1247,7 +1247,7 @@ Public Class Form1
     End Sub
 
     Private Sub RegistrerendreSykkelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrerendreSykkelToolStripMenuItem.Click
-        TabControl1.SelectTab(10)
+        TabControl1.SelectTab(9)
     End Sub
 
     Private Sub StatistikkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StatistikkToolStripMenuItem.Click
