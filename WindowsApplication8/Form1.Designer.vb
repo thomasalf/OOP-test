@@ -33,14 +33,7 @@ Partial Class Form1
         Me.TextBox13 = New System.Windows.Forms.TextBox()
         Me.TabPage2Medlemsinfo = New System.Windows.Forms.TabPage()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FNavn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Enavn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Adr = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Epost = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tlf = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tilh = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvKunder = New System.Windows.Forms.DataGridView()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -216,7 +209,7 @@ Partial Class Form1
         Me.GroupBox8.SuspendLayout()
         Me.TabPage2Medlemsinfo.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvKunder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3StatusBegrensning.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.TabPage4UtstyrStatus.SuspendLayout()
@@ -358,7 +351,7 @@ Partial Class Form1
         'GroupBox7
         '
         Me.GroupBox7.Controls.Add(Me.btnVisKunder)
-        Me.GroupBox7.Controls.Add(Me.DataGridView2)
+        Me.GroupBox7.Controls.Add(Me.dgvKunder)
         Me.GroupBox7.Controls.Add(Me.Button22)
         Me.GroupBox7.Controls.Add(Me.Button1)
         Me.GroupBox7.Controls.Add(Me.Button2)
@@ -370,49 +363,13 @@ Partial Class Form1
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Kundeinformasjon"
         '
-        'DataGridView2
+        'dgvKunder
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.FNavn, Me.Enavn, Me.Adr, Me.Epost, Me.tlf, Me.Tilh})
-        Me.DataGridView2.Location = New System.Drawing.Point(157, 39)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(743, 186)
-        Me.DataGridView2.TabIndex = 0
-        '
-        'ID
-        '
-        Me.ID.HeaderText = "MedlemsID"
-        Me.ID.Name = "ID"
-        '
-        'FNavn
-        '
-        Me.FNavn.HeaderText = "Fornavn"
-        Me.FNavn.Name = "FNavn"
-        '
-        'Enavn
-        '
-        Me.Enavn.HeaderText = "Etternavn"
-        Me.Enavn.Name = "Enavn"
-        '
-        'Adr
-        '
-        Me.Adr.HeaderText = "Adresse"
-        Me.Adr.Name = "Adr"
-        '
-        'Epost
-        '
-        Me.Epost.HeaderText = "E-post"
-        Me.Epost.Name = "Epost"
-        '
-        'tlf
-        '
-        Me.tlf.HeaderText = "Telefon"
-        Me.tlf.Name = "tlf"
-        '
-        'Tilh
-        '
-        Me.Tilh.HeaderText = "Tilhørighet"
-        Me.Tilh.Name = "Tilh"
+        Me.dgvKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvKunder.Location = New System.Drawing.Point(157, 39)
+        Me.dgvKunder.Name = "dgvKunder"
+        Me.dgvKunder.Size = New System.Drawing.Size(743, 186)
+        Me.dgvKunder.TabIndex = 0
         '
         'Button22
         '
@@ -2035,7 +1992,7 @@ Partial Class Form1
         Me.GroupBox8.PerformLayout()
         Me.TabPage2Medlemsinfo.ResumeLayout(False)
         Me.GroupBox7.ResumeLayout(False)
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvKunder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3StatusBegrensning.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
@@ -2094,14 +2051,7 @@ Partial Class Form1
     Friend WithEvents Side3ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TabPage4UtstyrStatus As System.Windows.Forms.TabPage
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
-    Friend WithEvents ID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents FNavn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Enavn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Adr As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Epost As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents tlf As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Tilh As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvKunder As System.Windows.Forms.DataGridView
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button

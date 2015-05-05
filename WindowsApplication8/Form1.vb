@@ -1253,4 +1253,15 @@ Public Class Form1
     Private Sub StatistikkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StatistikkToolStripMenuItem.Click
         TabControl1.SelectTab(9)
     End Sub
+
+    Private Sub btnVisKunder_Click(sender As Object, e As EventArgs) Handles btnVisKunder.Click
+        Dim kunder As New DataTable
+
+        Dim sql As String = "SELECT * from pdk_kunde;"
+
+        ' Hvordan få tak i denne funksjonen her? visBestillingerSQL(sql)
+
+        kunder = query(sql)
+        dgvKunder.DataSource = kunder
+    End Sub
 End Class
