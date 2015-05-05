@@ -502,34 +502,38 @@ Public Class Form1
 
     'Registrer Booking
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+        Try
+            Dim fra As String = DateTimePicker1.Value.Date.ToString("yyyy-MM-dd")
+            Dim til As String = DateTimePicker2.Value.Date.ToString("yyyy-MM-dd")
+
+            Dim utpost As String = ComboBox7.SelectedItem.ToString
+            Dim innpost As String = ComboBox10.SelectedItem.ToString
+
+            'Konstant dagspris for sykkelleie, kan byttes ut med variabel og hente timepris/ukepris fra database
+            Const pris As Integer = 500
+
+            Dim selgerID As String = Label8.Text
+            Dim PrisID As String = 2 ' denne vil på et senere tidspunkt brukes for å variere pris avhengig av produkt. 
+            Dim kundeID As String = Label5.Text
+            Dim SykkelID As String = DataGridView3.SelectedRows(0).Cells(0).Value.ToString
+            Dim Antalldager = DateTimePicker2.Value.Subtract(DateTimePicker1.Value).Days + 1
+
+            Dim salgspris As String = Antalldager * pris
 
 
-        Dim fra As String = DateTimePicker1.Value.Date.ToString("yyyy-MM-dd")
-        Dim til As String = DateTimePicker2.Value.Date.ToString("yyyy-MM-dd")
-        'Dim fra As Date = DateTimePicker1.Text
-        'Dim til As Date = DateTimePicker2.Text
 
-        Dim utpost As String = ComboBox7.SelectedItem.ToString
-        Dim innpost As String = ComboBox10.SelectedItem.ToString
+            'Registrerer bestilling inn i databasen
+            Dim sql As String = "INSERT INTO pdk_booking " _
+                        & "(uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) " _
+                        & "VALUES('" & fra & "'," & utpost & ",'" & til & "'," & innpost & ",NULL," & selgerID _
+                        & "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); " _
+                        & "INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ");"
 
-        Const pris As Integer = 500
+            query(sql)
 
-        Dim selgerID As String = Label8.Text ' må hente selgerID fra en plass?
-        Dim PrisID As String = 2 ' denne vil på et senere tidspunkt brukes for å variere pris avhengig av produkt. 
-        Dim kundeID As String = Label5.Text
-        Dim SykkelID As String = DataGridView3.SelectedRows(0).Cells(0).Value.ToString
-        Dim Antalldager = DateTimePicker2.Value.Subtract(DateTimePicker1.Value).Days + 1
-
-        Dim salgspris As String = Antalldager * pris
-
-        Dim sql As String = "INSERT INTO pdk_booking " _
-                    & "(uttid,utpostnr,inntid,innpostnr,betalt,selgerID,prisID,kundeID,pris,bstatus) " _
-                    & "VALUES('" & fra & "'," & utpost & ",'" & til & "'," & innpost & ",NULL," & selgerID _
-                    & "," & PrisID & "," & kundeID & "," & salgspris & ",'Utleid'); " _
-                    & "INSERT INTO pdk_syklerbooket (bookingID,sykkelID) VALUES(LAST_INSERT_ID()," & SykkelID & ");"
-
-
-        query(sql)
+        Catch ex As Exception 'Viser feilmelding dersom det er problemer med inndata
+            MessageBox.Show("Feil: " & ex.Message)
+        End Try
 
     End Sub
 
@@ -558,12 +562,12 @@ Public Class Form1
         Dim utgifter As Integer = 5000 ' 'Muligheter senere for å hente inn kostnader så langt fra regnskapssystem
         Dim avanse As Integer
         Dim totalpris As Integer
-        Dim inntid As String = Now.Year + 1
+        Dim inntid As String = Now.Year
 
 
         'Henter alle bestillinger fra i år
         Dim sql As String = "SELECT SUM(pris) as totalpris from pdk_booking " _
-        & "WHERE SUBSTR(inntid,1,4) < '" & inntid & "';"
+        & "WHERE SUBSTR(inntid,1,4) = '" & inntid & "';"
 
         data = query(sql)
 

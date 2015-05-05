@@ -1330,7 +1330,7 @@ Partial Class Form1
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker2.TabIndex = 3
-        Me.DateTimePicker2.Value = New Date(2015, 5, 4, 0, 0, 0, 0)
+        Me.DateTimePicker2.Value = New Date(2015, 5, 5, 0, 0, 0, 0)
         '
         'DateTimePicker1
         '
@@ -1342,6 +1342,7 @@ Partial Class Form1
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 2
+        Me.DateTimePicker1.Value = New Date(2015, 5, 5, 18, 0, 20, 0)
         '
         'Label27
         '
