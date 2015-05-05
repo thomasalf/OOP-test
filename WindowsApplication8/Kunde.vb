@@ -1,6 +1,8 @@
 ﻿Public Class Kunde
     Inherits Person
 
+    'NB: Har valgt å fjerne rabatten fra "kunde" og overføre rabatt til "booking"
+    'Koden som ligger her er altså ikke aktivt i bruk nå.
     Private rabatt As Integer = 0
 
     Private Const MIN As Integer = 0
@@ -27,14 +29,7 @@
 
     End Sub
 
-    'Setter navn og e-post + rabatt
-    'Public Sub New(ByVal fn As String, _
-    '            en As String, _
-    '            ep As String, _
-    '          rab As Integer)
-    '     MyBase.New(fn, en, ep)
-    '  setRabatt(rab)
-    ' End Sub
+
 
 
 

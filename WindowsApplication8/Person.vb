@@ -34,14 +34,6 @@
         setTelefon(tlf)
     End Sub
 
-    'Setter navn og e-post
-    ' Public Sub New(ByVal fn As String, _
-    '                en As String, _
-    '                ep As String)
-    '     setFornavn(fn)
-    '     setEtternavn(en)
-    '     setEpost(ep)
-    ' End Sub
 
 
 

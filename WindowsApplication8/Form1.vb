@@ -141,7 +141,7 @@ Public Class Form1
 
 
 
-    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
+    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs)
         TabControl1.SelectTab(3)
     End Sub
 
@@ -183,23 +183,7 @@ Public Class Form1
         'Fyller kundeinformasjonsfelt med informasjonen som finnes i databasen
         kundeInfoUtil.fyllInnKundeinfo(kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex), Label3, _
                                        TextBox12, TextBox11, TextBox10, TextBox9, TextBox8)
-        'START: gammel kode
-        'Dim data As New DataTable
-        'Dim sql As String = "SELECT * FROM pdk_kunde " _
-        '                           & "WHERE kundeID = '" & kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex) & "'"
-        'data = query(sql)
-        'If data.Rows.Count = 1 Then
-        ' clearGroupbox(GroupBox3)
-        ' Dim row As DataRow = Data.Rows(0)
-        ' kundeIDtilRedigering = row("kundeID")
-        ' Label3.Text = kundeIDtilRedigering
-        ' TextBox12.Text = row("kfornavn")
-        ' TextBox11.Text = row("ketternavn")
-        ' TextBox10.Text = row("kadresse")
-        ' TextBox9.Text = row("kepost")
-        ' TextBox8.Text = row("ktelefon")
-        ' End If
-        'SLUTT: GAMMEL KODE
+
         Label3.Text = kundeIDinformasjon(ComboBoxRegistrerteKunder.SelectedIndex)
         kundeIDtilRedigering = Label3.Text
 
@@ -210,8 +194,7 @@ Public Class Form1
     Private Sub ButtonLastInnRegistrerteKunder_Click(sender As Object, e As EventArgs) Handles ButtonLastInnRegistrerteKunder.Click
         ComboBoxRegistrerteKunder.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data As New DataTable
-        'Dim sql As String = "SELECT * FROM pdk_kunde"
-        'data = query(sql)
+
 
         data = personDAO.query(personDAO.velgAlleKunder())
 
@@ -1181,15 +1164,15 @@ Public Class Form1
         GroupBoxSykkelinformasjon.Visible = False
         GroupBoxHvaVilDuGjore.Visible = True
         ComboEksisterendeSykler.Items.Clear()
-        TabControl1.SelectTab(10)
-    End Sub
-
-    Private Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
         TabControl1.SelectTab(9)
     End Sub
 
+    Private Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
+        TabControl1.SelectTab(8)
+    End Sub
+
     Private Sub btnTransport_Click(sender As Object, e As EventArgs) Handles btnTransport.Click
-        TabControl1.SelectTab(11)
+        TabControl1.SelectTab(10)
     End Sub
 
     Private Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
@@ -1247,11 +1230,11 @@ Public Class Form1
     End Sub
 
     Private Sub RegistrerendreSykkelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrerendreSykkelToolStripMenuItem.Click
-        TabControl1.SelectTab(10)
+        TabControl1.SelectTab(9)
     End Sub
 
     Private Sub StatistikkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StatistikkToolStripMenuItem.Click
-        TabControl1.SelectTab(9)
+        TabControl1.SelectTab(8)
     End Sub
 
     Private Sub btnVisKunder_Click(sender As Object, e As EventArgs) Handles btnVisKunder.Click
