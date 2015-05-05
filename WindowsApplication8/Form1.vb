@@ -141,7 +141,7 @@ Public Class Form1
 
 
 
-    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
+    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs)
         TabControl1.SelectTab(3)
     End Sub
 
@@ -1181,15 +1181,15 @@ Public Class Form1
         GroupBoxSykkelinformasjon.Visible = False
         GroupBoxHvaVilDuGjore.Visible = True
         ComboEksisterendeSykler.Items.Clear()
-        TabControl1.SelectTab(10)
-    End Sub
-
-    Private Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
         TabControl1.SelectTab(9)
     End Sub
 
+    Private Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
+        TabControl1.SelectTab(8)
+    End Sub
+
     Private Sub btnTransport_Click(sender As Object, e As EventArgs) Handles btnTransport.Click
-        TabControl1.SelectTab(11)
+        TabControl1.SelectTab(10)
     End Sub
 
     Private Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
@@ -1251,7 +1251,7 @@ Public Class Form1
     End Sub
 
     Private Sub StatistikkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StatistikkToolStripMenuItem.Click
-        TabControl1.SelectTab(9)
+        TabControl1.SelectTab(8)
     End Sub
 
     Private Sub btnVisKunder_Click(sender As Object, e As EventArgs) Handles btnVisKunder.Click
