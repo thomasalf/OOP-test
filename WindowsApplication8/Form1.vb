@@ -1246,4 +1246,5 @@ Public Class Form1
         TabControl1.SelectTab(10)
     End Sub
 
+
 End Class

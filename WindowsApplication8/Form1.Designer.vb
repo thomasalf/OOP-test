@@ -1633,7 +1633,7 @@ Partial Class Form1
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.TextBoxSkl2)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklNullUtSkjema)
         Me.GroupBoxSykkelinformasjon.Controls.Add(Me.btnSklRegistrerEndringer)
-        Me.GroupBoxSykkelinformasjon.Location = New System.Drawing.Point(160, 224)
+        Me.GroupBoxSykkelinformasjon.Location = New System.Drawing.Point(160, 24)
         Me.GroupBoxSykkelinformasjon.Name = "GroupBoxSykkelinformasjon"
         Me.GroupBoxSykkelinformasjon.Size = New System.Drawing.Size(432, 288)
         Me.GroupBoxSykkelinformasjon.TabIndex = 6
@@ -1678,7 +1678,7 @@ Partial Class Form1
         '
         'btnSklLagreOppdatering
         '
-        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(176, 256)
+        Me.btnSklLagreOppdatering.Location = New System.Drawing.Point(176, 240)
         Me.btnSklLagreOppdatering.Name = "btnSklLagreOppdatering"
         Me.btnSklLagreOppdatering.Size = New System.Drawing.Size(104, 23)
         Me.btnSklLagreOppdatering.TabIndex = 54
@@ -1818,7 +1818,7 @@ Partial Class Form1
         '
         'btnSklRegistrerEndringer
         '
-        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(176, 232)
+        Me.btnSklRegistrerEndringer.Location = New System.Drawing.Point(176, 240)
         Me.btnSklRegistrerEndringer.Name = "btnSklRegistrerEndringer"
         Me.btnSklRegistrerEndringer.Size = New System.Drawing.Size(104, 23)
         Me.btnSklRegistrerEndringer.TabIndex = 48
