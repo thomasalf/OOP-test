@@ -791,8 +791,6 @@ Public Class Form1
 
     Private Sub ComboEksisterendeSykler_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEksisterendeSykler.SelectedIndexChanged
         GroupBoxHvaVilDuGjore.Visible = False
-        'btnSklLagreOppdatering.Visible = True
-        'btnSklRegistrerEndringer.Visible = False
         visAltIGroupBox(GroupBoxSykkelinformasjon)
         btnSklRegistrerEndringer.Visible = False
         ComboVelgStatus.Visible = False
@@ -809,7 +807,7 @@ Public Class Form1
 
 
 
-        'START: fyll "status"-combobox
+        'fyll "status"-combobox
         ComboVelgStatus.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data As New DataTable
         Dim sql As String = "SELECT * FROM pdk_status"
@@ -831,14 +829,10 @@ Public Class Form1
         Else
             MsgBox("Ingen informasjon funnet.")
         End If
-        'SLUTT: fyll "status"-combobox
 
-        'Velger riktig status i combobox
-        'ComboSklVelgMerke.SelectedIndex = ComboSklVelgMerke.FindStringExact(temprow("merke"))
-        ' Dim rowStatus As DataRow = data.Rows(ComboEksisterendeSykler.SelectedIndex)
-        ' ComboVelgStatus.SelectedIndex = ComboVelgStatus.FindStringExact(rowStatus("statusnavn"))
 
-        'Start: fyll "tilhørighet"-combobox
+
+        'fyll "tilhørighet"-combobox
         ComboVelgHjemsted.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data2 As New DataTable
         Dim sql2 As String = "SELECT DISTINCT stedsnavn, postnr FROM pdk_sted"
@@ -852,16 +846,16 @@ Public Class Form1
             For teller = 0 To (teller - 1)
                 Dim ComboboxTekst As String
                 Dim row As DataRow = data.Rows(teller)
-                ComboboxTekst = row("postnr") '& " " & row("stedsnavn")
+                ComboboxTekst = row("postnr")
                 ComboVelgHjemsted.Items.Add(ComboboxTekst)
             Next
         Else
             MsgBox("Ingen informasjon funnet.")
         End If
-        'Slutt: fyll "tilhørighet"-combobox
 
 
-        'Start: fyll "transportør"-combobox
+
+        'fyll "transportør"-combobox
         ComboVelgTransportor.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim data3 As New DataTable
         Dim sql3 As String = "SELECT * FROM pdk_transportor"
@@ -887,8 +881,7 @@ Public Class Form1
 
 
 
-        'START: fyll "merke"-combobox
-        'comboBoxUtil.fyllCombobox1(ComboSklVelgMerke, "pdk_sykkelmerke", "merke")
+        'fyll "merke"-combobox
         Dim sykkeldao As New SykkelDAO
         ComboSklVelgMerke.Items.Clear() 'Fjerner gammel informasjon fra combobox
         Dim dataMerke As New DataTable
@@ -909,11 +902,11 @@ Public Class Form1
             Next
         End If
 
-        'START: fyll "modell"-combobox
+        'fyll "modell"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgModell, "pdk_sykkelmodell", "modell")
 
 
-        'START: fyll "type"-combobox
+        'fyll "type"-combobox
         comboBoxUtil.fyllCombobox1(ComboSklVelgType, "pdk_sykkeltype", "sykkeltype")
 
         'Velger riktig informasjon i comboboxer
@@ -932,6 +925,7 @@ Public Class Form1
         'velger riktig sted/tilhørighet
         ComboVelgHjemsted.SelectedIndex = ComboVelgHjemsted.FindStringExact(temprow("postnr"))
 
+        'lagrer sykkelID og oppdaterer sykkelID-label
         LabelSykkelID.Text = sykkelIDinformasjon(ComboEksisterendeSykler.SelectedIndex)
         sykkelIDtilRedigering = LabelSykkelID.Text
 
@@ -1021,11 +1015,7 @@ Public Class Form1
 
 
     Private Sub ComboSykkelSomSkalTransporteres_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSykkelSomSkalTransporteres.SelectedIndexChanged
-        'Dim data As New DataTable
-        'Dim sql As String = "SELECT sykkelID, merke, modell FROM pdk_sykkel INNER JOIN pdk_sted WHERE pdk_sykkel.postnr = pdk_sted.postnr AND stedsnavn = '" & ComboSykkelSomSkalTransporteres.SelectedValue & "';"
-        'data = query(sql)
-        '
-        'DataGridViewSykkeltransport.DataSource = data
+
 
     End Sub
 
